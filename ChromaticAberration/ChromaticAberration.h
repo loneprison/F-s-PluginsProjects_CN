@@ -28,10 +28,10 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_R				"red"
-#define	STR_G				"green"
-#define	STR_B				"blue"
-#define	STR_CENTER			"center"
+#define	STR_R				L10N_PARAM_RED
+#define	STR_G				L10N_PARAM_GREEN
+#define	STR_B				L10N_PARAM_BLUE
+#define	STR_CENTER			L10N_PARAM_CENTER
 
 //UIのパラメータ
 typedef struct ParamInfo {

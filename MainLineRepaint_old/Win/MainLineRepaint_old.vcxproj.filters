@@ -21,16 +21,10 @@
     <Filter Include="Supporting code\AE">
       <UniqueIdentifier>{a5fe17df-932d-4cbb-98ff-0e85562d909b}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
+  <Filter Include="_i18n"><UniqueIdentifier>{9f4f1401-43d6-4abf-9f5d-c8f3982ce10f}</UniqueIdentifier></Filter></ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\MainLineRepaint_old.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\Smart_Utils.h">
       <Filter>Header Files\AE</Filter>
@@ -51,9 +45,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -92,9 +83,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -104,13 +92,13 @@
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
       <Filter>Supporting code\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2014\F%27s MainLineRepaint_OLD\FsAE.h">
+    <ClInclude Include="..\FsAE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2014\F%27s MainLineRepaint_OLD\FsGraphics.h">
+    <ClInclude Include="..\FsGraphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2014\F%27s MainLineRepaint_OLD\MainLineRepaint_old_Strings.h">
+    <ClInclude Include="..\MainLineRepaint_old_Strings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -143,4 +131,4 @@
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
-</Project>
+<ItemGroup><ClInclude Include="..\\..\\_i18n\\NF's Plugins-Cell\\MainLineRepaint_old_i18n.h"><Filter>_i18n</Filter></ClInclude></ItemGroup></Project>

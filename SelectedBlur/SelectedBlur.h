@@ -39,19 +39,19 @@
 //#include "FsAE.h"
 
 //-----------------------------------------------------------------------------------
-#define	STR_BLUR_VALUE	"blur"
-#define	STR_TARGET_RNG	"range"
-#define	STR_TARGET_ENABLE0	"有効"
-#define	STR_TARGET_ENABLE1	"ON"
+#define STR_BLUR_VALUE      L10N_PARAM_BLUR
+#define STR_TARGET_RNG      L10N_PARAM_RANGE
+#define STR_TARGET_ENABLE0  L10N_PARAM_ENABLE
+#define STR_TARGET_ENABLE1  L10N_PARAM_ON
 
-#define	STR_TARGET_COL0	"target0"
-#define	STR_TARGET_COL1	"target1"
-#define	STR_TARGET_COL2	"target2"
-#define	STR_TARGET_COL3	"target3"
-#define	STR_TARGET_COL4	"target4"
-#define	STR_TARGET_COL5	"target5"
-#define	STR_TARGET_COL6	"target6"
-#define	STR_TARGET_COL7	"target7"
+#define STR_TARGET_COL0     L10N_PARAM_TARGET0
+#define STR_TARGET_COL1     L10N_PARAM_TARGET1
+#define STR_TARGET_COL2     L10N_PARAM_TARGET2
+#define STR_TARGET_COL3     L10N_PARAM_TARGET3
+#define STR_TARGET_COL4     L10N_PARAM_TARGET4
+#define STR_TARGET_COL5     L10N_PARAM_TARGET5
+#define STR_TARGET_COL6     L10N_PARAM_TARGET6
+#define STR_TARGET_COL7     L10N_PARAM_TARGET7
 
 
 #define COLOR_COUNT 8

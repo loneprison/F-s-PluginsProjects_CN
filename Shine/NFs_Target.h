@@ -2,19 +2,20 @@
 #pragma once
 #ifndef NFs_TARGET_H
 #define NFs_TARGET_H
+#include "../_i18n/NF's Plugins-{Legacy}/Shine_i18n.h"
 
 #include "../NFsLibrary/NFsVersion.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define NFS_NAME			"F's Shine"
+#define NFS_NAME           L10N_PLUGIN_NAME
 #define NFS_DISPNAME		"F's Shine"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define NFS_DESCRIPTION	"Fake shine"
+#define NFS_DESCRIPTION   L10N_PLUGIN_DESC
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -70,4 +71,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

@@ -40,21 +40,20 @@
 
 
 
-#define	STR_MM				"大きさ(mm)"
-
-#define	STR_VALUE_RND		"大きさのばらつき(%)"
-#define	STR_DIR				"方向(Rot)"
-#define	STR_DIR_RND			"方向のばらつき(Rot)"
-#define	STR_RANDOMSEED		"Random Seed"
-#define	STR_EDGE_STATUS1	"縁の処理"
-#define	STR_EDGE_STATUS2	"透明|伸ばす|繰り返す1|繰り返す2"
-#define	STR_DPI				"解像度(dpi)"
+#define STR_MM              L10N_PARAM_AMOUNT_MM
+#define STR_VALUE_RND       L10N_PARAM_AMOUNT_RND
+#define STR_DIR             L10N_PARAM_DIR
+#define STR_DIR_RND         L10N_PARAM_DIR_RND
+#define STR_RANDOMSEED      L10N_PARAM_RANDOM_SEED
+#define STR_EDGE_STATUS1    L10N_PARAM_EDGE_MODE
+#define STR_EDGE_STATUS2    L10N_PARAM_EDGE_MODE_ITEMS
+#define STR_DPI             L10N_PARAM_DPI
 
 
 
 #ifdef TEST_MODE
-	#define	STR_TEST_TIME_CB1	"Time Disp"
-	#define	STR_TEST_TIME_CB2	"ON"
+    #define STR_TEST_TIME_CB1 L10N_PARAM_TEST_TIME_DISP
+    #define STR_TEST_TIME_CB2 L10N_PARAM_ON
 #endif
 
 

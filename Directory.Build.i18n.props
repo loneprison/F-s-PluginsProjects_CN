@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <!-- global i18n build mode: CN | JP_ForCN | Both -->
+    <FsI18nBuildMode>Both</FsI18nBuildMode>
+  </PropertyGroup>
+</Project>

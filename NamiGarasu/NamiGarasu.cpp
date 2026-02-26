@@ -297,7 +297,7 @@ static PF_Err ParamsSetup (
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
 	PF_ADD_CHECKBOX(STR_DISPMAP,
-					"on",
+					STR_ON,
 					FALSE,
 					0,
 					ID_DISPMAP

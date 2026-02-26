@@ -87,6 +87,27 @@ WarningLevel.ps1はVisual Studioのプロジェクトファイル(*.vcxproj)のW
 Debugの出力ディレクトリを一括変更するPowerShellスクリプトです。<br>
 現在 "..\..\Fs_Plugins_debug\"が設定されているので必要に応じて書き換えてください<br>
 
+## i18n_build.ps1
+i18n_build.ps1は、VS右键“生成”的全局产物策略切换脚本です。<br>
+切换目标写入仓库根目录 `Directory.Build.i18n.props`。<br>
+
+```
+.\_tools\i18n_build.ps1 -Mode CN
+.\_tools\i18n_build.ps1 -Mode JP_ForCN
+.\_tools\i18n_build.ps1 -Mode Both
+```
+
+モードの意味:
+- `CN`: VS Build は CN のみ出力
+- `JP_ForCN`: VS Build は JP_ForCN のみ出力
+- `Both`: VS Build は CN + JP_ForCN を両方出力
+
+必要なら、設定変更後にそのまま一括ビルドも可能:
+
+```
+.\_tools\i18n_build.ps1 -Mode Both -BuildNow -Configuration Release -Platform x64
+```
+
 ## PowerShellスクリプトの実行について
 PowerShellスクリプトを実行するには、PowerShellの実行ポリシーを変更する必要があります。<br>
 以下のコマンドをPowerShellで実行してください。<br>

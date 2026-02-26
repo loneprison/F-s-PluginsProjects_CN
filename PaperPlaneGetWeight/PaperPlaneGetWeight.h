@@ -58,10 +58,10 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_ISHALF		"HalfSize"
-#define	STR_COUNT		"Count"
-#define	STR_WEIGHT			"Weight"
-#define	STR_WEIGHT_ITEMS	"180|225|310|360"
+#define	STR_ISHALF		L10N_PARAM_HALF_SIZE
+#define	STR_COUNT		L10N_PARAM_COUNT
+#define	STR_WEIGHT			L10N_PARAM_WEIGHT
+#define	STR_WEIGHT_ITEMS	L10N_PARAM_WEIGHT_ITEMS
 #define	STR_WEIGHT_COUNT	4
 #define	STR_WEIGHT_DFLT		2
 

@@ -42,11 +42,11 @@
 #include "../FsLibrary/FsAE.h"
 #include "../FsLibrary/FsHLS.h"
 
-#define	STR_HUE			"hue"
-#define	STR_LUM			"lightness"
-#define	STR_SAT			"saturation"
-#define	STR_REV			"Reverse"
-#define	STR_ORG_BLEND	"blend original(%)"
+#define	STR_HUE			L10N_PARAM_HUE
+#define	STR_LUM			L10N_PARAM_LIGHTNESS
+#define	STR_SAT			L10N_PARAM_SATURATION
+#define	STR_REV			L10N_PARAM_REVERSE
+#define	STR_ORG_BLEND	L10N_PARAM_BLEND_ORIGINAL
 
 //ユーザーインターフェースのID
 //ParamsSetup関数とRender関数のparamsパラメータのIDになる

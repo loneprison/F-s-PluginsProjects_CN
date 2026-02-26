@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Header Files">
@@ -27,19 +27,13 @@
     <Filter Include="Supporting code\Fs">
       <UniqueIdentifier>{9669fa65-ebe0-43d2-88b3-c7d9bcc9e9c2}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
+  <Filter Include="_i18n"><UniqueIdentifier>{9f4f1401-43d6-4abf-9f5d-c8f3982ce10f}</UniqueIdentifier></Filter></ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Premultiply.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
@@ -54,9 +48,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -93,9 +84,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
@@ -151,4 +139,4 @@
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
-</Project>
+<ItemGroup><ClInclude Include="..\\..\\_i18n\\NF's Plugins-Channel\\Premultiply_i18n.h"><Filter>_i18n</Filter></ClInclude></ItemGroup></Project>

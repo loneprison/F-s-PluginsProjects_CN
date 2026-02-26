@@ -1,4 +1,4 @@
-#include "MaxFast.h"
+﻿#include "MaxFast.h"
 
 typedef struct LineBuf {
     A_FpShort	level;

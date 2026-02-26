@@ -50,11 +50,11 @@ enum {
 	ID_NUM_PARAMS
 };
 
-#define	STR_BRIGHT "ラインの明るさ(%)"
-#define	STR_HEIGHT "ラインの高さ(dot)"
-#define STR_INTER	"間隔補正(dot)"
-#define STR_DIR		"方向"
-#define STR_DIRSTR	"水平|垂直"
+#define STR_BRIGHT      L10N_PARAM_LINE_BRIGHTNESS
+#define STR_HEIGHT      L10N_PARAM_LINE_HEIGHT
+#define STR_INTER       L10N_PARAM_INTERVAL
+#define STR_DIR         L10N_PARAM_DIR
+#define STR_DIRSTR      L10N_PARAM_DIR_ITEMS
 
 typedef struct{
 	PF_FpLong	bright;

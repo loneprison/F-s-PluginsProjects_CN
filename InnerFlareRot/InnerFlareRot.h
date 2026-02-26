@@ -41,13 +41,13 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_BLUR			"blur"
-#define	STR_MINMAX			"max"
-#define	STR_HYPERBOLIC		"hyperbolic"
-#define	STR_ROT				"rot"
-#define	STR_LENGTH			"length"
-#define	STR_OFFSET			"offset"
-#define	STR_COLOR			"color"
+#define	STR_BLUR			L10N_PARAM_BLUR
+#define	STR_MINMAX			L10N_PARAM_MAX
+#define	STR_HYPERBOLIC		L10N_PARAM_HYPERBOLIC
+#define	STR_ROT				L10N_PARAM_ROT
+#define	STR_LENGTH			L10N_PARAM_LENGTH
+#define	STR_OFFSET			L10N_PARAM_OFFSET
+#define	STR_COLOR			L10N_PARAM_COLOR
 
 //UIのパラメータ
 typedef struct {

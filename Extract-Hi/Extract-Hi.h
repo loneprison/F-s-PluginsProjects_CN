@@ -55,15 +55,15 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_BORDER				"Border"
-#define	STR_SOFTNESS			"Softness"
-#define	STR_TARGET			"Target"
-#define	STR_TARGET_ITEM		"Luminance|Red|Green|Blue|Cyan|Magenta|Yellow|RGB_Max|Custum"
+#define	STR_BORDER				L10N_PARAM_BORDER
+#define	STR_SOFTNESS			L10N_PARAM_SOFTNESS
+#define	STR_TARGET			L10N_PARAM_TARGET
+#define	STR_TARGET_ITEM		L10N_PARAM_TARGET_ITEMS
 #define STR_TARGET_COUNT		9
 #define STR_TARGET_DFLT		1
-#define	STR_CUSTUM_COLOR	"CustumColor"
-#define	STR_INVERT			"Invert"
-#define	STR_INVERT_ON		"on"
+#define	STR_CUSTUM_COLOR	L10N_PARAM_CUSTOM_COLOR
+#define	STR_INVERT			L10N_PARAM_INVERT
+#define	STR_INVERT_ON		L10N_PARAM_ON
 
 //UIのパラメータ
 typedef struct ParamInfo {

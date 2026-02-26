@@ -114,28 +114,28 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TARGET_TOPIC			"Target"
-#define	STR_RANGE					"Range"
-#define	STR_ON						"on"
-#define	STR_TARGET_COLOR_ENABLED	"ColorEnabled"
-#define	STR_TARGET_COLOR			"Color"
+#define	STR_TARGET_TOPIC			L10N_PARAM_TARGET_TOPIC
+#define	STR_RANGE					L10N_PARAM_RANGE
+#define	STR_ON						L10N_PARAM_ON
+#define	STR_TARGET_COLOR_ENABLED	L10N_PARAM_TARGET_COLOR_EN
+#define	STR_TARGET_COLOR			L10N_PARAM_TARGET_COLOR
 
-#define	STR_DIR_TOPIC				"Extend"
-#define	STR_TOP						"Top"
-#define	STR_TOP_RIGHT				"Top_Right"
-#define	STR_RIGHT					"Right"
-#define	STR_BOTTOM_RIGHT			"Bottom_Right"
-#define	STR_BOTTOM					"Bottom"
-#define	STR_BOTTOM_LEFT				"Bottom_Left"
-#define	STR_LEFT					"Left"
-#define	STR_TOP_LEFT				"Top_Left"
+#define	STR_DIR_TOPIC				L10N_PARAM_EXTEND_TOPIC
+#define	STR_TOP						L10N_PARAM_TOP
+#define	STR_TOP_RIGHT				L10N_PARAM_TOP_RIGHT
+#define	STR_RIGHT					L10N_PARAM_RIGHT
+#define	STR_BOTTOM_RIGHT			L10N_PARAM_BOTTOM_RIGHT
+#define	STR_BOTTOM					L10N_PARAM_BOTTOM
+#define	STR_BOTTOM_LEFT				L10N_PARAM_BOTTOM_LEFT
+#define	STR_LEFT					L10N_PARAM_LEFT
+#define	STR_TOP_LEFT				L10N_PARAM_TOP_LEFT
 
-#define	STR_NONE_TOPIC				"NoDraw"
-#define	STR_NONE_COLOR_ENABLED		"NoColorEnabled"
-#define	STR_NONE_COLOR				"NoColor"
+#define	STR_NONE_TOPIC				L10N_PARAM_NODRAW_TOPIC
+#define	STR_NONE_COLOR_ENABLED		L10N_PARAM_NODRAW_COLOR_EN
+#define	STR_NONE_COLOR				L10N_PARAM_NODRAW_COLOR
 
 
-#define	STR_TARGET_ONLY				"TargetOnly"
+#define	STR_TARGET_ONLY				L10N_PARAM_TARGET_ONLY
 
 //UIのパラメータ
 typedef struct ParamInfo {

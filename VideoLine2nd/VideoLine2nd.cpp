@@ -214,8 +214,31 @@ FilterImage16 (
 	PF_Pixel16	*outP)
 {
 	PF_Err			err = PF_Err_NONE;
-	
+	ParamInfo *	niP		= reinterpret_cast<ParamInfo*>(refcon);
 
+	PF_FpLong brt = niP->bright;
+	if (brt == 0) return err;
+
+	A_long w = niP->height*2 + niP->inter;
+	A_long fy;
+	if ( niP->vurFlag == TRUE){
+		fy = yL % w;
+	}else {
+		fy = xL % w;
+	}
+
+	if ( fy < niP->height){
+		if (brt < 0) {
+			outP->blue = RoundShortFpLong((PF_FpLong)outP->blue + outP->blue * brt);
+			outP->green = RoundShortFpLong((PF_FpLong)outP->green + outP->green * brt);
+			outP->red = RoundShortFpLong((PF_FpLong)outP->red + outP->red * brt);
+		}
+		else {
+			outP->blue = RoundShortFpLong((PF_FpLong)outP->blue + (PF_MAX_CHAN16 - outP->blue) * brt);
+			outP->green = RoundShortFpLong((PF_FpLong)outP->green + (PF_MAX_CHAN16 - outP->green) * brt);
+			outP->red = RoundShortFpLong((PF_FpLong)outP->red + (PF_MAX_CHAN16 - outP->red) * brt);
+		}
+	}
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -229,10 +252,31 @@ FilterImage32 (
 	PF_PixelFloat	*outP)
 {
 	PF_Err			err = PF_Err_NONE;
-	
 	ParamInfo *	niP		= reinterpret_cast<ParamInfo*>(refcon);
-					
 
+	PF_FpLong brt = niP->bright;
+	if (brt == 0) return err;
+
+	A_long w = niP->height*2 + niP->inter;
+	A_long fy;
+	if ( niP->vurFlag == TRUE){
+		fy = yL % w;
+	}else {
+		fy = xL % w;
+	}
+
+	if ( fy < niP->height){
+		if (brt < 0) {
+			outP->blue = RoundFpShortDouble((PF_FpLong)outP->blue + outP->blue * brt);
+			outP->green = RoundFpShortDouble((PF_FpLong)outP->green + outP->green * brt);
+			outP->red = RoundFpShortDouble((PF_FpLong)outP->red + outP->red * brt);
+		}
+		else {
+			outP->blue = RoundFpShortDouble((PF_FpLong)outP->blue + ((PF_FpLong)1.0 - outP->blue) * brt);
+			outP->green = RoundFpShortDouble((PF_FpLong)outP->green + ((PF_FpLong)1.0 - outP->green) * brt);
+			outP->red = RoundFpShortDouble((PF_FpLong)outP->red + ((PF_FpLong)1.0 - outP->red) * brt);
+		}
+	}
 	return err;
 }
 

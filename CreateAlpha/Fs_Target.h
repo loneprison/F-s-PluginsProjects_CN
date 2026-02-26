@@ -9,17 +9,18 @@
 #ifndef FS_TAGET_H
 #define FS_TAGET_H
 
+#include "../_i18n/NF's Plugins-Channel/CreateAlpha_i18n.h"
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define	FS_NAME			"F's CreateAlpha"
+#define FS_NAME            L10N_PLUGIN_NAME
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"Unmultと同じ"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
-	#define FS_CATEGORY "NF's Plugins-Channel"
+#define FS_CATEGORY "NF's Plugins-Channel"
 //-----------------------------------------------------------
 #define SUPPORT_SMARTFX			//これを有効にするとSmartFX+Float_Colorに対応する
 //#define NO_USE_FSGRAPHICS	//これを有効にするとFsGraphics関係がインクルードされない
@@ -63,4 +64,8 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
+
+
 

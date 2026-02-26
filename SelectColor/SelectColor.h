@@ -74,6 +74,29 @@ enum {
 #define TARGET_POS(i) ( ID_TARGET0 + (i)*2 )
 #define SRCCOL_POS(i) ( ID_TARGET0 + (i)*2 +1)
 
+#define STR_TARGET0          L10N_PARAM_TARGET0
+#define STR_TARGET1          L10N_PARAM_TARGET1
+#define STR_TARGET2          L10N_PARAM_TARGET2
+#define STR_TARGET3          L10N_PARAM_TARGET3
+#define STR_TARGET4          L10N_PARAM_TARGET4
+#define STR_TARGET5          L10N_PARAM_TARGET5
+#define STR_TARGET6          L10N_PARAM_TARGET6
+#define STR_TARGET7          L10N_PARAM_TARGET7
+#define STR_TARGET_ON        L10N_PARAM_ENABLE
+
+#define STR_COLOR0           L10N_PARAM_COLOR0
+#define STR_COLOR1           L10N_PARAM_COLOR1
+#define STR_COLOR2           L10N_PARAM_COLOR2
+#define STR_COLOR3           L10N_PARAM_COLOR3
+#define STR_COLOR4           L10N_PARAM_COLOR4
+#define STR_COLOR5           L10N_PARAM_COLOR5
+#define STR_COLOR6           L10N_PARAM_COLOR6
+#define STR_COLOR7           L10N_PARAM_COLOR7
+
+#define STR_REV              L10N_PARAM_REVERSE
+#define STR_REV_ON           L10N_PARAM_REVERSE_ON
+#define STR_LEVEL            L10N_PARAM_TOLERANCE
+
 typedef struct ParamInfo{
 	PF_Boolean		rev;
 	A_long			lv;

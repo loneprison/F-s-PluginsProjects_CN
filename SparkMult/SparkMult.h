@@ -62,40 +62,37 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_OFFSET		"offset"
-#define	STR_WIPE		"wipe(%)"
+#define STR_SEED            L10N_PARAM_SEED
+#define STR_SEEDPOS         L10N_PARAM_SEED_POS
+#define STR_SEEDMOVE        L10N_PARAM_SEED_MOVE
+#define STR_OFFSET          L10N_PARAM_OFFSET
+#define STR_WIPE            L10N_PARAM_WIPE
 
-#define	STR_POINT_COUNT	"pointCount"
-#define	STR_0_P			"point0"
-#define	STR_1_P			"point1"
-#define	STR_2_P			"point2"
-#define	STR_3_P			"point3"
-#define	STR_4_P			"point4"
-#define	STR_5_P			"point5"
-#define	STR_6_P			"point6"
+#define STR_POINT_COUNT     L10N_PARAM_POINT_COUNT
+#define STR_0_P             L10N_PARAM_POINT0
+#define STR_1_P             L10N_PARAM_POINT1
+#define STR_2_P             L10N_PARAM_POINT2
+#define STR_3_P             L10N_PARAM_POINT3
+#define STR_4_P             L10N_PARAM_POINT4
+#define STR_5_P             L10N_PARAM_POINT5
+#define STR_6_P             L10N_PARAM_POINT6
 
-#define	STR_START_RX	"first_randX"
-#define	STR_START_RY	"first_randY"
-#define	STR_MID_RX		"mid_randX"
-#define	STR_MID_RY		"mid_randY"
-#define	STR_LAST_RX		"last_randX"
-#define	STR_LAST_RY		"last_randY"
+#define STR_START_RX        L10N_PARAM_FIRST_RAND_X
+#define STR_START_RY        L10N_PARAM_FIRST_RAND_Y
+#define STR_MID_RX          L10N_PARAM_MID_RAND_X
+#define STR_MID_RY          L10N_PARAM_MID_RAND_Y
+#define STR_LAST_RX         L10N_PARAM_LAST_RAND_X
+#define STR_LAST_RY         L10N_PARAM_LAST_RAND_Y
 
-#define	STR_LINESIZE	"lineSize"
-#define	STR_LINEMOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_DRAWCOUNT	"drawCount"
-#define	STR_SUBCOUNT	"subCount"
+#define STR_LINESIZE        L10N_PARAM_LINE_SIZE
+#define STR_LINEMOVE        L10N_PARAM_LINE_MOVE
+#define STR_FOLDCOUNT       L10N_PARAM_FOLD_COUNT
+#define STR_DRAWCOUNT       L10N_PARAM_DRAW_COUNT
+#define STR_SUBCOUNT        L10N_PARAM_SUB_COUNT
 
-
-
-
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+#define STR_COLOR           L10N_PARAM_COLOR
+#define STR_BLEND           L10N_PARAM_BLEND
+#define STR_ON              L10N_PARAM_ON
 
 
 

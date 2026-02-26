@@ -57,7 +57,7 @@ function Export-List($key, $reverseValue = $null) {
             "; $($item.name)//$($item.description)" # セミコロンあり
         }
     }
-    $lines | Out-File -FilePath $fileName -Encoding utf8
+    $lines | Out-File -FilePath $fileName -Encoding utf8BOM
     Write-Host "Success: $fileName を作成しました。" -ForegroundColor Green
 }
 

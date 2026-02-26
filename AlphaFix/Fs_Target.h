@@ -7,9 +7,9 @@
 #pragma once
 #ifndef FS_TAGET_H
 #define FS_TAGET_H
-
-#define FS_NAME			"F's AlphaFix"
-#define FS_DESCRIPTION	"Fill transparent areas."
+#include "../_i18n/NF's Plugins-Channel/AlphaFix_i18n.h"
+#define FS_NAME            L10N_PLUGIN_NAME
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 //-----------------------------------------------------------------------------------
 //プラグインが表示されるメニュー名
@@ -67,4 +67,10 @@
 #endif
 
 #endif
+
+
+
+
+
+
 

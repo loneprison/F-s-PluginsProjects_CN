@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Auto-generated from F's PluginsProjects.slnx folder groups. -->
+  <!-- Used for Release output category subfolders. -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='_sample_font'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='AlphaFix'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='AlphaHyperbolic'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='alphaThreshold'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='AnimatedNoise'">
+    <FsProjectCategory>NF&apos;s Plugins-Noise</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='CCplus'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='CellGrad'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='CellLineEraser'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ChannelBlur'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ChannelNoise'">
+    <FsProjectCategory>NF&apos;s Plugins-Noise</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ChannelShift'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ChromaticAberration'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ColorChange'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ColorChangeEng'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ColorChangeFromPoint'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ColorChangeSimple'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ColorKey'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ColorMatKey'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='colorThreshold'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='CreateAlpha'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='EdgeBlur'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='EdgeLine'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='EdgeLine-Hi'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ExpsColors'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ExpsPos'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Extract_Edge'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Extract-Hi'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='FillColor'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Filter'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Flare'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Frame'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='FsSSFrame'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='grayToColorize'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='grayToCountourLine'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='graytoneToColorize'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='grayToWaveLine'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='GuideFrame'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='HLS_Reverse'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='InnerFlare'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='InnerFlareRot'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='IroTore'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='IroToreAdjacent'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='LineDetection'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='LineTrace'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='MainLineRepaint'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='MainLineRepaint_old'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='MaskFromRGB'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='MaskFromRGB_Multi'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Max'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Max_Kasumi'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='MaxBlur'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='MaxFast'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Mosaic'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='NamiGarasu'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='NoiseHiLo_Alpha'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='NoiseHiLo_RGB'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='OpticalDiffusion'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='OutLine'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Paint'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PaintMultPoint'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PaperPlaneGetWeight'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PaperPlaneGetWeightInfo'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PixelExtend'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PixelReplace'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PixelSelector'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='PluginSkeleton'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Posterization8bit'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Premultiply'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RandomLineNoise'">
+    <FsProjectCategory>NF&apos;s Plugins-Noise</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RandomMosaic'">
+    <FsProjectCategory>NF&apos;s Plugins-Noise</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RandomMosaic2nd'">
+    <FsProjectCategory>NF&apos;s Plugins-Noise</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RandomShift'">
+    <FsProjectCategory>NF&apos;s Plugins-Noise</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RGBAControl'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RgbToAlpha'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='RimFil'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Scanline'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ScreenShakeDir'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ScreenShakeMM'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='SelectColor'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='SelectedBlur'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Shine'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ShitsuKanBlur'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='smokeThreshold'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Spark'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='SparkGrand'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='SparkMult'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='SparkRing'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='SparkStorm'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='sputteringAlpha'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='sputteringCircle'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='sputteringRect'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='sputteringSplash'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Star'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Star_Colorful'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='TargetGrad'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='TargetGradRadical'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Thin'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='ToGray'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Tone'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Toner'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='TouchDraw'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='TouchDrawCenter'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='TouchDrawStraght'">
+    <FsProjectCategory>NF&apos;s Plugins-Draw</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Unmult_KNSW_Fake'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='Unmult_RG_Fake'">
+    <FsProjectCategory>NF&apos;s Plugins-Channel</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='UsedColorList'">
+    <FsProjectCategory>NF&apos;s Plugins-Cell</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='VideoGrid'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='VideoLine'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='VideoLine2nd'">
+    <FsProjectCategory>NF&apos;s Plugins-{Legacy}</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='whiteInOut'">
+    <FsProjectCategory>NF&apos;s Plugins-Filter</FsProjectCategory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)'=='YuvControl'">
+    <FsProjectCategory>NF&apos;s Plugins-Colorize</FsProjectCategory>
+  </PropertyGroup>
+</Project>
+

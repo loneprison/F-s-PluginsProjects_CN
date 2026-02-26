@@ -85,9 +85,9 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target0","実行する", FALSE,0, ID_TARGET0);
+	PF_ADD_CHECKBOX(STR_TARGET0, STR_TARGET_ON, FALSE,0, ID_TARGET0);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color0", 
+	PF_ADD_COLOR(	STR_COLOR0,
 					255,
 					0,
 					0,
@@ -95,54 +95,54 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target1","実行する", FALSE,0, ID_TARGET1);
+	PF_ADD_CHECKBOX(STR_TARGET1, STR_TARGET_ON, FALSE,0, ID_TARGET1);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color1", 
+	PF_ADD_COLOR(	STR_COLOR1,
 					0,
 					255,
 					0,
 					ID_SRCCOL1
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target2","実行する", FALSE,0, ID_TARGET2);
+	PF_ADD_CHECKBOX(STR_TARGET2, STR_TARGET_ON, FALSE,0, ID_TARGET2);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color2", 
+	PF_ADD_COLOR(	STR_COLOR2,
 					0,
 					0,
 					255,
 					ID_SRCCOL2
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target3","実行する", FALSE,0, ID_TARGET3);
+	PF_ADD_CHECKBOX(STR_TARGET3, STR_TARGET_ON, FALSE,0, ID_TARGET3);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color3", 
+	PF_ADD_COLOR(	STR_COLOR3,
 					0,
 					255,
 					255,
 					ID_SRCCOL3
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target4","実行する", FALSE,0, ID_TARGET4);
+	PF_ADD_CHECKBOX(STR_TARGET4, STR_TARGET_ON, FALSE,0, ID_TARGET4);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color4", 
+	PF_ADD_COLOR(	STR_COLOR4,
 					255,
 					0,
 					255,
 					ID_SRCCOL4
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target5","実行する", FALSE,0, ID_TARGET5);
+	PF_ADD_CHECKBOX(STR_TARGET5, STR_TARGET_ON, FALSE,0, ID_TARGET5);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color5", 
+	PF_ADD_COLOR(	STR_COLOR5,
 					255,
 					255,
 					0,
 					ID_SRCCOL5
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target6","実行する", FALSE,0, ID_TARGET6);
+	PF_ADD_CHECKBOX(STR_TARGET6, STR_TARGET_ON, FALSE,0, ID_TARGET6);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color6", 
+	PF_ADD_COLOR(	STR_COLOR6,
 					255,
 					255,
 					255,
@@ -152,9 +152,9 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target7","実行する", FALSE,0, ID_TARGET7);
+	PF_ADD_CHECKBOX(STR_TARGET7, STR_TARGET_ON, FALSE,0, ID_TARGET7);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"元の色7", 
+	PF_ADD_COLOR(	STR_COLOR7,
 					0,
 					0,
 					0,
@@ -163,10 +163,10 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Rev","反転する", FALSE,0, ID_REV);
+	PF_ADD_CHECKBOX(STR_REV, STR_REV_ON, FALSE,0, ID_REV);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"許容値",//パラメータの名前
+	PF_ADD_SLIDER(	STR_LEVEL,//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					PF_MAX_CHAN8,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 

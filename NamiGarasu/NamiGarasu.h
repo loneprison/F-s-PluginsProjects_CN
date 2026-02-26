@@ -82,37 +82,37 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Y			"WaveValue"
-#define	STR_LENGTH_X		"X_Length"
-#define	STR_LENGTH_Y		"Y_Length"
-#define	STR_ROT				"Rot"
-#define	STR_SPEED			"Speed"
-#define	STR_LEVEL			"AddMap"
-#define	STR_NOISE			"Noise"
+#define	STR_Y			L10N_PARAM_WAVE_VALUE
+#define	STR_LENGTH_X		L10N_PARAM_X_LENGTH
+#define	STR_LENGTH_Y		L10N_PARAM_Y_LENGTH
+#define	STR_ROT				L10N_PARAM_ROT
+#define	STR_SPEED			L10N_PARAM_SPEED
+#define	STR_LEVEL			L10N_PARAM_ADD_MAP
+#define	STR_NOISE			L10N_PARAM_NOISE
 
-#define	STR_A				"LayerA"
-#define	STR_A_SIZE			"A_size"
-#define	STR_A_VALUE			"A_value"
-#define	STR_A_STRONG		"A_Strong"
-#define	STR_A_SPEED			"A_Speed"
-#define	STR_A_SEED			"A_Seed"
+#define	STR_A				L10N_PARAM_LAYER_A
+#define	STR_A_SIZE			L10N_PARAM_A_SIZE
+#define	STR_A_VALUE			L10N_PARAM_A_VALUE
+#define	STR_A_STRONG		L10N_PARAM_A_STRONG
+#define	STR_A_SPEED			L10N_PARAM_A_SPEED
+#define	STR_A_SEED			L10N_PARAM_A_SEED
 
-#define	STR_B				"LayerB"
-#define	STR_B_SIZE			"B_size"
-#define	STR_B_VALUE			"B_value"
-#define	STR_B_STRONG		"B_Strong"
-#define	STR_B_SPEED			"B_Speed"
-#define	STR_B_SEED			"B_Seed"
+#define	STR_B				L10N_PARAM_LAYER_B
+#define	STR_B_SIZE			L10N_PARAM_B_SIZE
+#define	STR_B_VALUE			L10N_PARAM_B_VALUE
+#define	STR_B_STRONG		L10N_PARAM_B_STRONG
+#define	STR_B_SPEED			L10N_PARAM_B_SPEED
+#define	STR_B_SEED			L10N_PARAM_B_SEED
 
-#define	STR_C				"LayerC"
-#define	STR_C_SIZE			"C_size"
-#define	STR_C_VALUE			"C_value"
-#define	STR_C_STRONG		"C_Strong"
-#define	STR_C_SPEED			"C_Speed"
-#define	STR_C_SEED			"C_Seed"
+#define	STR_C				L10N_PARAM_LAYER_C
+#define	STR_C_SIZE			L10N_PARAM_C_SIZE
+#define	STR_C_VALUE			L10N_PARAM_C_VALUE
+#define	STR_C_STRONG		L10N_PARAM_C_STRONG
+#define	STR_C_SPEED			L10N_PARAM_C_SPEED
+#define	STR_C_SEED			L10N_PARAM_C_SEED
 
-#define	STR_DISPMAP			"DispMap"
-
+#define	STR_DISPMAP			L10N_PARAM_DISP_MAP
+#define STR_ON            L10N_PARAM_ON
 #define	STR_POINT			"point"
 
 //UIのパラメータ

@@ -54,32 +54,30 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_OFFSET		"offset"
-#define	STR_WIPE		"wipe"
+#define STR_SEED        L10N_PARAM_SEED
+#define STR_SEEDPOS     L10N_PARAM_SEED_POS
+#define STR_SEEDMOVE    L10N_PARAM_SEED_MOVE
+#define STR_OFFSET      L10N_PARAM_OFFSET
+#define STR_WIPE        L10N_PARAM_WIPE
 
-#define	STR_START		"start"
-#define	STR_LAST1		"last1"
-#define	STR_LAST2		"last2"
+#define STR_START       L10N_PARAM_START
+#define STR_LAST1       L10N_PARAM_LAST1
+#define STR_LAST2       L10N_PARAM_LAST2
 
-#define	STR_START_RX	"startRandX"
-#define	STR_START_RY	"startRandY"
+#define STR_START_RX    L10N_PARAM_START_RAND_X
+#define STR_START_RY    L10N_PARAM_START_RAND_Y
+#define STR_LAST_RX     L10N_PARAM_LAST_RAND_X
+#define STR_LAST_RY     L10N_PARAM_LAST_RAND_Y
 
-#define	STR_LAST_RX		"lastRandX"
-#define	STR_LAST_RY		"laxtRandY"
+#define STR_LINE_SIZE   L10N_PARAM_LINE_SIZE
+#define STR_LINE_MOVE   L10N_PARAM_LINE_MOVE
+#define STR_FOLDCOUNT   L10N_PARAM_FOLD_COUNT
+#define STR_SUBCOUNT    L10N_PARAM_SUB_COUNT
+#define STR_DRAWCOUNT   L10N_PARAM_DRAW_COUNT
 
-
-#define	STR_LINE_SIZE	"lineSize"
-#define	STR_LINE_MOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_SUBCOUNT	"subCount"
-#define	STR_DRAWCOUNT	"drawCount"
-
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+#define STR_COLOR       L10N_PARAM_COLOR
+#define STR_BLEND       L10N_PARAM_BLEND
+#define STR_ON          L10N_PARAM_ON
 
 
 #define POINT_COUNT_MAX	36

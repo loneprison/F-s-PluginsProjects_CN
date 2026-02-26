@@ -223,9 +223,9 @@ static PF_Err ParamsSetup (
 	char num[255] = {"\0"};
 	for (A_long i=0; i< COUNT_OF_SUB; i++){ 
 #ifdef AE_OS_WIN
-		sprintf_s(num,"UserColor_%d",i+1);
+		sprintf_s(num, STR_USER_COLOR_FORMAT, i+1);
 #else
-		sprintf(num,"UserColor_%d",i+1);
+		sprintf(num, STR_USER_COLOR_FORMAT, i+1);
 #endif
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる

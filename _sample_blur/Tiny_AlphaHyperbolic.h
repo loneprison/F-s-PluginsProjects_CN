@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #pragma once
 #ifndef TINY_ALPHAHYPERBOLIC_H
 #define TINY_ALPHAHYPERBOLIC_H

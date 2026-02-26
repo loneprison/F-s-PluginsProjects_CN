@@ -79,9 +79,6 @@
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -103,12 +100,6 @@
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Util\entry.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -125,9 +116,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">

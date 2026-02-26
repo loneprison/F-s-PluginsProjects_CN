@@ -54,14 +54,14 @@ enum {
 	ID_NUM_PARAMS
 	};
 
-#define STR_Y		"量"
-#define STR_SHIFTMAX	"ずらし幅の最大値(px)"
-#define STR_SHIFTMIN	"ずらし幅の最小値(px)"
-#define STR_LENGTHMAX	"横幅の最大値(px)"
-#define STR_LEMGTHMIN	"横幅の最小値(px)"
-#define STR_HEIGHTMAX	"縦幅の最大値(px)"
-#define STR_HEIGHTMIN	"縦幅の最小値(px)"
-#define STR_VERSHIFT_VALUE	"上下のずらし幅(px)"
+#define STR_Y		L10N_PARAM_AMOUNT
+#define STR_SHIFTMAX	L10N_PARAM_SHIFT_MAX
+#define STR_SHIFTMIN	L10N_PARAM_SHIFT_MIN
+#define STR_LENGTHMAX	L10N_PARAM_LEN_MAX
+#define STR_LEMGTHMIN	L10N_PARAM_LEN_MIN
+#define STR_HEIGHTMAX	L10N_PARAM_HEIGHT_MAX
+#define STR_HEIGHTMIN	L10N_PARAM_HEIGHT_MIN
+#define STR_VERSHIFT_VALUE	L10N_PARAM_VER_SHIFT
 
 
 //UIのパラメータ

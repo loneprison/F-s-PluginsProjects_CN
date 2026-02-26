@@ -8,15 +8,16 @@
 #pragma once
 #ifndef Fs_TARGET_H
 #define Fs_TARGET_H
+#include "../_i18n/NF's Plugins-Colorize/graytoneToColorize_i18n.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define FS_NAME			"F's graytoneToColorize"
+#define FS_NAME            L10N_PLUGIN_NAME
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"適当な素材を適当に色を付ける2"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -24,7 +25,7 @@
 	//#define FS_CATEGORY "F's Plugins-Draw"
 	//#define FS_CATEGORY "F's Plugins-Filter"
 	//#define FS_CATEGORY "F's Plugins-Cell"
-	#define FS_CATEGORY "NF's Plugins-Colorize"
+#define FS_CATEGORY "NF's Plugins-Colorize"
 	//#define FS_CATEGORY "F's Plugins-Script"
 //#define FS_CATEGORY "F's Plugins-Test"
 
@@ -73,4 +74,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

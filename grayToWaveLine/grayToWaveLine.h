@@ -64,22 +64,22 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_SXCOUNT			"SampleXCount"
-#define	STR_SYCOUNT			"SampleYCount"
-#define	STR_DRAW_POS		"DrawPos"
-#define	STR_GRAPH_XSCALE	"GraphXScale"
-#define	STR_GRAPH_YMAX		"GraphYMax"
-#define	STR_TILT			"GraphTilt"
+#define	STR_SXCOUNT			L10N_PARAM_SAMPLE_X_COUNT
+#define	STR_SYCOUNT			L10N_PARAM_SAMPLE_Y_COUNT
+#define	STR_DRAW_POS		L10N_PARAM_DRAW_POS
+#define	STR_GRAPH_XSCALE	L10N_PARAM_GRAPH_X_SCALE
+#define	STR_GRAPH_YMAX		L10N_PARAM_GRAPH_Y_MAX
+#define	STR_TILT			L10N_PARAM_GRAPH_TILT
 
-#define	STR_X_OFFSET		"GraphXOffset"
-#define	STR_Y_OFFSET		"GraphYOffset"
+#define	STR_X_OFFSET		L10N_PARAM_GRAPH_X_OFFSET
+#define	STR_Y_OFFSET		L10N_PARAM_GRAPH_Y_OFFSET
 
-#define	STR_LINE_HEIGHT		"LineHeight"
-#define	STR_GRAPH_COLOR		"GraphColor"
-#define	STR_BASE_COLOR		"BaseColor"
+#define	STR_LINE_HEIGHT		L10N_PARAM_LINE_HEIGHT
+#define	STR_GRAPH_COLOR		L10N_PARAM_GRAPH_COLOR
+#define	STR_BASE_COLOR		L10N_PARAM_BASE_COLOR
 
-#define	STR_MODE			"mode"
-#define	STR_MODE_ITEM		"Wave+Base|WaveOnly|BaseOnly"
+#define	STR_MODE			L10N_PARAM_MODE
+#define	STR_MODE_ITEM		L10N_PARAM_MODE_ITEMS
 #define	STR_MODE_COUNT		3
 #define	STR_MODE_DFLT		1
 

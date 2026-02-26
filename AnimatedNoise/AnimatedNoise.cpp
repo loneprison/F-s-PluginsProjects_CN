@@ -93,8 +93,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 						PF_ParamFlag_CANNOT_INTERP;
 						
 	//def.ui_flags	=	PF_PUI_STD_CONTROL_ONLY; 
-	PF_ADD_CHECKBOX("毎フレームでノイズ変化",
-					"ON",
+	PF_ADD_CHECKBOX(L10N_PARAM_ANIM_EVERY_FRAME,
+					L10N_ON_LABEL,
 					TRUE,
 					0,
 					ID_ANIMATED_CB
@@ -103,7 +103,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_SLIDER(	"ノイズの動き",	//パラメータの名前
+	PF_ADD_SLIDER(	L10N_PARAM_ANIM_MOTION,	//パラメータの名前
 					0 , 				//数値入力する場合の最小値
 					F_RAND_MAX,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -115,7 +115,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//２個目のパラメータ
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"ノイズの量",	//パラメータの名前
+	PF_ADD_SLIDER(	L10N_PARAM_NOISE_AMOUNT,	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -127,7 +127,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//３個目のパラメータ
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	"ノイズの強さ",	//パラメータの名前
+	PF_ADD_FIXED(	L10N_PARAM_NOISE_STRENGTH,	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -142,8 +142,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//４個目のパラメータ
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("カラーノイズ",
-					"ON",
+	PF_ADD_CHECKBOX(L10N_PARAM_COLOR_NOISE,
+					L10N_ON_LABEL,
 					(PF_ParamValue)FALSE,
 					0,
 					ID_COLOR_CB
@@ -151,7 +151,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	"ブロックの量",	//パラメータの名前
+	PF_ADD_FIXED(	L10N_PARAM_BLOCK_AMOUNT,	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -165,7 +165,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	"ブロックの強さ",	//パラメータの名前
+	PF_ADD_FIXED(	L10N_PARAM_BLOCK_STRENGTH,	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -179,7 +179,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"ブロックの横幅(px)",	//パラメータの名前
+	PF_ADD_SLIDER(	L10N_PARAM_BLOCK_WIDTH,	//パラメータの名前
 					3, 				//数値入力する場合の最小値
 					512,			//数値入力する場合の最大値
 					3,				//スライダーの最小値 
@@ -190,7 +190,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"ブロックの縦幅(px)",	//パラメータの名前
+	PF_ADD_SLIDER(	L10N_PARAM_BLOCK_HEIGHT,	//パラメータの名前
 					3, 				//数値入力する場合の最小値
 					512,			//数値入力する場合の最大値
 					3,				//スライダーの最小値 
@@ -201,8 +201,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("カラーブロック",
-					"ON",
+	PF_ADD_CHECKBOX(L10N_PARAM_COLOR_BLOCK,
+					L10N_ON_LABEL,
 					FALSE,
 					0,
 					ID_BLOCK_COLOR_CB

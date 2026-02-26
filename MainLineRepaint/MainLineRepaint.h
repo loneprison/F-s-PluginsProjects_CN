@@ -50,8 +50,8 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Main_Color	"主線の色"
-#define	STR_level		"許容値(%)"
+#define	STR_Main_Color	L10N_PARAM_MAIN_COLOR
+#define	STR_level		L10N_PARAM_LEVEL
 
 //UIのパラメータ
 typedef struct ParamInfo {

@@ -46,12 +46,12 @@ enum {
 	ID_HEIGHT,
 	ID_NUM_PARAMS
 };
-#define STR_GRIDSIZE	"グリッドサイズ"
-#define STR_MODE1		"モード"
-#define STR_MODE2		"モザイク"
-#define STR_HILIGHT		"ハイライト(%)"
-#define STR_SHADOW		"シャドウ(%)"
-#define STR_HEIGHT		"ライン幅"
+#define STR_GRIDSIZE    L10N_PARAM_GRID_SIZE
+#define STR_MODE1       L10N_PARAM_MODE
+#define STR_MODE2       L10N_PARAM_MOSAIC
+#define STR_HILIGHT     L10N_PARAM_HILIGHT
+#define STR_SHADOW      L10N_PARAM_SHADOW
+#define STR_HEIGHT      L10N_PARAM_LINE_WIDTH
 
 typedef struct ParamInfo{
 	A_long			gridSize;

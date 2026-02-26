@@ -39,12 +39,12 @@
 #include "../FsLibrary/FsAE.h"
 
 	
-#define	Str_RED_VALUE		"Red Noise(%)"
-#define	Str_RED_OPT			"Red Opacity(%)"
-#define	Str_GREEN_VALUE		"Green Noise(%)"
-#define	Str_GREEN_OPT		"Green Opacity(%)"
-#define	Str_BLUE_VALUE		"Blue Noise(%)"
-#define	Str_BLUE_OPT		"Blue Opacity(%)"
+#define	Str_RED_VALUE		L10N_PARAM_RED_NOISE
+#define	Str_RED_OPT			L10N_PARAM_RED_OPACITY
+#define	Str_GREEN_VALUE		L10N_PARAM_GREEN_NOISE
+#define	Str_GREEN_OPT		L10N_PARAM_GREEN_OPACITY
+#define	Str_BLUE_VALUE		L10N_PARAM_BLUE_NOISE
+#define	Str_BLUE_OPT		L10N_PARAM_BLUE_OPACITY
 	
 
 //ユーザーインターフェースのID

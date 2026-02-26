@@ -67,23 +67,23 @@ enum{
 #define ID_NUM_PARAMS PixelSelector_NUM_PARAMS
 //-----------------------------------------------------------------------------
 //パラメータUI用の文字列
-#define UI_TOPIC	"Option"
-#define UI_ON		"ON"
-#define UI_REV		"反転する"
-#define UI_FILL		"塗りつぶす"
-#define UI_FILL_COLOR	"fillColor"
-#define UI_FILL_OPA		"fillColor_opacity"
+#define UI_TOPIC	L10N_PARAM_TOPIC
+#define UI_ON		L10N_PARAM_ON
+#define UI_REV		L10N_PARAM_REVERSE
+#define UI_FILL		L10N_PARAM_FILL
+#define UI_FILL_COLOR	L10N_PARAM_FILL_COLOR
+#define UI_FILL_OPA		L10N_PARAM_FILL_OPACITY
 
-#define UI_ENABLED	"Enabled"
-#define UI_SRC_COLOR	"targetColor"
+#define UI_ENABLED	L10N_PARAM_ENABLED
+#define UI_SRC_COLOR	L10N_PARAM_TARGET_COLOR
 
-#define UI_LV			"level"
+#define UI_LV			L10N_PARAM_LEVEL
 
-#define UI_POP1			"Disp"
-#define UI_POP2			"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24"
+#define UI_POP1			L10N_PARAM_DISP
+#define UI_POP2			L10N_PARAM_DISP_ITEMS
 
-#define ERR_GET_AEPRM	"すみませんエラーです。\nAfterEffects_Params error!"
-#define ERR_GET_PRM		"すみませんエラーです。\nPixelSelector_Params error!"
+#define ERR_GET_AEPRM	L10N_ERR_GET_AEPRM
+#define ERR_GET_PRM		L10N_ERR_GET_PRM
 //-----------------------------------------------------------------------------
 
 typedef struct

@@ -48,12 +48,12 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_POS			"pos"
-#define	STR_LENGTH		"length"
-#define	STR_STRONG		"strong"
-#define	STR_ISCOLOR		"useColor"
-#define	STR_COLOR		"color"
-#define	STR_ON			"on"
+#define STR_POS         L10N_PARAM_POS
+#define STR_LENGTH      L10N_PARAM_LENGTH
+#define STR_STRONG      L10N_PARAM_STRONG
+#define STR_ISCOLOR     L10N_PARAM_USE_COLOR
+#define STR_COLOR       L10N_PARAM_COLOR
+#define STR_ON          L10N_PARAM_ON
 
 
 

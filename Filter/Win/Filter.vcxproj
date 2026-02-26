@@ -9,7 +9,7 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-  </ItemGroup>
+  <ClInclude Include="..\\..\\_i18n\\NF's Plugins-{Legacy}\\Filter_i18n.h" /></ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FB474EFA-205B-4995-9D53-8D773AB3E816}</ProjectGuid>
     <RootNamespace>Filter</RootNamespace>
@@ -187,20 +187,16 @@
     <ClInclude Include="..\..\..\Headers\FIEL_Public.h" />
     <ClInclude Include="..\..\..\Headers\PF_Masks.h" />
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h" />
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h" />
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h" />
     <ClInclude Include="..\..\..\Headers\PR_Public.h" />
     <ClInclude Include="..\..\..\Headers\PT_Public.h" />
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h" />
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h" />
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h" />
     <ClInclude Include="..\..\..\Util\entry.h" />
     <ClInclude Include="..\..\..\Util\Param_Utils.h" />
     <ClInclude Include="..\..\..\Util\Smart_Utils.h" />
     <ClInclude Include="..\..\..\Util\String_Utils.h" />
     <ClInclude Include="..\Filter.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H" />
     <ClInclude Include="..\Filter_def.h" />
     <ClInclude Include="..\Filter_Target.h" />
     <CustomBuildStep Include="..\..\..\Util\AEFX_SuiteHelper.h" />

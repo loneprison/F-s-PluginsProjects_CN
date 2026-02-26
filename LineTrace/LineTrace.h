@@ -79,33 +79,33 @@ enum{
 //パラメータUI用の文字列
 
 
-#define UI_ENABLED_BLACK	"Black"
-#define UI_ENABLED_RED		"Red"
-#define UI_ENABLED_GREEN	"Green"
-#define UI_ENABLED_BLUE		"Blue"
-#define UI_ENABLED_YELLOW	"Yellow"
-#define UI_ENABLED_VIOLET	"Violet"
-#define UI_ENABLED2			"ON"
+#define UI_ENABLED_BLACK	L10N_PARAM_ENABLED_BLACK
+#define UI_ENABLED_RED		L10N_PARAM_ENABLED_RED
+#define UI_ENABLED_GREEN	L10N_PARAM_ENABLED_GREEN
+#define UI_ENABLED_BLUE		L10N_PARAM_ENABLED_BLUE
+#define UI_ENABLED_YELLOW	L10N_PARAM_ENABLED_YELLOW
+#define UI_ENABLED_VIOLET	L10N_PARAM_ENABLED_VIOLET
+#define UI_ENABLED2			L10N_PARAM_ENABLED_ON
 
-#define UI_DRAW_BLACK		"DrawBlack"
-#define UI_DRAW_RED			"DrawRed"
-#define UI_DRAW_GREEN		"DrawGreen"
-#define UI_DRAW_BLUE		"DrawBlue"
-#define UI_DRAW_YELLOW		"DrawYellow"
-#define UI_DRAW_VIOLET		"DrawViolet"
-
-
-#define UI_BORDER_BLACK		"BlackBorder"
-#define UI_BORDER_RED		"RedBorder"
-#define UI_BORDER_GREEN		"GreenBorder"
-#define UI_BORDER_BLUE		"BlueBorder"
-#define UI_BORDER_YELLOW	"YellowBorder"
-#define UI_BORDER_VIOLET	"VioletBorder"
+#define UI_DRAW_BLACK		L10N_PARAM_DRAW_BLACK
+#define UI_DRAW_RED			L10N_PARAM_DRAW_RED
+#define UI_DRAW_GREEN		L10N_PARAM_DRAW_GREEN
+#define UI_DRAW_BLUE		L10N_PARAM_DRAW_BLUE
+#define UI_DRAW_YELLOW		L10N_PARAM_DRAW_YELLOW
+#define UI_DRAW_VIOLET		L10N_PARAM_DRAW_VIOLET
 
 
+#define UI_BORDER_BLACK		L10N_PARAM_BORDER_BLACK
+#define UI_BORDER_RED		L10N_PARAM_BORDER_RED
+#define UI_BORDER_GREEN		L10N_PARAM_BORDER_GREEN
+#define UI_BORDER_BLUE		L10N_PARAM_BORDER_BLUE
+#define UI_BORDER_YELLOW	L10N_PARAM_BORDER_YELLOW
+#define UI_BORDER_VIOLET	L10N_PARAM_BORDER_VIOLET
 
-#define ERR_GET_AEPRM	"すみませんエラーです。\nAfterEffects_Params error!"
-#define ERR_GET_PRM		"すみませんエラーです。\nLineTrace_Params error!"
+
+
+#define ERR_GET_AEPRM	L10N_ERR_GET_AEPRM
+#define ERR_GET_PRM		L10N_ERR_GET_PRM
 //-----------------------------------------------------------------------------
 #define	RANGE_RED2	330
 #define	RANGE_RED3	360

@@ -34,7 +34,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_CHECKBOX(STR_G,
-					"on",
+					STR_ON,
 					TRUE,
 					0,
 					ID_GRAY

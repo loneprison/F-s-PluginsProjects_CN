@@ -80,26 +80,32 @@ enum {
 #define ID_MAIN_COL_L(idx)	(ID_MAIN_COL1_LV + idx*4)
 
 //UIの表示文字列
-#define	STR_ALPHA_LV		"alpha_Level"
-#define	STR_HS_LV			"colorMatch_level"
-#define	STR_L_LV			"colorLightness_level"
-#define	STR_MAIN_COL1_ON	"Enabled_1"
-#define	STR_MAIN_COL2_ON	"Enabled_2"
-#define	STR_MAIN_COL3_ON	"Enabled_3"
-#define	STR_ON				"on"
-#define	STR_MAIN_COL1		"color1"
-#define	STR_MAIN_COL2		"color2"
-#define	STR_MAIN_COL3		"color3"
-#define	STR_MAIN_COL1_LV	"color1_level"
-#define	STR_MAIN_COL2_LV	"color2_level"
-#define	STR_MAIN_COL3_LV	"color3_level"
-#define	STR_MAIN_COL1_HS	"color1_hs"
-#define	STR_MAIN_COL2_HS	"color2_hs"
-#define	STR_MAIN_COL3_HS	"color3_hs"
+#define	STR_ALPHA_LV		L10N_PARAM_ALPHA_LEVEL
+#define	STR_HS_LV			L10N_PARAM_MATCH_LEVEL
+#define	STR_L_LV			L10N_PARAM_LIGHT_LEVEL
+#define	STR_MAIN_COL1_ON	L10N_PARAM_MAIN_ON1
+#define	STR_MAIN_COL2_ON	L10N_PARAM_MAIN_ON2
+#define	STR_MAIN_COL3_ON	L10N_PARAM_MAIN_ON3
+#define	STR_ON				L10N_PARAM_ON
+#define	STR_MAIN_COL1		L10N_PARAM_MAIN_COLOR1
+#define	STR_MAIN_COL2		L10N_PARAM_MAIN_COLOR2
+#define	STR_MAIN_COL3		L10N_PARAM_MAIN_COLOR3
+#define	STR_MAIN_COL1_LV	L10N_PARAM_MAIN_LEVEL1
+#define	STR_MAIN_COL2_LV	L10N_PARAM_MAIN_LEVEL2
+#define	STR_MAIN_COL3_LV	L10N_PARAM_MAIN_LEVEL3
+#define	STR_MAIN_COL1_HS	L10N_PARAM_MAIN_HS1
+#define	STR_MAIN_COL2_HS	L10N_PARAM_MAIN_HS2
+#define	STR_MAIN_COL3_HS	L10N_PARAM_MAIN_HS3
 
-#define	STR_TOPIC_NAIN_COL	"LineColors"
-#define	STR_TOPIC_SUB_COL	"UseColor"
-#define	STR_SUB_COL_COUNT	"UseColor_count"
+
+#define	STR_TOPIC_NAIN_COL	L10N_PARAM_TOPIC_MAIN
+
+
+#define	STR_TOPIC_SUB_COL	L10N_PARAM_TOPIC_SUB
+
+#define	STR_SUB_COL_COUNT	L10N_PARAM_SUB_COUNT
+
+#define	STR_USER_COLOR_FORMAT	L10N_PARAM_USER_COLOR_FORMAT
 
 typedef struct hls {
 	PF_FpLong	h;
@@ -196,4 +202,6 @@ EntryPointFunc (
 	void			*extra);
 }
 #endif // colorThreshold_H
+
+
 

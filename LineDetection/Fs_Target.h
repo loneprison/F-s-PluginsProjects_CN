@@ -9,21 +9,22 @@
 
 #ifndef FS_TARGET_H
 #define FS_TARGET_H
+#include "../_i18n/NF's Plugins-Filter/LineDetection_i18n.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define FS_NAME			"F's LineDetection"
+#define FS_NAME            L10N_PLUGIN_NAME
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"輪郭線検出"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
 	//#define FS_CATEGORY "F's Plugins-Channel"
 	//#define FS_CATEGORY "F's Plugins-Draw"
-	#define FS_CATEGORY "NF's Plugins-Filter"
+#define FS_CATEGORY "NF's Plugins-Filter"
 	//#define FS_CATEGORY "F's Plugins-Cell"
 	//#define FS_CATEGORY "F's Plugins-Colorize"
 	//#define FS_CATEGORY "F's Plugins-Script"
@@ -73,4 +74,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

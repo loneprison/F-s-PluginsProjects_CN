@@ -68,17 +68,17 @@ enum {
 };
 
 	
-#define	Str_WIDTH_ADD			"width"
-#define	Str_HEIGHT_ADD			"height"
-#define	Str_LINE_COLOR			"line_color"
-#define	Str_SAFE_ADD			"safe_frame"
-#define	Str_CENTER_CB1			"center_line"
-#define	Str_CENTER_CB2			"ON"
-#define	Str_OUT_COLOR			"out_color"
-#define	Str_OUT_OPACITY			"out_opacity"
-#define	Str_LINE_HEIGHT			"line_height"
-#define	Str_SIZE_POP1			"size"
-#define	Str_SIZE_POP2			"上の数値|720x540|1024x576|1024x768|1280x720|1440x810|1920x1080"
+#define	Str_WIDTH_ADD			L10N_PARAM_WIDTH
+#define	Str_HEIGHT_ADD			L10N_PARAM_HEIGHT
+#define	Str_LINE_COLOR			L10N_PARAM_LINE_COLOR
+#define	Str_SAFE_ADD			L10N_PARAM_SAFE_FRAME
+#define	Str_CENTER_CB1			L10N_PARAM_CENTER_LINE
+#define	Str_CENTER_CB2			L10N_PARAM_ON
+#define	Str_OUT_COLOR			L10N_PARAM_OUT_COLOR
+#define	Str_OUT_OPACITY			L10N_PARAM_OUT_OPACITY
+#define	Str_LINE_HEIGHT			L10N_PARAM_LINE_HEIGHT
+#define	Str_SIZE_POP1			L10N_PARAM_SIZE
+#define	Str_SIZE_POP2			L10N_PARAM_SIZE_ITEMS
 
 
 typedef struct {

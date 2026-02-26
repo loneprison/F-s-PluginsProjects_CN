@@ -1,6 +1,7 @@
 ﻿/* MainLineRepaint_Strings.cpp */
 
 #include "MainLineRepaint_old.h"
+#include "../_i18n/NF's Plugins-Cell/MainLineRepaint_old_i18n.h"
 
 typedef struct {
 	unsigned long	index;
@@ -9,14 +10,14 @@ typedef struct {
 
 TableString		g_strs[StrID_NUMTYPES] = {
 	StrID_NONE,					"",
-	StrID_Name,					"F's MainLineRepaint",
-	StrID_Description,			"セル画の主線を無くします",
-	StrID_MADEBY,				"bry-ful",
+	StrID_Name,					L10N_PLUGIN_NAME,
+	StrID_Description,			L10N_PLUGIN_DESC,
+	StrID_MADEBY,				L10N_PLUGIN_MADEBY,
 	
-	StrID_MY_Main_Color,		"主線の色",
+	StrID_MY_Main_Color,		L10N_PARAM_MAIN_COLOR,
 
-	StrID_ERR_getFsAEParams,	"画像バッファーサイズエラーです。御免なさい。",
-	StrID_ERR_getParams,	"パラメータエラーです。御免なさい。",
+	StrID_ERR_getFsAEParams,	L10N_ERR_GETFSAEPARAMS,
+	StrID_ERR_getParams,		L10N_ERR_GETPARAMS,
 };
 
 

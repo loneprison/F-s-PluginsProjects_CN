@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\ExpsColors.cpp" />
@@ -35,11 +35,11 @@
     <ClCompile Include="..\..\..\Util\Smart_Utils.cpp">
       <Filter>Supporting code\AE</Filter>
     </ClCompile>
+    <Filter Include="_i18n">
+      <UniqueIdentifier>{9f4f1401-43d6-4abf-9f5d-c8f3982ce10f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Fs_Entry.h" />
-    <ClInclude Include="..\Fs_Target.h" />
-    <ClInclude Include="..\ExpsColors.h" />
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -56,9 +56,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -82,12 +79,6 @@
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Util\entry.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -104,9 +95,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
@@ -135,6 +123,15 @@
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsScreenShake.h">
       <Filter>Header Files\Fs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ExpsColors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Fs_Entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Fs_Target.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -169,5 +166,10 @@
     <ResourceCompile Include="ExpsColorsPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\\..\\_i18n\\NF's Plugins-{Legacy}\\ExpsColors_i18n.h">
+      <Filter>_i18n</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

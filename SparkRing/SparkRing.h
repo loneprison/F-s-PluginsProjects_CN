@@ -48,31 +48,30 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_OFFSET		"offset"
+#define STR_SEED            L10N_PARAM_SEED
+#define STR_SEEDPOS         L10N_PARAM_SEED_POS
+#define STR_SEEDMOVE        L10N_PARAM_SEED_MOVE
+#define STR_OFFSET          L10N_PARAM_OFFSET
 
-#define	STR_CENTER		"center"
-#define	STR_BLUR		"radius"
-#define	STR_ASPECT		"aspect"
+#define STR_CENTER          L10N_PARAM_CENTER
+#define STR_BLUR            L10N_PARAM_RADIUS
+#define STR_ASPECT          L10N_PARAM_ASPECT
 
-#define	STR_POINT_COUNT	"point_count"
-#define	STR_POINT_ROT	"point_rot"
-#define	STR_POINT_ROND	"point_rand"
+#define STR_POINT_COUNT     L10N_PARAM_POINT_COUNT
+#define STR_POINT_ROT       L10N_PARAM_POINT_ROT
+#define STR_POINT_ROND      L10N_PARAM_POINT_RAND
 
-#define	STR_ROT			"rot"
+#define STR_ROT             L10N_PARAM_ROT
 
+#define STR_LINE_SIZE       L10N_PARAM_LINE_SIZE
+#define STR_LINE_MOVE       L10N_PARAM_LINE_MOVE
+#define STR_FOLDCOUNT       L10N_PARAM_FOLD_COUNT
+#define STR_SUBCOUNT        L10N_PARAM_SUB_COUNT
+#define STR_DRAWCOUNT       L10N_PARAM_DRAW_COUNT
 
-#define	STR_LINE_SIZE	"lineSize"
-#define	STR_LINE_MOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_SUBCOUNT	"subCount"
-#define	STR_DRAWCOUNT	"drawCount"
-
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+#define STR_COLOR           L10N_PARAM_COLOR
+#define STR_BLEND           L10N_PARAM_BLEND
+#define STR_ON              L10N_PARAM_ON
 
 
 #define POINT_COUNT_MAX	36

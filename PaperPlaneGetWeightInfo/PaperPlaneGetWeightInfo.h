@@ -53,8 +53,8 @@ enum {
 #define BASEVALUE 240
 
 //UIの表示文字列
-#define	STR_DRAW_GRAPH		"DrawGraph"
-#define	STR_GLUE			"Glue"
+#define	STR_DRAW_GRAPH		L10N_PARAM_DRAW_GRAPH
+#define	STR_GLUE			L10N_PARAM_GLUE
 
 
 //UIのパラメータ

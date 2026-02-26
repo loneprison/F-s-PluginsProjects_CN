@@ -44,7 +44,7 @@
 	#include <Windows.h>
 #endif
 
-#define	STR_BASE_COLOR	"背景色"
+#define	STR_BASE_COLOR	L10N_PARAM_BASE_COLOR
 
 #include "../FsLibrary/FsAE.h"
 #include "../FsLibrary/CParamsSetup.h"

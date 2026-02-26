@@ -49,12 +49,12 @@ enum {
 	ID_NUM_PARAMS
 };
 
-#define STR_SIZE		"サイズ"
-#define STR_POS			"位置"
-#define STR_RAND		"ちらつき"
-#define STR_RAND_GRAY	"ちらつきをグレーに"
-#define STR_FRAME_RAND_ON	"フレーム毎にちらつかせる"
-#define STR_ON			"ON"
+#define STR_SIZE		L10N_PARAM_SIZE
+#define STR_POS			L10N_PARAM_POSITION
+#define STR_RAND		L10N_PARAM_FLICKER
+#define STR_RAND_GRAY	L10N_PARAM_FLICKER_GRAY
+#define STR_FRAME_RAND_ON	L10N_PARAM_FRAME_FLICKER
+#define STR_ON			L10N_PARAM_ON
 
 //UIのパラメータ
 typedef struct ParamInfo {

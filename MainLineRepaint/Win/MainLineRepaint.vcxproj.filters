@@ -24,6 +24,9 @@
     <Filter Include="Header Files\AE">
       <UniqueIdentifier>{703a9abf-315c-4cd9-bfb9-98dd961cc7e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_i18n">
+      <UniqueIdentifier>{3d4f0a2b-b773-4cf0-a2a8-927d02b85a4f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Supporting code\AE">
       <UniqueIdentifier>{a5fe17df-932d-4cbb-98ff-0e85562d909b}</UniqueIdentifier>
     </Filter>
@@ -35,11 +38,8 @@
     <ClInclude Include="..\MainLineRepaint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
+    <ClInclude Include="..\\..\\_i18n\\NF's Plugins-Cell\\MainLineRepaint_i18n.h">
+      <Filter>_i18n</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsAE.h">
       <Filter>Header Files\Fs</Filter>
@@ -80,9 +80,6 @@
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -119,9 +116,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -131,7 +125,7 @@
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
       <Filter>Supporting code\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2013\F%27s MainLineRepaint_2013\Fs_Entry.h">
+    <ClInclude Include="..\Fs_Entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

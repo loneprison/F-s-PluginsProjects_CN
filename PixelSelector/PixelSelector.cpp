@@ -217,9 +217,9 @@ ParamsSetup (
 	A_long i;
 	for (i=0; i< PS_PRM_COUNT; i++){ 
 #ifdef AE_OS_WIN
-		sprintf_s(num,"target%d",i+1);
+		sprintf_s(num,"%s%d", L10N_PARAM_TARGET, i+1);
 #else
-		sprintf(num,"target%d",i+1);
+		sprintf(num,"%s%d", L10N_PARAM_TARGET, i+1);
 #endif
 		//*************************************************
 		AEFX_CLR_STRUCT(def);	
@@ -420,14 +420,14 @@ static PF_Err GetParams(CFsAE *ae, ParamInfo *infoP)
 	ERR(ae->GetCHECKBOX(PixelSelector_REV,&infoP->rev));
 	ERR(ae->GetCHECKBOX(PixelSelector_FILL,&infoP->fill));
 	ERR(ae->GetCOLOR(PixelSelector_FILL_COLOR,&infoP->col));
-	if ( !err){
-		infoP->col16 = CONV8TO16(infoP->col);
-		infoP->col32 = CONV8TO32(infoP->col);
-	}
 	PF_Fixed f;
 	ERR(ae->GetFIXED(PixelSelector_FILL_OPACITY,&f));
 	if (!err){
 		infoP->col.alpha = (A_u_char)( ((PF_MAX_CHAN8) * f/100) >>16 );
+	}
+	if ( !err){
+		infoP->col16 = CONV8TO16(infoP->col);
+		infoP->col32 = CONV8TO32(infoP->col);
 	}
 	PF_FpLong d;
 	ERR(ae->GetFLOAT(PixelSelector_LV,&d));

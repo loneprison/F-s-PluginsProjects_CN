@@ -1,4 +1,4 @@
-#include "Tiny_MinMax.h"
+ï»¿#include "Tiny_MinMax.h"
 
 typedef struct LineBuf {
     A_FpShort	level;
@@ -41,7 +41,7 @@ Max_SubH(
     A_long w = infoP->width;
     PixelType* outP = (PixelType*)infoP->world->data + (y * infoP->widthTrue);
 
-    // 1. ”¼Œa‚ª‰æ‘œ•ˆÈã‚Ìê‡‚Í‘S‰æ–ÊÅ‘å’l‚ğŒvZ
+    // 1. åŠå¾„ãŒç”»åƒå¹…ä»¥ä¸Šã®å ´åˆã¯å…¨ç”»é¢æœ€å¤§å€¤ã‚’è¨ˆç®—
     if (radius >= w) {
         PixelType maax = outP[0];
         FloatType maaxV = (((FloatType)maax.red * 0.299) + ((FloatType)maax.green * 0.587) + ((FloatType)maax.blue * 0.114))*10 + (FloatType)maax.alpha /maxChan;
@@ -54,11 +54,11 @@ Max_SubH(
         return PF_Err_NONE;
     }
 
-    // ƒƒ‚ƒŠŠm•Û
+    // ãƒ¡ãƒ¢ãƒªç¢ºä¿
     A_long w2 = w + radius;
     w2 = (w2 + (16 - w2 % 16));
 
-    // --- vector‚ğg—p‚µ‚½ƒ‰ƒCƒ“ƒƒ‚ƒŠ‚ÌÀ‘• ---
+    // --- vectorã‚’ä½¿ç”¨ã—ãŸãƒ©ã‚¤ãƒ³ãƒ¡ãƒ¢ãƒªã®å®Ÿè£… ---
     std::vector<PixelType> line(w2);
     std::vector<FloatType> lineLevel(w2);
     std::vector<LineBufInfo> forward(w2);
@@ -72,7 +72,7 @@ Max_SubH(
         lineLevel[i] = (((FloatType)line[i].red * 0.299) + ((FloatType)line[i].green * 0.587) + ((FloatType)line[i].blue * 0.114))*10 + (FloatType)line[i].alpha/maxChan;
     }
 
-    // VHGƒAƒ‹ƒSƒŠƒYƒ€
+    // VHGã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ 
     int L = radius * 2 + 1;
     for (int b = 0; b < w; b += L) {
         int end = MIN(b + L, w);
@@ -102,7 +102,7 @@ Max_SubH(
         }
     }
 
-    // o—Í‘‚«–ß‚µ
+    // å‡ºåŠ›æ›¸ãæˆ»ã—
     for (int i = 0; i < w; i++) {
         int left = i - radius;
         int right = i + radius;
@@ -159,19 +159,19 @@ Max_SubH(
     return PF_Err_NONE;
 }
 
-// 8bit”Å
+// 8bitç‰ˆ
 static PF_Err Max_SubH8(void* refconPV, A_long thread_idxL, A_long y, A_long itrtL)
 {
     return Max_SubH<PF_Pixel8, A_u_char, A_FpShort>(refconPV, thread_idxL, y, itrtL, (A_FpShort)PF_MAX_CHAN8);
 }
 
-// 16bit”Å
+// 16bitç‰ˆ
 static PF_Err Max_SubH16(void* refconPV, A_long thread_idxL, A_long y, A_long itrtL)
 {
     return Max_SubH<PF_Pixel16, A_u_short, A_FpShort>(refconPV, thread_idxL, y, itrtL, (A_FpShort)PF_MAX_CHAN16);
 }
 
-// 32bit”Å
+// 32bitç‰ˆ
 static PF_Err Max_SubH32(void* refconPV, A_long thread_idxL, A_long y, A_long itrtL)
 {
     return Max_SubH<PF_PixelFloat, PF_FpShort, PF_FpShort>(refconPV, thread_idxL, y, itrtL, 1.0f);
@@ -196,24 +196,24 @@ Min_SubH(
     A_long w = infoP->width;
     PixelType* outP = (PixelType*)infoP->world->data + (y * infoP->widthTrue);
 
-    // 1. ”¼Œa‚ª‰æ‘œ•ˆÈã‚Ìê‡‚Í‘S‰æ–ÊÅ¬’l‚ğŒvZ
+    // 1. åŠå¾„ãŒç”»åƒå¹…ä»¥ä¸Šã®å ´åˆã¯å…¨ç”»é¢æœ€å°å€¤ã‚’è¨ˆç®—
     if (radius >= w) {
         PixelType miin = outP[0];
         FloatType miinV = (((FloatType)miin.red * 0.299) + ((FloatType)miin.green * 0.587) + ((FloatType)miin.blue * 0.114))*10 + (FloatType)miin.alpha/maxChan;
 
         for (A_long x = 1; x < w; x++) {
             FloatType v = (((FloatType)outP[x].red * 0.299) + ((FloatType)outP[x].green * 0.587) + ((FloatType)outP[x].blue * 0.114))*10 + (FloatType)outP[x].alpha/maxChan;
-            if (v < miinV) { miin = outP[x]; miinV = v; }  // < ‚É•ÏX
+            if (v < miinV) { miin = outP[x]; miinV = v; }  // < ã«å¤‰æ›´
         }
         for (A_long x = 0; x < w; x++) outP[x] = miin;
         return PF_Err_NONE;
     }
 
-    // ƒƒ‚ƒŠŠm•Û
+    // ãƒ¡ãƒ¢ãƒªç¢ºä¿
     A_long w2 = w + radius;
     w2 = (w2 + (16 - w2 % 16));
 
-    // --- vector‚ğg—p‚µ‚½ƒ‰ƒCƒ“ƒƒ‚ƒŠ‚ÌÀ‘• ---
+    // --- vectorã‚’ä½¿ç”¨ã—ãŸãƒ©ã‚¤ãƒ³ãƒ¡ãƒ¢ãƒªã®å®Ÿè£… ---
     std::vector<PixelType> line(w2);
     std::vector<FloatType> lineLevel(w2);
     std::vector<LineBufInfo> forward(w2);
@@ -224,7 +224,7 @@ Min_SubH(
         lineLevel[i] = (((FloatType)line[i].red * 0.299) + ((FloatType)line[i].green * 0.587) + ((FloatType)line[i].blue * 0.114))*10 + (FloatType)line[i].alpha/maxChan;
     }
 
-    // VHGƒAƒ‹ƒSƒŠƒYƒ€iÅ¬’l—p‚ÉC³j
+    // VHGã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ï¼ˆæœ€å°å€¤ç”¨ã«ä¿®æ­£ï¼‰
     int L = radius * 2 + 1;
     for (int b = 0; b < w; b += L) {
         int end = MIN(b + L, w);
@@ -232,7 +232,7 @@ Min_SubH(
         forward[b].level = lineLevel[b];
         forward[b].index = b;
         for (int i = b + 1; i < end; i++) {
-            if (forward[i - 1].level <= lineLevel[i]) {  // <= ‚É•ÏX
+            if (forward[i - 1].level <= lineLevel[i]) {  // <= ã«å¤‰æ›´
                 forward[i] = forward[i - 1];
             }
             else {
@@ -244,7 +244,7 @@ Min_SubH(
         backward[end - 1].level = lineLevel[end - 1];
         backward[end - 1].index = end - 1;
         for (int i = end - 2; i >= b; i--) {
-            if (backward[i + 1].level <= lineLevel[i]) {  // <= ‚É•ÏX
+            if (backward[i + 1].level <= lineLevel[i]) {  // <= ã«å¤‰æ›´
                 backward[i] = backward[i + 1];
             }
             else {
@@ -254,7 +254,7 @@ Min_SubH(
         }
     }
 
-    // o—Í‘‚«–ß‚µ
+    // å‡ºåŠ›æ›¸ãæˆ»ã—
     for (int i = 0; i < w; i++) {
         int left = i - radius;
         int right = i + radius;
@@ -272,19 +272,19 @@ Min_SubH(
             int left_block = safe_left / L;
             int right_block = safe_right / L;
 
-            FloatType minLevel = FLT_MAX;  // FLT_MAX ‚É•ÏX
+            FloatType minLevel = FLT_MAX;  // FLT_MAX ã«å¤‰æ›´
             int minIndex = safe_left;
 
             if (left_block == right_block) {
                 for (int j = safe_left; j <= safe_right; j++) {
-                    if (lineLevel[j] < minLevel) {  // < ‚É•ÏX
+                    if (lineLevel[j] < minLevel) {  // < ã«å¤‰æ›´
                         minLevel = lineLevel[j];
                         minIndex = j;
                     }
                 }
             }
             else {
-                if (backward[safe_left].level < minLevel) {  // < ‚É•ÏX
+                if (backward[safe_left].level < minLevel) {  // < ã«å¤‰æ›´
                     minLevel = backward[safe_left].level;
                     minIndex = backward[safe_left].index;
                 }
@@ -292,13 +292,13 @@ Min_SubH(
                 for (int b = left_block + 1; b < right_block; b++) {
                     int block_start = b * L;
                     int block_end = MIN(block_start + L - 1, w - 1);
-                    if (forward[block_end].level < minLevel) {  // < ‚É•ÏX
+                    if (forward[block_end].level < minLevel) {  // < ã«å¤‰æ›´
                         minLevel = forward[block_end].level;
                         minIndex = forward[block_end].index;
                     }
                 }
 
-                if (forward[safe_right].level < minLevel) {  // < ‚É•ÏX
+                if (forward[safe_right].level < minLevel) {  // < ã«å¤‰æ›´
                     minLevel = forward[safe_right].level;
                     minIndex = forward[safe_right].index;
                 }
@@ -310,19 +310,19 @@ Min_SubH(
     return PF_Err_NONE;
 }
 
-// 8bit”Å
+// 8bitç‰ˆ
 static PF_Err Min_SubH8(void* refconPV, A_long thread_idxL, A_long y, A_long itrtL)
 {
     return Min_SubH<PF_Pixel8, A_u_char, A_FpShort>(refconPV, thread_idxL, y, itrtL, (A_FpShort)PF_MAX_CHAN8);
 }
 
-// 16bit”Å
+// 16bitç‰ˆ
 static PF_Err Min_SubH16(void* refconPV, A_long thread_idxL, A_long y, A_long itrtL)
 {
     return Min_SubH<PF_Pixel16, A_u_short, A_FpShort>(refconPV, thread_idxL, y, itrtL, (A_FpShort)PF_MAX_CHAN16);
 }
 
-// 32bit”Å
+// 32bitç‰ˆ
 static PF_Err Min_SubH32(void* refconPV, A_long thread_idxL, A_long y, A_long itrtL)
 {
     return Min_SubH<PF_PixelFloat, PF_FpShort, PF_FpShort>(refconPV, thread_idxL, y, itrtL, 1.0f);
@@ -346,7 +346,7 @@ Max_SubV(
     A_long h = infoP->height;
     A_long wt = infoP->widthTrue;
 
-    // 1. ”¼Œa‚ª‰æ‘œ‚‚³ˆÈã‚Ìê‡‚Í‘S—ñÅ‘å’l‚ğŒvZ
+    // 1. åŠå¾„ãŒç”»åƒé«˜ã•ä»¥ä¸Šã®å ´åˆã¯å…¨åˆ—æœ€å¤§å€¤ã‚’è¨ˆç®—
     if (radius >= h) {
         PixelType maax = *((PixelType*)infoP->world->data + x);
         FloatType maaxV = (((FloatType)maax.red * 0.299) + ((FloatType)maax.green * 0.587) + ((FloatType)maax.blue * 0.114))*10 + (FloatType)maax.alpha/maxChan;
@@ -362,7 +362,7 @@ Max_SubV(
         return PF_Err_NONE;
     }
 
-    // 2. ƒƒ‚ƒŠŠm•Û
+    // 2. ãƒ¡ãƒ¢ãƒªç¢ºä¿
     A_long h2 = h + radius;
     h2 = (h2 + (16 - h2 % 16));
 
@@ -376,13 +376,13 @@ Max_SubV(
     LineBufInfo* forward = (LineBufInfo*)(lineLevel + h2);
     LineBufInfo* backward = forward + h2;
 
-    // 3. —ñƒf[ƒ^‚ğƒRƒs[
+    // 3. åˆ—ãƒ‡ãƒ¼ã‚¿ã‚’ã‚³ãƒ”ãƒ¼
     for (A_long y = 0; y < h; y++) {
         line[y] = *((PixelType*)infoP->world->data + (y * wt + x));
         lineLevel[y] = (((FloatType)line[y].red * 0.299) + ((FloatType)line[y].green * 0.587) + ((FloatType)line[y].blue * 0.114)) + (FloatType)line[y].alpha/maxChan;
     }
 
-    // 4. VHGƒAƒ‹ƒSƒŠƒYƒ€
+    // 4. VHGã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ 
     int L = radius * 2 + 1;
     for (int b = 0; b < h; b += L) {
         int end = MIN(b + L, h);
@@ -412,7 +412,7 @@ Max_SubV(
         }
     }
 
-    // 5. o—Í
+    // 5. å‡ºåŠ›
     for (int y = 0; y < h; y++) {
         int top = y - radius;
         int bottom = y + radius;
@@ -470,19 +470,19 @@ Max_SubV(
     return PF_Err_NONE;
 }
 
-// 8bit”Å
+// 8bitç‰ˆ
 static PF_Err Max_SubV8(void* refconPV, A_long thread_idxL, A_long x, A_long itrtL)
 {
     return Max_SubV<PF_Pixel8, A_u_char, A_FpShort>(refconPV, thread_idxL, x, itrtL, (A_FpShort)PF_MAX_CHAN8);
 }
 
-// 16bit”Å
+// 16bitç‰ˆ
 static PF_Err Max_SubV16(void* refconPV, A_long thread_idxL, A_long x, A_long itrtL)
 {
     return Max_SubV<PF_Pixel16, A_u_short, A_FpShort>(refconPV, thread_idxL, x, itrtL, (A_FpShort)PF_MAX_CHAN16);
 }
 
-// 32bit”Å
+// 32bitç‰ˆ
 static PF_Err Max_SubV32(void* refconPV, A_long thread_idxL, A_long x, A_long itrtL)
 {
     return Max_SubV<PF_PixelFloat, PF_FpShort, PF_FpShort>(refconPV, thread_idxL, x, itrtL, 1.0f);
@@ -505,7 +505,7 @@ Min_SubV(
     A_long h = infoP->height;
     A_long wt = infoP->widthTrue;
 
-    // 1. ”¼Œa‚ª‰æ‘œ‚‚³ˆÈã‚Ìê‡‚Í‘S—ñÅ¬’l‚ğŒvZ
+    // 1. åŠå¾„ãŒç”»åƒé«˜ã•ä»¥ä¸Šã®å ´åˆã¯å…¨åˆ—æœ€å°å€¤ã‚’è¨ˆç®—
     if (radius >= h) {
         PixelType miin = *((PixelType*)infoP->world->data + x);
         FloatType miinV = (((FloatType)miin.red * 0.299) + ((FloatType)miin.green * 0.587) + ((FloatType)miin.blue * 0.114))*10+ (FloatType)miin.alpha /maxChan;
@@ -513,7 +513,7 @@ Min_SubV(
         for (A_long y = 1; y < h; y++) {
             PixelType* p = (PixelType*)infoP->world->data + (y * wt + x);
             FloatType v = (((FloatType)p->red * 0.299) + ((FloatType)p->green * 0.587) + ((FloatType)p->blue * 0.114))*10 + (FloatType)p->alpha/maxChan;
-            if (v < miinV) { miin = *p; miinV = v; }  // < ‚É•ÏX
+            if (v < miinV) { miin = *p; miinV = v; }  // < ã«å¤‰æ›´
         }
         for (A_long y = 0; y < h; y++) {
             *((PixelType*)infoP->world->data + (y * wt + x)) = miin;
@@ -521,7 +521,7 @@ Min_SubV(
         return PF_Err_NONE;
     }
 
-    // 2. ƒƒ‚ƒŠŠm•Û
+    // 2. ãƒ¡ãƒ¢ãƒªç¢ºä¿
     A_long h2 = h + radius;
     h2 = (h2 + (16 - h2 % 16));
 
@@ -530,13 +530,13 @@ Min_SubV(
     std::vector<LineBufInfo> forward(h2);
     std::vector<LineBufInfo> backward(h2);
 
-    // 3. —ñƒf[ƒ^‚ğƒRƒs[
+    // 3. åˆ—ãƒ‡ãƒ¼ã‚¿ã‚’ã‚³ãƒ”ãƒ¼
     for (A_long y = 0; y < h; y++) {
         line[y] = *((PixelType*)infoP->world->data + (y * wt + x));
         lineLevel[y] = (((FloatType)line[y].red * 0.299) + ((FloatType)line[y].green * 0.587) + ((FloatType)line[y].blue * 0.114))*10 + (FloatType)line[y].alpha/maxChan;
     }
 
-    // 4. VHGƒAƒ‹ƒSƒŠƒYƒ€iÅ¬’l—p‚ÉC³j
+    // 4. VHGã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ï¼ˆæœ€å°å€¤ç”¨ã«ä¿®æ­£ï¼‰
     int L = radius * 2 + 1;
     for (int b = 0; b < h; b += L) {
         int end = MIN(b + L, h);
@@ -544,7 +544,7 @@ Min_SubV(
         forward[b].level = lineLevel[b];
         forward[b].index = b;
         for (int i = b + 1; i < end; i++) {
-            if (forward[i - 1].level <= lineLevel[i]) {  // <= ‚É•ÏX
+            if (forward[i - 1].level <= lineLevel[i]) {  // <= ã«å¤‰æ›´
                 forward[i] = forward[i - 1];
             }
             else {
@@ -556,7 +556,7 @@ Min_SubV(
         backward[end - 1].level = lineLevel[end - 1];
         backward[end - 1].index = end - 1;
         for (int i = end - 2; i >= b; i--) {
-            if (backward[i + 1].level <= lineLevel[i]) {  // <= ‚É•ÏX
+            if (backward[i + 1].level <= lineLevel[i]) {  // <= ã«å¤‰æ›´
                 backward[i] = backward[i + 1];
             }
             else {
@@ -566,7 +566,7 @@ Min_SubV(
         }
     }
 
-    // 5. o—Í
+    // 5. å‡ºåŠ›
     for (int y = 0; y < h; y++) {
         int top = y - radius;
         int bottom = y + radius;
@@ -584,19 +584,19 @@ Min_SubV(
             int top_block = safe_top / L;
             int bottom_block = safe_bottom / L;
 
-            FloatType minLevel = FLT_MAX;  // FLT_MAX ‚É•ÏX
+            FloatType minLevel = FLT_MAX;  // FLT_MAX ã«å¤‰æ›´
             int minIndex = safe_top;
 
             if (top_block == bottom_block) {
                 for (int j = safe_top; j <= safe_bottom; j++) {
-                    if (lineLevel[j] < minLevel) {  // < ‚É•ÏX
+                    if (lineLevel[j] < minLevel) {  // < ã«å¤‰æ›´
                         minLevel = lineLevel[j];
                         minIndex = j;
                     }
                 }
             }
             else {
-                if (backward[safe_top].level < minLevel) {  // < ‚É•ÏX
+                if (backward[safe_top].level < minLevel) {  // < ã«å¤‰æ›´
                     minLevel = backward[safe_top].level;
                     minIndex = backward[safe_top].index;
                 }
@@ -604,13 +604,13 @@ Min_SubV(
                 for (int b = top_block + 1; b < bottom_block; b++) {
                     int block_start = b * L;
                     int block_end = MIN(block_start + L - 1, h - 1);
-                    if (forward[block_end].level < minLevel) {  // < ‚É•ÏX
+                    if (forward[block_end].level < minLevel) {  // < ã«å¤‰æ›´
                         minLevel = forward[block_end].level;
                         minIndex = forward[block_end].index;
                     }
                 }
 
-                if (forward[safe_bottom].level < minLevel) {  // < ‚É•ÏX
+                if (forward[safe_bottom].level < minLevel) {  // < ã«å¤‰æ›´
                     minLevel = forward[safe_bottom].level;
                     minIndex = forward[safe_bottom].index;
                 }
@@ -622,19 +622,19 @@ Min_SubV(
     return PF_Err_NONE;
 }
 
-// 8bit”Å
+// 8bitç‰ˆ
 static PF_Err Min_SubV8(void* refconPV, A_long thread_idxL, A_long x, A_long itrtL)
 {
     return Min_SubV<PF_Pixel8, A_u_char, A_FpShort>(refconPV, thread_idxL, x, itrtL, (A_FpShort)PF_MAX_CHAN8);
 }
 
-// 16bit”Å
+// 16bitç‰ˆ
 static PF_Err Min_SubV16(void* refconPV, A_long thread_idxL, A_long x, A_long itrtL)
 {
     return Min_SubV<PF_Pixel16, A_u_short, A_FpShort>(refconPV, thread_idxL, x, itrtL, (A_FpShort)PF_MAX_CHAN16);
 }
 
-// 32bit”Å
+// 32bitç‰ˆ
 static PF_Err Min_SubV32(void* refconPV, A_long thread_idxL, A_long x, A_long itrtL)
 {
     return Min_SubV<PF_PixelFloat, PF_FpShort, PF_FpShort>(refconPV, thread_idxL, x, itrtL, 1.0f);
@@ -700,84 +700,84 @@ static PF_Err TinyMinMaxImpl(
         case PF_PixelFormat_ARGB32:
             if (info.maxMinus == FALSE) {
                 ERR(iter_scope->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubH8              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubH8              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scope->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubV8    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubV8    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             else {
                 ERR(iter_scope->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubH8              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubH8              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scope->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubV8    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubV8    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             break;
         case PF_PixelFormat_ARGB64:
             if (info.maxMinus == FALSE) {
                 ERR(iter_scope->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubH16              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubH16              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scope->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubV16    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubV16    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             else {
                 ERR(iter_scope->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubH16              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubH16              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scope->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubV16    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubV16    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             break;
         case PF_PixelFormat_ARGB128:
             if (info.maxMinus == FALSE) {
                 ERR(iter_scope->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubH32              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubH32              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scope->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubV32    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubV32    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             else {
                 ERR(iter_scope->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubH32              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubH32              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scope->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubV32    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubV32    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             break;
@@ -842,84 +842,84 @@ static PF_Err TinyMinMaxMImpl(
         case PF_PixelFormat_ARGB32:
             if (info.maxMinus == FALSE) {
                 ERR(iter_scopeP->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubH8              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubH8              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scopeP->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubV8    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubV8    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             else {
                 ERR(iter_scopeP->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubH8              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubH8              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scopeP->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubV8    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubV8    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             break;
         case PF_PixelFormat_ARGB64:
             if (info.maxMinus == FALSE) {
                 ERR(iter_scopeP->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubH16              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubH16              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scopeP->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubV16    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubV16    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             else {
                 ERR(iter_scopeP->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubH16              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubH16              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scopeP->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubV16    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubV16    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             break;
         case PF_PixelFormat_ARGB128:
             if (info.maxMinus == FALSE) {
                 ERR(iter_scopeP->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubH32              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubH32              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scopeP->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Max_SubV32    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Max_SubV32    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             else {
                 ERR(iter_scopeP->iterate_generic(
-                    info.height,     // iterationsL: Às‰ñ”is”j
-                    &info,                  // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubH32              // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.height,     // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                  // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubH32              // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
 
                 ERR(iter_scopeP->iterate_generic(
-                    info.width,           // iterationsL: Às‰ñ”is”j
-                    &info,                    // refconPV: ƒ†[ƒU[’è‹`ƒf[ƒ^
-                    Min_SubV32    // fn_func: ƒR[ƒ‹ƒoƒbƒNŠÖ”
+                    info.width,           // iterationsL: å®Ÿè¡Œå›æ•°ï¼ˆï¼è¡Œæ•°ï¼‰
+                    &info,                    // refconPV: ãƒ¦ãƒ¼ã‚¶ãƒ¼å®šç¾©ãƒ‡ãƒ¼ã‚¿
+                    Min_SubV32    // fn_func: ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
                 ));
             }
             break;

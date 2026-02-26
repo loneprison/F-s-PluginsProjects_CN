@@ -51,11 +51,11 @@ enum {
 };
 
 //UIの表示文字列
-#define STR_MAX		"Value"
-#define STR_DIR1	"ScanLine"
-#define STR_DIR2	"Horizon+Vertical|Horizon|Vertical"
-#define STR_CH1		"Channel"
-#define STR_CH2		"RGB+Alpha|RGB|alpha"
+#define STR_MAX		L10N_PARAM_VALUE
+#define STR_DIR1	L10N_PARAM_SCANLINE
+#define STR_DIR2	L10N_PARAM_SCANLINE_ITEMS
+#define STR_CH1		L10N_PARAM_CHANNEL
+#define STR_CH2		L10N_PARAM_CHANNEL_ITEMS
 
 
 

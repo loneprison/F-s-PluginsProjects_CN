@@ -11,7 +11,6 @@
 #include "AE_EffectCB.h"
 #include "AE_EffectCBSuites.h"
 #include "AE_Macros.h"
-#include "AEGP_SuiteHandler.h"
 #include "String_Utils.h"
 #include "Param_Utils.h"
 #include "Smart_Utils.h"
@@ -26,6 +25,7 @@
 #include "PF_Suite_Helper.h"
 #define refconType A_long
 #endif
+#include "AEGP_SuiteHandler.h"
 
 #ifdef AE_OS_WIN
 #include <Windows.h>
@@ -47,21 +47,21 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Use					"TargetColorCount"
-#define	STR_Color1				"color1"
-#define	STR_Color2				"color2"
-#define	STR_Color3				"color3"
-#define	STR_Color4				"color4"
-#define	STR_Color5				"color5"
-#define	STR_Color6				"color6"
-#define	STR_Color7				"color7"
-#define	STR_Color8				"color8"
-#define	STR_Color9				"color9"
-#define	STR_Color10				"color10"
-#define	STR_KEEP_PIXELS			"KeepPixels"
-#define	STR_FillUnknownColors	"Fill unremoved pixels"
-#define	STR_FillColor			"FillColor"
-#define	STR_MakeWhiteTransparent	"Make White Transparent"
+#define	STR_Use					L10N_PARAM_TARGET_COUNT
+#define	STR_Color1				L10N_PARAM_COLOR1
+#define	STR_Color2				L10N_PARAM_COLOR2
+#define	STR_Color3				L10N_PARAM_COLOR3
+#define	STR_Color4				L10N_PARAM_COLOR4
+#define	STR_Color5				L10N_PARAM_COLOR5
+#define	STR_Color6				L10N_PARAM_COLOR6
+#define	STR_Color7				L10N_PARAM_COLOR7
+#define	STR_Color8				L10N_PARAM_COLOR8
+#define	STR_Color9				L10N_PARAM_COLOR9
+#define	STR_Color10				L10N_PARAM_COLOR10
+#define	STR_KEEP_PIXELS			L10N_PARAM_KEEP_PIXELS
+#define	STR_FillUnknownColors	L10N_PARAM_FILL_UNKNOWN
+#define	STR_FillColor			L10N_PARAM_FILL_COLOR
+#define	STR_MakeWhiteTransparent	L10N_PARAM_WHITE_TRANS
 
 
 

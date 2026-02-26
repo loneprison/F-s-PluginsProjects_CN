@@ -159,9 +159,9 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 	A_long i;
 	for (i=0; i< PR_PRM_COUNT; i++){ 
 #ifdef AE_OS_WIN
-		sprintf_s(num,"target%d",i+1);
+		sprintf_s(num, L10N_PARAM_TARGET_FORMAT, i + 1);
 #else
-		sprintf(num,"target%d",i+1);
+		sprintf(num, L10N_PARAM_TARGET_FORMAT, i + 1);
 #endif
 		//*************************************************
 		AEFX_CLR_STRUCT(def);	

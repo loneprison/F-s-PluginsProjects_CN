@@ -1,20 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <BuildDate>$([System.DateTime]::Now.ToString("yyyyMMdd"))</BuildDate>
-    
-    <!-- Debug x64: After Effectsのプラグインフォルダに直接出力 -->
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\Adobe\Common\Plug-ins\7.0\MediaCore\Fs_Plugins_Debug\</OutDir>
-    
-    <!-- Release x64: 日付付きフォルダに出力 -->
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\Fs_Plugins_$(BuildDate)\</OutDir>
-    
-    <!-- Release x64 ビルド時のファイル名を直接指定 -->
-    <TargetName Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">F's $(ProjectName)_$(BuildDate)</TargetName>
-    <TargetPath Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">$(OutDir)F's $(ProjectName)_$(BuildDate)$(TargetExt)</TargetPath>
-    
-    <!-- Debug x64 ビルド時のファイル名 -->
-    <TargetName Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">F's $(ProjectName)_d</TargetName>
-    <TargetPath Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">$(OutDir)F's $(ProjectName)_d$(TargetExt)</TargetPath>
+    <!-- unified output root -->
+    <FsOutAexRoot>$(MSBuildThisFileDirectory)_OutAex\</FsOutAexRoot>
   </PropertyGroup>
+
+  <!-- x64 outputs:
+       - Debug   : _OutAex/<LangSuffix>/
+       - Release : _OutAex/<LangSuffix>/<Category>/ (if category is known) -->
+  <PropertyGroup>
+    <!-- Sanitize category for filesystem/MSBuild path safety -->
+    <FsProjectCategorySafe Condition="'$(FsProjectCategory)'!=''">$([System.String]::Copy('$(FsProjectCategory)').Replace(&quot;'&quot;,&quot;&quot;).Replace(&quot;:&quot;,&quot;_&quot;).Replace(&quot;{&quot;,&quot;(&quot;).Replace(&quot;}&quot;,&quot;)&quot;).Replace(&quot;/&quot;,&quot;-&quot;).Replace(&quot;\&quot;,&quot;-&quot;))</FsProjectCategorySafe>
+    <FsCategoryOutDir Condition="'$(Configuration)'=='Release' and '$(FsProjectCategorySafe)'!=''">$(FsProjectCategorySafe)\</FsCategoryOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Platform)'=='x64' and ('$(Configuration)'=='Release' or '$(Configuration)'=='Debug')">
+    <OutDir>$(FsOutAexRoot)$(FsI18nLangSuffix)\$(FsCategoryOutDir)</OutDir>
+    <TargetName>F's $(ProjectName)_$(FsI18nLangSuffix)</TargetName>
+    <TargetPath>$(OutDir)$(TargetName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+
+  <!-- In VS right-click Build, automatically build the mirrored i18n language once.
+       This keeps command-line/script builds unchanged. -->
+  <PropertyGroup>
+    <!-- C++ projects may not expose @(ClInclude) at this evaluation point.
+         Detect i18n enablement by locating <Project>_i18n.h under _i18n (flat or category subfolders). -->
+    <FsI18nHeaderRoot>$(ProjectDir)..\..\_i18n\</FsI18nHeaderRoot>
+    <FsI18nMirrorLang Condition="'$(FsI18nLang)'=='CN'">JP_ForCN</FsI18nMirrorLang>
+    <FsI18nMirrorLang Condition="'$(FsI18nLang)'=='JP_ForCN'">CN</FsI18nMirrorLang>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <FsI18nEnabled Condition="$([System.IO.File]::Exists('$(FsI18nHeaderRoot)$(MSBuildProjectName)_i18n.h'))">true</FsI18nEnabled>
+    <FsI18nEnabled Condition="'$(FsI18nEnabled)'!='true' and $([System.IO.Directory]::Exists('$(FsI18nHeaderRoot)')) and $([System.IO.Directory]::GetFiles('$(FsI18nHeaderRoot)','$(MSBuildProjectName)_i18n.h',System.IO.SearchOption.AllDirectories).Length) &gt; 0">true</FsI18nEnabled>
+  </PropertyGroup>
+
+  <Target Name="FsBuildMirrorLanguageInVS"
+          AfterTargets="Build"
+          Condition="'$(BuildingInsideVisualStudio)'=='true'
+                     and '$(Platform)'=='x64'
+                     and '$(FsI18nBuildMode)'=='Both'
+                     and '$(FsI18nEnabled)'=='true'
+                     and '$(FsDisableVsDualBuild)'!='true'
+                     and '$(FsI18nMirrorLang)'!=''">
+    <Message Text="Fs i18n mirror build: $(MSBuildProjectName) -> $(FsI18nMirrorLang)" Importance="high" />
+    <MSBuild Projects="$(MSBuildProjectFullPath)"
+             Targets="Build"
+             Properties="Configuration=$(Configuration);Platform=$(Platform);FsI18nLang=$(FsI18nMirrorLang);FsDisableVsDualBuild=true" />
+  </Target>
 </Project>
+
+

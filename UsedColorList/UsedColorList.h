@@ -52,16 +52,16 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_POS0			"PosStart"
-#define	STR_POS1			"PosEnd"
-#define	STR_ISDISP			"Disp"
-#define	STR_ON				"on"
-#define	STR_GRID_WIDTH		"GridWidrh"
-#define	STR_GRID_HEIGHT		"GridHeight"
+#define STR_POS0            L10N_PARAM_POS_START
+#define STR_POS1            L10N_PARAM_POS_END
+#define STR_ISDISP          L10N_PARAM_DISP
+#define STR_ON              L10N_PARAM_ON
+#define STR_GRID_WIDTH      L10N_PARAM_GRID_WIDTH
+#define STR_GRID_HEIGHT     L10N_PARAM_GRID_HEIGHT
 
-#define	STR_ExceptColor0	"ExceptColor0"
-#define	STR_ExceptColor1	"ExceptColor1"
-#define	STR_ExceptColor2	"ExceptColor2"
+#define STR_ExceptColor0    L10N_PARAM_EXCEPT_COLOR0
+#define STR_ExceptColor1    L10N_PARAM_EXCEPT_COLOR1
+#define STR_ExceptColor2    L10N_PARAM_EXCEPT_COLOR2
 
 
 

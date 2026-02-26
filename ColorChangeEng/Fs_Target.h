@@ -8,14 +8,15 @@
 #ifndef FS_TAGET_H
 #define FS_TAGET_H
 
+#include "../_i18n/NF's Plugins-Cell/ColorChangeEng_i18n.h"
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define FS_NAME			"F's ColorChangeEng"
-#define NFS_NAME		"NF's ColorChangeEng"
+#define FS_NAME            L10N_PLUGIN_NAME
+#define NFS_NAME           L10N_PLUGIN_NAME
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"Replace target colors with another."
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 //-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -23,7 +24,7 @@
 	//#define NFS_CATEGORY "NF's Plugins-Draw"
 	//#define NFS_CATEGORY "NF's Plugins-Filter"
 	//#define NFS_CATEGORY "NF's Plugins-Noise"
-	#define NFS_CATEGORY "NF's Plugins-Cell"
+#define NFS_CATEGORY "NF's Plugins-Cell"
 	//#define NFS_CATEGORY "NF's Plugins-Colorize"
 	//#define NFS_CATEGORY "NF's Plugins-Script"
 	//#define NFS_CATEGORY "NF's Plugins-{Legacy}"
@@ -59,4 +60,8 @@ out_data->out_flags
 
 
 #endif
+
+
+
+
 

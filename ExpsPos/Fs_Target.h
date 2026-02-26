@@ -8,15 +8,16 @@
 #pragma once
 #ifndef Fs_TARGET_H
 #define Fs_TARGET_H
+#include "../_i18n/NF's Plugins-{Legacy}/ExpsPos_i18n.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define FS_NAME			"F's ExpsPos"
+#define FS_NAME            L10N_PLUGIN_NAME
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"プラグインのスケルトン"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -31,7 +32,6 @@
 
 //#define FS_CATEGORY "NF's Plugins-expression"
 #define FS_CATEGORY "NF's Plugins-{Legacy}"
-
 	//-----------------------------------------------------------
 #define SUPPORT_SMARTFX			//これを有効にするとSmartFX+Float_Colorに対応する
 //#define NO_USE_FSGRAPHICS	//これを有効にするとFsGraphics関係がインクルードされない
@@ -73,4 +73,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

@@ -49,12 +49,12 @@ enum {
 	ID_NUM_PARAMS
 	};
 	
-#define STR_POP1	"mode"
-#define STR_POP2	"マットからストレート|ストレートからマット"
+#define STR_POP1	L10N_PARAM_MODE
+#define STR_POP2	L10N_PARAM_MODE_ITEMS
 #define STR_POP		2
 #define STR_POP_DEF	1
 
-#define STR_COLOR	"マットカラー"
+#define STR_COLOR	L10N_PARAM_MAT_COLOR
 
 typedef struct ParamInfo{
 	A_long		mode;

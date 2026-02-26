@@ -66,33 +66,32 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_ALPHA			"alphaThreshold"
-#define	STR_HI				"hilight"
-#define	STR_SDW1			"shadow1"
-#define	STR_SDW2			"shadow2"
+#define STR_ALPHA           L10N_PARAM_ALPHA_THRESHOLD
+#define STR_HI              L10N_PARAM_HILIGHT
+#define STR_SDW1            L10N_PARAM_SHADOW1
+#define STR_SDW2            L10N_PARAM_SHADOW2
 
-#define	STR_ON				"on"
-#define	STR_ALPHA_E			"alphaThresholdEnabled"
-#define	STR_HI_E			"hilightEnabled"
-#define	STR_SDW1_E			"shadow1Enabled"
-#define	STR_SDW2_E			"shadow2Enabled"
+#define STR_ON              L10N_PARAM_ON
+#define STR_ALPHA_E         L10N_PARAM_ALPHA_ENABLED
+#define STR_HI_E            L10N_PARAM_HILIGHT_ENABLED
+#define STR_SDW1_E          L10N_PARAM_SHADOW1_ENABLED
+#define STR_SDW2_E          L10N_PARAM_SHADOW2_ENABLED
 
-#define	STR_HI_COL			"hilightColor"
-#define	STR_NOR_COL			"normalColor"
-#define	STR_SDW1_COL		"shadow1Color"
-#define	STR_SDW2_COL		"shadow2Color"
+#define STR_HI_COL          L10N_PARAM_HILIGHT_COLOR
+#define STR_NOR_COL         L10N_PARAM_NORMAL_COLOR
+#define STR_SDW1_COL        L10N_PARAM_SHADOW1_COLOR
+#define STR_SDW2_COL        L10N_PARAM_SHADOW2_COLOR
 
-#define	STR_LINE_WEIGHT		"LineWeight"
+#define STR_LINE_WEIGHT     L10N_PARAM_LINE_WEIGHT
+#define STR_OUTLINE         L10N_PARAM_OUTLINE
 
-#define STR_OUTLINE			"OutLine"
+#define STR_NOR_LINE        L10N_PARAM_NORMAL_LINE
+#define STR_SDW1_LINE       L10N_PARAM_SHADOW1_LINE
+#define STR_SDW2_LINE       L10N_PARAM_SHADOW2_LINE
 
-#define	STR_NOR_LINE		"normalLine"
-#define	STR_SDW1_LINE		"shadow1Line"
-#define	STR_SDW2_LINE		"shadow2Line"
-
-#define	STR_NOR_LINE_E		"normalLine_Enabled"
-#define	STR_SDW1_LINE_E		"shadow1Line_Enabled"
-#define	STR_SDW2_LINE_E		"shadow2Line_Enabled"
+#define STR_NOR_LINE_E      L10N_PARAM_NORMAL_LINE_ENABLED
+#define STR_SDW1_LINE_E     L10N_PARAM_SHADOW1_LINE_ENABLED
+#define STR_SDW2_LINE_E     L10N_PARAM_SHADOW2_LINE_ENABLED
 
 //UIのパラメータ
 typedef struct ParamInfo {

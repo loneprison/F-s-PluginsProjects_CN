@@ -18,7 +18,6 @@
 #include "AE_EffectCB.h"
 #include "AE_EffectCBSuites.h"
 #include "AE_Macros.h"
-#include "AEGP_SuiteHandler.h"
 #include "String_Utils.h"
 #include "Param_Utils.h"
 #include "Smart_Utils.h"
@@ -30,6 +29,7 @@
 	#include "PF_Suite_Helper.h"
 	#define refconType A_long
 #endif
+#include "AEGP_SuiteHandler.h"
 
 #ifdef AE_OS_WIN
 	#include <Windows.h>

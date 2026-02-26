@@ -43,13 +43,13 @@
 
 
 	
-#define STR_COLOR			"color"
-#define STR_TOPLEFT			"TopLeft"
-#define STR_BOTTOMRIGHT		"BottomRight"
-#define STR_CHK1			"Check"
-#define STR_CHK2			"on"
-#define STR_SMOOTH1			"Smooth"
-#define STR_SMOOTH2			"on"
+#define STR_COLOR			L10N_PARAM_COLOR
+#define STR_TOPLEFT			L10N_PARAM_TOP_LEFT
+#define STR_BOTTOMRIGHT		L10N_PARAM_BOTTOM_RIGHT
+#define STR_CHK1			L10N_PARAM_CHECK
+#define STR_CHK2			L10N_PARAM_ON
+#define STR_SMOOTH1			L10N_PARAM_SMOOTH
+#define STR_SMOOTH2			L10N_PARAM_ON
 
 
 //ユーザーインターフェースのID

@@ -230,7 +230,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_TARGET,
+	PF_ADD_POPUP(STR_TARGET_MODE,
 		STR_TARGET_COUNT,	//メニューの数
 		table.targetColorMode,	//デフォルト
 		STR_TARGET_ITEMS,
@@ -255,9 +255,14 @@ static PF_Err ParamsSetup (
 		);
 		AEFX_CLR_STRUCT(def);
 		//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-		str = STR_TARGET + std::to_string(i + 1);
+		char target_name[64];
+#ifdef AE_OS_WIN
+		sprintf_s(target_name, STR_TARGET_FORMAT, i + 1);
+#else
+		sprintf(target_name, STR_TARGET_FORMAT, i + 1);
+#endif
 		PF_ADD_COLOR(
-			str.c_str(),
+			target_name,
 			table.target[i].red,
 			table.target[i].green,
 			table.target[i].blue,

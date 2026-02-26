@@ -1,4 +1,58 @@
-﻿# F's Plugins New and Next
+# F-s-PluginsProjects_CN
+- 该项目Fork于原f's项目的(47a9d2c)版本
+- 该项目的目的有三个
+    1. 编译在中文电脑上可以正确显示日文版本的插件（原作者已做适配但并没有人编译并传播）
+    2. 制作中文的汉化版本
+    
+## 该项目与原项目的主代码区别
+- 为了更优雅的实现目的2而引入了一个i18n方案，此改动会影响到所有项目文件
+- 为部分遗漏的16bpc适配进行支持(即便那不是必要的,但黄色感叹号确实看上去令人烦躁)
+- 由于原项目已经停止支持,所以大范围调整了原本散落的项目工程结构,方便正确高效的的管理文件
+- 我注意到了部分不应该编译的项目,我不准备动它们或者编译
+    - 三个未构建完成的插件，ShineParallel,Extract_Edge，ChannelBlur
+    - 一个测试用插件Spark_Test
+    - 一个模板工程NFsSkelton
+
+## 主代码功能改动:
+- 修正了一个bug,该bug曾导致F's PixelSelector的fillColor_opacity功能在16/32bpc下失效
+- 修正了一个bug,该bug曾导致F's VideoLine2nd的功能在16/32bpc下失效
+- 修正了一个bug,该bug曾导致F's grayToColorize的Mat在16bpc下的意外结果
+- 修正了一个bug,该bug曾导致F's YuvControl在16/32bpc下的意外结果
+- 修复 FsLibrary 中的多处关键问题
+    - 修复 FsMat 中多个颜色通道写入错误（blue 误写为 green）
+        - 该问题曾导致 F's OpticalDiffusion 颜色严重偏差
+        - 该问题曾导致 F's Max 在含半透明像素且使用负值时出现错误的蓝色边缘
+    - 修复 32bpc 路径中通过调用 16bpc 逻辑规避崩溃的历史问题；根因是 32bpc 缓冲区分配错误
+        - 该问题曾导致上述插件及 F's smokeThreshold 在 32bpc 下实际精度被限制到 16bpc
+        - 该问题还会导致在强制切回 32bpc 逻辑时，上述三个插件可能引发 AE 崩溃
+- 修正了一个bug,该bug曾导致LineTrace的填充黑不生效的问题
+
+- ！！！2026-02-26 请注意！当前上诉修改并未拉取Fork并合并到原项目,这一工作将在汉化完成后一次性进行（避免反复提交）
+
+## 汉化版本 V0.1（待校对）
+- 截至 2026-02-26：已完成第一轮批量汉化接入与预校对，当前阶段为“可用但待人工逐项校对”。
+- 当前仓库主线以中文可维护性为目标，后续会继续做术语统一、界面文案校对与回归验证。
+
+---
+## 以下为AI记录
+---
+
+## 提交简报（最近一次）
+### 1) 中文翻译版本V0.1(待校对)（2026-02-26）
+- 提交标题：`中文翻译版本V0.1(待校对)`
+- 变更统计：`673 files changed, 9355 insertions(+), 5568 deletions(-)`
+- 本次提交覆盖范围：
+  - 批量接入与补齐 `_i18n/` 多分类插件头文件，形成统一的本地化入口。
+  - 大量更新 `Win/*.vcxproj` 与 `Win/*.vcxproj.filters`，把 i18n 头文件纳入工程并保持过滤器映射一致。
+  - 新增 `Directory.Build.Category.props`、`Directory.Build.i18n.props`，并配合 `_tools/i18n_build.ps1` 统一构建与汉化处理流程。
+  - 清理多处历史 `.sln` 入口，进一步收敛工程结构，减少重复维护点。
+  - 同步更新主 README，明确当前版本状态与后续人工校对计划。
+- 当前结论：
+  - 当前已完成一个版本的完全汉化。
+  - 下一阶段将等待校对工作者进行专业术语校对。
+
+------ 原README ------
+# F's Plugins New and Next
 Adone After EffectsのEffectsPlugin集のソース一式とWindowsバイナリです。<br>
 (**No macOS support** / **不支持 macOS**)<br>
 　
@@ -242,6 +296,7 @@ Nanae Furuhashi
 
 My daughter,
 May her soul rest in peace．
+
 
 
 

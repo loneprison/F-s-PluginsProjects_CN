@@ -117,79 +117,77 @@ enum {
 };
 #define LENGTH_MIN 3
 //UIの表示文字列
-#define	STR_CBX_ON				"on"
+#define STR_CBX_ON              L10N_PARAM_ON
 
-#define	STR_CBX_COLOR0			"Enabled0"
-#define	STR_CBX_COLOR1			"Enabled1"
-#define	STR_CBX_COLOR2			"Enabled2"
-#define	STR_CBX_COLOR3			"Enabled3"
-#define	STR_CBX_COLOR4			"Enabled4"
-#define	STR_CBX_COLOR5			"Enabled5"
-#define	STR_CBX_COLOR6			"Enabled6"
-#define	STR_CBX_COLOR7			"Enabled7"
+#define STR_CBX_COLOR0          L10N_PARAM_ENABLED0
+#define STR_CBX_COLOR1          L10N_PARAM_ENABLED1
+#define STR_CBX_COLOR2          L10N_PARAM_ENABLED2
+#define STR_CBX_COLOR3          L10N_PARAM_ENABLED3
+#define STR_CBX_COLOR4          L10N_PARAM_ENABLED4
+#define STR_CBX_COLOR5          L10N_PARAM_ENABLED5
+#define STR_CBX_COLOR6          L10N_PARAM_ENABLED6
+#define STR_CBX_COLOR7          L10N_PARAM_ENABLED7
 
-#define	STR_COL_COLOR0			"Color0"
-#define	STR_COL_COLOR1			"Color1"
-#define	STR_COL_COLOR2			"Color2"
-#define	STR_COL_COLOR3			"Color3"
-#define	STR_COL_COLOR4			"Color4"
-#define	STR_COL_COLOR5			"Color5"
-#define	STR_COL_COLOR6			"Color6"
-#define	STR_COL_COLOR7			"Color7"
+#define STR_COL_COLOR0          L10N_PARAM_COLOR0
+#define STR_COL_COLOR1          L10N_PARAM_COLOR1
+#define STR_COL_COLOR2          L10N_PARAM_COLOR2
+#define STR_COL_COLOR3          L10N_PARAM_COLOR3
+#define STR_COL_COLOR4          L10N_PARAM_COLOR4
+#define STR_COL_COLOR5          L10N_PARAM_COLOR5
+#define STR_COL_COLOR6          L10N_PARAM_COLOR6
+#define STR_COL_COLOR7          L10N_PARAM_COLOR7
 
-#define	STR_COL_TOPICS0			"TargetColors"
-#define	STR_COL_TOPICS1			"TargetEXColors"
-#define	STR_HI_TOPICS			"Hilight"
-#define	STR_SW_TOPICS			"Shadow"
+#define STR_COL_TOPICS0         L10N_PARAM_TARGET_COLORS
+#define STR_COL_TOPICS1         L10N_PARAM_TARGET_EX_COLORS
+#define STR_HI_TOPICS           L10N_PARAM_HILIGHT_TOPIC
+#define STR_SW_TOPICS           L10N_PARAM_SHADOW_TOPIC
 
-#define	STR_CBX_COLOR_EX0		"EnabledEX0"
-#define	STR_CBX_COLOR_EX1		"EnabledEX1"
-#define	STR_CBX_COLOR_EX2		"EnabledEX2"
-#define	STR_CBX_COLOR_EX3		"EnabledEX3"
-#define	STR_CBX_COLOR_EX4		"EnabledEX4"
-#define	STR_CBX_COLOR_EX5		"EnabledEX5"
-#define	STR_CBX_COLOR_EX6		"EnabledEX6"
-#define	STR_CBX_COLOR_EX7		"EnabledEX7"
+#define STR_CBX_COLOR_EX0       L10N_PARAM_ENABLED_EX0
+#define STR_CBX_COLOR_EX1       L10N_PARAM_ENABLED_EX1
+#define STR_CBX_COLOR_EX2       L10N_PARAM_ENABLED_EX2
+#define STR_CBX_COLOR_EX3       L10N_PARAM_ENABLED_EX3
+#define STR_CBX_COLOR_EX4       L10N_PARAM_ENABLED_EX4
+#define STR_CBX_COLOR_EX5       L10N_PARAM_ENABLED_EX5
+#define STR_CBX_COLOR_EX6       L10N_PARAM_ENABLED_EX6
+#define STR_CBX_COLOR_EX7       L10N_PARAM_ENABLED_EX7
 
-#define	STR_COL_COLOR_EX0		"EXColor0"
-#define	STR_COL_COLOR_EX1		"EXColor1"
-#define	STR_COL_COLOR_EX2		"EXColor2"
-#define	STR_COL_COLOR_EX3		"EXColor3"
-#define	STR_COL_COLOR_EX4		"EXColor4"
-#define	STR_COL_COLOR_EX5		"EXColor5"
-#define	STR_COL_COLOR_EX6		"EXColor6"
-#define	STR_COL_COLOR_EX7		"EXColor7"
+#define STR_COL_COLOR_EX0       L10N_PARAM_EX_COLOR0
+#define STR_COL_COLOR_EX1       L10N_PARAM_EX_COLOR1
+#define STR_COL_COLOR_EX2       L10N_PARAM_EX_COLOR2
+#define STR_COL_COLOR_EX3       L10N_PARAM_EX_COLOR3
+#define STR_COL_COLOR_EX4       L10N_PARAM_EX_COLOR4
+#define STR_COL_COLOR_EX5       L10N_PARAM_EX_COLOR5
+#define STR_COL_COLOR_EX6       L10N_PARAM_EX_COLOR6
+#define STR_COL_COLOR_EX7       L10N_PARAM_EX_COLOR7
 
+#define STR_ANGLE               L10N_PARAM_DIRECTION
+#define STR_FLT_HI_LENGTH       L10N_PARAM_HILIGHT_LENGTH
+#define STR_FLT_HI_BLUR         L10N_PARAM_HILIGHT_BLUR
+#define STR_FLT_SW_LENGTH       L10N_PARAM_SHADOW_LENGTH
+#define STR_FLT_SW_BLUR         L10N_PARAM_SHADOW_BLUR
+#define STR_CBX_EDGE1           L10N_PARAM_OUT_OF_SCREEN
+#define STR_CBX_EDGE2           L10N_PARAM_EDGE_REPEAT
 
-#define	STR_ANGLE				"Direction"
-#define	STR_FLT_HI_LENGTH		"HilightLength"
-#define	STR_FLT_HI_BLUR			"HilightBlur"
-#define	STR_FLT_SW_LENGTH		"ShadowLength"
-#define	STR_FLT_SW_BLUR			"ShadowBlur"
-#define	STR_CBX_EDGE1			"OutOfScreen"
-#define	STR_CBX_EDGE2			"EdgeRepeat"
+#define STR_FLT_HILIGHT_LV      L10N_PARAM_HILIGHT_LV
+#define STR_FLT_HILIGHT_R       L10N_PARAM_HILIGHT_RED
+#define STR_FLT_HILIGHT_G       L10N_PARAM_HILIGHT_GREEN
+#define STR_FLT_HILIGHT_B       L10N_PARAM_HILIGHT_BLUE
 
-#define	STR_FLT_HILIGHT_LV		"Hilight_Lv(%)"
-#define	STR_FLT_HILIGHT_R		"Hilight_Red(%)"
-#define	STR_FLT_HILIGHT_G		"Hilight_Green(%)"
-#define	STR_FLT_HILIGHT_B		"Hilight_Blue(%)"
+#define STR_FLT_SHADOW_LV       L10N_PARAM_SHADOW_LV
+#define STR_FLT_SHADOW_R        L10N_PARAM_SHADOW_RED
+#define STR_FLT_SHADOW_G        L10N_PARAM_SHADOW_GREEN
+#define STR_FLT_SHADOW_B        L10N_PARAM_SHADOW_BLUE
 
-#define	STR_FLT_SHADOW_LV		"Shadow_Lv(%)"
-#define	STR_FLT_SHADOW_R		"Shadow_Red(%)"
-#define	STR_FLT_SHADOW_G		"Shadow_Green(%)"
-#define	STR_FLT_SHADOW_B		"Shadow_Blue(%)"
+#define STR_NOISE               L10N_PARAM_NOISE
+#define STR_CBX_DRAW            L10N_PARAM_BLEND_WITH_ORIGINAL
 
-#define	STR_NOISE				"Noise"
-
-#define	STR_CBX_DRAW			"Blend_with_original"
-
-#define	STR_PUP_DRAW			"Blend"
-#define	STR_PUP_ITEMS			"WithOriginal|Only|MaskHilight|MaskShadow"
+#define STR_PUP_DRAW            L10N_PARAM_BLEND
+#define STR_PUP_ITEMS           L10N_PARAM_BLEND_ITEMS
 #define	STR_PUP_COUNT			4
 #define	STR_PUP_DFLT			1
 
-#define	STR_COL_MASKCOLOR		"MaskColor"
-#define	STR_CBX_WHITE			"WhiteKey"
+#define STR_COL_MASKCOLOR       L10N_PARAM_MASK_COLOR
+#define STR_CBX_WHITE           L10N_PARAM_WHITE_KEY
 
 
 

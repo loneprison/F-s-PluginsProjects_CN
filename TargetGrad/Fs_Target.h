@@ -3,16 +3,17 @@
 #pragma once
 #ifndef Fs_TARGET_H
 #define Fs_TARGET_H
+#include "../_i18n/NF's Plugins-Cell/TargetGrad_i18n.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define FS_NAME		"F's TargetGrad"
+#define FS_NAME            L10N_PLUGIN_NAME
 #define FS_DISPNAME	"NF's TargetGrad"
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"TargetGrad"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -27,7 +28,6 @@
 
 
 #define NFS_CATEGORY "NF's Plugins-Cell"
-
 	//-----------------------------------------------------------
 #define SUPPORT_SMARTFX			//これを有効にするとSmartFX+Float_Colorに対応する
 //#define NO_USE_FSGRAPHICS	//これを有効にするとFsGraphics関係がインクルードされない
@@ -76,4 +76,6 @@ out_data->out_flags
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

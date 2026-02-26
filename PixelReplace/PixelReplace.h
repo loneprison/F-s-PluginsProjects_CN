@@ -59,18 +59,18 @@ enum {
 #define PARAMS_IDX(I,J) ((I) *paramsOffset_num + (J) +1)
 //-----------------------------------------------------------------------------
 //パラメータUI用の文字列
-#define UI_TOPIC	"Target"
+#define UI_TOPIC	L10N_PARAM_TOPIC
 
-#define UI_ENABLED1	"Enabled"
-#define UI_ENABLED2	"ON"
-#define UI_SRC_COLOR	"targetColor"
-#define UI_REP_COLOR	"replaceColor"
-#define UI_REP_OPACITY	"replaceOpacity"
+#define UI_ENABLED1	L10N_PARAM_ENABLED
+#define UI_ENABLED2	L10N_PARAM_ON
+#define UI_SRC_COLOR	L10N_PARAM_SOURCE_COLOR
+#define UI_REP_COLOR	L10N_PARAM_REPLACE_COLOR
+#define UI_REP_OPACITY	L10N_PARAM_REPLACE_OPACITY
 
-#define UI_LV		"lebel"
+#define UI_LV		L10N_PARAM_LEVEL
 
-#define UI_POP1			"Disp"
-#define UI_POP2			"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24"
+#define UI_POP1			L10N_PARAM_DISP
+#define UI_POP2			L10N_PARAM_DISP_ITEMS
 
 
 //-----------------------------------------------------------------------------

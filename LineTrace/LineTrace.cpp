@@ -232,13 +232,13 @@ FilterImage8 (
 					p = WHT8;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK8;	
+					p = infoP->ParamTable[LT_BLACK].color;	
 				}else{
 					p = WHT8;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK8;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT8;
 				}
@@ -319,13 +319,13 @@ FilterImage16 (
 					p = WHT16;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK16;	
+					p = infoP->ParamTable[LT_BLACK].color;	
 				}else{
 					p = WHT16;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK16;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT16;
 				}
@@ -406,13 +406,13 @@ FilterImage32 (
 					p = WHT32;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK32;	
+					p = infoP->ParamTable[LT_BLACK].color;	
 				}else{
 					p = WHT32;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK32;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT32;
 				}

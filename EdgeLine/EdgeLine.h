@@ -52,11 +52,11 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TARGET			"TargetColor"
-#define	STR_SAMPLE			"SampleColor"
-#define	STR_LEVEL			"level(%)"
-#define	STR_LENGTH			"length(px)"
-#define	STR_DRAW			"DrawColor"
+#define	STR_TARGET			L10N_PARAM_TARGET_COLOR
+#define	STR_SAMPLE			L10N_PARAM_SAMPLE_COLOR
+#define	STR_LEVEL			L10N_PARAM_LEVEL
+#define	STR_LENGTH			L10N_PARAM_LENGTH
+#define	STR_DRAW			L10N_PARAM_DRAW_COLOR
 
 
 //UIのパラメータ

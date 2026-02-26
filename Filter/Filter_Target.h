@@ -7,13 +7,14 @@
 #pragma once
 #ifndef Filter_Target_H
 #define Filter_Target_H
+#include "../_i18n/NF's Plugins-{Legacy}/Filter_i18n.h"
 
 #include "../FsLibrary_next/FsVersion.h"
 
 
 
-#define FS_DESCRIPTION		"Filter Effect Filter"
-#define	FS_NAME				"F's Filter"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
+#define FS_NAME            L10N_PLUGIN_NAME
 #define FS_MATCH_NAME		FS_NAME
 #define FS_CREATER			"Copyright (c) 2019 bryful ( bryful@gmail.com/twitter:bryful )"
 //-----------------------------------------------------------------------------------
@@ -26,8 +27,6 @@
 	//#define FS_CATEGORY "F's Plugins-Script"
 	//#define FS_CATEGORY "F's Plugins-{Legacy}"
 #define FS_CATEGORY "NF's Plugins-{Legacy}"
-
-
 //#define SUPPORT_SMARTFX			//これを有効にするとSmartFX+Float_Colorに対応する
 
 
@@ -90,5 +89,7 @@ dlg.show();\
 
 
 #endif // Filter_Target_H
+
+
 
 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #pragma once
 #ifndef TINY_MULT_H
 #define TINY_MULT_H

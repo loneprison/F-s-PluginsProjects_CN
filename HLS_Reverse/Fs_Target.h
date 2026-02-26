@@ -7,14 +7,15 @@
 #pragma once
 #ifndef FS_TAGET_H
 #define FS_TAGET_H
+#include "../_i18n/NF's Plugins-Colorize/HLS_Reverse_i18n.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define FS_NAME			"F's HLS_Reverse"
+#define FS_NAME            L10N_PLUGIN_NAME
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"HLS のLを反転させる"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 
 	//-----------------------------------------------------------------------------------
@@ -23,7 +24,7 @@
 	//#define FS_CATEGORY "F's Plugins-Draw"
 	//#define FS_CATEGORY "F's Plugins-Filter"
 	//#define FS_CATEGORY "F's Plugins-Cell"
-	#define FS_CATEGORY "NF's Plugins-Colorize"
+#define FS_CATEGORY "NF's Plugins-Colorize"
 	//#define FS_CATEGORY "F's Plugins-Script"
 //#define FS_CATEGORY "F's Plugins-Test"
 
@@ -71,4 +72,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

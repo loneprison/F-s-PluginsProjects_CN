@@ -277,4 +277,9 @@ paket-files/
 __pycache__/
 *.pyc
 
+# Local generated/output and local instructions
+_OutAex/
+AGENTS
+AGENTS.md
+
 

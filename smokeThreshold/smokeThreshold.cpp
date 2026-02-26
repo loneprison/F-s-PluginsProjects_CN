@@ -181,7 +181,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SDW1_LINE_E, 
+	PF_ADD_COLOR(	STR_SDW1_LINE, 
 					0x30,
 					0x30,
 					0x30,
@@ -190,7 +190,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SDW2_LINE_E, 
+	PF_ADD_COLOR(	STR_SDW2_LINE, 
 					0x20,
 					0x20,
 					0x20,

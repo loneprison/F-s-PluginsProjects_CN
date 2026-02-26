@@ -75,26 +75,27 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TARGET		"target"
-#define	STR_TARGET_ITEMS		"brightness|red|green|blue|alpha"
+#define	STR_TARGET		L10N_PARAM_TARGET
+#define	STR_TARGET_ITEMS		L10N_PARAM_TARGET_ITEMS
 #define	STR_TARGET_COUNT		5
 #define	STR_TARGET_DEFLT		1
 
-#define	STR_COL0		"color0"
-#define	STR_COL1		"color1"
-#define	STR_COL2		"color2"
-#define	STR_COL3		"color3"
-#define	STR_COL4		"color4"
-#define	STR_COL5		"color5"
-#define	STR_COL6		"color6"
-#define	STR_COL7		"color7"
-#define	STR_COL8		"color8"
+#define	STR_COL0		L10N_PARAM_COLOR0
+#define	STR_COL1		L10N_PARAM_COLOR1
+#define	STR_COL2		L10N_PARAM_COLOR2
+#define	STR_COL3		L10N_PARAM_COLOR3
+#define	STR_COL4		L10N_PARAM_COLOR4
+#define	STR_COL5		L10N_PARAM_COLOR5
+#define	STR_COL6		L10N_PARAM_COLOR6
+#define	STR_COL7		L10N_PARAM_COLOR7
+#define	STR_COL8		L10N_PARAM_COLOR8
 
-#define	STR_OFFSET		"offset"
-#define	STR_OFFSET_ON	"offset_enabled"
-#define	STR_OFFSET_SPEED	"offset_speed"
+#define	STR_OFFSET		L10N_PARAM_OFFSET
+#define	STR_OFFSET_ON	L10N_PARAM_OFFSET_ENABLED
+#define STR_ON          L10N_PARAM_ON
+#define	STR_OFFSET_SPEED	L10N_PARAM_OFFSET_SPEED
 
-#define	STR_REP			"repeat"
+#define	STR_REP			L10N_PARAM_REPEAT
 
 //UIのパラメータ
 #define COL_COUNT 9

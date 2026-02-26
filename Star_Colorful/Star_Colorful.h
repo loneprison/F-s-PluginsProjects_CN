@@ -97,56 +97,53 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TOPIC0				"Target"
+#define STR_TOPIC0              L10N_PARAM_TARGET_TOPIC
 
-#define	STR_TARGET_KIND			"Target"
-#define	STR_TARGET_ITEMS		"RGBMax|R+G+B|Brightness|TargetColor"
+#define STR_TARGET_KIND         L10N_PARAM_TARGET
+#define STR_TARGET_ITEMS        L10N_PARAM_TARGET_ITEMS
 #define	STR_TARGET_COUNT		4
 #define	STR_TARGET_DFLT			1
-#define	STR_TARGET_COLOR		"TargetColor"
-#define	STR_TARGET_MASK			"TargetDisp"
-#define	STR_ON					"on"
+#define STR_TARGET_COLOR        L10N_PARAM_TARGET_COLOR
+#define STR_TARGET_MASK         L10N_PARAM_TARGET_DISP
+#define STR_ON                  L10N_PARAM_ON
 
-#define	STR_TAGET_BORDER		"TargetBorder"
-#define	STR_TAGET_SOFT			"TargetSoftness"
+#define STR_TAGET_BORDER        L10N_PARAM_TARGET_BORDER
+#define STR_TAGET_SOFT          L10N_PARAM_TARGET_SOFTNESS
 
+#define STR_TOPICA              L10N_PARAM_CONTROL_TOPIC
+#define STR_ROT                 L10N_PARAM_ROT
+#define STR_AUTOROLLING         L10N_PARAM_AUTO_ROLLING
+#define STR_ROLLINGSPEED        L10N_PARAM_ROLLING_SPEED
 
-#define	STR_TOPICA				"Control"
-#define	STR_ROT					"Rot"
-#define	STR_AUTOROLLING			"AutoRolling"
-#define	STR_ON					"on"
-#define	STR_ROLLINGSPEED		"RollingSpeed"
+#define STR_LENGTH              L10N_PARAM_LENGTH
+#define STR_OPACITY             L10N_PARAM_OPACITY
 
-#define	STR_LENGTH				"Length"
-#define	STR_OPACITY				"Opacity"
-
-#define	STR_TOPIC1				"Color"
-#define	STR_COLOR_KIND			"ColorKind"
-#define	STR_COLOR				"Color"
-#define	STR_BRIGHT				"ColorBrightness"
-#define	STR_COLOR_ITEMS			"Color|Screen|Rainbow"
+#define STR_TOPIC1              L10N_PARAM_COLOR_TOPIC
+#define STR_COLOR_KIND          L10N_PARAM_COLOR_KIND
+#define STR_COLOR               L10N_PARAM_COLOR
+#define STR_BRIGHT              L10N_PARAM_COLOR_BRIGHTNESS
+#define STR_COLOR_ITEMS         L10N_PARAM_COLOR_ITEMS
 #define	STR_COLOR_COUNT			3
 #define	STR_COLOR_DFLT			1
 
-#define	STR_RAINBOW_OFFSET		"RainbowOffset"
-#define	STR_RAINBOW_DELTA		"RainbowDelta"
+#define STR_RAINBOW_OFFSET      L10N_PARAM_RAINBOW_OFFSET
+#define STR_RAINBOW_DELTA       L10N_PARAM_RAINBOW_DELTA
 
+#define STR_TOPIC2              L10N_PARAM_STAR_DETAIL
+#define STR_VER_LEN             L10N_PARAM_VERTICAL_LENGTH
+#define STR_VER_ROT             L10N_PARAM_VERTICAL_ROT
+#define STR_VER_OPACITY         L10N_PARAM_VERTICAL_OPACITY
+#define STR_HOR_LEN             L10N_PARAM_HORIZON_LENGTH
+#define STR_HOR_ROT             L10N_PARAM_HORIZON_ROT
+#define STR_HOR_OPACITY         L10N_PARAM_HORIZON_OPACITY
 
-#define	STR_TOPIC2				"StarDetail"
-#define	STR_VER_LEN				"VerticalLength"
-#define	STR_VER_ROT				"VerticalRot"
-#define	STR_VER_OPACITY			"verticalOpacity"
-#define	STR_HOR_LEN				"HorizonLength"
-#define	STR_HOR_ROT				"HorizonRot"
-#define	STR_HOR_OPACITY			"HorizonOpacity"
+#define STR_DIA_LEN             L10N_PARAM_DIAGONAL_LENGTH
+#define STR_DIA_ROT             L10N_PARAM_DIAGONAL_ROT
+#define STR_DIA_ROT2            L10N_PARAM_DIAGONAL2_ROT
+#define STR_DIA_OPACITY         L10N_PARAM_DIAGONAL_OPACITY
 
-#define	STR_DIA_LEN				"DiagonalLength"
-#define	STR_DIA_ROT				"DiagonalRot"
-#define	STR_DIA_ROT2			"Diagonal2Rot"
-#define	STR_DIA_OPACITY			"DiagonalOpacity"
-
-#define	STR_BLEND				"Blemnd"
-#define	STR_BLEND_ITEMS			"None|Screen|Add|Normal"
+#define STR_BLEND               L10N_PARAM_BLEND
+#define STR_BLEND_ITEMS         L10N_PARAM_BLEND_ITEMS
 #define	STR_BLEND_COUNT			4
 #define	STR_BLEND_DFLT			1
 

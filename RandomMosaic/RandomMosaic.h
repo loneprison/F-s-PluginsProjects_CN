@@ -56,11 +56,11 @@ enum {
 	ID_NUM_PARAMS
 };
 
-#define STR_Y		"量"
-#define STR_SIZEMAX		"サイズ(最大)"
-#define STR_SIZEMIN		"サイズ(最小)"
-#define STR_ASPECT		"縦横のばらつき"
-#define STR_RANDOMCOLOR	"明るさのばらつき"
+#define STR_Y		L10N_PARAM_AMOUNT
+#define STR_SIZEMAX		L10N_PARAM_SIZE_MAX
+#define STR_SIZEMIN		L10N_PARAM_SIZE_MIN
+#define STR_ASPECT		L10N_PARAM_ASPECT_RANDOM
+#define STR_RANDOMCOLOR	L10N_PARAM_BRIGHT_RANDOM
 
 
 

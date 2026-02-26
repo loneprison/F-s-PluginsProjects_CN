@@ -105,18 +105,18 @@ enum {
 
 //UIの表示文字列
 
-#define	STR_ALPHA_THRESHOLD		"AlphaThreshold"
-#define	STR_MAT_CB				"Mat"
-#define	STR_MAT_COL				"MatColor"
-#define	STR_COLOR_LEVEL			"ColorLevel"
-#define	STR_COL_COUNT			"ColorCount"
-#define	STR_COL					"TargetColor"
-#define	STR_COL1				"Color1"
-#define	STR_COL2				"Color2"
-#define	STR_COL3				"Color3"
-#define	STR_COL4				"Color4"
-#define	STR_COL5				"Color5"
-#define	STR_ON					"on"
+#define	STR_ALPHA_THRESHOLD		L10N_PARAM_ALPHA_THRESHOLD
+#define	STR_MAT_CB				L10N_PARAM_MAT
+#define	STR_MAT_COL				L10N_PARAM_MAT_COLOR
+#define	STR_COLOR_LEVEL			L10N_PARAM_COLOR_LEVEL
+#define	STR_COL_COUNT			L10N_PARAM_COLOR_COUNT
+#define	STR_COL					L10N_PARAM_TARGET_COLOR
+#define	STR_COL1				L10N_PARAM_COLOR1
+#define	STR_COL2				L10N_PARAM_COLOR2
+#define	STR_COL3				L10N_PARAM_COLOR3
+#define	STR_COL4				L10N_PARAM_COLOR4
+#define	STR_COL5				L10N_PARAM_COLOR5
+#define	STR_ON					L10N_PARAM_ON
 
 
 //UIのパラメータ

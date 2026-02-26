@@ -42,12 +42,12 @@
 //#include "FsAE.h"
 
 
-#define	StrEXECUTED_CB1		"塗りつぶす"
-#define	StrEXECUTED_CB2		"ON"
-#define	StrPOS				"位置"
-#define	StrCOLOR			"ペイント色"
-#define	StrCOLOR_Opacity	"不透明度(%)"
-#define	StrERR_getParams	"パラメータエラーです。御免なさい。"
+#define	StrEXECUTED_CB1		L10N_PARAM_EXECUTE
+#define	StrEXECUTED_CB2		L10N_PARAM_ON
+#define	StrPOS				L10N_PARAM_POSITION
+#define	StrCOLOR			L10N_PARAM_PAINT_COLOR
+#define	StrCOLOR_Opacity	L10N_PARAM_OPACITY
+#define	StrERR_getParams	L10N_ERR_GET_PARAMS
 
 
 //ユーザーインターフェースのID

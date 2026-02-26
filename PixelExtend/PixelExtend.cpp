@@ -55,9 +55,9 @@ static PF_Err ParamsSetup (
 	{
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "TargetColorEnabled%d", i);
+		sprintf_s(num, "%s%d", STR_TARGET_COLOR_ENABLED, i);
 #else
-		sprintf(num, "TargetColorEnabled%d", i);
+		sprintf(num, "%s%d", STR_TARGET_COLOR_ENABLED, i);
 #endif
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
@@ -69,9 +69,9 @@ static PF_Err ParamsSetup (
 		);
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "TargetColor%d", i);
+		sprintf_s(num, "%s%d", STR_TARGET_COLOR, i);
 #else
-		sprintf(num, "TargetColor%d", i);
+		sprintf(num, "%s%d", STR_TARGET_COLOR, i);
 #endif
 		//色の指定
 		AEFX_CLR_STRUCT(def);
@@ -180,9 +180,9 @@ static PF_Err ParamsSetup (
 	{
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "NoneColorEnabled%d", i);
+		sprintf_s(num, "%s%d", STR_NONE_COLOR_ENABLED, i);
 #else
-		sprintf(num, "NoneColorEnabled%d", i);
+		sprintf(num, "%s%d", STR_NONE_COLOR_ENABLED, i);
 #endif
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
@@ -194,9 +194,9 @@ static PF_Err ParamsSetup (
 		);
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "NoneColor%d", i);
+		sprintf_s(num, "%s%d", STR_NONE_COLOR, i);
 #else
-		sprintf(num, "NoneColor%d", i);
+		sprintf(num, "%s%d", STR_NONE_COLOR, i);
 #endif
 		//色の指定
 		AEFX_CLR_STRUCT(def);

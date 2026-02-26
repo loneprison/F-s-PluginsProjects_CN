@@ -21,8 +21,7 @@
 //#define FS_CATEGORY "NF's Plugins-Script"
 //#define FS_CATEGORY "NF's Plugins-Test"
 
-#define FS_CATEGORY "NF's Plugins-{sample}"
-
+#define FS_CATEGORY "NF's Plugins-Channel"
 //-----------------------------------------------------------
 #ifndef SUPPORT_SMARTFX			//２重登録を防ぐ
 #define SUPPORT_SMARTFX			//これを有効にするとSmartFX+Float_Colorに対応する
@@ -68,4 +67,5 @@
 #endif
 
 #endif
+
 

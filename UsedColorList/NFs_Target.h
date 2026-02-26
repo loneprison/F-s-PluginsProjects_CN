@@ -2,19 +2,20 @@
 #pragma once
 #ifndef NFs_TARGET_H
 #define NFs_TARGET_H
+#include "../_i18n/NF's Plugins-Cell/UsedColorList_i18n.h"
 
 #include "../NFsLibrary/NFsVersion.h"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define NFS_NAME			"F's UsedColorList"
+#define NFS_NAME           L10N_PLUGIN_NAME
 #define NFS_DISPNAME		"F's UsedColorList"
 
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define NFS_DESCRIPTION	"プラグインのスケルトン"
+#define NFS_DESCRIPTION   L10N_PLUGIN_DESC
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -28,8 +29,7 @@
 	//#define NFS_CATEGORY "NF's Plugins-{DEBUG}"
 	//#define NFS_CATEGORY "NF's Plugins-{Legacy}"
 
-	#define NFS_CATEGORY "NF's Plugins-Cell"
-
+#define NFS_CATEGORY "NF's Plugins-Cell"
 	//-----------------------------------------------------------
 #define SUPPORT_SMARTFX			//これを有効にするとSmartFX+Float_Colorに対応する
 
@@ -68,4 +68,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

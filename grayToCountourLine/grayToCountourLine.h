@@ -50,11 +50,11 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_LO				"Count_Lo"
-#define	STR_MID				"Count_Mid"
-#define	STR_HI				"Count_Hi"
-#define	STR_DRAW_COL		"DrawCol"
-#define	STR_ON				"on"
+#define	STR_LO				L10N_PARAM_COUNT_LO
+#define	STR_MID				L10N_PARAM_COUNT_MID
+#define	STR_HI				L10N_PARAM_COUNT_HI
+#define	STR_DRAW_COL		L10N_PARAM_DRAW_COLOR
+#define	STR_ON				L10N_PARAM_ON
 
 
 enum GBDR

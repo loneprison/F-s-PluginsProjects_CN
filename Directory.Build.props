@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.i18n.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.i18n.props')" />
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.Category.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.Category.props')" />
   <!-- すべての構成に共通の設定 -->
   <PropertyGroup>
     <!-- 警告レベル 4 を設定 -->
@@ -13,6 +17,24 @@
 
     <!-- 標準準拠モード -->
     <ConformanceMode>true</ConformanceMode>
+
+    <!-- global i18n build mode controlled by _tools/i18n_build.ps1
+         CN        -> VS Build outputs CN only
+         JP_ForCN  -> VS Build outputs JP_ForCN only
+         Both      -> VS Build outputs both CN and JP_ForCN -->
+    <FsI18nBuildMode Condition="'$(FsI18nBuildMode)'==''">JP_ForCN</FsI18nBuildMode>
+    <FsI18nBuildMode Condition="'$(FsI18nBuildMode)'!='CN' and '$(FsI18nBuildMode)'!='JP_ForCN' and '$(FsI18nBuildMode)'!='Both'">JP_ForCN</FsI18nBuildMode>
+
+    <!-- selected language for current build invocation -->
+    <FsI18nLang Condition="'$(FsI18nLang)'=='' and '$(FsI18nBuildMode)'=='CN'">CN</FsI18nLang>
+    <FsI18nLang Condition="'$(FsI18nLang)'=='' and '$(FsI18nBuildMode)'=='JP_ForCN'">JP_ForCN</FsI18nLang>
+    <FsI18nLang Condition="'$(FsI18nLang)'=='' and '$(FsI18nBuildMode)'=='Both'">JP_ForCN</FsI18nLang>
+    <FsI18nLang Condition="'$(FsI18nLang)'==''">JP_ForCN</FsI18nLang>
+
+    <!-- normalized language suffix used by output naming -->
+    <FsI18nLangSuffix Condition="'$(FsI18nLang)'=='CN'">CN</FsI18nLangSuffix>
+    <FsI18nLangSuffix Condition="'$(FsI18nLang)'=='JP_ForCN'">JP_ForCN</FsI18nLangSuffix>
+    <FsI18nLangSuffix Condition="'$(FsI18nLangSuffix)'==''">JP_ForCN</FsI18nLangSuffix>
   </PropertyGroup>
 
   <!-- Debug 構成のみの設定 -->
@@ -41,6 +63,13 @@
       
       <!-- SDL チェックを無効化 -->
       <SDLCheck>false</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <!-- Inject zh-CN localization macro only for CN output -->
+  <ItemDefinitionGroup Condition="'$(FsI18nLang)'=='CN'">
+    <ClCompile>
+      <PreprocessorDefinitions>FS_LOCALIZE_ZH_CN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>

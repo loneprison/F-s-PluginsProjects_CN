@@ -48,9 +48,9 @@ enum {
 	ID_NUM_PARAMS
 	};
 
-#define STR_LEVEL	"許容値"
-#define STR_SRC		"元の色"
-#define STR_DST		"新しい色"
+#define STR_LEVEL	L10N_PARAM_LEVEL
+#define STR_SRC		L10N_PARAM_SRC_COLOR
+#define STR_DST		L10N_PARAM_DST_COLOR
 
 typedef struct ParamInfo{
 	A_u_char		level;

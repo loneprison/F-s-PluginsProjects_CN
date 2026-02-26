@@ -7,13 +7,14 @@
 #pragma once
 #ifndef FS_TAGET_H
 #define FS_TAGET_H
+#include "../_i18n/NF's Plugins-Cell/SelectColor_i18n.h"
 
 //-----------------------------------------------------------------------------------
 //プラグインの識別に使われる名前
-#define	FS_NAME			"F's SelectColor"
+#define FS_NAME            L10N_PLUGIN_NAME
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"ペイントセルから色マスク作成"
+#define FS_DESCRIPTION    L10N_PLUGIN_DESC
 
 //#define FS_CATEGORY "F's Plugins-Fx"
 //#define FS_CATEGORY "F's Plugins-Channel"
@@ -64,4 +65,6 @@ out_data->out_flags2
 
 //-----------------------------------------------------------------------------------
 #endif
+
+
 

@@ -95,44 +95,44 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_LINE_ONLY		"LineOnly"
-#define	STR_ON				"on"
-#define	STR_COLOR1_ON		"EnabledColor1"
-#define	STR_COLOR2_ON		"EnabledColor2"
-#define	STR_COLOR3_ON		"EnabledColor3"
-#define	STR_COLOR4_ON		"EnabledColor4"
-#define	STR_COLOR5_ON		"EnabledColor5"
-#define	STR_COLOR6_ON		"EnabledColor6"
+#define	STR_LINE_ONLY		L10N_PARAM_LINE_ONLY
+#define	STR_ON				L10N_PARAM_ON
+#define	STR_COLOR1_ON		L10N_PARAM_COLOR1_ON
+#define	STR_COLOR2_ON		L10N_PARAM_COLOR2_ON
+#define	STR_COLOR3_ON		L10N_PARAM_COLOR3_ON
+#define	STR_COLOR4_ON		L10N_PARAM_COLOR4_ON
+#define	STR_COLOR5_ON		L10N_PARAM_COLOR5_ON
+#define	STR_COLOR6_ON		L10N_PARAM_COLOR6_ON
 
-#define	STR_COLOR1			"Color1"
-#define	STR_COLOR2			"Color2"
-#define	STR_COLOR3			"Color3"
-#define	STR_COLOR4			"Color4"
-#define	STR_COLOR5			"Color5"
-#define	STR_COLOR6			"Color6"
+#define	STR_COLOR1			L10N_PARAM_COLOR1
+#define	STR_COLOR2			L10N_PARAM_COLOR2
+#define	STR_COLOR3			L10N_PARAM_COLOR3
+#define	STR_COLOR4			L10N_PARAM_COLOR4
+#define	STR_COLOR5			L10N_PARAM_COLOR5
+#define	STR_COLOR6			L10N_PARAM_COLOR6
 
-#define	STR_LEVEL			"level"
-#define	STR_IG_COLOR		"あきらめ色"
+#define	STR_LEVEL			L10N_PARAM_LEVEL
+#define	STR_IG_COLOR		L10N_PARAM_IGNORE_COLOR
 
-#define	STR_LINE_MINMAX1	"Min/Max1"
-#define	STR_LINE_MINMAX2	"Min/Max2"
-#define	STR_LINE_BLUR		"LineBlur"
-#define	STR_LINE_H			"LineH"
-#define	STR_LINE_S			"LineS"
-#define	STR_LINE_L			"LineL"
-#define	STR_LINE_R			"LineRed"
-#define	STR_LINE_G			"LineGreen"
-#define	STR_LINE_B			"LineBlue"
+#define	STR_LINE_MINMAX1	L10N_PARAM_LINE_MINMAX1
+#define	STR_LINE_MINMAX2	L10N_PARAM_LINE_MINMAX2
+#define	STR_LINE_BLUR		L10N_PARAM_LINE_BLUR
+#define	STR_LINE_H			L10N_PARAM_LINE_H
+#define	STR_LINE_S			L10N_PARAM_LINE_S
+#define	STR_LINE_L			L10N_PARAM_LINE_L
+#define	STR_LINE_R			L10N_PARAM_LINE_R
+#define	STR_LINE_G			L10N_PARAM_LINE_G
+#define	STR_LINE_B			L10N_PARAM_LINE_B
 
-#define	STR_NEG_COLOR1_ON		"EnabledN1"
-#define	STR_NEG_COLOR2_ON		"EnabledN2"
-#define	STR_NEG_COLOR3_ON		"EnabledN3"
-#define	STR_NEG_COLOR4_ON		"EnabledN4"
+#define	STR_NEG_COLOR1_ON		L10N_PARAM_NEG_COLOR1_ON
+#define	STR_NEG_COLOR2_ON		L10N_PARAM_NEG_COLOR2_ON
+#define	STR_NEG_COLOR3_ON		L10N_PARAM_NEG_COLOR3_ON
+#define	STR_NEG_COLOR4_ON		L10N_PARAM_NEG_COLOR4_ON
 
-#define	STR_NEG_COLOR1			"NegColor1"
-#define	STR_NEG_COLOR2			"NegColor2"
-#define	STR_NEG_COLOR3			"NegColor3"
-#define	STR_NEG_COLOR4			"NegColor4"
+#define	STR_NEG_COLOR1			L10N_PARAM_NEG_COLOR1
+#define	STR_NEG_COLOR2			L10N_PARAM_NEG_COLOR2
+#define	STR_NEG_COLOR3			L10N_PARAM_NEG_COLOR3
+#define	STR_NEG_COLOR4			L10N_PARAM_NEG_COLOR4
 
 #define PF_HALF_CHAN32 (0.5)
 #define PF_MAX_CHAN32 (1.0)

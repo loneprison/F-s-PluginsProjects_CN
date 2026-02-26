@@ -51,8 +51,8 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_POINT			"TargetColorPoint"
-#define	STR_COLOR			"Color"
+#define	STR_POINT			L10N_PARAM_TARGET_POINT
+#define	STR_COLOR			L10N_PARAM_COLOR
 
 
 

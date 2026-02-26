@@ -81,45 +81,44 @@ enum {
 #define ID_COLOR_ENABLED(IDX) (ID_TCOLOR1_ENABLED + (IDX) * 2)
 
 //UIの表示文字列
-#define	STR_TARGET			"target"
-#define	STR_TARGET_ITEMS	"targetColors|alphaOn|all"
+#define STR_TARGET_MODE     L10N_PARAM_TARGET_MODE
+#define STR_TARGET_FORMAT   L10N_PARAM_TARGET_FORMAT
+#define STR_TARGET_ITEMS    L10N_PARAM_TARGET_ITEMS
 #define	STR_TARGET_COUNT	3
 #define	STR_TARGET_DFLT		1
 
-#define	STR_TOPIC_COLOR		"targetColors"
-#define	STR_TARGET			"target"
-#define	STR_TARGET_CB		"targetEnabled"
-#define	STR_TARGET_CB2		"on"
+#define STR_TOPIC_COLOR     L10N_PARAM_TARGET_COLORS
+#define STR_TARGET_CB       L10N_PARAM_TARGET_ENABLED
+#define STR_TARGET_CB2      L10N_PARAM_ON
 
-#define	STR_GRADCOLOR		"gradColor"
-#define	STR_INVERT			"swapPoint"
-#define	STR_INVERT2			"on"
+#define STR_GRADCOLOR       L10N_PARAM_GRAD_COLOR
+#define STR_INVERT          L10N_PARAM_SWAP_POINT
+#define STR_INVERT2         L10N_PARAM_ON
 
-#define	STR_HYPERBOLIC		"hyperbolic"
+#define STR_HYPERBOLIC      L10N_PARAM_HYPERBOLIC
 
-#define	STR_AUTO_POS		"autoPos"
-#define	STR_AUTO_POS2		"on"
+#define STR_AUTO_POS        L10N_PARAM_AUTO_POS
+#define STR_AUTO_POS2       L10N_PARAM_ON
 
-#define	STR_TOPIC_2POINT	"2Point"
-#define	STR_START			"start"
-#define	STR_LAST			"last"
+#define STR_TOPIC_2POINT    L10N_PARAM_TWO_POINT
+#define STR_START           L10N_PARAM_START
+#define STR_LAST            L10N_PARAM_LAST
 
-#define	STR_ROT				"rot"
+#define STR_ROT             L10N_PARAM_ROT
 
-#define	STR_START_PER		"startPercent"
-#define	STR_LAST_PER		"lastPercent"
+#define STR_START_PER       L10N_PARAM_START_PERCENT
+#define STR_LAST_PER        L10N_PARAM_LAST_PERCENT
 
-#define	STR_OFFSET_X		"offsetX"
-#define	STR_OFFSET_Y		"offsetY"
+#define STR_OFFSET_X        L10N_PARAM_OFFSET_X
+#define STR_OFFSET_Y        L10N_PARAM_OFFSET_Y
 
+#define STR_LAOD_CAP        L10N_PARAM_COLOR_TABLE
+#define STR_LOAD_BTN        L10N_PARAM_LOAD
+#define STR_SAVE_BTN        L10N_PARAM_SAVE
 
-#define	STR_LAOD_CAP		"colorTable"
-#define	STR_LOAD_BTN		"load"
-#define	STR_SAVE_BTN		"save"
-
-#define	STR_GUIDE_ENABLED	"guideDraw"
-#define	STR_GUIDE_ENABLED2	"on"
-#define	STR_GUIDE_COLOR		"guideColor"
+#define STR_GUIDE_ENABLED   L10N_PARAM_GUIDE_DRAW
+#define STR_GUIDE_ENABLED2  L10N_PARAM_ON
+#define STR_GUIDE_COLOR     L10N_PARAM_GUIDE_COLOR
 
 //UIのパラメータ
 #define COLOR_TABLE_COUNT	8

@@ -45,31 +45,31 @@
 #include "FsTDpset.h"
 
 
-#define	STR_SEED			"RandomSeed"
-#define	STR_TARGET_VALUE	"Value"
-#define	STR_TARGET_TOPIC	"Target"
-#define	STR_TARGET_MODE1	"Mode"
-#define	STR_TARGET_MODE2	"Color|BrightnessDelta|AlphaDelta"
-#define	STR_TARGET_COLOR	"Color"
-#define	STR_COLOR_RANGE		"Color_Range"
-#define	STR_DELTA_RANGE		"Delta_Range"
-#define	STR_ROT				"Rot"
-#define	STR_LENGTH_I_MAX	"Inside_Length"
-#define	STR_LENGTH_I_RND	"Inside_Length_Random"
-#define	STR_LENGTH_O_MAX	"Outside_Length"
-#define	STR_LENGTH_O_RND	"Outside_Length_Random"
-#define	STR_COLOR			"Color"
-#define	STR_OPACITY			"Opacity"
-#define	STR_OPACITY_RND		"Opacity_Random"
+#define STR_SEED            L10N_PARAM_RANDOM_SEED
+#define STR_TARGET_VALUE    L10N_PARAM_VALUE
+#define STR_TARGET_TOPIC    L10N_PARAM_TARGET
+#define STR_TARGET_MODE1    L10N_PARAM_MODE
+#define STR_TARGET_MODE2    L10N_PARAM_MODE_ITEMS
+#define STR_TARGET_COLOR    L10N_PARAM_TARGET_COLOR
+#define STR_COLOR_RANGE     L10N_PARAM_COLOR_RANGE
+#define STR_DELTA_RANGE     L10N_PARAM_DELTA_RANGE
+#define STR_ROT             L10N_PARAM_ROT
+#define STR_LENGTH_I_MAX    L10N_PARAM_INSIDE_LENGTH
+#define STR_LENGTH_I_RND    L10N_PARAM_INSIDE_LENGTH_RANDOM
+#define STR_LENGTH_O_MAX    L10N_PARAM_OUTSIDE_LENGTH
+#define STR_LENGTH_O_RND    L10N_PARAM_OUTSIDE_LENGTH_RANDOM
+#define STR_COLOR           L10N_PARAM_COLOR
+#define STR_OPACITY         L10N_PARAM_OPACITY
+#define STR_OPACITY_RND     L10N_PARAM_OPACITY_RANDOM
 
-#define	STR_POINT_COUNT		"Point_Count"
-#define	STR_POINT_LENGTH	"Point_Length"
+#define STR_POINT_COUNT     L10N_PARAM_POINT_COUNT
+#define STR_POINT_LENGTH    L10N_PARAM_POINT_LENGTH
 
-#define	STR_BLOCK_VALUE		"Block_Value"
-#define	STR_BLOCK_SIZE		"Block_Size"
+#define STR_BLOCK_VALUE     L10N_PARAM_BLOCK_VALUE
+#define STR_BLOCK_SIZE      L10N_PARAM_BLOCK_SIZE
 
-#define	STR_ORG_CB1			"Original_Blend"
-#define	STR_ORG_CB2			"ON"
+#define STR_ORG_CB1         L10N_PARAM_ORIGINAL_BLEND
+#define STR_ORG_CB2         L10N_PARAM_ON
 
 
 //ユーザーインターフェースのID

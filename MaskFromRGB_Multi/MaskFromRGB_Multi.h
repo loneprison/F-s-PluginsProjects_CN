@@ -65,14 +65,14 @@ enum {
 
 //UIの表示文字列
 
-#define	STR_LEVEL		"Level"
-#define	STR_R			"Red"
-#define	STR_G			"Green"
-#define	STR_B			"Blue"
-#define	STR_Y			"Yellow"
-#define	STR_M			"Magenta"
-#define	STR_C			"Cyan"
-#define	STR_ON			"on"
+#define	STR_LEVEL		L10N_PARAM_LEVEL
+#define	STR_R			L10N_PARAM_RED
+#define	STR_G			L10N_PARAM_GREEN
+#define	STR_B			L10N_PARAM_BLUE
+#define	STR_Y			L10N_PARAM_YELLOW
+#define	STR_M			L10N_PARAM_MAGENTA
+#define	STR_C			L10N_PARAM_CYAN
+#define	STR_ON			L10N_PARAM_ON
 
 
 //UIのパラメータ

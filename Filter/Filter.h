@@ -64,34 +64,34 @@ enum
 //ID_NUM_PARAMS
 
 //UIの表示文字列
-#define	STR_ON				"on"
-#define	STR_BASE_ENABLED	"BaseEnabled"
-#define	STR_BASE_OPACITY	"BaseOpacity"
+#define	STR_ON				L10N_PARAM_ON
+#define	STR_BASE_ENABLED	L10N_PARAM_BASE_ENABLED
+#define	STR_BASE_OPACITY	L10N_PARAM_BASE_OPACITY
 
-#define	STR_TOPIC			"Filter_"
-#define	STR_ENABLED			"Enabled_"
-#define	STR_EXTRACT			"Extract_"
-#define	STR_EXTRACT_ITEMS	"None|Hi|Low"
+#define	STR_TOPIC			L10N_PARAM_TOPIC
+#define	STR_ENABLED			L10N_PARAM_ENABLED
+#define	STR_EXTRACT			L10N_PARAM_EXTRACT
+#define	STR_EXTRACT_ITEMS	L10N_PARAM_EXTRACT_ITEMS
 #define	STR_EXTRACT_COUNT	3
 #define	STR_EXTRACT_DFLT	1
-#define	STR_BORDER_HI		"border_hi_"
-#define	STR_SOFTNESS_HI		"softness_hi_"
-#define	STR_BORDER_LO		"border_lo_"
-#define	STR_SOFTNESS_LO		"softness_lo_"
-#define	STR_BRIGHT			"Brightness_"
+#define	STR_BORDER_HI		L10N_PARAM_BORDER_HI
+#define	STR_SOFTNESS_HI		L10N_PARAM_SOFTNESS_HI
+#define	STR_BORDER_LO		L10N_PARAM_BORDER_LO
+#define	STR_SOFTNESS_LO		L10N_PARAM_SOFTNESS_LO
+#define	STR_BRIGHT			L10N_PARAM_BRIGHTNESS
 
-#define	STR_MINMAX			"MinToMax_"
-#define	STR_MAX				"Max_"
-#define	STR_BLUR			"Blur_"
-#define	STR_OPACITY			"Opacity_"
-#define	STR_BLEND			"Blend_"
-#define	STR_BLEND_ITEMS		"Normal|Add|Screen|Lighten|LighterColor|Multiply|Darken|DarkerColor|Overlay"
+#define	STR_MINMAX			L10N_PARAM_MINMAX
+#define	STR_MAX				L10N_PARAM_MAX
+#define	STR_BLUR			L10N_PARAM_BLUR
+#define	STR_OPACITY			L10N_PARAM_OPACITY
+#define	STR_BLEND			L10N_PARAM_BLEND
+#define	STR_BLEND_ITEMS		L10N_PARAM_BLEND_ITEMS
 #define	STR_BLEND_COUNT		9
 #define	STR_BLEND_DFLT		1
-#define	STR_FILTER_OPACITY	"FilterOpacity"
+#define	STR_FILTER_OPACITY	L10N_PARAM_FILTER_OPACITY
 
-#define	STR_NOISE			"Noise"
-#define	STR_ALPHA_ON		"Alpha_ON"
+#define	STR_NOISE			L10N_PARAM_NOISE
+#define	STR_ALPHA_ON		L10N_PARAM_ALPHA_ON
 
 enum EXTRACT_MODE
 {

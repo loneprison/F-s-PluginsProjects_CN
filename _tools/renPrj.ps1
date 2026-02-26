@@ -29,7 +29,7 @@ foreach ($file in $files) {
     
     # UTF-8(BOM付き)で保存
     # 内容が変わっていなくても、Shift-JISだったものはここでUTF-8に変換されます
-    $newContent | Out-File -FilePath $file.FullName -Encoding utf8 -Force
+    $newContent | Out-File -FilePath $file.FullName -Encoding utf8BOM -Force
     Write-Host "Processed: $($file.Name)"
 }
 

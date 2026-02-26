@@ -86,39 +86,39 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_LINE_ONLY		"LineOnly"
+#define	STR_LINE_ONLY		L10N_PARAM_LINE_ONLY
 
-#define	STR_NEW_COLOR		"NewColor"
+#define	STR_NEW_COLOR		L10N_PARAM_NEW_COLOR
 
-#define	STR_Y			"Value"
+#define	STR_Y			L10N_PARAM_VALUE
 
-#define	STR_LINE_MINMAX		"Min/Max"
+#define	STR_LINE_MINMAX		L10N_PARAM_LINE_MINMAX
 
-#define	STR_LINE_BLUR		"Blur"
+#define	STR_LINE_BLUR		L10N_PARAM_LINE_BLUR
 
 
-#define	STR_ON				"on"
-#define	STR_MN_COLOR1_ON		"EnabledMain1"
-#define	STR_MN_COLOR2_ON		"EnabledMain2"
+#define	STR_ON				L10N_PARAM_ON
+#define	STR_MN_COLOR1_ON		L10N_PARAM_MAIN1_ON
+#define	STR_MN_COLOR2_ON		L10N_PARAM_MAIN2_ON
 
-#define	STR_MN_COLOR1			"MainColor1"
-#define	STR_MN_COLOR2			"MainColor2"
+#define	STR_MN_COLOR1			L10N_PARAM_MAIN1
+#define	STR_MN_COLOR2			L10N_PARAM_MAIN2
 
-#define	STR_AD_COLOR1_ON		"EnabledAdjacent1"
-#define	STR_AD_COLOR2_ON		"EnabledAdjacent2"
-#define	STR_AD_COLOR3_ON		"EnabledAdjacent3"
-#define	STR_AD_COLOR4_ON		"EnabledAdjacent4"
-#define	STR_AD_COLOR5_ON		"EnabledAdjacent5"
-#define	STR_AD_COLOR6_ON		"EnabledAdjacent6"
+#define	STR_AD_COLOR1_ON		L10N_PARAM_ADJ1_ON
+#define	STR_AD_COLOR2_ON		L10N_PARAM_ADJ2_ON
+#define	STR_AD_COLOR3_ON		L10N_PARAM_ADJ3_ON
+#define	STR_AD_COLOR4_ON		L10N_PARAM_ADJ4_ON
+#define	STR_AD_COLOR5_ON		L10N_PARAM_ADJ5_ON
+#define	STR_AD_COLOR6_ON		L10N_PARAM_ADJ6_ON
 
-#define	STR_AD_COLOR1			"AdjacentColor1"
-#define	STR_AD_COLOR2			"AdjacentColor2"
-#define	STR_AD_COLOR3			"AdjacentColor3"
-#define	STR_AD_COLOR4			"AdjacentColor4"
-#define	STR_AD_COLOR5			"AdjacentColor5"
-#define	STR_AD_COLOR6			"AdjacentColor6"
+#define	STR_AD_COLOR1			L10N_PARAM_ADJ1
+#define	STR_AD_COLOR2			L10N_PARAM_ADJ2
+#define	STR_AD_COLOR3			L10N_PARAM_ADJ3
+#define	STR_AD_COLOR4			L10N_PARAM_ADJ4
+#define	STR_AD_COLOR5			L10N_PARAM_ADJ5
+#define	STR_AD_COLOR6			L10N_PARAM_ADJ6
 
-#define	STR_LEVEL			"level"
+#define	STR_LEVEL			L10N_PARAM_LEVEL
 
 
 #define TARGET_MAIN8	255

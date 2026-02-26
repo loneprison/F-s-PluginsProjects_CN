@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\UsedColorList.cpp" />
@@ -17,9 +17,11 @@
     <ClCompile Include="..\..\..\Util\Smart_Utils.cpp">
       <Filter>Supporting code\AE</Filter>
     </ClCompile>
+    <Filter Include="_i18n">
+      <UniqueIdentifier>{9f4f1401-43d6-4abf-9f5d-c8f3982ce10f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\UsedColorList.h" />
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -36,9 +38,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -62,12 +61,6 @@
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Util\entry.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -86,9 +79,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -104,14 +94,21 @@
     <ClInclude Include="..\..\NFsLibrary\AEInfo.h">
       <Filter>Header Files\NFs</Filter>
     </ClInclude>
-    <ClInclude Include="..\NFs_Target.h" />
     <ClInclude Include="..\..\NFsLibrary\NFsUtils.h">
       <Filter>Header Files\NFs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\NFsLibrary\NFsWorld.h">
       <Filter>Header Files\NFs</Filter>
     </ClInclude>
-    <ClInclude Include="..\UsedColorListFX.h" />
+    <ClInclude Include="..\UsedColorList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\UsedColorListFX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NFs_Target.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -145,5 +142,10 @@
     <ResourceCompile Include="UsedColorListPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\\..\\_i18n\\NF's Plugins-Cell\\UsedColorList_i18n.h">
+      <Filter>_i18n</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

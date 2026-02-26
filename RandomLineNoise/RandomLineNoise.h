@@ -54,16 +54,16 @@ enum {
 	ID_NUM_PARAMS
 	};
 
-#define STR_Y		"ノイズ量"
-#define STR_STRONG		"ノイズの強さ(%)"
-#define STR_LENGTH_MIN	"ノイズの長さ(最小)"
-#define STR_LENGTH_MAX	"ノイズの長さ(最大)"
-#define STR_COLOR1		"ノイズの色"
-#define STR_COLOR2		"カラー"
+#define STR_Y		L10N_PARAM_NOISE_AMOUNT
+#define STR_STRONG		L10N_PARAM_NOISE_STRONG
+#define STR_LENGTH_MIN	L10N_PARAM_LEN_MIN
+#define STR_LENGTH_MAX	L10N_PARAM_LEN_MAX
+#define STR_COLOR1		L10N_PARAM_NOISE_COLOR
+#define STR_COLOR2		L10N_PARAM_COLOR
 
-#define STR_WEIGHT		"ノイズの幅"
-#define STR_VERTUAL1	"縦方向に"
-#define STR_VERTUAL2	"縦"
+#define STR_WEIGHT		L10N_PARAM_NOISE_WIDTH
+#define STR_VERTUAL1	L10N_PARAM_VERTICAL
+#define STR_VERTUAL2	L10N_PARAM_VERTICAL_SHORT
 
 
 typedef struct ParamInfo{

@@ -42,20 +42,20 @@
 //#include "FsAE.h"
 
 
-#define	STR_TOPIC			"Point_%d"
-#define	STR_EXECUTED_CB1	"塗りつぶす_%d"
-#define	STR_EXECUTED_CB2	"ON"
-#define	STR_POS				"位置_%d"
-#define	STR_COLOR			"ペイント色_%d"
+#define	STR_TOPIC			L10N_PARAM_TOPIC_FMT
+#define	STR_EXECUTED_CB1	L10N_PARAM_EXECUTE_FMT
+#define	STR_EXECUTED_CB2	L10N_PARAM_ON
+#define	STR_POS				L10N_PARAM_POS_FMT
+#define	STR_COLOR			L10N_PARAM_COLOR_FMT
 
 #ifdef AE_OS_WIN
-#define	STR_GUIDE_CB1		"ガイド表示_%d"
-#define	STR_GUIDE_ALL_CB2	"非表示"
-#define STR_GUIDE_ALL_CB1 "ガイドをすべて非表示にする"
+#define	STR_GUIDE_CB1		L10N_PARAM_GUIDE_FMT
+#define	STR_GUIDE_ALL_CB2	L10N_PARAM_GUIDE_ALL_OFF
+#define STR_GUIDE_ALL_CB1	L10N_PARAM_GUIDE_ALL
 #else
-#define	STR_GUIDE_CB1		"ガイド表\示_%d"
-#define	STR_GUIDE_ALL_CB2	"非表\示"
-#define STR_GUIDE_ALL_CB1 "ガイドをすべて非表\示にする"
+#define	STR_GUIDE_CB1		L10N_PARAM_GUIDE_FMT
+#define	STR_GUIDE_ALL_CB2	L10N_PARAM_GUIDE_ALL_OFF
+#define STR_GUIDE_ALL_CB1	L10N_PARAM_GUIDE_ALL
 #endif
 
 
