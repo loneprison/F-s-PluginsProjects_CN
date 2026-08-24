@@ -114,9 +114,6 @@ static PF_Err
 	{
 		return err;
 	}
-	if (ae->downSaleValue() != 1) {
-		return err;
-	}
 	switch(ae->pixelFormat())
 	{
 	case PF_PixelFormat_ARGB128:

@@ -299,7 +299,7 @@ static PF_Err GetParams(CFsAE *ae, ParamInfo *infoP)
 	A_long pH = ae->in_data->height;
 	if ((pW % infoP->block_size)!=0) { pW = pW/infoP->block_size +1;}else{pW = pW/infoP->block_size;}
 	if ((pH % infoP->block_size)!=0) { pH = pH/infoP->block_size +1;}else{pH = pH/infoP->block_size;}
-	infoP->block_count = pW * pH * infoP->block_value >> 16;
+	infoP->block_count = (static_cast<A_u_longlong>(pW) * pH * infoP->block_value) >> 16;
 
 	ERR(ae->GetCHECKBOX(ID_ORG,&infoP->org));
 
