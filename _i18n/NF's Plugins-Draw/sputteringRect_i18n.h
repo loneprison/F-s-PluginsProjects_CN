@@ -11,7 +11,7 @@
     #define L10N_PLUGIN_NAME            "F's sputteringRect"
     #define L10N_PLUGIN_DESC            "在矩形范围内喷溅"
     #define L10N_PARAM_SEED                 "随机种子"
-    #define L10N_PARAM_VALUE                "强度"
+    #define L10N_PARAM_VALUE                "数量(%)"
     #define L10N_PARAM_OPACITY_RAND         "不透明度"
     #define L10N_PARAM_TOP_LEFT             "左上"
     #define L10N_PARAM_BOTTOM_RIGHT         "右下"

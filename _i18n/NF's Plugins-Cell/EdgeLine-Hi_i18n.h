@@ -12,7 +12,7 @@
     #define L10N_PLUGIN_NAME            "F's EdgeLine-Hi"
     #define L10N_PLUGIN_DESC            "按照指定方向绘制边缘线"
     #define L10N_PARAM_TARGET_COLOR     "目标颜色"
-    #define L10N_PARAM_SAMPLE_COLOR     "采样颜色"
+    #define L10N_PARAM_SAMPLE_COLOR     "相邻颜色"
     #define L10N_PARAM_LENGTH           "大小"
     #define L10N_PARAM_ROT              "角度"
     #define L10N_PARAM_LEVEL            "阈值"

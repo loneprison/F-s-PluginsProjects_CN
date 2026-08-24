@@ -11,7 +11,7 @@
     #define L10N_PLUGIN_NAME            "F's MaskFromRGB"
     #define L10N_PLUGIN_DESC            "根据RGBA值创建遮罩"
     #define L10N_PARAM_MASK             "遮罩通道"
-    #define L10N_PARAM_MASK_ITEMS       "红|绿|蓝|黄|洋红|青|最大值"
+    #define L10N_PARAM_MASK_ITEMS       "红色|绿色|蓝色|黄色|洋红|青色|最大值"
     #define L10N_PARAM_LEVEL            "强度"
 #else
     #define L10N_PLUGIN_NAME            "F's MaskFromRGB"

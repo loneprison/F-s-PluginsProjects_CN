@@ -9,7 +9,7 @@
 
 #if defined(FS_LOCALIZE_ZH_CN)
 	#define L10N_PLUGIN_NAME			"F's MainLineRepaint"
-	#define L10N_PLUGIN_DESC			"去除二值图像主线"
+	#define L10N_PLUGIN_DESC			"去除二值图像的主线"
 
 	#define L10N_PARAM_MAIN_COLOR		"主线颜色"
 	#define L10N_PARAM_LEVEL			"阈值"

@@ -10,7 +10,7 @@
 #if defined(FS_LOCALIZE_ZH_CN)
     #define L10N_PLUGIN_NAME            "F's Mosaic"
     #define L10N_PLUGIN_DESC            "马赛克"
-    #define L10N_PARAM_SIZE             "大小"
+    #define L10N_PARAM_SIZE             "尺寸"
     #define L10N_PARAM_POSITION         "位置"
     #define L10N_PARAM_FLICKER          "随机颜色"
     #define L10N_PARAM_FLICKER_GRAY     "仅亮度"

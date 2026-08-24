@@ -15,11 +15,11 @@
     #define L10N_PARAM_LENGTH           "长度"
     #define L10N_PARAM_LENGTH_RANDOM    "随机长度"
     #define L10N_PARAM_VALUE            "数量"
-    #define L10N_PARAM_COLOR            "颜色"
+    #define L10N_PARAM_COLOR            "线条颜色"
     #define L10N_PARAM_OPACITY          "不透明度"
     #define L10N_PARAM_OPACITY_RANDOM   "随机不透明度"
     #define L10N_PARAM_POINT_COUNT      "点数量"
-    #define L10N_PARAM_POINT_LENGTH     "点长度"
+    #define L10N_PARAM_POINT_LENGTH     "点间距"
     #define L10N_PARAM_ORIGINAL_BLEND   "与原始图像混合"
     #define L10N_PARAM_ON               "开"
 #else

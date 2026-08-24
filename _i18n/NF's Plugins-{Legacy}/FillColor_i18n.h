@@ -10,7 +10,7 @@
 #if defined(FS_LOCALIZE_ZH_CN)
     #define L10N_PLUGIN_NAME            "F's FillColor"
     #define L10N_PLUGIN_DESC            "填充不透明区域"
-    #define L10N_PARAM_EXECUTE          "激活"
+    #define L10N_PARAM_EXECUTE          "启用"
     #define L10N_PARAM_ON               "开"
     #define L10N_PARAM_COLOR            "颜色"
     #define L10N_PARAM_OPACITY          "不透明度"

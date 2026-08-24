@@ -9,7 +9,7 @@
 
 #if defined(FS_LOCALIZE_ZH_CN)
     #define L10N_PLUGIN_NAME            "F's LineTrace"
-    #define L10N_PLUGIN_DESC            "快速二值化"
+    #define L10N_PLUGIN_DESC            "快速二值化临摹 (仿RETAS TraceMan)"
     #define L10N_PARAM_ENABLED_BLACK    "黑"
     #define L10N_PARAM_ENABLED_RED      "红"
     #define L10N_PARAM_ENABLED_GREEN    "绿"

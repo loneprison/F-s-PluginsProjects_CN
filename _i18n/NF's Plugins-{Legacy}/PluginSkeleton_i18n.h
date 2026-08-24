@@ -9,7 +9,7 @@
 
 #if defined(FS_LOCALIZE_ZH_CN)
     #define L10N_PLUGIN_NAME            "F's PluginSkeleton"
-    #define L10N_PLUGIN_DESC            "测试用插件骨架"
+    #define L10N_PLUGIN_DESC            "测试用插件框架"
     #define L10N_PARAM_R                "R"
     #define L10N_PARAM_G                "G"
     #define L10N_PARAM_B                "B"

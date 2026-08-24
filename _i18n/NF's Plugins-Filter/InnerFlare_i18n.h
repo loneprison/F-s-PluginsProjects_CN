@@ -15,6 +15,7 @@
     #define L10N_PARAM_HYPERBOLIC       "偏差"
     #define L10N_PARAM_REVERSE          "反转"
     #define L10N_PARAM_COLOR            "颜色"
+    #define L10N_PARAM_ON                  "开"
 #else
     #define L10N_PLUGIN_NAME            "F's InnerFlare"
     #define L10N_PLUGIN_DESC            "InnerFlare"
@@ -23,6 +24,7 @@
     #define L10N_PARAM_HYPERBOLIC       "hyperbolic"
     #define L10N_PARAM_REVERSE          "reverce"
     #define L10N_PARAM_COLOR            "color"
+    #define L10N_PARAM_ON                  "on"
 #endif
 
 

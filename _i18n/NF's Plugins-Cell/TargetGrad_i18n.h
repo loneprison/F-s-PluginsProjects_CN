@@ -14,7 +14,7 @@
     #define L10N_PARAM_TARGET_FORMAT    "颜色%d"
     #define L10N_PARAM_TARGET_ITEMS     "指定目标颜色|仅Alpha|全部"
     #define L10N_PARAM_TARGET_COLORS    "目标颜色"
-    #define L10N_PARAM_TARGET_ENABLED   "方案"
+    #define L10N_PARAM_TARGET_ENABLED   "目标方案"
     #define L10N_PARAM_ON               "开"
     #define L10N_PARAM_GRAD_COLOR       "渐变颜色"
     #define L10N_PARAM_SWAP_POINT       "交换颜色"

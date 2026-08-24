@@ -11,8 +11,8 @@
     #define L10N_PLUGIN_NAME            "F's RgbToAlpha"
     #define L10N_PLUGIN_DESC            "将RGB值写入Alpha。"
     #define L10N_PARAM_FILL_COLOR       "填充颜色"
-    #define L10N_PARAM_FILL_ITEMS       "白|黑|指定色"
-    #define L10N_PARAM_CUSTOM_COLOR     "指定颜色"
+    #define L10N_PARAM_FILL_ITEMS       "白色|黑色|自定义"
+    #define L10N_PARAM_CUSTOM_COLOR     "自定义颜色"
     #define L10N_PARAM_REVERSE_ALPHA    "反转Alpha"
     #define L10N_PARAM_REV              "反转"
 #else

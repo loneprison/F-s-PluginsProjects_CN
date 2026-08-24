@@ -25,6 +25,7 @@
     #define L10N_PARAM_FILL_UNKNOWN     "填充未清除像素"
     #define L10N_PARAM_FILL_COLOR       "填充颜色"
     #define L10N_PARAM_WHITE_TRANS      "白色转透明"
+    #define L10N_PARAM_ON                  "开"
 #else
     #define L10N_PLUGIN_NAME            "F's CellLineEraser"
     #define L10N_PLUGIN_DESC            "セル画の主線を無くします"
@@ -43,6 +44,7 @@
     #define L10N_PARAM_FILL_UNKNOWN     "Fill unremoved pixels"
     #define L10N_PARAM_FILL_COLOR       "FillColor"
     #define L10N_PARAM_WHITE_TRANS      "Make White Transparent"
+    #define L10N_PARAM_ON                  "on"
 #endif
 
 

@@ -18,7 +18,7 @@
     #define L10N_PARAM_COLOR_KIND_ITEMS     "A 到 B|B 到 A|仅 A|仅 B|屏幕"
     #define L10N_PARAM_COLOR_A              "颜色 A"
     #define L10N_PARAM_COLOR_B              "颜色 B"
-    #define L10N_PARAM_COLOR_BORDER         "颜色边界 (%)"
+    #define L10N_PARAM_COLOR_BORDER         "颜色 AB 占比 (%)"
     #define L10N_PARAM_LINE1_TOPIC          "线1"
     #define L10N_PARAM_LINE1_LENGTH         "线1 长度"
     #define L10N_PARAM_LINE1_STRONG         "线1 强度"

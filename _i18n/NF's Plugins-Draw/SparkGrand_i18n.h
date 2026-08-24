@@ -14,7 +14,7 @@
     #define L10N_PARAM_SEED_POS         "位置随机种子"
     #define L10N_PARAM_SEED_MOVE        "形态随机种子"
     #define L10N_PARAM_OFFSET           "偏移"
-    #define L10N_PARAM_WIPE             "擦除"
+    #define L10N_PARAM_WIPE             "擦除(%)"
     #define L10N_PARAM_START            "起点"
     #define L10N_PARAM_LAST1            "终点1"
     #define L10N_PARAM_LAST2            "终点2"

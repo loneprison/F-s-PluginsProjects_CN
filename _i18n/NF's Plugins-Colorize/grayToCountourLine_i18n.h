@@ -11,7 +11,7 @@
     #define L10N_PLUGIN_NAME            "F's grayToCountourLine"
     #define L10N_PLUGIN_DESC            "由灰度图生成等高线"
     #define L10N_PARAM_COUNT_LO         "阴影颜色数量"
-    #define L10N_PARAM_COUNT_MID        "中间调颜色数量"
+    #define L10N_PARAM_COUNT_MID        "中间颜色数量"
     #define L10N_PARAM_COUNT_HI         "高光颜色数量"
     #define L10N_PARAM_DRAW_COLOR       "显示颜色列表"
     #define L10N_PARAM_ON               "开"

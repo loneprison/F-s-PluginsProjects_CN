@@ -14,7 +14,7 @@
     #define L10N_PARAM_MAX              "大小"
     #define L10N_PARAM_HYPERBOLIC       "偏差"
     #define L10N_PARAM_ROT              "方向"
-    #define L10N_PARAM_LENGTH           "长度"
+    #define L10N_PARAM_LENGTH           "距离"
     #define L10N_PARAM_OFFSET           "偏移"
     #define L10N_PARAM_COLOR            "颜色"
 #else

@@ -9,8 +9,8 @@
 
 #if defined(FS_LOCALIZE_ZH_CN)
     #define L10N_PLUGIN_NAME            "F's AlphaHyperbolic"
-    #define L10N_PLUGIN_DESC            "Alpha 边缘阈值调整"
-    #define L10N_PARAM_HYPERBOLIC       "阈值"
+    #define L10N_PLUGIN_DESC            "Alpha 边缘偏移调整"
+    #define L10N_PARAM_HYPERBOLIC       "Alpha 偏移"
 #else
     #define L10N_PLUGIN_NAME            "F's AlphaHyperbolic"
     #define L10N_PLUGIN_DESC            "AlphaHyperbolic"

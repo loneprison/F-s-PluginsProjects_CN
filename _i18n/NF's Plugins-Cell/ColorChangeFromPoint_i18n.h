@@ -10,8 +10,8 @@
  
 #if defined(FS_LOCALIZE_ZH_CN)
     #define L10N_PLUGIN_NAME            "F's ColorChangeFromPoint"
-    #define L10N_PLUGIN_DESC            "按取样点颜色替换匹配像素"
-    #define L10N_PARAM_TARGET_POINT     "取样点"
+    #define L10N_PLUGIN_DESC            "按锚点颜色替换匹配像素"
+    #define L10N_PARAM_TARGET_POINT     "锚点"
     #define L10N_PARAM_COLOR            "替换颜色"
 #else
     #define L10N_PLUGIN_NAME            "F's ColorChangeFromPoint"

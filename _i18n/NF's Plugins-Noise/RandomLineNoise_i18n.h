@@ -14,7 +14,7 @@
     #define L10N_PARAM_NOISE_STRONG     "杂色强度"
     #define L10N_PARAM_LEN_MIN          "最小长度"
     #define L10N_PARAM_LEN_MAX          "最大长度"
-    #define L10N_PARAM_NOISE_COLOR      "彩色化"
+    #define L10N_PARAM_NOISE_COLOR      "彩色杂色"
     #define L10N_PARAM_COLOR            "开"
     #define L10N_PARAM_NOISE_WIDTH      "宽度"
     #define L10N_PARAM_VERTICAL         "垂直方向"
