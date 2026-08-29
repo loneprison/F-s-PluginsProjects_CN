@@ -59,34 +59,34 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_SEEDDRAW	"seedDraw"
-#define	STR_OFFSET		"offset"
-#define	STR_WIPE		"wipe(%)"
+#define	L10N_PARAM_SEED		"seed"
+#define	L10N_PARAM_SEED_POS		"seedPos"
+#define	L10N_PARAM_SEED_MOVE	"seedMove"
+#define	L10N_PARAM_SEED_DRAW	"seedDraw"
+#define	L10N_PARAM_OFFSET		"offset"
+#define	L10N_PARAM_WIPE		"wipe(%)"
 
-#define	STR_START_P0	"start0"
-#define	STR_START_P1	"start1"
+#define	L10N_PARAM_START0	"start0"
+#define	L10N_PARAM_START1	"start1"
 
-#define	STR_LAST_P0		"last0"
-#define	STR_LAST_P1		"last1"
+#define	L10N_PARAM_LAST0		"last0"
+#define	L10N_PARAM_LAST1		"last1"
 
-#define	STR_START_RX	"first_randX"
-#define	STR_START_RY	"first_randY"
-#define	STR_LAST_RX		"last_randX"
-#define	STR_LAST_RY		"last_randY"
+#define	L10N_PARAM_FIRST_RAND_X	"first_randX"
+#define	L10N_PARAM_FIRST_RAND_Y	"first_randY"
+#define	L10N_PARAM_LAST_RAND_X		"last_randX"
+#define	L10N_PARAM_LAST_RAND_Y		"last_randY"
 
-#define	STR_LINESIZE	"lineSize"
-#define	STR_LINEMOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_DRAWCOUNT	"drawCount"
-#define	STR_SUBCOUNT	"subCount"
+#define	L10N_PARAM_LINE_SIZE	"lineSize"
+#define	L10N_PARAM_LINE_MOVE	"lineMove"
+#define	L10N_PARAM_FOLD_COUNT	"foldCount"
+#define	L10N_PARAM_DRAW_COUNT	"drawCount"
+#define	L10N_PARAM_SUB_COUNT	"subCount"
 
 
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+#define	L10N_PARAM_COLOR		"color"
+#define	L10N_PARAM_BLEND		"blend"
+#define	L10N_PARAM_ON			"on"
 
 
 

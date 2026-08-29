@@ -6,6 +6,7 @@
 
 
 #include "RandomMosaic.h"
+#include "RandomMosaicText.generated.h"
 
 
 //-----------------------------------------------------------------------------------
@@ -18,7 +19,9 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const RandomMosaicText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -85,10 +88,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const RandomMosaicText::Strings strings(in_data);
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_Y,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_AMOUNT),//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					2048,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -97,7 +101,7 @@ static PF_Err ParamsSetup (
 					ID_Y
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SIZEMAX,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SIZE_MAX),//パラメータの名前
 					3, 				//数値入力する場合の最小値
 					1024,			//数値入力する場合の最大値
 					12,				//スライダーの最小値 
@@ -106,7 +110,7 @@ static PF_Err ParamsSetup (
 					ID_SIZEMAX
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SIZEMIN,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SIZE_MIN),//パラメータの名前
 					3, 				//数値入力する場合の最小値
 					1024,			//数値入力する場合の最大値
 					6,				//スライダーの最小値 
@@ -115,7 +119,7 @@ static PF_Err ParamsSetup (
 					ID_SIZEMIN
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_ASPECT,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_ASPECT_RANDOM),//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -124,7 +128,7 @@ static PF_Err ParamsSetup (
 					ID_ASPECT
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_RANDOMCOLOR,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BRIGHT_RANDOM),//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					255,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -485,9 +489,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				RandomMosaicText::OpenSettings(in_data, L"F's RandomMosaic");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

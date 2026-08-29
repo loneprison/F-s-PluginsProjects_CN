@@ -9,7 +9,7 @@
 #define FS_TAGET_H
 
 #define FS_NAME			"F's _sample_font"
-#define FS_DESCRIPTION	"Fill transparent areas."
+#define L10N_PLUGIN_DESC	"文字描画のサンプル。"
 
 //-----------------------------------------------------------------------------------
 //プラグインが表示されるメニュー名
@@ -44,7 +44,7 @@
 		//33556032	
 		//33556036 +PF_OutFlag_NON_PARAM_VARY
 */
-#define FS_OUT_FLAGS 33556032
+#define FS_OUT_FLAGS 33556064
 //#define Fs_OUTFLAGS 33556036
 
 //-----------------------------------------------------------------------------------

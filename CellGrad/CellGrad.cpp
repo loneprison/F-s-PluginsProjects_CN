@@ -6,6 +6,7 @@
 
 
 #include "CellGrad.h"
+#include "CellGradText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,12 +20,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const CellGradText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_TARGET_TOPIC, ID_TARGET_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET_TOPIC), ID_TARGET_TOPIC);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_TARGET_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COUNT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		8,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -34,7 +36,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TARGET_LEVEL,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TARGET_LEVEL),	//Name
 		0,						//VALID_MIN
 		20,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -49,7 +51,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL1,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL1),
 		0xFF,
 		0xFF,
 		0xFF,
@@ -58,7 +60,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL2,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL2),
 		0xFF,
 		0x00,
 		0x00,
@@ -67,7 +69,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL3,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL3),
 		0x00,
 		0xFF,
 		0x00,
@@ -76,7 +78,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL4,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL4),
 		0x00,
 		0x00,
 		0xFF,
@@ -85,7 +87,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL5,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL5),
 		0xFF,
 		0xFF,
 		0x00,
@@ -94,7 +96,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL6,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL6),
 		0xFF,
 		0x00,
 		0xFF,
@@ -103,7 +105,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL7,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL7),
 		0x80,
 		0x80,
 		0x00,
@@ -112,7 +114,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COL8,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COL8),
 		0x80,
 		0x00,
 		0x80,
@@ -124,10 +126,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ANGLE, 0, ID_ANGLE);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ANGLE), 0, ID_ANGLE);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_START_OVER,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_START_OVER),	//Name
 		-200,						//VALID_MIN
 		400,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -141,7 +143,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LAST_OVER,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LAST_OVER),	//Name
 		-200,						//VALID_MIN
 		400,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -156,7 +158,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_START_COL,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_START_COL),
 		0xFF,
 		0xFF,
 		0xFF,
@@ -165,7 +167,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_LAST_COL,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_LAST_COL),
 		0x00,
 		0x00,
 		0x00,
@@ -173,8 +175,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_GUIDE_SHOW,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_GUIDE_SHOW),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_GUIDE_SHOW
@@ -182,7 +184,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_GUIDE_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_GUIDE_COLOR),
 		0xFF,
 		0x00,
 		0x00,

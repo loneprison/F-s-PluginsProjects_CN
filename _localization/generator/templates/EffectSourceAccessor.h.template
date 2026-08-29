@@ -1,0 +1,6 @@
+    {{RETURN_TYPE}} {{METHOD}}(AeText::TextToken token) const noexcept
+    {
+        return token.role == AeText::TextRole::{{ROLE}}
+            ? text_.{{RESOLVER}}(token)
+            : {{EMPTY_VALUE}};
+    }

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_MODE": {"useSource": true},
+        "L10N_PARAM_TARGET0": {"useSource": true},
+        "L10N_PARAM_SRCCOL0": {"useSource": true},
+        "L10N_PARAM_DSTCOL0": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_EXEC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "Tolerance",
+        "L10N_PARAM_MODE": "Mode",
+        "L10N_PARAM_TARGET0": "Target",
+        "L10N_PARAM_SRCCOL0": "SourceColor",
+        "L10N_PARAM_DSTCOL0": "DestColor"
+      },
+      "Label": {
+        "L10N_PARAM_EXEC": "Execute"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将目标颜色替换为另一种颜色"
+      }
+    }
+  }
+}

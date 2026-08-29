@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "ChannelNoise.h"
+#include "ChannelNoiseText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +18,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const ChannelNoiseText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -84,10 +87,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ChannelNoiseText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	Str_RED_VALUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_RED_NOISE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -100,7 +104,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	Str_RED_OPT,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_RED_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -113,7 +117,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	Str_GREEN_VALUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_GREEN_NOISE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -126,7 +130,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	Str_GREEN_OPT,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_GREEN_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -139,7 +143,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	Str_BLUE_VALUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLUE_NOISE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -152,7 +156,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	Str_BLUE_OPT,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLUE_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -585,9 +589,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ChannelNoiseText::OpenSettings(in_data, L"F's ChannelNoise");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

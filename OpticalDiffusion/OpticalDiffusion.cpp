@@ -6,6 +6,7 @@
 
 
 #include "OpticalDiffusion.h"
+#include "OpticalDiffusionText.generated.h"
 
 //-------------------------------------------------------------------------------------------------
 //AfterEffextsにパラメータを通達する
@@ -18,10 +19,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const OpticalDiffusionText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_EXTRACT_ENABLED,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_EXTRACT_ENABLED),
 					"",
 					TRUE,
 					0,
@@ -30,11 +32,11 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_EXTRACT_TOPIC, ID_EXTRACT_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_EXTRACT_TOPIC), ID_EXTRACT_TOPIC);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_EXTRACT_BLACK_POINT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BLACK_POINT),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					128,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -44,7 +46,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_EXTRACT_WHITE_POINT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_WHITE_POINT),	//パラメータの名前
 					100, 		//数値入力する場合の最小値
 					255,			//数値入力する場合の最大値
 					128,				//スライダーの最小値 
@@ -54,7 +56,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_EXTRACT_BLACK_SOFTNESS,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BLACK_SOFTNESS),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					255,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -64,7 +66,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_EXTRACT_WHITE_SOFTNESS,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_WHITE_SOFTNESS),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					255,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -74,7 +76,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_EXTRACT_INVERT,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_INVERT),
 					"",
 					TRUE,
 					0,
@@ -88,11 +90,11 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_EXTRACT_COLOR_TOPIC, ID_EXTRACT_COLOR_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_EXTRACT_COLOR_TOPIC), ID_EXTRACT_COLOR_TOPIC);
 	//----------------------------------------------------------------
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_EXTRACT_COLOR_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_USE_COUNT),	//パラメータの名前
 					0, 						//数値入力する場合の最小値
 					8,						//数値入力する場合の最大値
 					0,						//スライダーの最小値 
@@ -102,7 +104,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_EXTRACT_COLOR_RANGE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_RANGE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -116,7 +118,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL1, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 					0xFF,
 					0x00,
 					0x00,
@@ -125,7 +127,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL2, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR2),
 					0x00,
 					0xFF,
 					0x00,
@@ -134,7 +136,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL3, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR3),
 					0x00,
 					0x00,
 					0xFF,
@@ -144,7 +146,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL4, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR4),
 					0xFF,
 					0xFF,
 					0x00,
@@ -153,7 +155,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL5, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR5),
 					0xFF,
 					0x00,
 					0xFF,
@@ -162,7 +164,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL6, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR6),
 					0x00,
 					0xFF,
 					0xFF,
@@ -172,7 +174,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL7, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR7),
 					0xFF,
 					0x80,
 					0x00,
@@ -181,7 +183,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_EXTRACT_COL8, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR8),
 					0x00,
 					0x80,
 					0xFF,
@@ -194,7 +196,7 @@ static PF_Err ParamsSetup (
 	//**********************************
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_MINIMAX_1ST,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_MINIMAX_1ST),	//パラメータの名前
 					-100, 		//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					-25,				//スライダーの最小値 
@@ -204,7 +206,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_MINIMAX_2ND,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_MINIMAX_2ND),	//パラメータの名前
 					-100, 		//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					-25,				//スライダーの最小値 
@@ -213,7 +215,7 @@ static PF_Err ParamsSetup (
 					ID_MINIMAX_2ND
 					);
 	//----------------------------------------------------------------
-	PF_ADD_FLOAT_SLIDER(STR_BLUR,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BLUR),	//Name
 						0,							//VALID_MIN
 						255,						//VALID_MAX
 						0,							//SLIDER_MIN
@@ -229,15 +231,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_BLEND_MODE, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_BLEND_MODE),
 						STR_BLEND_COUNT,	//メニューの数
 						STR_BLEND_DFLT,	//デフォルト
-						STR_BLEND_ITEMS,
+						AETEXT_POPUP(strings, L10N_PARAM_BLEND_ITEMS),
 						ID_BLEND_MODE
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_BLEND_OPACITY,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLEND_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -250,7 +252,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_NOISE_VALUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_NOISE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 

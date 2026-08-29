@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_SEED": {"useSource": true},
+        "L10N_PARAM_VALUE": {"useSource": true},
+        "L10N_PARAM_OPACITY_RAND": {"useSource": true},
+        "L10N_PARAM_TOP_LEFT": {"useSource": true},
+        "L10N_PARAM_BOTTOM_RIGHT": {"useSource": true},
+        "L10N_PARAM_POINT_VALUE": {"useSource": true},
+        "L10N_PARAM_POINT_LENGTH": {"useSource": true},
+        "L10N_PARAM_SIZE": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_COLOR_MAX": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_BLEND_WITH_ORIGINAL": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_SIZE_ITEMS": "Tiny|Small|Medium|Large|Extra Large"
+      },
+      "Topic": {
+        "L10N_PARAM_EXTRA_COLORS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Sputters pixels within a rectangular area."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_SEED": "随机种子",
+        "L10N_PARAM_VALUE": "数量(%)",
+        "L10N_PARAM_OPACITY_RAND": "不透明度",
+        "L10N_PARAM_TOP_LEFT": "左上",
+        "L10N_PARAM_BOTTOM_RIGHT": "右下",
+        "L10N_PARAM_POINT_VALUE": "点数量",
+        "L10N_PARAM_POINT_LENGTH": "点间距",
+        "L10N_PARAM_SIZE": "尺寸",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_COLOR_MAX": "颜色数量",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_BLEND_WITH_ORIGINAL": "与原始图像混合"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_SIZE_ITEMS": "极小|小|中|大|特大"
+      },
+      "Topic": {
+        "L10N_PARAM_EXTRA_COLORS": "其他颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "在矩形范围内喷溅"
+      }
+    }
+  }
+}

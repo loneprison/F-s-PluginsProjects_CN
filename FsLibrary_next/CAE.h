@@ -9,6 +9,8 @@
 #include "FsAEHeader.h"
 #include "FsVersion.h"
 #include "FsUtils.h"
+#include "../FsLibrary/FsAbout.h"
+#include "../_localization/AeText.h"
 
 #define FLOAT_PAR(x) do{x/=100;if(x<-1) x=1;else if(x>1) x=1;}while(0)
 
@@ -344,15 +346,19 @@ public:
 	//*********************************************************************************
 	//その他の処理
 	//*********************************************************************************
-	PF_Err About
+private:
+	PF_Err RunAbout
 	(
 		PF_InData		*in_data,
 		PF_OutData		*out_data,
 		PF_ParamDef		*params[],
-		PF_LayerDef		*output)
+		PF_LayerDef		*output,
+		const char		*script_description,
+		const char		*legacy_description,
+		A_Boolean		platform_encodingB)
 	{
 		PF_Err	err				= PF_Err_NONE;
-		CAE::suitesP	= new AEGP_SuiteHandler(in_data->pica_basicP);
+		AEGP_SuiteHandler suites(in_data->pica_basicP);
 		if (in_data->global_data){
 			ae_plugin_idH	= in_data->global_data;
 			ae_plugin_idP = reinterpret_cast<ae_global_dataP>(DH(in_data->global_data));
@@ -364,29 +370,83 @@ public:
 		if (ae_plugin_idP!=NULL){
 			//スクリプトでダイアログ表示だけど使わない
 			A_char scriptCode[1024*4] = {'\0'}; 
-			PF_SPRINTF(	scriptCode,FS_ABOUT_STR,
+			PF_SPRINTF(	scriptCode,FS_ABOUT_DIALOG,
 				FS_NAME, 
 				MAJOR_VERSION, 
 				MINOR_VERSION, 
-				FS_DESCRIPTION,
-				FS_CREATER,
-				FS_CATEGORY
+				__DATE__,
+				script_description
 			);
 			
-			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, TRUE, NULL, NULL));
+			ERR(suites.UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, platform_encodingB, NULL, NULL));
 		}
 		else {
 
 			PF_SPRINTF(out_data->return_msg,
-				"%s, v%d.%d\r%s",
+				"%s, v%d.%d (%s)\r%s",
 				FS_NAME,
 				MAJOR_VERSION,
 				MINOR_VERSION,
-				FS_DESCRIPTION);
+				__DATE__,
+				legacy_description);
 		}
 		m_resultErr = err;
 		m_mode		= AE_ABOUT;
 		return err;
+	}
+
+public:
+	PF_Err About
+	(
+		PF_InData		*in_data,
+		PF_OutData		*out_data,
+		PF_ParamDef		*params[],
+		PF_LayerDef		*output)
+	{
+		return RunAbout(
+			in_data,
+			out_data,
+			params,
+			output,
+			FS_DESCRIPTION,
+			FS_DESCRIPTION,
+			TRUE);
+	}
+
+	PF_Err About
+	(
+		PF_InData		*in_data,
+		PF_OutData		*out_data,
+		PF_ParamDef		*params[],
+		PF_LayerDef		*output,
+		const AeText::LegacyAboutText &description)
+	{
+		return RunAbout(
+			in_data,
+			out_data,
+			params,
+			output,
+			description.script_utf8,
+			description.legacy,
+			FALSE);
+	}
+
+	PF_Err About
+	(
+		PF_InData		*in_data,
+		PF_OutData		*out_data,
+		PF_ParamDef		*params[],
+		PF_LayerDef		*output,
+		const AeText::AboutText &description)
+	{
+		return RunAbout(
+			in_data,
+			out_data,
+			params,
+			output,
+			AeText::detail::AboutTextAccess::ScriptUtf8(description),
+			AeText::detail::AboutTextAccess::Legacy(description),
+			FALSE);
 	}
 	//*********************************************************************************
 	PF_Err GlobalSetup

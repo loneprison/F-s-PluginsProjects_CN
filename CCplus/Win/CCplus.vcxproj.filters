@@ -5,9 +5,6 @@
       <UniqueIdentifier>{64d532ea-b409-45e0-ac66-694d415a2667}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{5a55e17c-065b-4f4d-8311-8b1c5613f86c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\AE">
       <UniqueIdentifier>{749aa06f-45df-40db-a693-629e05a05b9c}</UniqueIdentifier>
     </Filter>
@@ -27,6 +24,9 @@
     <Filter Include="Supporting code\Fs">
       <UniqueIdentifier>{ff89e4ed-c905-4041-8332-0d7b3af3604d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{c72d03c3-52eb-45fb-8786-14626eb192d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CCplus.h">
@@ -35,11 +35,8 @@
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
+    <ClInclude Include="..\Fs_Entry.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
@@ -54,9 +51,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +89,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -124,7 +115,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CCplusPiPL.rc">
+    <ResourceCompile Include="$(IntDir)CCplusPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -145,6 +136,9 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\CCplusPiPL.r">
@@ -152,8 +146,16 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuildStep Include="..\..\..\Util\AEFX_SuiteHelper.h">
+    <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
       <Filter>Header Files\AE</Filter>
-    </CustomBuildStep>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-{Legacy}\CCplus.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

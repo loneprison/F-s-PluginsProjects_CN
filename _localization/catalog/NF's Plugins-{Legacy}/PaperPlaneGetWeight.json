@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_HALF_SIZE": {"useSource": true},
+        "L10N_PARAM_COUNT": {"useSource": true},
+        "L10N_PARAM_WEIGHT": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_WEIGHT_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Fills weight-encoded values for paper-airplane center-of-gravity calculations."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_HALF_SIZE": "半尺寸",
+        "L10N_PARAM_COUNT": "层数",
+        "L10N_PARAM_WEIGHT": "纸张克重(g/m2)"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_WEIGHT_ITEMS": "180|225|310|360"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "用于纸飞机重心计算的权重编码填色（纸制手工模型用）"
+      }
+    }
+  }
+}

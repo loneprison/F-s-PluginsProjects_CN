@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_POS_START": {"useSource": true},
+        "L10N_PARAM_POS_END": {"useSource": true},
+        "L10N_PARAM_EXCEPT_COLOR0": {"useSource": true},
+        "L10N_PARAM_EXCEPT_COLOR1": {"useSource": true},
+        "L10N_PARAM_EXCEPT_COLOR2": {"useSource": true},
+        "L10N_PARAM_DISP": {"useSource": true},
+        "L10N_PARAM_GRID_WIDTH": {"useSource": true},
+        "L10N_PARAM_GRID_HEIGHT": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Extracts colors used in the selected area and displays them as a color swatch list (up to 64 colors)."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_POS_START": "起始位置",
+        "L10N_PARAM_POS_END": "结束位置",
+        "L10N_PARAM_EXCEPT_COLOR0": "排除颜色0",
+        "L10N_PARAM_EXCEPT_COLOR1": "排除颜色1",
+        "L10N_PARAM_EXCEPT_COLOR2": "排除颜色2",
+        "L10N_PARAM_DISP": "显示表格",
+        "L10N_PARAM_GRID_WIDTH": "网格宽度",
+        "L10N_PARAM_GRID_HEIGHT": "网格高度"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "提取选区范围中的使用颜色,并显示为颜色列表(最多64种颜色)。"
+      }
+    }
+  }
+}

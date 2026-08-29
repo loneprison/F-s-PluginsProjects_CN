@@ -53,15 +53,15 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_MODE			"Mode"
-#define	STR_MODE_ITEMS		"RGB|HLS|Yuv"
+#define L10N_PARAM_MODE			"Mode"
+#define L10N_PARAM_MODE_ITEMS	"RGB|HLS|Yuv"
 #define	STR_MODE_COUNT		3
 #define	STR_MODE_DFLT		1
 
-#define	STR_0CH_R			"R_H_Y_blur"
-#define	STR_1CH_G			"G_L_u_blur"
-#define	STR_2CH_B			"B_S_v_blur"
-#define	STR_3CH_A			"Alpha_blur"
+#define L10N_PARAM_R_H_Y_BLUR	"R_H_Y_blur"
+#define L10N_PARAM_G_L_U_BLUR	"G_L_u_blur"
+#define L10N_PARAM_B_S_V_BLUR	"B_S_v_blur"
+#define L10N_PARAM_ALPHA_BLUR	"Alpha_blur"
 
 
 

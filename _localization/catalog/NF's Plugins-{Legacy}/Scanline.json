@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_HEIGHT": "Line Thickness (pixels)",
+        "L10N_PARAM_LEVEL0": "Odd Line Brightness (%)",
+        "L10N_PARAM_OPACITY0": "Odd Line Opacity (%)",
+        "L10N_PARAM_LEVEL1": "Even Line Brightness (%)",
+        "L10N_PARAM_OPACITY1": "Even Line Opacity (%)",
+        "L10N_PARAM_DIR": "Direction"
+      },
+      "Popup": {
+        "L10N_PARAM_DIR_ITEMS": "Horizontal|Vertical"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Scanline effect."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_HEIGHT": "扫描线宽度",
+        "L10N_PARAM_LEVEL0": "奇数行亮度",
+        "L10N_PARAM_OPACITY0": "奇数行不透明度",
+        "L10N_PARAM_LEVEL1": "偶数行亮度",
+        "L10N_PARAM_OPACITY1": "偶数行不透明度",
+        "L10N_PARAM_DIR": "方向"
+      },
+      "Popup": {
+        "L10N_PARAM_DIR_ITEMS": "水平|垂直"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "扫描线插件"
+      }
+    }
+  }
+}

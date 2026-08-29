@@ -48,34 +48,34 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_R				"R"
-#define	STR_G				"G"
-#define	STR_B				"B"
-#define	STR_NOISE			"noise"
-#define	STR_NOISE_FRAME1	"frame randerm"
-#define	STR_NOISE_FRAME2	"on"
-#define	STR_NOISE_OFFSET	"noise offset"
+#define	L10N_PARAM_R				"R"
+#define	L10N_PARAM_G				"G"
+#define	L10N_PARAM_B				"B"
+#define	L10N_PARAM_NOISE			"noise"
+#define	L10N_PARAM_NOISE_FRAME	"frame randerm"
+#define	L10N_PARAM_ON	"on"
+#define	L10N_PARAM_NOISE_OFFSET	"noise offset"
 
 
-#define	STR_HIDDEN_ON1		"Hidden UI"
-#define	STR_HIDDEN_ON2		"oba-Q!"
+#define	L10N_PARAM_HIDDEN_UI		"Hidden UI"
+#define	L10N_PARAM_HIDDEN_TEXT		"oba-Q!"
 
-#define	STR_TOPIC			"Sample Topics"
-#define	STR_ADD_SLIDER		"Add_Slider"
-#define	STR_FIXED_SLIDER	"Fixed_Slider"
-#define	STR_FLOAT_SLIDER	"Float_Slider"
-#define	STR_COLOR			"Color"
-#define	STR_CHECKBOX1		"Checkbox"
+#define	L10N_PARAM_SAMPLE_TOPIC			"Sample Topics"
+#define	L10N_PARAM_ADD_SLIDER		"Add_Slider"
+#define	L10N_PARAM_FIXED_SLIDER	"Fixed_Slider"
+#define	L10N_PARAM_FLOAT_SLIDER	"Float_Slider"
+#define	L10N_PARAM_COLOR			"Color"
+#define	L10N_PARAM_CHECKBOX		"Checkbox"
 #define	STR_CHECKBOX2		"on"
-#define	STR_ANGLE			"Angle"
-#define	STR_POPUP			"Popup"
-#define	STR_POPUP_ITEMS		"One|Two|Tree"
+#define	L10N_PARAM_ANGLE			"Angle"
+#define	L10N_PARAM_POPUP			"Popup"
+#define	L10N_PARAM_POPUP_ITEMS		"One|Two|Tree"
 #define	STR_POPUP_COUNT		3
 #define	STR_POPUP_DFLT		1
-#define	STR_POINT			"Point"
+#define	L10N_PARAM_POINT			"Point"
 
-#define	STR_BUTTON1			"button"
-#define	STR_BUTTON2			"push"
+#define	L10N_PARAM_BUTTON			"button"
+#define	L10N_PARAM_PUSH			"push"
 
 //UIのパラメータ
 typedef struct ParamInfo {

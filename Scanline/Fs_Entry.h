@@ -45,7 +45,9 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const ScanlineText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -199,9 +201,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ScanlineText::OpenSettings(in_data, L"F's Scanline");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

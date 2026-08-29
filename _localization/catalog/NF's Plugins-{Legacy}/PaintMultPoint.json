@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_EXECUTE_FMT": "Fill_%d",
+        "L10N_PARAM_POS_FMT": "Position_%d",
+        "L10N_PARAM_COLOR_FMT": "Paint Color_%d",
+        "L10N_PARAM_GUIDE_FMT": "Show Guide_%d",
+        "L10N_PARAM_GUIDE_ALL": "Hide All Guides"
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true},
+        "L10N_PARAM_GUIDE_ALL_OFF": "Hidden"
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC_FMT": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "A modified multi-point paint fill tool."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_EXECUTE_FMT": "启用_%d",
+        "L10N_PARAM_POS_FMT": "填充点_%d",
+        "L10N_PARAM_COLOR_FMT": "颜色_%d",
+        "L10N_PARAM_GUIDE_FMT": "显示参考线_%d",
+        "L10N_PARAM_GUIDE_ALL": "隐藏所有参考线"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开",
+        "L10N_PARAM_GUIDE_ALL_OFF": "开"
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC_FMT": "方案_%d"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "适用于二值图像的油漆桶填充工具（多点版）"
+      }
+    }
+  }
+}

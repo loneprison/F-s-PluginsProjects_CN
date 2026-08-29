@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "Premultiply.h"
+#include "PremultiplyText.generated.h"
 
 
 //About表示
@@ -15,7 +16,9 @@ static PF_Err About (	PF_InData		*in_data,
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const PremultiplyText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -81,20 +84,21 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PremultiplyText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_POP1, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_MODE),
 						STR_POP,	//メニューの数
 						STR_POP_DEF,	//デフォルト
-						STR_POP2,
+						AETEXT_POPUP(strings, L10N_PARAM_MODE_ITEMS),
 						ID_MODE
 						);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MAT_COLOR),
 					0x00,
 					0x00,
 					0x00,
@@ -329,9 +333,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				PremultiplyText::OpenSettings(in_data, L"F's Premultiply");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

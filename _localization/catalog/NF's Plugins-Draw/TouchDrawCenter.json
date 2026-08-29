@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_RANDOM_SEED": {"useSource": true},
+        "L10N_PARAM_CENTER": {"useSource": true},
+        "L10N_PARAM_LENGTH": {"useSource": true},
+        "L10N_PARAM_LENGTH_RANDOM": {"useSource": true},
+        "L10N_PARAM_VALUE": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_OPACITY": {"useSource": true},
+        "L10N_PARAM_OPACITY_RANDOM": {"useSource": true},
+        "L10N_PARAM_POINT_COUNT": {"useSource": true},
+        "L10N_PARAM_POINT_LENGTH": {"useSource": true},
+        "L10N_PARAM_ORIGINAL_BLEND": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws converging lines from the surrounding area."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_RANDOM_SEED": "随机种子",
+        "L10N_PARAM_CENTER": "中心点",
+        "L10N_PARAM_LENGTH": "长度",
+        "L10N_PARAM_LENGTH_RANDOM": "随机长度",
+        "L10N_PARAM_VALUE": "数量",
+        "L10N_PARAM_COLOR": "线条颜色",
+        "L10N_PARAM_OPACITY": "不透明度",
+        "L10N_PARAM_OPACITY_RANDOM": "随机不透明度",
+        "L10N_PARAM_POINT_COUNT": "点数量",
+        "L10N_PARAM_POINT_LENGTH": "点间距",
+        "L10N_PARAM_ORIGINAL_BLEND": "与原始图像混合"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "绘制从周围汇聚的线条"
+      }
+    }
+  }
+}

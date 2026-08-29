@@ -36,6 +36,28 @@
 #include "../FsLibrary/FsAE.h"
 //#include "FsAE.h"
 
+//-----------------------------------------------------------------------------------
+#define L10N_PARAM_TARGET0 "Target0"
+#define L10N_PARAM_TARGET1 "Target1"
+#define L10N_PARAM_TARGET2 "Target2"
+#define L10N_PARAM_TARGET3 "Target3"
+#define L10N_PARAM_TARGET4 "Target4"
+#define L10N_PARAM_TARGET5 "Target5"
+#define L10N_PARAM_TARGET6 "Target6"
+#define L10N_PARAM_TARGET7 "Target7"
+#define L10N_PARAM_ENABLE "実行する"
+#define L10N_PARAM_COLOR0 "color0"
+#define L10N_PARAM_COLOR1 "color1"
+#define L10N_PARAM_COLOR2 "color2"
+#define L10N_PARAM_COLOR3 "color3"
+#define L10N_PARAM_COLOR4 "color4"
+#define L10N_PARAM_COLOR5 "color5"
+#define L10N_PARAM_COLOR6 "color6"
+#define L10N_PARAM_COLOR7 "元の色7"
+#define L10N_PARAM_REVERSE "Rev"
+#define L10N_PARAM_REVERSE_ON "反転する"
+#define L10N_PARAM_TOLERANCE "許容値"
+
 
 enum {
 	ID_INPUT = 0,		// default input layer 

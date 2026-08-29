@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_START_POINT": {"useSource": true},
+        "L10N_PARAM_START_SIZE": {"useSource": true},
+        "L10N_PARAM_LAST_POINT": {"useSource": true},
+        "L10N_PARAM_LAST_SIZE": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_BLEND": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws anime-style lightning for rendering tests."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_START_POINT": "起点",
+        "L10N_PARAM_START_SIZE": "起点大小",
+        "L10N_PARAM_LAST_POINT": "终点",
+        "L10N_PARAM_LAST_SIZE": "终点大小",
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_BLEND": "在原始图像上合成"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "绘制动画风格闪电（绘制测试用）"
+      }
+    }
+  }
+}

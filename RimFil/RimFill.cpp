@@ -6,6 +6,7 @@
 
 
 #include "RimFill.h"
+#include "RimFilText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,9 +20,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const RimFilText::Strings strings(in_data);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_WIDTH,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_WIDTH),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		200,	//数値入力する場合の最大値
 		0,		//スライダーの最小値 
@@ -31,17 +33,17 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_MODE,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_FILL_METHOD),
 		STR_MODE_COUNT,	//メニューの数
 		STR_MODE_DFLT,	//デフォルト
-		STR_MODE_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_FILL_ITEMS),
 		ID_MODE
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
 	PF_ADD_COLOR(
-		STR_CUSTOMCOLOR,
+		AETEXT_PARAM(strings, L10N_PARAM_CUSTOM_COLOR),
 		0,
 		0,
 		0,
@@ -50,8 +52,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_CHECKBOX(STR_WHITE,
-		"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_WHITE_TRANS),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_WHITE

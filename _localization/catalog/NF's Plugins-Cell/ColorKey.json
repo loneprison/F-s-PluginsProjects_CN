@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_RANGE": {"useSource": true},
+        "L10N_PARAM_UNDER_COLOR": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Color key."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_COLOR": "主色",
+        "L10N_PARAM_RANGE": "容差",
+        "L10N_PARAM_UNDER_COLOR": "底色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "颜色键控"
+      }
+    }
+  }
+}

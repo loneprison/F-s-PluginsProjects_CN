@@ -58,14 +58,14 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_ON				"on"
-#define	STR_CB_EDGE			"Edge"
-#define	STR_LO_LV			"LoLevel"
-#define	STR_HI_LV			"HiLevel"
-#define	STR_CB_ALPHA		"AlphaEdge"
-#define	STR_ALPHA_LV		"AlphaLevel"
-#define	STR_CB_COLOR		"UseColor"
-#define	STR_COLOR			"Color"
+#define L10N_PARAM_ON			"on"
+#define L10N_PARAM_EDGE			"Edge"
+#define L10N_PARAM_LOW_LEVEL		"LoLevel"
+#define L10N_PARAM_HIGH_LEVEL	"HiLevel"
+#define L10N_PARAM_ALPHA_EDGE	"AlphaEdge"
+#define L10N_PARAM_ALPHA_LEVEL	"AlphaLevel"
+#define L10N_PARAM_USE_COLOR		"UseColor"
+#define L10N_PARAM_COLOR			"Color"
 
 
 

@@ -6,6 +6,7 @@
 
 
 #include "ChromaticAberration.h"
+#include "ChromaticAberrationText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ChromaticAberrationText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_R,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_RED),	//Name
 		0,						//VALID_MIN
 		150,					//VALID_MAX
 		90,						//SLIDER_MIN
@@ -36,7 +38,7 @@ static PF_Err ParamsSetup (
 		);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_G,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GREEN),	//Name
 		0,						//VALID_MIN
 		150,					//VALID_MAX
 		90,						//SLIDER_MIN
@@ -50,7 +52,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_B,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BLUE),	//Name
 		0,						//VALID_MIN
 		150,					//VALID_MAX
 		90,						//SLIDER_MIN
@@ -66,7 +68,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(STR_CENTER,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_CENTER),			/*"New Center"*/
 				50,	// X
 				50,	// Y
 				0,	// Flag

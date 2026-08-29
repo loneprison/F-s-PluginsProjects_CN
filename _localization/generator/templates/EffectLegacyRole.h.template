@@ -1,0 +1,8 @@
+enum class {{ROLE_TYPE}} : std::uint32_t {
+{{ENUM_ENTRIES}}
+};
+
+inline constexpr AeText::TextToken Token({{ROLE_TYPE}} value)
+{
+    return { AeText::TextRole::{{ROLE}}, static_cast<std::uint32_t>(value) };
+}

@@ -1,0 +1,4 @@
+    {{RETURN_TYPE}} {{METHOD}}({{ROLE_TYPE}} value) const noexcept
+    {
+        return text_.{{RESOLVER}}(Token(value));
+    }

@@ -50,29 +50,29 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TARGET_TOPIC	"target"
-#define	STR_TARGET_LEVEL	"targetLevel"
-#define	STR_TARGET_COUNT	"targetCount"
-#define	STR_TARGET_COL1		"color1"
-#define	STR_TARGET_COL2		"color2"
-#define	STR_TARGET_COL3		"color3"
-#define	STR_TARGET_COL4		"color4"
-#define	STR_TARGET_COL5		"color5"
-#define	STR_TARGET_COL6		"color6"
-#define	STR_TARGET_COL7		"color7"
-#define	STR_TARGET_COL8		"color8"
+#define	L10N_PARAM_TARGET_TOPIC	"target"
+#define	L10N_PARAM_TARGET_LEVEL	"targetLevel"
+#define	L10N_PARAM_TARGET_COUNT	"targetCount"
+#define	L10N_PARAM_TARGET_COL1		"color1"
+#define	L10N_PARAM_TARGET_COL2		"color2"
+#define	L10N_PARAM_TARGET_COL3		"color3"
+#define	L10N_PARAM_TARGET_COL4		"color4"
+#define	L10N_PARAM_TARGET_COL5		"color5"
+#define	L10N_PARAM_TARGET_COL6		"color6"
+#define	L10N_PARAM_TARGET_COL7		"color7"
+#define	L10N_PARAM_TARGET_COL8		"color8"
 
-#define	STR_ANGLE			"angle"
+#define	L10N_PARAM_ANGLE			"angle"
 
-#define	STR_START_OVER		"startOver"
-#define	STR_LAST_OVER		"lastOver"
+#define	L10N_PARAM_START_OVER		"startOver"
+#define	L10N_PARAM_LAST_OVER		"lastOver"
 
-#define	STR_START_COL		"startCol"
-#define	STR_LAST_COL		"lastCol"
+#define	L10N_PARAM_START_COL		"startCol"
+#define	L10N_PARAM_LAST_COL		"lastCol"
 
-#define	STR_GUIDE_SHOW		"showGuide"
-#define	STR_GUIDE_COLOR		"showGuide"
-#define	STR_ON				"on"
+#define	L10N_PARAM_GUIDE_SHOW		"showGuide"
+#define	L10N_PARAM_GUIDE_COLOR		"showGuide"
+#define	L10N_PARAM_ON				"on"
 
 //UIのパラメータ
 typedef struct ParamInfo {

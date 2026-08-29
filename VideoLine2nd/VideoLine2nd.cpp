@@ -6,6 +6,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "VideoLine2nd.h"
+#include "VideoLine2ndText.generated.h"
 
 PF_Err (*subFunc8)(refconType	refcon, A_long xL, A_long yL,PF_Pixel8	*inP, PF_Pixel8	*outP);
 PF_Err (*subFunc16)(refconType	refcon, A_long xL, A_long yL,PF_Pixel16	*inP, PF_Pixel16	*outP);
@@ -21,7 +22,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const VideoLine2ndText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -89,10 +97,11 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const VideoLine2ndText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_BRIGHT,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LINE_BRIGHTNESS),	//Name
 		-100,						//VALID_MIN
 		100,						//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -106,7 +115,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_HEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE_HEIGHT),	//パラメータの名前
 					1, 			//数値入力する場合の最小値
 					100,		//数値入力する場合の最大値
 					1,			//スライダーの最小値 
@@ -117,7 +126,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_INTER,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_INTERVAL),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					100,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -129,10 +138,10 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_DIR, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_DIR),
 						2,	//メニューの数
 						1,	//デフォルト
-						STR_DIRSTR,
+						AETEXT_POPUP(strings, L10N_PARAM_DIR_ITEMS),
 						ID_DIR
 						);
 
@@ -214,8 +223,31 @@ FilterImage16 (
 	PF_Pixel16	*outP)
 {
 	PF_Err			err = PF_Err_NONE;
-	
+	ParamInfo *	niP		= reinterpret_cast<ParamInfo*>(refcon);
 
+	PF_FpLong brt = niP->bright;
+	if (brt == 0) return err;
+
+	A_long w = niP->height*2 + niP->inter;
+	A_long fy;
+	if ( niP->vurFlag == TRUE){
+		fy = yL % w;
+	}else {
+		fy = xL % w;
+	}
+
+	if ( fy < niP->height){
+		if (brt < 0) {
+			outP->blue = RoundShortFpLong((PF_FpLong)outP->blue + outP->blue * brt);
+			outP->green = RoundShortFpLong((PF_FpLong)outP->green + outP->green * brt);
+			outP->red = RoundShortFpLong((PF_FpLong)outP->red + outP->red * brt);
+		}
+		else {
+			outP->blue = RoundShortFpLong((PF_FpLong)outP->blue + (PF_MAX_CHAN16 - outP->blue) * brt);
+			outP->green = RoundShortFpLong((PF_FpLong)outP->green + (PF_MAX_CHAN16 - outP->green) * brt);
+			outP->red = RoundShortFpLong((PF_FpLong)outP->red + (PF_MAX_CHAN16 - outP->red) * brt);
+		}
+	}
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -229,10 +261,31 @@ FilterImage32 (
 	PF_PixelFloat	*outP)
 {
 	PF_Err			err = PF_Err_NONE;
-	
 	ParamInfo *	niP		= reinterpret_cast<ParamInfo*>(refcon);
-					
 
+	PF_FpLong brt = niP->bright;
+	if (brt == 0) return err;
+
+	A_long w = niP->height*2 + niP->inter;
+	A_long fy;
+	if ( niP->vurFlag == TRUE){
+		fy = yL % w;
+	}else {
+		fy = xL % w;
+	}
+
+	if ( fy < niP->height){
+		if (brt < 0) {
+			outP->blue = RoundFpShortDouble((PF_FpLong)outP->blue + outP->blue * brt);
+			outP->green = RoundFpShortDouble((PF_FpLong)outP->green + outP->green * brt);
+			outP->red = RoundFpShortDouble((PF_FpLong)outP->red + outP->red * brt);
+		}
+		else {
+			outP->blue = RoundFpShortDouble((PF_FpLong)outP->blue + ((PF_FpLong)1.0 - outP->blue) * brt);
+			outP->green = RoundFpShortDouble((PF_FpLong)outP->green + ((PF_FpLong)1.0 - outP->green) * brt);
+			outP->red = RoundFpShortDouble((PF_FpLong)outP->red + ((PF_FpLong)1.0 - outP->red) * brt);
+		}
+	}
 	return err;
 }
 
@@ -430,9 +483,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				VideoLine2ndText::OpenSettings(in_data, L"F's VideoLine2nd");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

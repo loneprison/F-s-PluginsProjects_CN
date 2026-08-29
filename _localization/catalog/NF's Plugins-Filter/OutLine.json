@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_VALUE": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_LEVEL": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws an outline."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_VALUE": "大小",
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_LEVEL": "不透明度"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "绘制描边"
+      }
+    }
+  }
+}

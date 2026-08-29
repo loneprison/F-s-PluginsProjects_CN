@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "sputteringRect.h"
+#include "sputteringRectText.generated.h"
 
 
 //-----------------------------------------------------------------------------
@@ -17,10 +18,11 @@ ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const sputteringRectText::Strings strings(in_data);
 	
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	UI_SEED,		//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SEED),		//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					32000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -30,7 +32,7 @@ ParamsSetup (
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	UI_VALUE,		//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_VALUE),		//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					32000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -40,7 +42,7 @@ ParamsSetup (
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_OPA_RND,		//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY_RAND),		//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					5,				//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -53,7 +55,7 @@ ParamsSetup (
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(	UI_TOPLEFT, 
+	PF_ADD_POINT(	AETEXT_PARAM(strings, L10N_PARAM_TOP_LEFT),
 					25,	// X(横の%)
 					25,	// Y(縦の%)
 					FALSE,	// TRUEなら0.0から100.0の値に限定される
@@ -61,7 +63,7 @@ ParamsSetup (
 				);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(	UI_BOTTOMRIGHT, 
+	PF_ADD_POINT(	AETEXT_PARAM(strings, L10N_PARAM_BOTTOM_RIGHT),
 					75,	// X(横の%)
 					75,	// Y(縦の%)
 					FALSE,	// TRUEなら0.0から100.0の値に限定される
@@ -69,7 +71,7 @@ ParamsSetup (
 				);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	UI_POINT_VALUE,		//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_POINT_VALUE),		//パラメータの名前
 					1, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -79,7 +81,7 @@ ParamsSetup (
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	UI_POINT_LENGTH,		//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_POINT_LENGTH),		//パラメータの名前
 					5, 			//数値入力する場合の最小値
 					1000,			//数値入力する場合の最大値
 					5,				//スライダーの最小値 
@@ -90,16 +92,16 @@ ParamsSetup (
 	//-----------------
 	//ポップアップ
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(	UI_SIZE1, 
+	PF_ADD_POPUP(	AETEXT_PARAM(strings, L10N_PARAM_SIZE),
 					UI_SIZE_COUNT,	//メニューの数
 					UI_SIZE_DFLT,	//デフォルト
-					UI_SIZE2,
+					AETEXT_POPUP(strings, L10N_PARAM_SIZE_ITEMS),
 					ID_SIZE
 					);
 
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_COLOR1, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 					PF_MAX_CHAN8,	// Red
 					PF_MAX_CHAN8,	//Green
 					PF_MAX_CHAN8,	//Blue
@@ -110,12 +112,12 @@ ParamsSetup (
 	//トピック表示の開始
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//
-	PF_ADD_TOPIC(	UI_COLOR_TOPIC,
+	PF_ADD_TOPIC(	AETEXT_TOPIC(strings, L10N_PARAM_EXTRA_COLORS),
 					ID_COLOR_TOPIC
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	UI_COLOR_MAX,		//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_COLOR_MAX),		//パラメータの名前
 					1, 				//数値入力する場合の最小値
 					UI_COLOR_MAX_V,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -126,7 +128,7 @@ ParamsSetup (
 
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_COLOR2, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR2),
 					PF_MAX_CHAN8,	// Red
 					PF_MAX_CHAN8,	//Green
 					0,	//Blue
@@ -134,7 +136,7 @@ ParamsSetup (
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_COLOR3, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR3),
 					PF_MAX_CHAN8,	// Red
 					0,	//Green
 					PF_MAX_CHAN8,	//Blue
@@ -142,7 +144,7 @@ ParamsSetup (
 					);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_COLOR4, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR4),
 					0,	// Red
 					PF_MAX_CHAN8,	//Green
 					PF_MAX_CHAN8,	//Blue
@@ -155,8 +157,8 @@ ParamsSetup (
 	//-----------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ORG1,
-					UI_ORG2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_BLEND_WITH_ORIGINAL),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_ORG

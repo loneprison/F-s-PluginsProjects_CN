@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "familyId": "fs",
+  "sourceVariantId": "source",
+  "variants": [
+    {
+      "id": "en",
+      "textSource": {
+        "kind": "translation",
+        "locale": "en"
+      },
+      "encodingProfile": "windows-1252"
+    },
+    {
+      "id": "source",
+      "textSource": {
+        "kind": "source"
+      },
+      "encodingProfile": "windows-932"
+    },
+    {
+      "id": "zh",
+      "textSource": {
+        "kind": "translation",
+        "locale": "zh"
+      },
+      "encodingProfile": "windows-936"
+    },
+    {
+      "id": "source-cp936-compatible",
+      "textSource": {
+        "kind": "source"
+      },
+      "encodingProfile": "windows-936-ae-display"
+    }
+  ]
+}

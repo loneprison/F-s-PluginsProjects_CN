@@ -68,31 +68,31 @@ enum {
 };
 //-----------------------------------------------------------------------------
 //パラメータUI用の文字列
-#define UI_SEED			"seed"
-#define UI_VALUE		"value"
-#define UI_OPA_RND		"opacity_rand"
+#define L10N_PARAM_SEED			"seed"
+#define L10N_PARAM_VALUE		"value"
+#define L10N_PARAM_OPACITY_RAND		"opacity_rand"
 
-#define UI_TOPLEFT		"TopLeft"
-#define UI_BOTTOMRIGHT	"BottomRight"
+#define L10N_PARAM_TOP_LEFT		"TopLeft"
+#define L10N_PARAM_BOTTOM_RIGHT	"BottomRight"
 
-#define UI_POINT_VALUE	"PointValue"
-#define UI_POINT_LENGTH	"PointLength"
+#define L10N_PARAM_POINT_VALUE	"PointValue"
+#define L10N_PARAM_POINT_LENGTH	"PointLength"
 
-#define UI_SIZE1		"size"
-#define UI_SIZE2		"極小|小|中|大|特大"
+#define L10N_PARAM_SIZE		"size"
+#define L10N_PARAM_SIZE_ITEMS		"極小|小|中|大|特大"
 #define UI_SIZE_COUNT	5
 #define UI_SIZE_DFLT	2
 
-#define UI_COLOR1		"Color1"
-#define UI_COLOR_TOPIC	"ExtraColors"
-#define UI_COLOR_MAX	"ColorMax"
+#define L10N_PARAM_COLOR1		"Color1"
+#define L10N_PARAM_EXTRA_COLORS	"ExtraColors"
+#define L10N_PARAM_COLOR_MAX	"ColorMax"
 #define UI_COLOR_MAX_V	4
-#define UI_COLOR2		"Color2"
-#define UI_COLOR3		"Color3"
-#define UI_COLOR4		"Color4"
+#define L10N_PARAM_COLOR2		"Color2"
+#define L10N_PARAM_COLOR3		"Color3"
+#define L10N_PARAM_COLOR4		"Color4"
 
-#define UI_ORG1			"Blend with original"
-#define UI_ORG2			"ON"
+#define L10N_PARAM_BLEND_WITH_ORIGINAL			"Blend with original"
+#define L10N_PARAM_ON			"ON"
 
 
 //-----------------------------------------------------------------------------

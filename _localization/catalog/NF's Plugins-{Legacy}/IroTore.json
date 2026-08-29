@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LINE_ONLY": {"useSource": true},
+        "L10N_PARAM_COLOR1_ON": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_COLOR2_ON": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_COLOR3_ON": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_COLOR4_ON": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_COLOR5_ON": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_COLOR6_ON": {"useSource": true},
+        "L10N_PARAM_COLOR6": {"useSource": true},
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_IGNORE_COLOR": "Unmatched Color",
+        "L10N_PARAM_LINE_MINMAX1": {"useSource": true},
+        "L10N_PARAM_LINE_MINMAX2": {"useSource": true},
+        "L10N_PARAM_LINE_BLUR": {"useSource": true},
+        "L10N_PARAM_LINE_H": {"useSource": true},
+        "L10N_PARAM_LINE_S": {"useSource": true},
+        "L10N_PARAM_LINE_L": {"useSource": true},
+        "L10N_PARAM_LINE_R": {"useSource": true},
+        "L10N_PARAM_LINE_G": {"useSource": true},
+        "L10N_PARAM_LINE_B": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR1_ON": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR1": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR2_ON": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR2": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR3_ON": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR3": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR4_ON": {"useSource": true},
+        "L10N_PARAM_NEG_COLOR4": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Forcibly converts the main lines into colored lines."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LINE_ONLY": "仅线条",
+        "L10N_PARAM_COLOR1_ON": "方案1",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_COLOR2_ON": "方案2",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_COLOR3_ON": "方案3",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_COLOR4_ON": "方案4",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_COLOR5_ON": "方案5",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_COLOR6_ON": "方案6",
+        "L10N_PARAM_COLOR6": "颜色6",
+        "L10N_PARAM_LEVEL": "阈值",
+        "L10N_PARAM_IGNORE_COLOR": "替代色",
+        "L10N_PARAM_LINE_MINMAX1": "最小/最大1",
+        "L10N_PARAM_LINE_MINMAX2": "最小/最大2",
+        "L10N_PARAM_LINE_BLUR": "底色模糊度",
+        "L10N_PARAM_LINE_H": "线条_H色相",
+        "L10N_PARAM_LINE_S": "线条_S饱和",
+        "L10N_PARAM_LINE_L": "线条_L明度",
+        "L10N_PARAM_LINE_R": "线条_R红",
+        "L10N_PARAM_LINE_G": "线条_G绿",
+        "L10N_PARAM_LINE_B": "线条_B蓝",
+        "L10N_PARAM_NEG_COLOR1_ON": "排除1",
+        "L10N_PARAM_NEG_COLOR1": "排除颜色1",
+        "L10N_PARAM_NEG_COLOR2_ON": "排除2",
+        "L10N_PARAM_NEG_COLOR2": "排除颜色2",
+        "L10N_PARAM_NEG_COLOR3_ON": "排除3",
+        "L10N_PARAM_NEG_COLOR3": "排除颜色3",
+        "L10N_PARAM_NEG_COLOR4_ON": "排除4",
+        "L10N_PARAM_NEG_COLOR4": "排除颜色4"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将主线强制转化为带颜色的线条"
+      }
+    }
+  }
+}

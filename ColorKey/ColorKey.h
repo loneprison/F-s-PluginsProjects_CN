@@ -51,9 +51,9 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_COLOR			"color"
-#define	STR_RANGE			"range"
-#define	STR_UNDER			"Undercolor"
+#define	L10N_PARAM_COLOR			"color"
+#define	L10N_PARAM_RANGE			"range"
+#define	L10N_PARAM_UNDER_COLOR			"Undercolor"
 
 
 //UIのパラメータ

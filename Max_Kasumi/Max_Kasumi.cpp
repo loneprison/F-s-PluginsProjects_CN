@@ -6,6 +6,7 @@
 
 
 #include "Max_Kasumi.h"
+#include "Max_KasumiText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,11 +20,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const Max_KasumiText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MAX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_VALUE),	//パラメータの名前
 		-30, 				//数値入力する場合の最小値
 		30,			//数値入力する場合の最大値
 		-15,				//スライダーの最小値 
@@ -35,19 +37,19 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_DIR1,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_SCANLINE),
 		3,	//メニューの数
 		1,	//デフォルト
-		STR_DIR2,
+		AETEXT_POPUP(strings, L10N_PARAM_SCANLINE_ITEMS),
 		ID_DIR
 	);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_CH1,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_CHANNEL),
 		3,	//メニューの数
 		1,	//デフォルト
-		STR_CH2,
+		AETEXT_POPUP(strings, L10N_PARAM_CHANNEL_ITEMS),
 		ID_CHANNEL
 	);
 
@@ -114,9 +116,10 @@ static PF_Err
 	{
 		return err;
 	}
-	if (ae->downSaleValue() != 1) {
-		return err;
-	}
+	// Temporarily disabled for non-full-resolution preview testing.
+	//if (ae->downSaleValue() != 1) {
+	//	return err;
+	//}
 	switch(ae->pixelFormat())
 	{
 	case PF_PixelFormat_ARGB128:

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MASK": {"useSource": true},
+        "L10N_PARAM_LEVEL": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_MASK_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Creates a mask from RGBA values."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MASK": "遮罩通道",
+        "L10N_PARAM_LEVEL": "强度"
+      },
+      "Popup": {
+        "L10N_PARAM_MASK_ITEMS": "红色|绿色|蓝色|黄色|洋红|青色|最大值"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "根据RGBA值创建遮罩"
+      }
+    }
+  }
+}

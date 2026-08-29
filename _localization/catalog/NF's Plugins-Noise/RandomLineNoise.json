@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_NOISE_AMOUNT": "Noise Amount",
+        "L10N_PARAM_NOISE_STRONG": "Noise Strength (%)",
+        "L10N_PARAM_LEN_MIN": "Minimum Noise Length",
+        "L10N_PARAM_LEN_MAX": "Maximum Noise Length",
+        "L10N_PARAM_NOISE_COLOR": "Noise Color",
+        "L10N_PARAM_NOISE_WIDTH": "Noise Width",
+        "L10N_PARAM_VERTICAL": "Vertical Direction"
+      },
+      "Label": {
+        "L10N_PARAM_COLOR": "Color",
+        "L10N_PARAM_VERTICAL_SHORT": "Vertical"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Random horizontal line noise."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_NOISE_AMOUNT": "杂色数量",
+        "L10N_PARAM_NOISE_STRONG": "杂色强度",
+        "L10N_PARAM_LEN_MIN": "最小长度",
+        "L10N_PARAM_LEN_MAX": "最大长度",
+        "L10N_PARAM_NOISE_COLOR": "彩色杂色",
+        "L10N_PARAM_NOISE_WIDTH": "宽度",
+        "L10N_PARAM_VERTICAL": "垂直方向"
+      },
+      "Label": {
+        "L10N_PARAM_COLOR": "开",
+        "L10N_PARAM_VERTICAL_SHORT": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "随机横线杂色"
+      }
+    }
+  }
+}

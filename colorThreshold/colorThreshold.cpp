@@ -6,8 +6,8 @@
 
 
 #include "colorThreshold.h"
+#include "colorThresholdText.generated.h"
 
-#include <stdio.h>
 #include <Math.h>
 //-------------------------------------------------------------------------------------------------
 //AfterEffextsにパラメータを通達する
@@ -20,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const colorThresholdText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_ALPHA_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						25,						//SLIDER_MIN
@@ -37,7 +38,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HS_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MATCH_LEVEL),	//Name
 						0,						//VALID_MIN
 						10,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -51,7 +52,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_L_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LIGHT_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						25,						//SLIDER_MIN
@@ -66,11 +67,11 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_TOPIC_NAIN_COL, ID_TOPIC_NAIN_COL);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TOPIC_MAIN), ID_TOPIC_NAIN_COL);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_MAIN_COL1_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_MAIN_ON1),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_MAIN_COL1_ON
@@ -78,7 +79,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_MAIN_COL1, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MAIN_COLOR1),
 					10,	// Red
 					10,	//Green
 					10,	//Blue
@@ -86,7 +87,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MAIN_COL1_HS,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAIN_HS1),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -100,7 +101,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MAIN_COL1_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAIN_LEVEL1),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -114,8 +115,8 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_MAIN_COL2_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_MAIN_ON2),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_MAIN_COL2_ON
@@ -123,7 +124,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_MAIN_COL2, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MAIN_COLOR2),
 					PF_MAX_CHAN8-1,	// Red
 					PF_MAX_CHAN8-1,	//Green
 					PF_MAX_CHAN8-1,	//Blue
@@ -131,7 +132,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MAIN_COL2_HS,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAIN_HS2),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -145,7 +146,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MAIN_COL2_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAIN_LEVEL2),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -159,8 +160,8 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_MAIN_COL3_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_MAIN_ON3),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_MAIN_COL3_ON
@@ -168,7 +169,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_MAIN_COL3, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MAIN_COLOR3),
 					0,	// Red
 					0,	//Green
 					0,	//Blue
@@ -176,7 +177,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MAIN_COL3_HS,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAIN_HS3),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -190,7 +191,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MAIN_COL3_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAIN_LEVEL3),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -208,10 +209,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_TOPIC_SUB_COL, ID_TOPIC_SUB_COL);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TOPIC_SUB), ID_TOPIC_SUB_COL);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SUB_COL_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SUB_COUNT),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					COUNT_OF_SUB,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -222,11 +223,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	char num[255] = {"\0"};
 	for (A_long i=0; i< COUNT_OF_SUB; i++){ 
-#ifdef AE_OS_WIN
-		sprintf_s(num,"UserColor_%d",i+1);
-#else
-		sprintf(num,"UserColor_%d",i+1);
-#endif
+		PF_SPRINTF(num, AETEXT_PARAM(strings, L10N_PARAM_USER_COLOR_FORMAT), i + 1);
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
 		PF_ADD_COLOR(	num, 

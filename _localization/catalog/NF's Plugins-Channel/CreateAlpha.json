@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "About": {
+        "L10N_PLUGIN_DESC": "Same as Unmult."
+      }
+    },
+    "zh": {
+      "About": {
+        "L10N_PLUGIN_DESC": "与 UnMult 相同"
+      }
+    }
+  }
+}

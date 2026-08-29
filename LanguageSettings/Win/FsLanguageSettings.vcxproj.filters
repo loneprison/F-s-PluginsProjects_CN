@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C1B55A27-A927-4E4C-A976-B93F13F1B471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{45E06BA3-BC89-4C03-8320-CE153D7855B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Fs">
+      <UniqueIdentifier>{A57DB4B4-E3BA-4FC8-9D51-0D77645B33DF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5CA80CB7-4763-460E-B5B0-F4F56E104435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Supporting code">
+      <UniqueIdentifier>{83D39BE2-A7C4-4998-B212-2D5BB64520C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Supporting code\AE">
+      <UniqueIdentifier>{ED3EF2A2-A59D-4999-8B2F-B70A75AA8ED1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{D8EAB30F-5724-479B-8684-65D55E931371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Localization\Catalog">
+      <UniqueIdentifier>{A9C64B39-4F89-47E1-A143-A40C2D682A61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Localization\Catalog\_Support">
+      <UniqueIdentifier>{9D6C7ACB-D58A-4BFC-8595-4F2778E76B97}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\FsLibrary\json.hpp">
+      <Filter>Header Files\Fs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\core\AeTextCatalog.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HostEnvironment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LanguageConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LanguagePolicy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LanguageSettingsResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\FsLanguageSettingsPiPL.r">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\LanguageSettings.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="$(IntDir)FsLanguageSettingsPiPL.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\HostEnvironment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LanguageConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LanguageSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\AEGP_SuiteHandler.cpp">
+      <Filter>Supporting code\AE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Util\MissingSuiteError.cpp">
+      <Filter>Supporting code\AE</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\_Support\Settings.json">
+      <Filter>Localization\Catalog\_Support</Filter>
+    </None>
+    <None Include="..\..\_localization\GenerateTextCatalog.ps1">
+      <Filter>Localization</Filter>
+    </None>
+  </ItemGroup>
+</Project>

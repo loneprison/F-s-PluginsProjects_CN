@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_SIZE": "Size",
+        "L10N_PARAM_POSITION": "Position",
+        "L10N_PARAM_FLICKER": "Flicker",
+        "L10N_PARAM_FLICKER_GRAY": "Grayscale Flicker",
+        "L10N_PARAM_FRAME_FLICKER": "Flicker Every Frame"
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a mosaic effect."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_SIZE": "尺寸",
+        "L10N_PARAM_POSITION": "位置",
+        "L10N_PARAM_FLICKER": "随机颜色",
+        "L10N_PARAM_FLICKER_GRAY": "仅亮度",
+        "L10N_PARAM_FRAME_FLICKER": "动态变化"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "马赛克"
+      }
+    }
+  }
+}

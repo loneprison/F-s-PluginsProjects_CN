@@ -6,6 +6,7 @@
 
 
 #include "TouchDraw.h"
+#include "TouchDrawText.generated.h"
 
 
 
@@ -20,10 +21,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const TouchDrawText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SEED,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_RANDOM_SEED),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					32000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -35,7 +37,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_TARGET_VALUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -49,20 +51,20 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_TARGET_TOPIC, ID_TARGRT_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET), ID_TARGRT_TOPIC);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_TARGET_MODE1, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_MODE),
 						3,	//メニューの数
 						2,	//デフォルト
-						STR_TARGET_MODE2,
+						AETEXT_POPUP(strings, L10N_PARAM_MODE_ITEMS),
 						ID_TARGET_MODE
 						);
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_TARGET_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR),
 					0x00,
 					0x00,
 					0x00,
@@ -71,7 +73,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_COLOR_RANGE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_COLOR_RANGE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -85,7 +87,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_DELTA_RANGE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_DELTA_RANGE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -102,7 +104,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(STR_CENTER,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_CENTER),			/*"New Center"*/
 				50,	// X
 				50,	// Y
 				0,	// Flag
@@ -111,7 +113,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_I_MAX,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_INSIDE_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -125,7 +127,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_I_RND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_INSIDE_LENGTH_RANDOM),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -139,7 +141,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_O_MAX,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OUTSIDE_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -153,7 +155,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_O_RND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OUTSIDE_LENGTH_RANDOM),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -167,7 +169,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 					0x00,
 					0x00,
 					0x00,
@@ -176,7 +178,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_OPACITY,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -190,7 +192,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_OPACITY_RND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY_RANDOM),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -204,7 +206,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_POINT_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_POINT_COUNT),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -215,7 +217,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_POINT_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_POINT_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -230,7 +232,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_BLOCK_VALUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLOCK_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -244,7 +246,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_BLOCK_SIZE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BLOCK_SIZE),	//パラメータの名前
 					8, 				//数値入力する場合の最小値
 					128,			//数値入力する場合の最大値
 					8,				//スライダーの最小値 
@@ -256,8 +258,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ORG_CB1,
-					STR_ORG_CB2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ORIGINAL_BLEND),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_ORG
@@ -305,7 +307,9 @@ static PF_Err GetParams(CFsAE *ae, ParamInfo *infoP)
 	A_long pH = ae->in_data->height;
 	if ((pW % infoP->block_size)!=0) { pW = pW/infoP->block_size +1;}else{pW = pW/infoP->block_size;}
 	if ((pH % infoP->block_size)!=0) { pH = pH/infoP->block_size +1;}else{pH = pH/infoP->block_size;}
-	infoP->block_count = pW * pH * infoP->block_value >> 16;
+
+	// This calculation can overflow, so use 64-bit arithmetic to keep the fix minimal.
+	infoP->block_count = (static_cast<A_u_longlong>(pW) * pH * infoP->block_value) >> 16;
 
 	ERR(ae->GetCHECKBOX(ID_ORG,&infoP->org));
 
@@ -332,7 +336,7 @@ static PF_Err
 	}
 
 	F_SRAND(infoP->seed);	
-	blockDraw(ae,infoP->block_size,infoP->block_count);
+	blockDraw(ae,infoP->block_size,infoP->block_count,infoP->seed);
 	
 	F_SRAND(infoP->seed);	
 	switch(ae->pixelFormat()){

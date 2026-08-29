@@ -425,8 +425,8 @@ sub8(
 		return err;
 	}
 	//bufがハーフサイズなので位置補正
-	PF_FpLong cx = infoP->pos.x / 2;
-	PF_FpLong cy = infoP->pos.y / 2;
+	PF_FpLong cx = (PF_FpLong)infoP->bufP1->width() / 2;
+	PF_FpLong cy = (PF_FpLong)infoP->bufP1->height() / 2;
 
 	//sqrt( (x1-x2)^2 + (y1-y2)^2 )
 	//lenDターゲットからの距離
@@ -509,8 +509,8 @@ sub16(
 		return err;
 	}
 	//bufがハーフサイズなので位置補正
-	PF_FpLong cx = infoP->pos.x / 2;
-	PF_FpLong cy = infoP->pos.y / 2;
+	PF_FpLong cx = (PF_FpLong)infoP->bufP1->width() / 2;
+	PF_FpLong cy = (PF_FpLong)infoP->bufP1->height() / 2;
 
 	//sqrt( (x1-x2)^2 + (y1-y2)^2 )
 	//lenDターゲットからの距離
@@ -593,8 +593,8 @@ sub32(
 		return err;
 	}
 	//bufがハーフサイズなので位置補正
-	PF_FpLong cx = infoP->pos.x / 2;
-	PF_FpLong cy = infoP->pos.y / 2;
+	PF_FpLong cx = (PF_FpLong)infoP->bufP1->width() / 2;
+	PF_FpLong cy = (PF_FpLong)infoP->bufP1->height() / 2;
 
 	//sqrt( (x1-x2)^2 + (y1-y2)^2 )
 	//lenDターゲットからの距離
@@ -684,8 +684,8 @@ subG8(
 
 
 	//bufがハーフサイズなので位置補正
-	PF_FpLong cx = infoP->pos.x / 2;
-	PF_FpLong cy = infoP->pos.y / 2;
+	PF_FpLong cx = (PF_FpLong)infoP->bufP1->width() / 2;
+	PF_FpLong cy = (PF_FpLong)infoP->bufP1->height() / 2;
 
 	//sqrt( (x1-x2)^2 + (y1-y2)^2 )
 	//lenDターゲットからの距離
@@ -754,8 +754,8 @@ subG16(
 
 
 	//bufがハーフサイズなので位置補正
-	PF_FpLong cx = infoP->pos.x / 2;
-	PF_FpLong cy = infoP->pos.y / 2;
+	PF_FpLong cx = (PF_FpLong)infoP->bufP1->width() / 2;
+	PF_FpLong cy = (PF_FpLong)infoP->bufP1->height() / 2;
 
 	//sqrt( (x1-x2)^2 + (y1-y2)^2 )
 	//lenDターゲットからの距離
@@ -823,8 +823,8 @@ subG32(
 
 
 	//bufがハーフサイズなので位置補正
-	PF_FpLong cx = infoP->pos.x / 2;
-	PF_FpLong cy = infoP->pos.y / 2;
+	PF_FpLong cx = (PF_FpLong)infoP->bufP1->width() / 2;
+	PF_FpLong cy = (PF_FpLong)infoP->bufP1->height() / 2;
 
 	//sqrt( (x1-x2)^2 + (y1-y2)^2 )
 	//lenDターゲットからの距離
@@ -971,15 +971,16 @@ PF_Err ShineParallel::ParamsSetup(
 	in_data = in_dataP;
 	out_data = out_dataP;
 	PF_ParamDef		def;
+	const ShineParallelText::Strings strings(in_dataP);
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ROT, 45, ID_Rot);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ROT), 45, ID_Rot);
 
 	//----------------------------------------------------------------
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LENGTH),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		1000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値
@@ -989,7 +990,7 @@ PF_Err ShineParallel::ParamsSetup(
 	);		
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_STRONG,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_STRONG),	//Name
 		0,						//VALID_MIN
 		1000,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -1003,8 +1004,8 @@ PF_Err ShineParallel::ParamsSetup(
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ISCOLOR,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_USE_COLOR),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_ISCOLOR
@@ -1012,7 +1013,7 @@ PF_Err ShineParallel::ParamsSetup(
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,

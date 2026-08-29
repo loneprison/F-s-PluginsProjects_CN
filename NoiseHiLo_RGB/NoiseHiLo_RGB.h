@@ -54,11 +54,11 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_HI_POS			"HightPos(%)"
-#define	STR_LO_POS			"LoPos(%)"
-#define	STR_HI_LV			"HighLevel(%)"
-#define	STR_MD_LV			"MidLevel(%)"
-#define	STR_LO_LV			"LoLevel(%)"
+#define	L10N_PARAM_HIGH_POS			"HightPos(%)"
+#define	L10N_PARAM_LOW_POS			"LoPos(%)"
+#define	L10N_PARAM_HIGH_LEVEL			"HighLevel(%)"
+#define	L10N_PARAM_MID_LEVEL			"MidLevel(%)"
+#define	L10N_PARAM_LOW_LEVEL			"LoLevel(%)"
 
 //UIのパラメータ
 typedef struct ParamInfo {

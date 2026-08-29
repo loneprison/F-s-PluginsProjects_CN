@@ -6,6 +6,7 @@
 
 
 #include "grayToWaveLine.h"
+#include "grayToWaveLineText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,9 +20,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const grayToWaveLineText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_SXCOUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SAMPLE_X_COUNT),	//パラメータの名前
 		50, 					//数値入力する場合の最小値
 		2000,					//数値入力する場合の最大値
 		100,					//スライダーの最小値 
@@ -31,7 +33,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_SYCOUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SAMPLE_Y_COUNT),	//パラメータの名前
 		1, 					//数値入力する場合の最小値
 		1000,					//数値入力する場合の最大値
 		1,					//スライダーの最小値 
@@ -42,7 +44,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_DRAW_POS,
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_DRAW_POS),
 		25,	// X
 		15,	// Y
 		0,	// Flag
@@ -50,7 +52,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_GRAPH_XSCALE,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRAPH_X_SCALE),	//パラメータの名前
 		1, 					//数値入力する場合の最小値
 		100,				//数値入力する場合の最大値
 		2,					//スライダーの最小値 
@@ -60,7 +62,7 @@ static PF_Err ParamsSetup (
 	);	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_GRAPH_YMAX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRAPH_Y_MAX),	//パラメータの名前
 		-1000, 					//数値入力する場合の最小値
 		1000,					//数値入力する場合の最大値
 		-200,					//スライダーの最小値 
@@ -70,7 +72,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_TILT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRAPH_TILT),	//パラメータの名前
 		-1000, 					//数値入力する場合の最小値
 		1000,					//数値入力する場合の最大値
 		-200,					//スライダーの最小値 
@@ -80,7 +82,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_X_OFFSET,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRAPH_X_OFFSET),	//パラメータの名前
 		-1000, 					//数値入力する場合の最小値
 		1000,					//数値入力する場合の最大値
 		-500,					//スライダーの最小値 
@@ -90,7 +92,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_Y_OFFSET,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRAPH_Y_OFFSET),	//パラメータの名前
 		-1000, 					//数値入力する場合の最小値
 		1000,					//数値入力する場合の最大値
 		-500,					//スライダーの最小値 
@@ -100,7 +102,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LINE_HEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LINE_HEIGHT),	//パラメータの名前
 		1, 					//数値入力する場合の最小値
 		20,					//数値入力する場合の最大値
 		1,					//スライダーの最小値 
@@ -111,7 +113,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_GRAPH_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_GRAPH_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,
@@ -120,7 +122,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_BASE_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_BASE_COLOR),
 		0x80,
 		0x80,
 		0x80,
@@ -128,10 +130,10 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_MODE,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_MODE),
 		STR_MODE_COUNT,	//メニューの数
 		STR_MODE_DFLT,	//デフォルト
-		STR_MODE_ITEM,
+		AETEXT_POPUP(strings, L10N_PARAM_MODE_ITEMS),
 		ID_MODE
 	);	out_data->num_params = 	ID_NUM_PARAMS;
 

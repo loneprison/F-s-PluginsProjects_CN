@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_HUE": {"useSource": true},
+        "L10N_PARAM_LIGHTNESS": {"useSource": true},
+        "L10N_PARAM_SATURATION": {"useSource": true},
+        "L10N_PARAM_BLEND_ORIGINAL": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_REVERSE": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Inverts the L channel in HLS."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_HUE": "色相",
+        "L10N_PARAM_LIGHTNESS": "明度",
+        "L10N_PARAM_SATURATION": "饱和度",
+        "L10N_PARAM_BLEND_ORIGINAL": "与原始图像混合(%)"
+      },
+      "Label": {
+        "L10N_PARAM_REVERSE": "反转"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "反转HLS的指定通道"
+      }
+    }
+  }
+}

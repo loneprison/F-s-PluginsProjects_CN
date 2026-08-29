@@ -48,31 +48,31 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_OFFSET		"offset"
+#define	L10N_PARAM_SEED		"seed"
+#define	L10N_PARAM_SEED_POS		"seedPos"
+#define	L10N_PARAM_SEED_MOVE	"seedMove"
+#define	L10N_PARAM_OFFSET		"offset"
 
 #define	STR_CENTER		"center"
-#define	STR_BLUR		"radius"
-#define	STR_ASPECT		"aspect"
+#define	L10N_PARAM_RADIUS		"radius"
+#define	L10N_PARAM_ASPECT		"aspect"
 
-#define	STR_POINT_COUNT	"point_count"
-#define	STR_POINT_ROT	"point_rot"
-#define	STR_POINT_ROND	"point_rand"
+#define	L10N_PARAM_POINT_COUNT	"point_count"
+#define	L10N_PARAM_POINT_ROT	"point_rot"
+#define	L10N_PARAM_POINT_RAND	"point_rand"
 
-#define	STR_ROT			"rot"
+#define	L10N_PARAM_ROT			"rot"
 
 
-#define	STR_LINE_SIZE	"lineSize"
-#define	STR_LINE_MOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_SUBCOUNT	"subCount"
-#define	STR_DRAWCOUNT	"drawCount"
+#define	L10N_PARAM_LINE_SIZE	"lineSize"
+#define	L10N_PARAM_LINE_MOVE	"lineMove"
+#define	L10N_PARAM_FOLD_COUNT	"foldCount"
+#define	L10N_PARAM_SUB_COUNT	"subCount"
+#define	L10N_PARAM_DRAW_COUNT	"drawCount"
 
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+#define	L10N_PARAM_COLOR		"color"
+#define	L10N_PARAM_BLEND		"blend"
+#define	L10N_PARAM_ON			"on"
 
 
 #define POINT_COUNT_MAX	36

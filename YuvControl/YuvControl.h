@@ -51,12 +51,12 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Y			"Y"
-#define	STR_U			"U"
-#define	STR_V			"V"
+#define	L10N_PARAM_Y			"Y"
+#define	L10N_PARAM_U			"U"
+#define	L10N_PARAM_V			"V"
 
-#define	STR_UV_AUTO		"UVをYと連動させる"
-#define	STR_ON			"on"
+#define	L10N_PARAM_UV_AUTO		"UVをYと連動させる"
+#define	L10N_PARAM_ON			"on"
 
 //UIのパラメータ
 typedef struct ParamInfo {

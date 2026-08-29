@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "PixelReplace.h"
-#include <stdio.h>
+#include "PixelReplaceText.generated.h"
 #include "PixelReplace_def.h"
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +17,9 @@ static PF_Err About (	PF_InData		*in_data,
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const PixelReplaceText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -154,14 +156,15 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PixelReplaceText::Strings strings(in_data);
 	
 	char num[255] = {"\0"};
 	A_long i;
 	for (i=0; i< PR_PRM_COUNT; i++){ 
 #ifdef AE_OS_WIN
-		sprintf_s(num,"target%d",i+1);
+		sprintf_s(num, AETEXT_PARAM(strings, L10N_PARAM_TARGET_FORMAT), i + 1);
 #else
-		sprintf(num,"target%d",i+1);
+		sprintf(num, AETEXT_PARAM(strings, L10N_PARAM_TARGET_FORMAT), i + 1);
 #endif
 		//*************************************************
 		AEFX_CLR_STRUCT(def);	
@@ -171,12 +174,13 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 			);
 		//-----------------
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_CHECKBOX(UI_ENABLED1,UI_ENABLED2,FALSE,0,
+		PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED),
+			AETEXT_LABEL(strings, L10N_PARAM_ON),FALSE,0,
 			PARAMS_IDX(i, paramsOffset_enabled)
 			);
 		//-----------------
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_COLOR(	UI_SRC_COLOR, 
+		PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SOURCE_COLOR),
 						pr_colorDef[i%COLOR_DEF_SIZE][0],	// Red
 						pr_colorDef[i%COLOR_DEF_SIZE][1],	//Green
 						pr_colorDef[i%COLOR_DEF_SIZE][2],	//Blue
@@ -184,7 +188,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 						);
 		//-----------------
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_COLOR(	UI_REP_COLOR, 
+		PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_REPLACE_COLOR),
 						pr_colorDef[i%COLOR_DEF_SIZE][3],	// Red
 						pr_colorDef[i%COLOR_DEF_SIZE][4],	//Green
 						pr_colorDef[i%COLOR_DEF_SIZE][5],	//Blue
@@ -192,7 +196,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 						);
 		//-----------------
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_PERCENT(	UI_REP_OPACITY, 100,
+		PF_ADD_PERCENT(	AETEXT_PARAM(strings, L10N_PARAM_REPLACE_OPACITY), 100,
 						PARAMS_IDX(i, paramsOffset_d_opacity)
 						);
 		//-----------------
@@ -205,7 +209,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(UI_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,							//VALID_MIN
 						100,						//VALID_MAX
 						0,							//SLIDER_MIN
@@ -226,10 +230,10 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 						PF_ParamFlag_CANNOT_INTERP;
 						
 	//def.ui_flags	=	PF_PUI_STD_CONTROL_ONLY; 
-	PF_ADD_POPUP(UI_POP1, 
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_DISP),
 				PR_PRM_COUNT,	//メニューの数
 				PR_PRM_COUNT,	//デフォルト
-				UI_POP2,
+				AETEXT_POPUP(strings, L10N_PARAM_DISP_ITEMS),
 				PixelReplace_POP
 				);
 	out_data->num_params = PixelReplace_NUM_PARAMS;
@@ -512,9 +516,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				PixelReplaceText::OpenSettings(in_data, L"F's PixelReplace");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

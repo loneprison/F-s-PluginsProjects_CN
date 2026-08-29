@@ -15,12 +15,18 @@
 
 #include "FsUtils.h"
 #include "FsBuffer.h"
+#include "FsAbout.h"
+#include "../_localization/AeText.h"
+#if !defined(MAJOR_VERSION) || !defined(MINOR_VERSION) || !defined(BUG_VERSION) || \
+	!defined(STAGE_VERSION) || !defined(BUILD_VERSION) || !defined(FS_VERSION)
 #include "FsVersion.h"
+#endif
 
 #ifndef NO_USE_FSGRAPHICS
 	#include "FsGraphics.h"
 #endif
 
+#include <string>
 #include <vector>
 enum
 {
@@ -65,30 +71,6 @@ typedef struct FsPixelCopyParam{
 //******************************************************************************
 #define FS_SCRIPT_ALERT	"alert(%s);\r\n"
 
-#define FS_ABOUT_DIALOG	"var  FsAbout = function()\r\n\
-{\r\n\
-	var strName = \"%s\";\r\n\
-	var strVersion = \"ver %d.%d [%s]\";\r\n\
-	var strDis = \"%s\";\r\n\
-	var strMyName = \"https://github.com/bryful : bryful@gmail.com \";\r\n\
-    var nanae = \"Nanae Furuhashi - My beloved daughter. May she rest in peace.\";\r\n\
-	var winObj = new Window(\"dialog\", \"NF's Plugins\", [ 0,  0,  480, 180] );\r\n\
-\
-	var edFsName = winObj.add(\"edittext\", [  30,   10,   30+ 440,   10+  20], strName, { readonly:true, borderless:true });\r\n\
-	var edFsVersion = winObj.add(\"edittext\", [  30,   40,   30+ 440,   40+ 20], strVersion, { readonly:true, borderless:true });\r\n\
-	var edFsDis = winObj.add(\"edittext\", [  30,   70,   30+ 440,   70+  20], strDis, { readonly:true, borderless:true });\r\n\
-	var edMyName = winObj.add(\"edittext\", [  30,  100,   30+ 440,  100+  20], strMyName, { readonly:true, borderless:true });\r\n\
-    var stNana = winObj.add(\"statictext\", [  30,  130,   30+ 440,  130+  20], nanae, { readonly:true, borderless:true });\r\n\
-	var btnOK = winObj.add(\"button\", [ 360,  140,  360+ 100,  140+  24], \"OK\" , { name:\"ok\" });\r\n\
-	this.show = function()\r\n\
-	{\r\n\
-		winObj.center();\r\n\
-		return winObj.show();\r\n\
-	}\r\n\
-}\r\n\
-var dlg = new FsAbout;\r\n\
-dlg.show();\r\n"
-
 #define FsAE_ITEM_COUNT	256
 
 //******************************************************************************
@@ -119,6 +101,29 @@ typedef struct{
 //******************************************************************************
 class CFsAE{
 private:
+	static std::string EscapeAboutUtf8ScriptString(const char *text)
+	{
+		std::string escaped;
+		if (!text) {
+			return escaped;
+		}
+
+		escaped.reserve(std::char_traits<char>::length(text));
+		for (const char character : std::string(text)) {
+			switch (character) {
+			case '\\': escaped += "\\\\"; break;
+			case '"': escaped += "\\\""; break;
+			case '\b': escaped += "\\b"; break;
+			case '\f': escaped += "\\f"; break;
+			case '\n': escaped += "\\n"; break;
+			case '\r': escaped += "\\r"; break;
+			case '\t': escaped += "\\t"; break;
+			default: escaped += character; break;
+			}
+		}
+		return escaped;
+	}
+
 protected:
 	PF_PixelFormat		m_format;
 	A_long				m_frame;
@@ -411,7 +416,9 @@ public:
 		PF_InData		*in_dataP,
 		PF_OutData		*out_dataP,
 		PF_ParamDef		*paramsP[],
-		PF_LayerDef		*outputP)
+		PF_LayerDef		*outputP,
+		const char		*script_description,
+		const char		*legacy_description)
 	{
 		(void)paramsP;  // 未使用パラメータの警告を抑制
 		(void)outputP;  // 未使用パラメータの警告を抑制
@@ -427,16 +434,16 @@ public:
 			m_frame	=(in_dataP->current_time/in_dataP->time_step); 
 		}
 		if (ae_plugin_idP!=NULL){
-			
+			const std::string escaped_description = EscapeAboutUtf8ScriptString(script_description);
 			A_char scriptCode[2048] = {'\0'}; 
 			PF_SPRINTF(	scriptCode,FS_ABOUT_DIALOG,
 				FS_NAME, 
 				MAJOR_VERSION, 
 				MINOR_VERSION, 
 				__DATE__,
-				FS_DESCRIPTION);
+				escaped_description.c_str());
 			
-			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, TRUE, NULL, NULL));
+			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, FALSE, NULL, NULL));
 
 		}else{
 			PF_SPRINTF(	out_dataP->return_msg, 
@@ -445,11 +452,27 @@ public:
 				MAJOR_VERSION, 
 				MINOR_VERSION, 
 				__DATE__,
-				FS_DESCRIPTION);
+				legacy_description);
 		}
 		m_resultErr = err;
 		m_mode		= FsAE_ABOUT;
 		return err;
+	}
+	PF_Err About
+	(
+		PF_InData		*in_dataP,
+		PF_OutData		*out_dataP,
+		PF_ParamDef		*paramsP[],
+		PF_LayerDef		*outputP,
+		const AeText::AboutText &description)
+	{
+		return About(
+			in_dataP,
+			out_dataP,
+			paramsP,
+			outputP,
+			AeText::detail::AboutTextAccess::ScriptUtf8(description),
+			AeText::detail::AboutTextAccess::Legacy(description));
 	}
 	//*********************************************************************************
 	PF_Err GlobalSetup

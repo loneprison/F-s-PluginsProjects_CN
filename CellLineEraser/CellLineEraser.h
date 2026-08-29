@@ -47,21 +47,22 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Use					"TargetColorCount"
-#define	STR_Color1				"color1"
-#define	STR_Color2				"color2"
-#define	STR_Color3				"color3"
-#define	STR_Color4				"color4"
-#define	STR_Color5				"color5"
-#define	STR_Color6				"color6"
-#define	STR_Color7				"color7"
-#define	STR_Color8				"color8"
-#define	STR_Color9				"color9"
-#define	STR_Color10				"color10"
-#define	STR_KEEP_PIXELS			"KeepPixels"
-#define	STR_FillUnknownColors	"Fill unremoved pixels"
-#define	STR_FillColor			"FillColor"
-#define	STR_MakeWhiteTransparent	"Make White Transparent"
+#define	L10N_PARAM_TARGET_COUNT					"TargetColorCount"
+#define	L10N_PARAM_COLOR1				"color1"
+#define	L10N_PARAM_COLOR2				"color2"
+#define	L10N_PARAM_COLOR3				"color3"
+#define	L10N_PARAM_COLOR4				"color4"
+#define	L10N_PARAM_COLOR5				"color5"
+#define	L10N_PARAM_COLOR6				"color6"
+#define	L10N_PARAM_COLOR7				"color7"
+#define	L10N_PARAM_COLOR8				"color8"
+#define	L10N_PARAM_COLOR9				"color9"
+#define	L10N_PARAM_COLOR10				"color10"
+#define	L10N_PARAM_KEEP_PIXELS			"KeepPixels"
+#define	L10N_PARAM_FILL_UNKNOWN	"Fill unremoved pixels"
+#define	L10N_PARAM_FILL_COLOR			"FillColor"
+#define	L10N_PARAM_WHITE_TRANS	"Make White Transparent"
+#define	L10N_PARAM_ON					"on"
 
 
 
@@ -93,4 +94,4 @@ extern "C" {
 		void* extra);
 }
 
-#endif // CellLineEraser_H	
+#endif // CellLineEraser_H

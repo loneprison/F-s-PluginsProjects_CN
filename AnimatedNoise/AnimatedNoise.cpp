@@ -3,6 +3,7 @@
 */
 
 #include "AnimatedNoise.h"
+#include "AnimatedNoiseText.generated.h"
 
 void (*mosicSub)(PrmTbl *prm);
 void (*noiseSub)(PrmTbl *prm);
@@ -17,7 +18,9 @@ static PF_Err About (	PF_InData		*in_data,
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const AnimatedNoiseText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -84,6 +87,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const AnimatedNoiseText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//１個目のパラメータ
@@ -93,8 +97,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 						PF_ParamFlag_CANNOT_INTERP;
 						
 	//def.ui_flags	=	PF_PUI_STD_CONTROL_ONLY; 
-	PF_ADD_CHECKBOX("毎フレームでノイズ変化",
-					"ON",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ANIM_EVERY_FRAME),
+					AETEXT_LABEL(strings, L10N_ON_LABEL),
 					TRUE,
 					0,
 					ID_ANIMATED_CB
@@ -103,7 +107,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_SLIDER(	"ノイズの動き",	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_ANIM_MOTION),	//パラメータの名前
 					0 , 				//数値入力する場合の最小値
 					F_RAND_MAX,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -115,7 +119,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//２個目のパラメータ
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"ノイズの量",	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_NOISE_AMOUNT),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -127,7 +131,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//３個目のパラメータ
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	"ノイズの強さ",	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_NOISE_STRENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -142,8 +146,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//４個目のパラメータ
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("カラーノイズ",
-					"ON",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_COLOR_NOISE),
+					AETEXT_LABEL(strings, L10N_ON_LABEL),
 					(PF_ParamValue)FALSE,
 					0,
 					ID_COLOR_CB
@@ -151,7 +155,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	"ブロックの量",	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLOCK_AMOUNT),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -165,7 +169,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	"ブロックの強さ",	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLOCK_STRENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -179,7 +183,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"ブロックの横幅(px)",	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BLOCK_WIDTH),	//パラメータの名前
 					3, 				//数値入力する場合の最小値
 					512,			//数値入力する場合の最大値
 					3,				//スライダーの最小値 
@@ -190,7 +194,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"ブロックの縦幅(px)",	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BLOCK_HEIGHT),	//パラメータの名前
 					3, 				//数値入力する場合の最小値
 					512,			//数値入力する場合の最大値
 					3,				//スライダーの最小値 
@@ -201,8 +205,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("カラーブロック",
-					"ON",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_COLOR_BLOCK),
+					AETEXT_LABEL(strings, L10N_ON_LABEL),
 					FALSE,
 					0,
 					ID_BLOCK_COLOR_CB
@@ -913,9 +917,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
-				break;		
+			case PF_Cmd_DO_DIALOG: {
+
+				AnimatedNoiseText::OpenSettings(in_data, L"F's AnimatedNoise");
+				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

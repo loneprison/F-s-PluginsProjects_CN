@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MODE": {"useSource": true},
+        "L10N_PARAM_R_H_Y_BLUR": {"useSource": true},
+        "L10N_PARAM_G_L_U_BLUR": {"useSource": true},
+        "L10N_PARAM_B_S_V_BLUR": {"useSource": true},
+        "L10N_PARAM_ALPHA_BLUR": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Blurs each channel separately."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MODE": "模式",
+        "L10N_PARAM_R_H_Y_BLUR": "R/H/Y 模糊",
+        "L10N_PARAM_G_L_U_BLUR": "G/L/u 模糊",
+        "L10N_PARAM_B_S_V_BLUR": "B/S/v 模糊",
+        "L10N_PARAM_ALPHA_BLUR": "Alpha 模糊"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "RGB|HLS|Yuv"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "分别模糊各个通道"
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
 
 
 #include "OutLine.h"
+#include "OutLineText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const OutLineText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_Y,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_VALUE),	//パラメータの名前
 					1, 		//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -35,7 +37,7 @@ static PF_Err ParamsSetup (
 	//色の指定
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 					0xFF,
 					0xFF,
 					0xFF,
@@ -43,7 +45,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,						//VALID_MIN
 						400,					//VALID_MAX
 						100,					//SLIDER_MIN

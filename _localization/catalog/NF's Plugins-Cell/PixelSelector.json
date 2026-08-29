@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_REVERSE": "Invert",
+        "L10N_PARAM_FILL": "Fill",
+        "L10N_PARAM_FILL_COLOR": {"useSource": true},
+        "L10N_PARAM_FILL_OPACITY": {"useSource": true},
+        "L10N_PARAM_ENABLED": {"useSource": true},
+        "L10N_PARAM_TARGET_COLOR": {"useSource": true},
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_DISP": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_DISP_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC": {"useSource": true},
+        "L10N_PARAM_TARGET": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Makes all colors except the selected colors transparent."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_REVERSE": "反转",
+        "L10N_PARAM_FILL": "填充",
+        "L10N_PARAM_FILL_COLOR": "填充颜色",
+        "L10N_PARAM_FILL_OPACITY": "填充不透明度",
+        "L10N_PARAM_ENABLED": "启用",
+        "L10N_PARAM_TARGET_COLOR": "目标颜色",
+        "L10N_PARAM_LEVEL": "阈值",
+        "L10N_PARAM_DISP": "显示数量"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_DISP_ITEMS": "1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24"
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC": "选项",
+        "L10N_PARAM_TARGET": "方案"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将所选颜色以外设为透明。"
+      }
+    }
+  }
+}

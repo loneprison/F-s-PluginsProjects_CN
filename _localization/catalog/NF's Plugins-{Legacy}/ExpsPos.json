@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ON": {"useSource": true},
+        "L10N_PARAM_POS0": {"useSource": true},
+        "L10N_PARAM_POS1": {"useSource": true},
+        "L10N_PARAM_POS2": {"useSource": true},
+        "L10N_PARAM_POS3": {"useSource": true},
+        "L10N_PARAM_POS4": {"useSource": true},
+        "L10N_PARAM_POS5": {"useSource": true},
+        "L10N_PARAM_POS6": {"useSource": true},
+        "L10N_PARAM_POS7": {"useSource": true},
+        "L10N_PARAM_POS8": {"useSource": true},
+        "L10N_PARAM_POS9": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON_VALUE": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Provides position controls for expressions."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ON": "启用",
+        "L10N_PARAM_POS0": "位置0",
+        "L10N_PARAM_POS1": "位置1",
+        "L10N_PARAM_POS2": "位置2",
+        "L10N_PARAM_POS3": "位置3",
+        "L10N_PARAM_POS4": "位置4",
+        "L10N_PARAM_POS5": "位置5",
+        "L10N_PARAM_POS6": "位置6",
+        "L10N_PARAM_POS7": "位置7",
+        "L10N_PARAM_POS8": "位置8",
+        "L10N_PARAM_POS9": "位置9"
+      },
+      "Label": {
+        "L10N_PARAM_ON_VALUE": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "表达式位置控制"
+      }
+    }
+  }
+}

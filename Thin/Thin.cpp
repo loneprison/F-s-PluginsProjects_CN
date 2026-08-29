@@ -6,6 +6,7 @@
 
 
 #include "Thin.h"
+#include "ThinText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,9 +20,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ThinText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_Y,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_THIN_VALUE),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					16,			//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -31,8 +33,8 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_COLOR1_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_COLOR1),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_COLOR1_ON
@@ -40,7 +42,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR1, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 					0x05,
 					0x05,
 					0x05,
@@ -48,8 +50,8 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_COLOR2_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_COLOR2),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_COLOR2_ON
@@ -57,7 +59,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR2, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR2),
 					0x0A,
 					0x0A,
 					0x0A,
@@ -65,8 +67,8 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_COLOR3_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_COLOR3),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_COLOR3_ON
@@ -74,7 +76,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR3, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR3),
 					0xFF,
 					0x00,
 					0x00,
@@ -82,8 +84,8 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_COLOR4_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_COLOR4),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_COLOR4_ON
@@ -91,7 +93,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR4, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR4),
 					0x00,
 					0xFF,
 					0x00,
@@ -99,7 +101,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -114,16 +116,16 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_WHITE,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_NO_WHITE),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_WHITE
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ALPHAZERO,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_NO_ALPHA_ZERO),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_ALPHAZERO
@@ -131,8 +133,8 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_EDGE,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_EDGE_FILTER),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_EDGE

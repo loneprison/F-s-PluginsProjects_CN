@@ -6,6 +6,7 @@
 
 
 #include "smokeThreshold.h"
+#include "smokeThresholdText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const smokeThresholdText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_ALPHA,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_THRESHOLD),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						25,						//SLIDER_MIN
@@ -36,31 +38,31 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_HI_E,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_ENABLED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_HI_ENABLED
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SDW1_E,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SHADOW1_ENABLED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_SDW1_ENABLED
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SDW2_E,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SHADOW2_ENABLED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_SDW2_ENABLED
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HI,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						60,						//SLIDER_MIN
@@ -74,7 +76,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_SDW1,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW1),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						20,						//SLIDER_MIN
@@ -88,7 +90,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_SDW2,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW2),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -102,7 +104,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_HI_COL, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_COLOR),
 					0xF0,
 					0xF0,
 					0xF0,
@@ -111,7 +113,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_NOR_COL, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_NORMAL_COLOR),
 					0x90,
 					0x90,
 					0x90,
@@ -119,7 +121,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SDW1_COL, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SHADOW1_COLOR),
 					0x50,
 					0x50,
 					0x50,
@@ -127,7 +129,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SDW2_COL, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SHADOW2_COLOR),
 					0x30,
 					0x30,
 					0x30,
@@ -136,10 +138,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_OUTLINE, ID_LINE_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_OUTLINE), ID_LINE_TOPIC);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LINE_WEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE_WEIGHT),	//パラメータの名前
 					1, 				//数値入力する場合の最小値
 					5,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -149,31 +151,31 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_NOR_LINE_E,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_NORMAL_LINE_ENABLED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_NOR_LINE_ENABLED
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SDW1_LINE_E,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SHADOW1_LINE_ENABLED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_SDW1_LINE_ENABLED
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SDW2_LINE_E,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SHADOW2_LINE_ENABLED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_SDW2_LINE_ENABLED
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_NOR_LINE, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_NORMAL_LINE),
 					0x50,
 					0x50,
 					0x50,
@@ -181,7 +183,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SDW1_LINE_E, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SHADOW1_LINE),
 					0x30,
 					0x30,
 					0x30,
@@ -190,7 +192,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SDW2_LINE_E, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SHADOW2_LINE),
 					0x20,
 					0x20,
 					0x20,

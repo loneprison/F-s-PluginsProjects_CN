@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_ORG_REV_LABEL": {"useSource": true},
+        "L10N_COLOR_START": {"useSource": true},
+        "L10N_COLOR_CENTER": {"useSource": true},
+        "L10N_COLOR_END": {"useSource": true},
+        "L10N_COLOR_CENTER_POS": {"useSource": true},
+        "L10N_ALPHA_START": {"useSource": true},
+        "L10N_ALPHA_END": {"useSource": true},
+        "L10N_NOISE_VALUE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_ORG_REV_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Adds color according to brightness."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_ORG_REV_LABEL": "反转原始亮度",
+        "L10N_COLOR_START": "高光",
+        "L10N_COLOR_CENTER": "中间调",
+        "L10N_COLOR_END": "阴影",
+        "L10N_COLOR_CENTER_POS": "中间调位置",
+        "L10N_ALPHA_START": "高光不透明度",
+        "L10N_ALPHA_END": "阴影不透明度",
+        "L10N_NOISE_VALUE": "杂色数量"
+      },
+      "Label": {
+        "L10N_ORG_REV_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "按亮度着色"
+      }
+    }
+  }
+}

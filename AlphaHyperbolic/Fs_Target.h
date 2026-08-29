@@ -12,7 +12,7 @@
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"AlphaHyperbolic"
+#define L10N_PLUGIN_DESC	"AlphaHyperbolic"
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -50,7 +50,7 @@ out_data->out_flags
 //#define FS_OUT_FLAGS	33555008	//通常はこちら
 
 
-#define FS_OUT_FLAGS 33556032
+#define FS_OUT_FLAGS 33556064 // Original flags plus PF_OutFlag_I_DO_DIALOG.
 
 
 //#define FS_OUT_FLAGS	33556036	//こっちを有効にすると毎フレームごとに描画する。NON_PARAM_VARYを動作中に切り替えるときもこちらに

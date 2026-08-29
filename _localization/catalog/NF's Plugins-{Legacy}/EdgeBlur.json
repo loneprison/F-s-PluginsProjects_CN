@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_OFFSET": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Blurs the edges of the image."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_BLUR": "模糊",
+        "L10N_PARAM_OFFSET": "偏移"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "模糊图像边缘"
+      }
+    }
+  }
+}

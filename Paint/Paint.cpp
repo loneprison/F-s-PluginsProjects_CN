@@ -4,6 +4,7 @@
 */
 //-----------------------------------------------------------------------------------
 #include "Paint.h"
+#include "PaintText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -16,7 +17,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const PaintText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -82,12 +85,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PaintText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(StrEXECUTED_CB1,
-					StrEXECUTED_CB2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_EXECUTE),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_EXECUTED_CB
@@ -96,7 +100,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(StrPOS,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POSITION),			/*"New Center"*/
 				50,	// X
 				50,	// Y
 				0,	// Flag
@@ -105,7 +109,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	StrCOLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_PAINT_COLOR),
 					0xFF,
 					0x00,
 					0x00,
@@ -113,7 +117,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	StrCOLOR_Opacity,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -359,9 +363,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				PaintText::OpenSettings(in_data, L"F's Paint");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

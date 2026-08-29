@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "RgbToAlpha.h"
+#include "RgbToAlphaText.generated.h"
 
 
 static PF_Pixel COL_W = {0xFF,0xFF,0xFF,0xFF};
@@ -19,7 +20,9 @@ static PF_Err About (	PF_InData		*in_data,
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const RgbToAlphaText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 //-------------------------------------------------------------------------------------------------
@@ -85,21 +88,22 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const RgbToAlphaText::Strings strings(in_data);
 
 	AEFX_CLR_STRUCT(def);	
 	def.flags		=	PF_ParamFlag_SUPERVISE			|
 						PF_ParamFlag_CANNOT_INTERP;
 						
-	PF_ADD_POPUP(		STR_POP1, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_FILL_COLOR),
 						STR_POP,	//メニューの数
 						STR_POP_DEF,	//デフォルト
-						STR_POP2,
+						AETEXT_POPUP(strings, L10N_PARAM_FILL_ITEMS),
 						ID_POP
 						);
 
 	AEFX_CLR_STRUCT(def);
 	//def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_CUSTOM_COLOR),
 					0xFF,
 					0x00,
 					0x00,
@@ -107,8 +111,8 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_REV1,
-					STR_REV2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_REVERSE_ALPHA),
+					AETEXT_LABEL(strings, L10N_PARAM_REV),
 					FALSE,
 					0,
 					ID_CB
@@ -466,9 +470,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				RgbToAlphaText::OpenSettings(in_data, L"F's RgbToAlpha");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

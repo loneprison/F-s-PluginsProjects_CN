@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LINE_BRIGHTNESS": "Line Brightness (%)",
+        "L10N_PARAM_LINE_HEIGHT": "Line Height (dots)",
+        "L10N_PARAM_LINE_POSITION": "Line Position",
+        "L10N_PARAM_INTERVAL": "Interval Adjustment (dots)",
+        "L10N_PARAM_DIR": "Direction",
+        "L10N_PARAM_OFFSET": "Offset"
+      },
+      "Label": {
+        "L10N_PARAM_REVERSE": "Reverse"
+      },
+      "Popup": {
+        "L10N_PARAM_DIR_ITEMS": "Horizontal|Vertical"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "A TV-style scanline effect."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LINE_BRIGHTNESS": "线条亮度",
+        "L10N_PARAM_LINE_HEIGHT": "线条宽度",
+        "L10N_PARAM_LINE_POSITION": "反转贴图",
+        "L10N_PARAM_INTERVAL": "间距补正",
+        "L10N_PARAM_DIR": "方向",
+        "L10N_PARAM_OFFSET": "相位"
+      },
+      "Label": {
+        "L10N_PARAM_REVERSE": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_DIR_ITEMS": "水平|垂直"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "类似电视扫描线"
+      }
+    }
+  }
+}

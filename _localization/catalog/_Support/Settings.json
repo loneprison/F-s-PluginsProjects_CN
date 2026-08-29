@@ -1,0 +1,438 @@
+{
+  "entries": [
+    {
+      "id": "L10N_SETTINGS_WINDOW_HEADING",
+      "token": "WindowHeading",
+      "zh": "语言设置",
+      "en": "Language Settings",
+      "ja": "言語設定"
+    },
+    {
+      "id": "L10N_SETTINGS_WINDOW_UI_LANGUAGE",
+      "token": "WindowUiLanguage",
+      "zh": "设置窗口语言",
+      "en": "Settings language",
+      "ja": "設定画面の言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_GROUP",
+      "token": "StatusGroup",
+      "zh": "运行状态",
+      "en": "Runtime status",
+      "ja": "動作状況"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_AE_LANGUAGE",
+      "token": "StatusAeLanguage",
+      "zh": "AE 语言",
+      "en": "After Effects language",
+      "ja": "After Effects の言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_AE_VERSION",
+      "token": "StatusAeVersion",
+      "zh": "AE 版本",
+      "en": "After Effects version",
+      "ja": "After Effects のバージョン"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_WINDOWS_LANGUAGE",
+      "token": "StatusWindowsLanguage",
+      "zh": "Windows“非 Unicode 程序的语言”",
+      "en": "Windows language for non-Unicode programs",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CURRENT_LANGUAGE",
+      "token": "StatusCurrentLanguage",
+      "zh": "当前会话语言",
+      "en": "Current session language",
+      "ja": "現在のセッション言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_NEXT_LANGUAGE",
+      "token": "StatusNextLanguage",
+      "zh": "下次启动语言",
+      "en": "Language after restart",
+      "ja": "再起動後の言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_SAVE_AND_RESTART",
+      "token": "StatusSaveAndRestart",
+      "zh": "保存并重启 After Effects 后生效。",
+      "en": "Save and restart After Effects to apply this change.",
+      "ja": "保存して After Effects を再起動すると反映されます。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_RESTART",
+      "token": "StatusRestart",
+      "zh": "重启 After Effects 后生效。",
+      "en": "Restart After Effects to apply this change.",
+      "ja": "After Effects を再起動すると反映されます。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_NO_CONFIG",
+      "token": "StatusNoConfig",
+      "zh": "尚未保存设置，当前使用自动模式。",
+      "en": "No settings have been saved. Automatic mode is currently in use.",
+      "ja": "設定はまだ保存されていません。現在は自動モードを使用しています。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_INVALID_CONFIG",
+      "token": "StatusInvalidConfig",
+      "zh": "无法读取设置。请勿重复打开设置窗口，关闭其他设置窗口后重试。",
+      "en": "The settings could not be read. Do not open the settings window repeatedly. Close any other settings windows and try again.",
+      "ja": "設定を読み込めません。設定ウィンドウを繰り返し開かず、ほかの設定ウィンドウを閉じてからもう一度お試しください。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_REPAIRED",
+      "token": "StatusConfigRepaired",
+      "zh": "设置无效，已恢复默认设置。",
+      "en": "The settings were invalid and have been reset to defaults.",
+      "ja": "設定が無効だったため、既定値に戻しました。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_FIELDS_REPAIRED",
+      "token": "StatusConfigFieldsRepaired",
+      "zh": "部分设置无效，已重置部分设置。",
+      "en": "Some settings were invalid and have been reset.",
+      "ja": "一部の設定が無効だったため、一部の設定をリセットしました。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_BACKUP_FAILED",
+      "token": "StatusConfigBackupFailed",
+      "zh": "设置无效，当前使用修复后的设置。",
+      "en": "The settings are invalid. Repaired settings are currently in use.",
+      "ja": "設定が無効なため、現在は修復後の設定を使用しています。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_REPAIR_WRITE_FAILED",
+      "token": "StatusConfigRepairWriteFailed",
+      "zh": "设置无效，修复后的设置未能保存。",
+      "en": "The settings are invalid. The repaired settings could not be saved.",
+      "ja": "設定が無効で、修復後の設定を保存できませんでした。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_VERSION_COMPATIBILITY",
+      "token": "StatusConfigVersionCompatibility",
+      "zh": "配置版本过高或损坏，保存后将会重置部分设置。",
+      "en": "The settings version is newer or the file is damaged. Saving will reset some settings.",
+      "ja": "設定のバージョンが新しいか、ファイルが破損しています。保存すると一部の設定がリセットされます。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_VERSION_DEFAULTS",
+      "token": "StatusConfigVersionDefaults",
+      "zh": "部分设置已使用默认值。",
+      "en": "Some settings are using defaults.",
+      "ja": "一部の設定には既定値を使用しています。"
+    },
+    {
+      "id": "L10N_SETTINGS_COMPATIBILITY_GROUP",
+      "token": "CompatibilityGroup",
+      "zh": "兼容性提示",
+      "en": "Compatibility guidance",
+      "ja": "互換性に関する案内"
+    },
+    {
+      "id": "L10N_SETTINGS_PLUGIN_LANGUAGE_GROUP",
+      "token": "PluginLanguageGroup",
+      "zh": "插件语言",
+      "en": "Plugin language",
+      "ja": "プラグインの言語"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_AUTO",
+      "token": "ModeAuto",
+      "zh": "自动",
+      "en": "Automatic",
+      "ja": "自動"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_ENGLISH",
+      "token": "ModeEnglish",
+      "zh": "英语",
+      "en": "English",
+      "ja": "英語"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_ORIGINAL",
+      "token": "ModeOriginal",
+      "zh": "原文",
+      "en": "Original",
+      "ja": "原文"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_CHINESE",
+      "token": "ModeSimplifiedChinese",
+      "zh": "简体中文",
+      "en": "Chinese (Simplified)",
+      "ja": "簡体字中国語"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_ORIGINAL_FOR_ZH",
+      "token": "ModeOriginalForSimplifiedChinese",
+      "zh": "原文（兼容简体中文环境）",
+      "en": "Original (for Simplified Chinese systems)",
+      "ja": "原文（簡体字中国語環境向け）"
+    },
+    {
+      "id": "L10N_SETTINGS_VALUE_UNAVAILABLE",
+      "token": "ValueUnavailable",
+      "zh": "无法取得",
+      "en": "Unavailable",
+      "ja": "取得できません"
+    },
+    {
+      "id": "L10N_SETTINGS_VALUE_UNKNOWN",
+      "token": "ValueUnknown",
+      "zh": "未知",
+      "en": "Unknown",
+      "ja": "不明"
+    },
+    {
+      "id": "L10N_SETTINGS_BUTTON_SAVE",
+      "token": "ButtonSave",
+      "zh": "保存",
+      "en": "Save",
+      "ja": "保存"
+    },
+    {
+      "id": "L10N_SETTINGS_BUTTON_CANCEL",
+      "token": "ButtonCancel",
+      "zh": "取消",
+      "en": "Cancel",
+      "ja": "キャンセル"
+    },
+    {
+      "id": "L10N_SETTINGS_BUTTON_BACK",
+      "token": "ButtonBack",
+      "zh": "返回",
+      "en": "Back",
+      "ja": "戻る"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_CONFIG_DIRECTORY_UNAVAILABLE",
+      "token": "SaveErrorConfigDirectoryUnavailable",
+      "zh": "无法使用本地配置目录。",
+      "en": "The local configuration directory is unavailable.",
+      "ja": "ローカル設定フォルダーを使用できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_CONFIG_BUSY",
+      "token": "SaveErrorConfigBusy",
+      "zh": "另一个 After Effects 实例正在使用配置，请稍后重试。",
+      "en": "Another After Effects instance is using the configuration. Please try again later.",
+      "ja": "別の After Effects が設定を使用しています。しばらくしてから再試行してください。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_DIRECTORY_CREATION_FAILED",
+      "token": "SaveErrorDirectoryCreationFailed",
+      "zh": "无法创建本地配置目录。",
+      "en": "The local configuration directory could not be created.",
+      "ja": "ローカル設定フォルダーを作成できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_TEMPORARY_FILE_CREATION_FAILED",
+      "token": "SaveErrorTemporaryFileCreationFailed",
+      "zh": "无法创建临时配置文件。",
+      "en": "The temporary configuration file could not be created.",
+      "ja": "一時設定ファイルを作成できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_SAFE_REPLACE_FAILED",
+      "token": "SaveErrorSafeReplaceFailed",
+      "zh": "无法安全保存语言配置。",
+      "en": "The language configuration could not be saved safely.",
+      "ja": "言語設定を安全に保存できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_AUTO_ENGLISH_LEGACY_OTHER_WINDOWS",
+      "token": "MessageAutoEnglishLegacyOtherWindows",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为“{windows_language}”。自动模式将使用原文显示，请注意插件文本可能出现乱码。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "Windows is set to “{windows_language}” for non-Unicode programs. Automatic mode will use the original text, which may appear garbled. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は「{windows_language}」です。自動モードでは原文を使用しますが、プラグインの文字が化ける可能性があります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_AUTO_ENGLISH_MODERN",
+      "token": "MessageAutoEnglishModern",
+      "zh": "AE 23.x 及以上版本无法兼容该插件的日文文本。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "After Effects 23.x and later cannot display this plugin's Japanese text compatibly. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "After Effects 23.x 以降では、このプラグインの日本語テキストを互換表示できません。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_AUTO_UNKNOWN_AE",
+      "token": "MessageAutoUnknownAe",
+      "zh": "未知系统／AE 语言（{ae_language}），将使用原文显示。推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "The system or After Effects language is not recognized ({ae_language}); the original text will be used. We recommend the NF-series plugins rebuilt by the original author.",
+      "ja": "システムまたは After Effects の言語（{ae_language}）を判定できないため、原文を使用します。原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_AUTO_AE_UNAVAILABLE",
+      "token": "MessageAutoAeUnavailable",
+      "zh": "无法取得当前 AE 语言环境，将使用原文显示。推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "The current After Effects language could not be determined, so the original text will be used. We recommend the NF-series plugins rebuilt by the original author.",
+      "ja": "現在の After Effects の言語環境を取得できないため、原文を使用します。原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH",
+      "token": "MessageManualEnglish",
+      "zh": "这不是一个常见选项，仅用于兼容以前图层中使用过英文版本的用户。如果你希望长期使用这类插件，推荐下载原作者重新编写的 NF 系列插件。",
+      "en": "This is an uncommon option intended only for users who previously used an English version of the plugin in existing layers. For long-term use, we recommend the NF-series plugins rewritten by the original author.",
+      "ja": "これは一般的な選択肢ではなく、以前の英語版を既存レイヤーで使用していた場合の互換用です。継続して使用する場合は、原作者が書き直した NF シリーズをおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_JAPANESE_OTHER",
+      "token": "MessageManualJapaneseOther",
+      "zh": "不推荐在日语 AE 环境下更改为其他语言。",
+      "en": "Changing to another language is not recommended in Japanese After Effects.",
+      "ja": "日本語版 After Effects で別の言語に変更することはおすすめしません。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_CHINESE_RECOMMENDED",
+      "token": "MessageManualSimplifiedChineseRecommended",
+      "zh": "这是简体中文 AE 环境下的推荐选项。",
+      "en": "This is the recommended option for Simplified Chinese After Effects.",
+      "ja": "簡体字中国語版 After Effects では、この選択肢をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_CHINESE_ORIGINAL_RISK",
+      "token": "MessageManualSimplifiedChineseOriginalRisk",
+      "zh": "选择此项可能产生乱码。如果此前使用的是原版插件，可能产生与原版插件相同的乱码文本。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "This option may produce garbled text. If you previously used the original plugin, the result may match its existing garbled text. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "この選択肢では文字化けする可能性があります。以前に原版プラグインを使用していた場合は、原版と同じ文字化けになる可能性があります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_CHINESE_ORIGINAL_FOR_ZH",
+      "token": "MessageManualSimplifiedChineseOriginalForSimplifiedChinese",
+      "zh": "选择此项可能在中文电脑上正确显示日文插件文本。请确认你的工作环境确实需要正确显示日文。",
+      "en": "This option may display the plugin's Japanese text correctly on a Chinese system. Use it only if your workflow specifically requires Japanese text.",
+      "ja": "この選択肢では、中国語環境のコンピューターで日本語のプラグインテキストが正しく表示される可能性があります。日本語表示が必要な作業環境であることを確認してください。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_MODERN_ORIGINAL_OR_CHINESE",
+      "token": "MessageManualEnglishModernOriginalOrSimplifiedChinese",
+      "zh": "选择此项可能产生乱码。如果此前使用的是原版插件，可能产生与原版插件相同的乱码文本。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "This option may produce garbled text. If you previously used the original plugin, the result may match its existing garbled text. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "この選択肢では文字化けする可能性があります。以前に原版プラグインを使用していた場合は、原版と同じ文字化けになる可能性があります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_MODERN_ORIGINAL_FOR_ZH",
+      "token": "MessageManualEnglishModernOriginalForSimplifiedChinese",
+      "zh": "选择此项可能产生乱码。请注意，这可能产生与既有版本不兼容的全新乱码文本。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "This option may produce garbled text, including new garbling that is incompatible with earlier versions. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "この選択肢では文字化けする可能性があります。従来版と互換性のない新しい文字化けになる可能性もあります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_JAPANESE",
+      "token": "MessageManualEnglishLegacyOriginalJapanese",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为日语。选择此项可以正确显示原版插件日语文本。",
+      "en": "Windows is set to Japanese for non-Unicode programs. This option can correctly display the original plugin's Japanese text.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は日本語です。この選択肢では、オリジナル版プラグインの日本語テキストを正しく表示できます。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_MISMATCH",
+      "token": "MessageManualEnglishLegacyOriginalMismatch",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为“{windows_language}”，与原文编码不符。选择此项可能产生乱码；如果此前使用的是原版插件，可能产生与原版插件相同的乱码文本。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "Windows is set to “{windows_language}” for non-Unicode programs, which does not match the original encoding. This option may produce garbled text; if you previously used the original plugin, the result may match its existing garbled text. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は「{windows_language}」で、原文のエンコーディングと一致しません。この選択肢では文字化けする可能性があり、以前に原版プラグインを使用していた場合は原版と同じ文字化けになる可能性があります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_CHINESE_CHINESE",
+      "token": "MessageManualEnglishLegacySimplifiedChineseOnSimplifiedChinese",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为简体中文。选择此项可能正确显示中文插件文本。",
+      "en": "Windows is set to Simplified Chinese for non-Unicode programs. This option may display the plugin's Chinese text correctly.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は簡体字中国語です。この選択肢では、中国語のプラグインテキストが正しく表示される可能性があります。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_CHINESE_MISMATCH",
+      "token": "MessageManualEnglishLegacySimplifiedChineseMismatch",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为“{windows_language}”，与中文编码不符。选择此项可能产生乱码。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "Windows is set to “{windows_language}” for non-Unicode programs, which does not match the Chinese encoding. This option may produce garbled text. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は「{windows_language}」で、中国語のエンコーディングと一致しません。この選択肢では文字化けする可能性があります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_FOR_ZH_CHINESE",
+      "token": "MessageManualEnglishLegacyOriginalForSimplifiedChineseOnSimplifiedChinese",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为简体中文。选择此项可能正确显示日文插件文本，请确认你的工作环境确实需要正确显示日文。",
+      "en": "Windows is set to Simplified Chinese for non-Unicode programs. This option may display the plugin's Japanese text correctly; use it only if your workflow specifically requires Japanese text.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は簡体字中国語です。この選択肢では、日本語のプラグインテキストが正しく表示される可能性があります。日本語表示が必要な作業環境であることを確認してください。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_FOR_ZH_MISMATCH",
+      "token": "MessageManualEnglishLegacyOriginalForSimplifiedChineseMismatch",
+      "zh": "当前 Windows 的“非 Unicode 程序的语言”设置为“{windows_language}”，与该兼容模式的编码不符，可能产生与既有版本不兼容的全新乱码文本。如果希望消除乱码，推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "Windows is set to “{windows_language}” for non-Unicode programs, which does not match this compatibility mode. It may produce new garbled text that is incompatible with earlier versions. To avoid garbled text, use the NF-series plugins rebuilt by the original author.",
+      "ja": "Windows の「Unicode 対応でないプログラムの言語」は「{windows_language}」で、この互換モードのエンコーディングと一致しません。従来版と互換性のない新しい文字化けになる可能性があります。文字化けを解消するには、原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_UNKNOWN_AE",
+      "token": "MessageManualUnknownAe",
+      "zh": "未知系统／AE 语言（{ae_language}）。在当前环境中选择“{selected_mode}”无法保证正确显示，可能产生乱码。推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "The system or After Effects language is not recognized ({ae_language}). “{selected_mode}” cannot be guaranteed to display correctly in this environment and may produce garbled text. We recommend the NF-series plugins rebuilt by the original author.",
+      "ja": "システムまたは After Effects の言語（{ae_language}）を判定できません。この環境では「{selected_mode}」が正しく表示される保証はなく、文字化けする可能性があります。原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_MANUAL_AE_UNAVAILABLE",
+      "token": "MessageManualAeUnavailable",
+      "zh": "无法取得当前 AE 语言环境。在当前环境中选择“{selected_mode}”无法保证正确显示，可能产生乱码。推荐使用原作者重新构建的 NF 系列插件。",
+      "en": "The current After Effects language could not be determined. “{selected_mode}” cannot be guaranteed to display correctly in this environment and may produce garbled text. We recommend the NF-series plugins rebuilt by the original author.",
+      "ja": "現在の After Effects の言語環境を取得できません。この環境では「{selected_mode}」が正しく表示される保証はなく、文字化けする可能性があります。原作者が再ビルドした NF シリーズの使用をおすすめします。"
+    }
+  ],
+  "references": [
+    "L10N_SETTINGS_WINDOW_HEADING",
+    "L10N_SETTINGS_WINDOW_UI_LANGUAGE",
+    "L10N_SETTINGS_STATUS_GROUP",
+    "L10N_SETTINGS_STATUS_AE_LANGUAGE",
+    "L10N_SETTINGS_STATUS_AE_VERSION",
+    "L10N_SETTINGS_STATUS_WINDOWS_LANGUAGE",
+    "L10N_SETTINGS_STATUS_CURRENT_LANGUAGE",
+    "L10N_SETTINGS_STATUS_NEXT_LANGUAGE",
+    "L10N_SETTINGS_STATUS_SAVE_AND_RESTART",
+    "L10N_SETTINGS_STATUS_RESTART",
+    "L10N_SETTINGS_STATUS_NO_CONFIG",
+    "L10N_SETTINGS_STATUS_INVALID_CONFIG",
+    "L10N_SETTINGS_STATUS_CONFIG_REPAIRED",
+    "L10N_SETTINGS_STATUS_CONFIG_FIELDS_REPAIRED",
+    "L10N_SETTINGS_STATUS_CONFIG_BACKUP_FAILED",
+    "L10N_SETTINGS_STATUS_CONFIG_REPAIR_WRITE_FAILED",
+    "L10N_SETTINGS_STATUS_CONFIG_VERSION_COMPATIBILITY",
+    "L10N_SETTINGS_STATUS_CONFIG_VERSION_DEFAULTS",
+    "L10N_SETTINGS_COMPATIBILITY_GROUP",
+    "L10N_SETTINGS_PLUGIN_LANGUAGE_GROUP",
+    "L10N_SETTINGS_MODE_AUTO",
+    "L10N_SETTINGS_MODE_ENGLISH",
+    "L10N_SETTINGS_MODE_ORIGINAL",
+    "L10N_SETTINGS_MODE_CHINESE",
+    "L10N_SETTINGS_MODE_ORIGINAL_FOR_ZH",
+    "L10N_SETTINGS_VALUE_UNAVAILABLE",
+    "L10N_SETTINGS_VALUE_UNKNOWN",
+    "L10N_SETTINGS_BUTTON_SAVE",
+    "L10N_SETTINGS_BUTTON_CANCEL",
+    "L10N_SETTINGS_BUTTON_BACK",
+    "L10N_SETTINGS_SAVE_ERROR_CONFIG_DIRECTORY_UNAVAILABLE",
+    "L10N_SETTINGS_SAVE_ERROR_CONFIG_BUSY",
+    "L10N_SETTINGS_SAVE_ERROR_DIRECTORY_CREATION_FAILED",
+    "L10N_SETTINGS_SAVE_ERROR_TEMPORARY_FILE_CREATION_FAILED",
+    "L10N_SETTINGS_SAVE_ERROR_SAFE_REPLACE_FAILED",
+    "L10N_SETTINGS_MESSAGE_AUTO_ENGLISH_LEGACY_OTHER_WINDOWS",
+    "L10N_SETTINGS_MESSAGE_AUTO_ENGLISH_MODERN",
+    "L10N_SETTINGS_MESSAGE_AUTO_UNKNOWN_AE",
+    "L10N_SETTINGS_MESSAGE_AUTO_AE_UNAVAILABLE",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH",
+    "L10N_SETTINGS_MESSAGE_MANUAL_JAPANESE_OTHER",
+    "L10N_SETTINGS_MESSAGE_MANUAL_CHINESE_RECOMMENDED",
+    "L10N_SETTINGS_MESSAGE_MANUAL_CHINESE_ORIGINAL_RISK",
+    "L10N_SETTINGS_MESSAGE_MANUAL_CHINESE_ORIGINAL_FOR_ZH",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_MODERN_ORIGINAL_OR_CHINESE",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_MODERN_ORIGINAL_FOR_ZH",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_JAPANESE",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_MISMATCH",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_CHINESE_CHINESE",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_CHINESE_MISMATCH",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_FOR_ZH_CHINESE",
+    "L10N_SETTINGS_MESSAGE_MANUAL_ENGLISH_LEGACY_ORIGINAL_FOR_ZH_MISMATCH",
+    "L10N_SETTINGS_MESSAGE_MANUAL_UNKNOWN_AE",
+    "L10N_SETTINGS_MESSAGE_MANUAL_AE_UNAVAILABLE"
+  ]
+}

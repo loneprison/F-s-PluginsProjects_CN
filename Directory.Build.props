@@ -1,28 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- すべての構成に共通の設定 -->
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
     <!-- 警告レベル 4 を設定 -->
     <WarningLevel>3</WarningLevel>
     
-    <!-- 警告をエラーとして扱わない -->
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    
-    <!-- C++言語標準 -->
-    <LanguageStandard>stdcpp17</LanguageStandard>
+    <!-- 共通ツールチェーン -->
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <PlatformToolset>v145</PlatformToolset>
 
     <!-- 標準準拠モード -->
     <ConformanceMode>true</ConformanceMode>
+
+    <!-- Publication validation is explicit; Release remains a development build. -->
+    <AeTextPublicationValidation Condition="'$(AeTextPublicationValidation)'=='' and '$(FsTextPublicationValidation)'!=''">$(FsTextPublicationValidation)</AeTextPublicationValidation>
+    <AeTextPublicationValidationArgument Condition="'$(AeTextPublicationValidation)'=='true'">-PublicationValidation</AeTextPublicationValidationArgument>
   </PropertyGroup>
 
   <!-- Debug 構成のみの設定 -->
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <LocalDebuggerCommand>C:\Program Files\Adobe\Adobe After Effects 2024\Support Files\AfterFX.exe</LocalDebuggerCommand>
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and '$(Configuration)'=='Debug' and '$(AE_DEBUG_HOST_EXE)'!=''">
+    <LocalDebuggerCommand>$(AE_DEBUG_HOST_EXE)</LocalDebuggerCommand>
   </PropertyGroup>
   
   <!-- すべての構成に共通のコンパイル設定 -->
-  <ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
     <ClCompile>
+      <!-- C++言語標準 -->
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+
       <!-- 特定の警告を無効化 -->
       <!-- 4103: alignment changed after including header
            4189: local variable is initialized but not referenced
@@ -41,6 +47,14 @@
       
       <!-- SDL チェックを無効化 -->
       <SDLCheck>false</SDLCheck>
+
+      <!-- AE SDK の ABI と CRT を全工程で統一 -->
+      <StructMemberAlignment>16Bytes</StructMemberAlignment>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.PluginMap.props"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj'" />
 </Project>

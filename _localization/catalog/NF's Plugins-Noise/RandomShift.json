@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_AMOUNT": "Amount",
+        "L10N_PARAM_SHIFT_MAX": "Maximum Horizontal Shift (px)",
+        "L10N_PARAM_SHIFT_MIN": "Minimum Horizontal Shift (px)",
+        "L10N_PARAM_LEN_MAX": "Maximum Width (px)",
+        "L10N_PARAM_LEN_MIN": "Minimum Width (px)",
+        "L10N_PARAM_HEIGHT_MAX": "Maximum Height (px)",
+        "L10N_PARAM_HEIGHT_MIN": "Minimum Height (px)",
+        "L10N_PARAM_VER_SHIFT": "Vertical Shift (px)"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Randomly shifts random rectangles."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_AMOUNT": "数量",
+        "L10N_PARAM_SHIFT_MAX": "最大水平偏移",
+        "L10N_PARAM_SHIFT_MIN": "最小水平偏移",
+        "L10N_PARAM_LEN_MAX": "块最大宽度",
+        "L10N_PARAM_LEN_MIN": "块最小宽度",
+        "L10N_PARAM_HEIGHT_MAX": "块最大高度",
+        "L10N_PARAM_HEIGHT_MIN": "块最小高度",
+        "L10N_PARAM_VER_SHIFT": "垂直偏移"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "随机错位随机矩形"
+      }
+    }
+  }
+}

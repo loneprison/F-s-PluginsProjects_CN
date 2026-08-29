@@ -14,6 +14,7 @@
 
 
 #include "NFs_Target.h"
+#include "ColorChangeFromPointText.generated.h"
 
 
 
@@ -51,8 +52,8 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_POINT			"TargetColorPoint"
-#define	STR_COLOR			"Color"
+#define	L10N_PARAM_TARGET_POINT			"TargetColorPoint"
+#define	L10N_PARAM_COLOR			"Color"
 
 
 
@@ -90,12 +91,14 @@ public:
 		A_char MNV[64] = { '\0' };
 		PF_SPRINTF(MJV, "%d", MAJOR_VERSION);
 		PF_SPRINTF(MNV, "%d", MINOR_VERSION);
+		const ColorChangeFromPointText::Strings strings(in_dataP);
+		const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
 
 		ERR(AboutBox(
 			NFS_DISPNAME,
 			MJV,
 			MNV,
-			NFS_DESCRIPTION));
+			description));
 
 		return err;
 
@@ -249,9 +252,11 @@ extern "C" {
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = ae.RespondtoAEGP(in_dataP, out_dataP, paramsP, outputP, extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ColorChangeFromPointText::OpenSettings(in_dataP, L"F's ColorChangeFromPoint");
 				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = ae.HandleChangedParam(in_dataP,
 					out_dataP,

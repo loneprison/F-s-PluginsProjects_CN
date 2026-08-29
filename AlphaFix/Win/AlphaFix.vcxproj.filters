@@ -27,6 +27,9 @@
     <Filter Include="Supporting code\Fs">
       <UniqueIdentifier>{9a306c72-5eb0-45ca-8222-10d571f04825}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{D8EAB30F-5724-479B-8684-65D55E931371}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\AlphaFix.h">
@@ -34,12 +37,6 @@
     </ClInclude>
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
@@ -54,9 +51,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +89,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -111,7 +102,7 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
-      <Filter>Supporting code\AE</Filter>
+      <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsAE.h">
       <Filter>Header Files\Fs</Filter>
@@ -123,11 +114,14 @@
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\CParamsSetup.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Fs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="AlphaFixPiPL.rc">
+    <ResourceCompile Include="$(IntDir)AlphaFixPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -148,10 +142,18 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\AlphaFixPiPL.r">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Channel\AlphaFix.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@
 
 
 #include "NFs_Target.h"
+#include "NFsSkeltonText.generated.h"
 
 
 
@@ -35,9 +36,9 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_VALUE			"value"
-#define	STR_CHECK			"check"
-#define	STR_ON				"on"
+#define L10N_PARAM_VALUE	"value"
+#define L10N_PARAM_CHECK	"check"
+#define L10N_PARAM_ON		"on"
 
 
 
@@ -75,12 +76,14 @@ public:
 		A_char MNV[64] = { '\0' };
 		PF_SPRINTF(MJV, "%d", MAJOR_VERSION);
 		PF_SPRINTF(MNV, "%d", MINOR_VERSION);
+		const NFsSkeltonText::Strings strings(in_dataP);
+		const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
 
 		ERR(AboutBox(
 			NFS_DISPNAME,
 			MJV,
 			MNV,
-			NFS_DESCRIPTION));
+			description));
 
 		return err;
 
@@ -234,9 +237,11 @@ extern "C" {
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = ae.RespondtoAEGP(in_dataP, out_dataP, paramsP, outputP, extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				NFsSkeltonText::OpenSettings(in_dataP, L"F's NFsSkelton");
 				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = ae.HandleChangedParam(in_dataP,
 					out_dataP,

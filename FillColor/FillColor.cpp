@@ -4,6 +4,7 @@
 */
 //-----------------------------------------------------------------------------------
 #include "FillColor.h"
+#include "FillColorText.generated.h"
 
 
 //-----------------------------------------------------------------------------------
@@ -16,7 +17,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const FillColorText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 
@@ -86,11 +94,12 @@ ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const FillColorText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ENABLED_CB1,
-					STR_ENABLED_CB2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_EXECUTE),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_ENABLED_CB
@@ -99,7 +108,7 @@ ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 					0xff,
 					0x00,
 					0x00,
@@ -107,7 +116,7 @@ ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_OPA_FIXED,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -473,9 +482,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				FillColorText::OpenSettings(in_data, L"F's FillColor");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

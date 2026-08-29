@@ -6,6 +6,7 @@
 
 
 #include "PluginSkeleton.h"
+#include "PluginSkeletonText.generated.h"
 
 #ifndef PF_CLAMP
 #define PF_CLAMP(VAL, MIN, MAX) ((VAL) < (MIN) ? (MIN) : ((VAL) > (MAX) ? (MAX) : (VAL)))
@@ -22,9 +23,10 @@ static PF_Err ParamsSetup (
 	PF_Err			err = PF_Err_NONE;
 
 	CParamsSetup cs(in_data, out_data);
+	const PluginSkeletonText::Strings strings(in_data);
 
 	cs.AddFloatSilder(	// R
-		STR_R,			//Name
+		AETEXT_PARAM(strings, L10N_PARAM_R),			//Name
 		-2,				//VALID_MIN
 		2,				//VALID_MAX
 		-1,				//SLIDER_MIN
@@ -36,7 +38,7 @@ static PF_Err ParamsSetup (
 		ID_R
 	);
 	cs.AddFloatSilder(	// R
-		STR_G,			//Name
+		AETEXT_PARAM(strings, L10N_PARAM_G),			//Name
 		-2,				//VALID_MIN
 		2,				//VALID_MAX
 		-1,				//SLIDER_MIN
@@ -48,7 +50,7 @@ static PF_Err ParamsSetup (
 		ID_G
 	);
 	cs.AddFloatSilder(	// R
-		STR_B,			//Name
+		AETEXT_PARAM(strings, L10N_PARAM_B),			//Name
 		-2,				//VALID_MIN
 		2,				//VALID_MAX
 		-1,				//SLIDER_MIN
@@ -60,7 +62,7 @@ static PF_Err ParamsSetup (
 		ID_B
 	);
 	cs.AddFloatSilder(	// R
-		STR_NOISE,			//Name
+		AETEXT_PARAM(strings, L10N_PARAM_NOISE),			//Name
 		0,				//VALID_MIN
 		1,				//VALID_MAX
 		0,				//SLIDER_MIN
@@ -73,8 +75,8 @@ static PF_Err ParamsSetup (
 	);
 		
 	cs.AddCheckBox(	// noise frame
-		STR_NOISE_FRAME1,
-		STR_NOISE_FRAME2,
+		AETEXT_PARAM(strings, L10N_PARAM_NOISE_FRAME),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		ID_NOISE_FRAME,
 		PF_ParamFlag_SUPERVISE |
@@ -82,7 +84,7 @@ static PF_Err ParamsSetup (
 		PF_ParamFlag_CANNOT_INTERP
 	);
 	cs.AddSlider(	// noise offset
-		STR_NOISE_OFFSET,	//パラメータの名前
+		AETEXT_PARAM(strings, L10N_PARAM_NOISE_OFFSET),	//パラメータの名前
 		-30000, 		//数値入力する場合の最小値
 		30000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -93,24 +95,24 @@ static PF_Err ParamsSetup (
 		PF_PUI_DISABLED
 	);
 	cs.AddCheckBox(
-		STR_HIDDEN_ON1,
-		STR_HIDDEN_ON2,
+		AETEXT_PARAM(strings, L10N_PARAM_HIDDEN_UI),
+		AETEXT_LABEL(strings, L10N_PARAM_HIDDEN_TEXT),
 		FALSE,
 		ID_HIDDEN_ON,
 		PF_ParamFlag_SUPERVISE |
 		PF_ParamFlag_CANNOT_TIME_VARY |
 		PF_ParamFlag_CANNOT_INTERP
 	);
-	cs.AddTopic(STR_TOPIC, ID_TOPIC, PF_ParamFlag_START_COLLAPSED);
+	cs.AddTopic(AETEXT_TOPIC(strings, L10N_PARAM_SAMPLE_TOPIC), ID_TOPIC, PF_ParamFlag_START_COLLAPSED);
 	cs.AddColor(	// color
-		STR_COLOR, 
+		AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		{ 0xFF, 0xFF, 0xFF, 0xFF },
 		ID_COLOR,
 		PF_ParamFlag_CANNOT_TIME_VARY//これをつけるとキーフレームが撃てなくなる
 	);
 	//cs.SetParamFlags();
 	cs.AddSlider(	// add slider
-		STR_ADD_SLIDER,	//パラメータの名前
+		AETEXT_PARAM(strings, L10N_PARAM_ADD_SLIDER),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		100,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -119,7 +121,7 @@ static PF_Err ParamsSetup (
 		ID_ADD_SLIDER,
 		PF_ParamFlag_CANNOT_TIME_VARY//これをつけるとキーフレームが撃てなくなる
 	);
-	cs.AddFixedSlider(		STR_FIXED_SLIDER,	//パラメータの名前
+	cs.AddFixedSlider(		AETEXT_PARAM(strings, L10N_PARAM_FIXED_SLIDER),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		100,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -131,7 +133,7 @@ static PF_Err ParamsSetup (
 		PF_ParamFlag_CANNOT_TIME_VARY//これをつけるとキーフレームが撃てなくなる
 	);
 	cs.AddFloatSilder(	// float slider
-		STR_FLOAT_SLIDER,	//パラメータの名前
+		AETEXT_PARAM(strings, L10N_PARAM_FLOAT_SLIDER),	//パラメータの名前
 		-10000, 				//数値入力する場合の最小値
 		10000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -143,24 +145,24 @@ static PF_Err ParamsSetup (
 		ID_FLOAT_SLIDER
 	);
 	cs.AddCheckBox(	// checkbox
-		STR_CHECKBOX1,
-		STR_CHECKBOX2,
+		AETEXT_PARAM(strings, L10N_PARAM_CHECKBOX),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		ID_CHECKBOX
 	);
 	cs.AddAngle(	// angle
-		STR_ANGLE,
+		AETEXT_PARAM(strings, L10N_PARAM_ANGLE),
 		0,
 		ID_ANGLE
 	);
-	cs.AddPopup(		STR_POPUP,
+	cs.AddPopup(		AETEXT_PARAM(strings, L10N_PARAM_POPUP),
 		STR_POPUP_COUNT,
 		STR_POPUP_DFLT,
-		STR_POPUP_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_POPUP_ITEMS),
 		ID_POPUP
 	);
 	cs.AddPoint(
-		STR_POINT,
+		AETEXT_PARAM(strings, L10N_PARAM_POINT),
 		50, 
 		50,
 		FALSE,
@@ -168,8 +170,8 @@ static PF_Err ParamsSetup (
 	);
 	cs.EndTopic(ID_TOPIC_END);
 	cs.AddButton(	// button
-		STR_BUTTON1,
-		STR_BUTTON2,
+		AETEXT_PARAM(strings, L10N_PARAM_BUTTON),
+		AETEXT_LABEL(strings, L10N_PARAM_PUSH),
 		ID_BUTTON,
 		PF_ParamFlag_SUPERVISE
 	);
@@ -195,15 +197,9 @@ HandleChangedParam(
 		if (!err) {
 			if (extraP->param_index == ID_BUTTON)
 			{
-				A_char scriptCode[2048] = { '\0' };
-				PF_SPRINTF(scriptCode, FS_ABOUT_DIALOG,
-					FS_NAME,
-					MAJOR_VERSION,
-					MINOR_VERSION,
-					__DATE__,
-					FS_DESCRIPTION);
-
-				ERR(ae.suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae.ae_plugin_idP->my_id, scriptCode, TRUE, NULL, NULL));
+				const PluginSkeletonText::Strings strings(in_data);
+				const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+				ERR(ae.About(in_data, out_data, params, outputP, description));
 				out_data->out_flags |= PF_OutFlag_REFRESH_UI;
 			}
 		}

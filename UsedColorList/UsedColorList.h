@@ -14,6 +14,7 @@
 
 
 #include "NFs_Target.h"
+#include "UsedColorListText.generated.h"
 
 
 
@@ -52,16 +53,16 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_POS0			"PosStart"
-#define	STR_POS1			"PosEnd"
-#define	STR_ISDISP			"Disp"
-#define	STR_ON				"on"
-#define	STR_GRID_WIDTH		"GridWidrh"
-#define	STR_GRID_HEIGHT		"GridHeight"
+#define	L10N_PARAM_POS_START			"PosStart"
+#define	L10N_PARAM_POS_END			"PosEnd"
+#define	L10N_PARAM_DISP			"Disp"
+#define	L10N_PARAM_ON				"on"
+#define	L10N_PARAM_GRID_WIDTH		"GridWidrh"
+#define	L10N_PARAM_GRID_HEIGHT		"GridHeight"
 
-#define	STR_ExceptColor0	"ExceptColor0"
-#define	STR_ExceptColor1	"ExceptColor1"
-#define	STR_ExceptColor2	"ExceptColor2"
+#define	L10N_PARAM_EXCEPT_COLOR0	"ExceptColor0"
+#define	L10N_PARAM_EXCEPT_COLOR1	"ExceptColor1"
+#define	L10N_PARAM_EXCEPT_COLOR2	"ExceptColor2"
 
 
 
@@ -98,12 +99,14 @@ public:
 		A_char MNV[64] = { '\0' };
 		PF_SPRINTF(MJV, "%d", MAJOR_VERSION);
 		PF_SPRINTF(MNV, "%d", MINOR_VERSION);
+		const UsedColorListText::Strings strings(in_dataP);
+		const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
 
 		ERR(AboutBox(
 			NFS_DISPNAME,
 			MJV,
 			MNV,
-			NFS_DESCRIPTION));
+			description));
 
 		return err;
 
@@ -257,9 +260,11 @@ extern "C" {
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = ae.RespondtoAEGP(in_dataP, out_dataP, paramsP, outputP, extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				UsedColorListText::OpenSettings(in_dataP, L"F's UsedColorList");
 				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = ae.HandleChangedParam(in_dataP,
 					out_dataP,

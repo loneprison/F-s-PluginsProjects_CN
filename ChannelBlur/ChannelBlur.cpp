@@ -6,6 +6,7 @@
 
 
 #include "ChannelBlur.h"
+#include "ChannelBlurText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,19 +20,20 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ChannelBlurText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_MODE,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_MODE),
 		STR_MODE_COUNT,	//メニューの数
 		STR_MODE_DFLT,	//デフォルト
-		STR_MODE_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_MODE_ITEMS),
 		ID_MODE
 	);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_0CH_R,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_R_H_Y_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -41,7 +43,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_1CH_G,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_G_L_U_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -51,7 +53,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_2CH_B,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_B_S_V_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -61,7 +63,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_3CH_A,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 

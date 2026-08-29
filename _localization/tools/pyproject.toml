@@ -1,0 +1,61 @@
+[project]
+name = "aetext-tools"
+version = "0.1.0"
+description = "Development-only localization tooling for AeText"
+readme = "README.md"
+requires-python = "==3.12.*"
+classifiers = ["Private :: Do Not Upload"]
+dependencies = [
+    "nicegui>=3.16,<4",
+    "pydantic>=2.13,<3",
+    "tree-sitter>=0.26,<0.27",
+    "tree-sitter-cpp>=0.23,<0.24",
+]
+
+[project.scripts]
+aetext = "aetext.cli:main"
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.165,<7",
+    "pytest>=9,<10",
+    "pytest-playwright>=0.9,<1",
+    "ruff>=0.16,<0.17",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "aetext"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "../tests"]
+markers = [
+    "e2e: Playwright Chromium end-to-end review tests",
+]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+    "SIM",
+    "RUF",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

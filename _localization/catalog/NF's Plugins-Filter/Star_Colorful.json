@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET": {"useSource": true},
+        "L10N_PARAM_TARGET_BORDER": {"useSource": true},
+        "L10N_PARAM_TARGET_SOFTNESS": {"useSource": true},
+        "L10N_PARAM_TARGET_COLOR": {"useSource": true},
+        "L10N_PARAM_TARGET_DISP": {"useSource": true},
+        "L10N_PARAM_LENGTH": {"useSource": true},
+        "L10N_PARAM_OPACITY": {"useSource": true},
+        "L10N_PARAM_ROT": {"useSource": true},
+        "L10N_PARAM_AUTO_ROLLING": {"useSource": true},
+        "L10N_PARAM_ROLLING_SPEED": {"useSource": true},
+        "L10N_PARAM_COLOR_KIND": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_COLOR_BRIGHTNESS": {"useSource": true},
+        "L10N_PARAM_RAINBOW_OFFSET": {"useSource": true},
+        "L10N_PARAM_RAINBOW_DELTA": {"useSource": true},
+        "L10N_PARAM_VERTICAL_LENGTH": {"useSource": true},
+        "L10N_PARAM_VERTICAL_ROT": {"useSource": true},
+        "L10N_PARAM_VERTICAL_OPACITY": {"useSource": true},
+        "L10N_PARAM_HORIZON_LENGTH": {"useSource": true},
+        "L10N_PARAM_HORIZON_ROT": {"useSource": true},
+        "L10N_PARAM_HORIZON_OPACITY": {"useSource": true},
+        "L10N_PARAM_DIAGONAL_LENGTH": {"useSource": true},
+        "L10N_PARAM_DIAGONAL_ROT": {"useSource": true},
+        "L10N_PARAM_DIAGONAL2_ROT": {"useSource": true},
+        "L10N_PARAM_DIAGONAL_OPACITY": {"useSource": true},
+        "L10N_PARAM_BLEND": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": {"useSource": true},
+        "L10N_PARAM_COLOR_ITEMS": {"useSource": true},
+        "L10N_PARAM_BLEND_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_TOPIC": {"useSource": true},
+        "L10N_PARAM_CONTROL_TOPIC": {"useSource": true},
+        "L10N_PARAM_COLOR_TOPIC": {"useSource": true},
+        "L10N_PARAM_STAR_DETAIL": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Generates adjustable four-direction star rays from bright areas or a target color."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET": "输入通道",
+        "L10N_PARAM_TARGET_BORDER": "阈值",
+        "L10N_PARAM_TARGET_SOFTNESS": "柔和度",
+        "L10N_PARAM_TARGET_COLOR": "目标颜色",
+        "L10N_PARAM_TARGET_DISP": "显示提取范围",
+        "L10N_PARAM_LENGTH": "光线长度",
+        "L10N_PARAM_OPACITY": "不透明度",
+        "L10N_PARAM_ROT": "旋转",
+        "L10N_PARAM_AUTO_ROLLING": "自动旋转",
+        "L10N_PARAM_ROLLING_SPEED": "旋转速度",
+        "L10N_PARAM_COLOR_KIND": "颜色模式",
+        "L10N_PARAM_COLOR": "自定义颜色",
+        "L10N_PARAM_COLOR_BRIGHTNESS": "颜色亮度",
+        "L10N_PARAM_RAINBOW_OFFSET": "彩虹颜色相位",
+        "L10N_PARAM_RAINBOW_DELTA": "彩虹循环次数",
+        "L10N_PARAM_VERTICAL_LENGTH": "垂直长度",
+        "L10N_PARAM_VERTICAL_ROT": "垂直旋转",
+        "L10N_PARAM_VERTICAL_OPACITY": "垂直不透明度",
+        "L10N_PARAM_HORIZON_LENGTH": "水平长度",
+        "L10N_PARAM_HORIZON_ROT": "水平旋转",
+        "L10N_PARAM_HORIZON_OPACITY": "水平不透明度",
+        "L10N_PARAM_DIAGONAL_LENGTH": "对角长度",
+        "L10N_PARAM_DIAGONAL_ROT": "对角1旋转",
+        "L10N_PARAM_DIAGONAL2_ROT": "对角2旋转",
+        "L10N_PARAM_DIAGONAL_OPACITY": "对角不透明度",
+        "L10N_PARAM_BLEND": "混合模式"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": "RGB最大|R+G+B|亮度|目标颜色",
+        "L10N_PARAM_COLOR_ITEMS": "自定义|原始颜色|彩虹色",
+        "L10N_PARAM_BLEND_ITEMS": "无|屏幕|相加|正常"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_TOPIC": "提取设置",
+        "L10N_PARAM_CONTROL_TOPIC": "星芒设置",
+        "L10N_PARAM_COLOR_TOPIC": "颜色设置",
+        "L10N_PARAM_STAR_DETAIL": "星芒细节"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "画面亮点或目标颜色生成可调节的四向星芒光效"
+      }
+    }
+  }
+}

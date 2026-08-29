@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LENGTH": {"useSource": true},
+        "L10N_PARAM_STRONG": {"useSource": true},
+        "L10N_PARAM_ROT": {"useSource": true},
+        "L10N_PARAM_COLOR_KIND": {"useSource": true},
+        "L10N_PARAM_COLOR_A": {"useSource": true},
+        "L10N_PARAM_COLOR_B": {"useSource": true},
+        "L10N_PARAM_COLOR_BORDER": {"useSource": true},
+        "L10N_PARAM_LINE1_LENGTH": {"useSource": true},
+        "L10N_PARAM_LINE1_STRONG": {"useSource": true},
+        "L10N_PARAM_LINE1_ROT": {"useSource": true},
+        "L10N_PARAM_LINE2_LENGTH": {"useSource": true},
+        "L10N_PARAM_LINE2_STRONG": {"useSource": true},
+        "L10N_PARAM_LINE2_ROT": {"useSource": true},
+        "L10N_PARAM_LINE3_LENGTH": {"useSource": true},
+        "L10N_PARAM_LINE3_STRONG": {"useSource": true},
+        "L10N_PARAM_LINE3_ROT": {"useSource": true},
+        "L10N_PARAM_LINE4_LENGTH": {"useSource": true},
+        "L10N_PARAM_LINE4_STRONG": {"useSource": true},
+        "L10N_PARAM_LINE4_ROT": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_COLOR_KIND_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_COLOR_TOPIC": {"useSource": true},
+        "L10N_PARAM_LINE1_TOPIC": {"useSource": true},
+        "L10N_PARAM_LINE2_TOPIC": {"useSource": true},
+        "L10N_PARAM_LINE3_TOPIC": {"useSource": true},
+        "L10N_PARAM_LINE4_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a simple cross filter."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LENGTH": "长度 (%)",
+        "L10N_PARAM_STRONG": "强度 (%)",
+        "L10N_PARAM_ROT": "旋转",
+        "L10N_PARAM_COLOR_KIND": "模式",
+        "L10N_PARAM_COLOR_A": "颜色 A",
+        "L10N_PARAM_COLOR_B": "颜色 B",
+        "L10N_PARAM_COLOR_BORDER": "颜色 AB 占比 (%)",
+        "L10N_PARAM_LINE1_LENGTH": "线1 长度",
+        "L10N_PARAM_LINE1_STRONG": "线1 强度",
+        "L10N_PARAM_LINE1_ROT": "线1 旋转",
+        "L10N_PARAM_LINE2_LENGTH": "线2 长度",
+        "L10N_PARAM_LINE2_STRONG": "线2 强度",
+        "L10N_PARAM_LINE2_ROT": "线2 旋转",
+        "L10N_PARAM_LINE3_LENGTH": "线3 长度",
+        "L10N_PARAM_LINE3_STRONG": "线3 强度",
+        "L10N_PARAM_LINE3_ROT": "线3 旋转",
+        "L10N_PARAM_LINE4_LENGTH": "线4 长度",
+        "L10N_PARAM_LINE4_STRONG": "线4 强度",
+        "L10N_PARAM_LINE4_ROT": "线4 旋转"
+      },
+      "Popup": {
+        "L10N_PARAM_COLOR_KIND_ITEMS": "A 到 B|B 到 A|仅 A|仅 B|屏幕"
+      },
+      "Topic": {
+        "L10N_PARAM_COLOR_TOPIC": "颜色",
+        "L10N_PARAM_LINE1_TOPIC": "线1",
+        "L10N_PARAM_LINE2_TOPIC": "线2",
+        "L10N_PARAM_LINE3_TOPIC": "线3",
+        "L10N_PARAM_LINE4_TOPIC": "线4"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "简易十字滤镜"
+      }
+    }
+  }
+}

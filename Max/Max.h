@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------------
+Ôªø//-----------------------------------------------------------------------------------
 /*
 	PluginSkeleton for VS2010
 */
@@ -38,8 +38,8 @@
 #include "../FsLibrary/FsAE.h"
 
 
-//ÉÜÅ[ÉUÅ[ÉCÉìÉ^Å[ÉtÉFÅ[ÉXÇÃID
-//ParamsSetupä÷êîÇ∆Renderä÷êîÇÃparamsÉpÉâÉÅÅ[É^ÇÃIDÇ…Ç»ÇÈ
+//„É¶„Éº„Ç∂„Éº„Ç§„É≥„Çø„Éº„Éï„Çß„Éº„Çπ„ÅÆID
+//ParamsSetupÈñ¢Êï∞„Å®RenderÈñ¢Êï∞„ÅÆparams„Éë„É©„É°„Éº„Çø„ÅÆID„Å´„Å™„Çã
 enum {
 	ID_INPUT = 0,	// default input layer 
 
@@ -50,12 +50,13 @@ enum {
 	ID_NUM_PARAMS
 };
 
-#define STR_MAX		"value"
-#define STR_DIR1	"ScanLine"
-#define STR_DIR2	"Horizon+Vurtual|Horizon|Vurtual"
-#define STR_CH1		"Channel"
-#define STR_CH2		"RGB+Alpha|RGB|alpha"
-#define STR_OUT		"OutOnly"
+#define L10N_PARAM_VALUE		"value"
+#define L10N_PARAM_SCANLINE	"ScanLine"
+#define L10N_PARAM_SCANLINE_ITEMS	"Horizon+Vurtual|Horizon|Vurtual"
+#define L10N_PARAM_CHANNEL		"Channel"
+#define L10N_PARAM_CHANNEL_ITEMS		"RGB+Alpha|RGB|alpha"
+#define L10N_PARAM_OUT_ONLY		"OutOnly"
+#define L10N_PARAM_ON		"on"
 
 typedef struct ParamInfo{
 	A_long		max;

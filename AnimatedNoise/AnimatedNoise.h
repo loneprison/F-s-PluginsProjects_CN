@@ -56,6 +56,19 @@ enum {
 
 	ID_NUM_PARAMS
 	};
+
+#define L10N_ON_LABEL					"ON"
+#define L10N_PARAM_ANIM_EVERY_FRAME	"毎フレームでノイズ変化"
+#define L10N_PARAM_ANIM_MOTION			"ノイズの動き"
+#define L10N_PARAM_NOISE_AMOUNT		"ノイズの量"
+#define L10N_PARAM_NOISE_STRENGTH		"ノイズの強さ"
+#define L10N_PARAM_COLOR_NOISE			"カラーノイズ"
+#define L10N_PARAM_BLOCK_AMOUNT		"ブロックの量"
+#define L10N_PARAM_BLOCK_STRENGTH		"ブロックの強さ"
+#define L10N_PARAM_BLOCK_WIDTH			"ブロックの横幅(px)"
+#define L10N_PARAM_BLOCK_HEIGHT		"ブロックの縦幅(px)"
+#define L10N_PARAM_COLOR_BLOCK			"カラーブロック"
+
 typedef struct PrmTbl{
 	PF_PixelPtr	data;		//画像
 	A_long 		width;		//画像の横幅

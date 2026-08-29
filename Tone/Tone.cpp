@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "Tone.h"
+#include "ToneText.generated.h"
 
 
 //-----------------------------------------------------------------------------------
@@ -17,7 +18,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const ToneText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 
@@ -85,11 +93,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ToneText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_Highlights_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_HIGHLIGHTS),
 					Highlights_def_red,
 					Highlights_def_green,
 					Highlights_def_blue,
@@ -99,7 +108,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_Midtones_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MIDTONES),
 					Midtones_def_red,
 					Midtones_def_green,
 					Midtones_def_blue,
@@ -109,7 +118,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_Shadows_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SHADOWS),
 					Shadows_def_red,
 					Shadows_def_green,
 					Shadows_def_blue,
@@ -119,7 +128,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_Midtones_OFFSET,//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_MIDTONES_OFFSET),//パラメータの名前
 					-100, 				//数値入力する場合の最小値
 					100,				//数値入力する場合の最大値
 					-50,				//スライダーの最小値 
@@ -133,7 +142,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_Blend_w_Original_FIXED,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLEND_WITH_ORIGINAL),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -607,9 +616,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ToneText::OpenSettings(in_data, L"F's Tone");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

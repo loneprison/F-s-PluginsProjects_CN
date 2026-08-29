@@ -39,15 +39,15 @@
 #include "../FsLibrary/FsAE.h"
 
 
-#define STR_CB				"ON"
+#define L10N_PARAM_ON				"ON"
 
-#define STR_DELTA_CB		"RGB差分検出"
-#define STR_DELTA_OPACITY	"RGB差分検出の濃度"
+#define L10N_PARAM_DELTA_CB		"RGB差分検出"
+#define L10N_PARAM_DELTA_OPACITY	"RGB差分検出の濃度"
 
-#define STR_ALPHA_CB		"Alpha差分検出"
-#define STR_ALPHA_OPACITY	"Alpha差分検出の濃度"
+#define L10N_PARAM_ALPHA_CB		"Alpha差分検出"
+#define L10N_PARAM_ALPHA_OPACITY	"Alpha差分検出の濃度"
 
-#define STR_LINE_COLOR		"検出した線の色"
+#define L10N_PARAM_LINE_COLOR		"検出した線の色"
 
 /*
 #define STR_TOPIC			"Extra Colors"

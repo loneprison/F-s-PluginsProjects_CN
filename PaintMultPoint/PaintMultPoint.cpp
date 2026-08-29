@@ -4,6 +4,7 @@
 */
 //-----------------------------------------------------------------------------------
 #include "PaintMultPoint.h"
+#include "PaintMultPointText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -16,7 +17,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const PaintMultPointText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -93,23 +96,24 @@ static PF_Err ParamsSetup (
 
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PaintMultPointText::Strings strings(in_data);
 
 	char cap[255] = {"\0"};
 	for (A_long i=0; i<POINT_COLOR_COUNT; i++){
 		AEFX_CLR_STRUCT(def);	
 		def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-		PF_SPRINTF(cap,STR_TOPIC,i);
+		PF_SPRINTF(cap, AETEXT_TOPIC(strings, L10N_PARAM_TOPIC_FMT), i);
 		PF_ADD_TOPIC(cap, ID_UI_TOPIC(i));
 		AEFX_CLR_STRUCT(def);
-		PF_SPRINTF(cap,STR_EXECUTED_CB1,i);
+		PF_SPRINTF(cap, AETEXT_PARAM(strings, L10N_PARAM_EXECUTE_FMT), i);
 		PF_ADD_CHECKBOX(cap,
-						STR_EXECUTED_CB2,
+						AETEXT_LABEL(strings, L10N_PARAM_ON),
 						FALSE,
 						0,
 						ID_UI_CB(i)
 						);
 		AEFX_CLR_STRUCT(def);	
-		PF_SPRINTF(cap,STR_POS,i);
+		PF_SPRINTF(cap, AETEXT_PARAM(strings, L10N_PARAM_POS_FMT), i);
 		PF_ADD_POINT(cap,
 					(5+10*i),// X
 					(5+10*i),	// Y
@@ -117,17 +121,17 @@ static PF_Err ParamsSetup (
 					ID_UI_POS(i)
 					);
 		AEFX_CLR_STRUCT(def);
-		PF_SPRINTF(cap,STR_COLOR,i);
-		PF_ADD_COLOR(	cap, 
+		PF_SPRINTF(cap, AETEXT_PARAM(strings, L10N_PARAM_COLOR_FMT), i);
+		PF_ADD_COLOR(	cap,
 						cols[i].red,	// Red
 						cols[i].green,	//Green
 						cols[i].blue,	//Blue
 						ID_UI_COL(i)
 						);
 		AEFX_CLR_STRUCT(def);
-		PF_SPRINTF(cap,STR_GUIDE_CB1,i);
+		PF_SPRINTF(cap, AETEXT_PARAM(strings, L10N_PARAM_GUIDE_FMT), i);
 		PF_ADD_CHECKBOX(cap,
-						STR_EXECUTED_CB2,
+						AETEXT_LABEL(strings, L10N_PARAM_ON),
 						FALSE,
 						0,
 						ID_UI_GID(i)
@@ -137,8 +141,8 @@ static PF_Err ParamsSetup (
 		PF_END_TOPIC(ID_UI_TOPIC_END(i));
 	}
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_GUIDE_ALL_CB1,
-					STR_GUIDE_ALL_CB2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_GUIDE_ALL),
+					AETEXT_LABEL(strings, L10N_PARAM_GUIDE_ALL_OFF),
 					FALSE,
 					0,
 					ID_UI_GUIDE_VISIBLE
@@ -370,9 +374,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				PaintMultPointText::OpenSettings(in_data, L"F's PaintMalutPaint");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

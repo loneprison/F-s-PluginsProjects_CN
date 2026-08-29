@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ANIM_EVERY_FRAME": "Change Noise Every Frame",
+        "L10N_PARAM_ANIM_MOTION": "Noise Motion",
+        "L10N_PARAM_NOISE_AMOUNT": "Noise Amount",
+        "L10N_PARAM_NOISE_STRENGTH": "Noise Strength",
+        "L10N_PARAM_COLOR_NOISE": "Color Noise",
+        "L10N_PARAM_BLOCK_AMOUNT": "Block Amount",
+        "L10N_PARAM_BLOCK_STRENGTH": "Block Strength",
+        "L10N_PARAM_BLOCK_WIDTH": "Block Width (px)",
+        "L10N_PARAM_BLOCK_HEIGHT": "Block Height (px)",
+        "L10N_PARAM_COLOR_BLOCK": "Color Blocks"
+      },
+      "Label": {
+        "L10N_ON_LABEL": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Animation-style noise."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ANIM_EVERY_FRAME": "每帧变化",
+        "L10N_PARAM_ANIM_MOTION": "随机种子",
+        "L10N_PARAM_NOISE_AMOUNT": "杂色数量",
+        "L10N_PARAM_NOISE_STRENGTH": "杂色强度",
+        "L10N_PARAM_COLOR_NOISE": "彩色杂色",
+        "L10N_PARAM_BLOCK_AMOUNT": "块状杂色数量",
+        "L10N_PARAM_BLOCK_STRENGTH": "块状杂色强度",
+        "L10N_PARAM_BLOCK_WIDTH": "块宽度",
+        "L10N_PARAM_BLOCK_HEIGHT": "块高度",
+        "L10N_PARAM_COLOR_BLOCK": "彩色块状杂色"
+      },
+      "Label": {
+        "L10N_ON_LABEL": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "动画风格的杂色"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_DELTA_CB": "RGB Difference Detection",
+        "L10N_PARAM_DELTA_OPACITY": "RGB Difference Intensity",
+        "L10N_PARAM_ALPHA_CB": "Alpha Difference Detection",
+        "L10N_PARAM_ALPHA_OPACITY": "Alpha Difference Intensity",
+        "L10N_PARAM_LINE_COLOR": "Detected Line Color"
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Detects contour lines."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_DELTA_CB": "按RGB变化检测",
+        "L10N_PARAM_DELTA_OPACITY": "RGB线条强度",
+        "L10N_PARAM_ALPHA_CB": "按Alpha变化检测",
+        "L10N_PARAM_ALPHA_OPACITY": "Alpha线条强度",
+        "L10N_PARAM_LINE_COLOR": "线条颜色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "检测并生成轮廓线"
+      }
+    }
+  }
+}

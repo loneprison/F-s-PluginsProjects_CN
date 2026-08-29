@@ -40,10 +40,10 @@
 //#include "FsAE.h"
 
 
-#define STR_ENABLED_CB1	"実行する"
-#define STR_ENABLED_CB2	"ON"
-#define STR_COLOR		"色"
-#define STR_OPA_FIXED	"不透明度"
+#define L10N_PARAM_EXECUTE	"実行する"
+#define L10N_PARAM_ON	"ON"
+#define L10N_PARAM_COLOR		"色"
+#define L10N_PARAM_OPACITY	"不透明度"
 
 
 //ユーザーインターフェースのID

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET_COUNT": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_COLOR6": {"useSource": true},
+        "L10N_PARAM_COLOR7": {"useSource": true},
+        "L10N_PARAM_COLOR8": {"useSource": true},
+        "L10N_PARAM_COLOR9": {"useSource": true},
+        "L10N_PARAM_COLOR10": {"useSource": true},
+        "L10N_PARAM_KEEP_PIXELS": {"useSource": true},
+        "L10N_PARAM_FILL_UNKNOWN": {"useSource": true},
+        "L10N_PARAM_FILL_COLOR": {"useSource": true},
+        "L10N_PARAM_WHITE_TRANS": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Removes the main lines from cel images."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET_COUNT": "目标颜色数量",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_COLOR6": "颜色6",
+        "L10N_PARAM_COLOR7": "颜色7",
+        "L10N_PARAM_COLOR8": "颜色8",
+        "L10N_PARAM_COLOR9": "颜色9",
+        "L10N_PARAM_COLOR10": "颜色10",
+        "L10N_PARAM_KEEP_PIXELS": "保留未清除像素",
+        "L10N_PARAM_FILL_UNKNOWN": "填充未清除像素",
+        "L10N_PARAM_FILL_COLOR": "填充颜色",
+        "L10N_PARAM_WHITE_TRANS": "白色转透明"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "去除二值图像主线"
+      }
+    }
+  }
+}

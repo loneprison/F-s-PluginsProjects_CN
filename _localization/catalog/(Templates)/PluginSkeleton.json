@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_R": {"useSource": true},
+        "L10N_PARAM_G": {"useSource": true},
+        "L10N_PARAM_B": {"useSource": true},
+        "L10N_PARAM_NOISE": {"useSource": true},
+        "L10N_PARAM_NOISE_FRAME": {"useSource": true},
+        "L10N_PARAM_NOISE_OFFSET": {"useSource": true},
+        "L10N_PARAM_HIDDEN_UI": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_ADD_SLIDER": {"useSource": true},
+        "L10N_PARAM_FIXED_SLIDER": {"useSource": true},
+        "L10N_PARAM_FLOAT_SLIDER": {"useSource": true},
+        "L10N_PARAM_CHECKBOX": {"useSource": true},
+        "L10N_PARAM_ANGLE": {"useSource": true},
+        "L10N_PARAM_POPUP": {"useSource": true},
+        "L10N_PARAM_POINT": {"useSource": true},
+        "L10N_PARAM_BUTTON": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true},
+        "L10N_PARAM_HIDDEN_TEXT": {"useSource": true},
+        "L10N_PARAM_PUSH": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_POPUP_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_SAMPLE_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Plugin skeleton."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_R": "R",
+        "L10N_PARAM_G": "G",
+        "L10N_PARAM_B": "B",
+        "L10N_PARAM_NOISE": "杂色",
+        "L10N_PARAM_NOISE_FRAME": "随机种子",
+        "L10N_PARAM_NOISE_OFFSET": "杂色相位",
+        "L10N_PARAM_HIDDEN_UI": "隐藏界面",
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_ADD_SLIDER": "整数滑块",
+        "L10N_PARAM_FIXED_SLIDER": "定点小数滑块",
+        "L10N_PARAM_FLOAT_SLIDER": "浮点滑块",
+        "L10N_PARAM_CHECKBOX": "复选框",
+        "L10N_PARAM_ANGLE": "角度",
+        "L10N_PARAM_POPUP": "下拉菜单",
+        "L10N_PARAM_POINT": "点",
+        "L10N_PARAM_BUTTON": "按钮"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开",
+        "L10N_PARAM_HIDDEN_TEXT": "oba-Q!",
+        "L10N_PARAM_PUSH": "按下"
+      },
+      "Popup": {
+        "L10N_PARAM_POPUP_ITEMS": "一|二|三"
+      },
+      "Topic": {
+        "L10N_PARAM_SAMPLE_TOPIC": "示例主题"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "测试用插件框架"
+      }
+    }
+  }
+}

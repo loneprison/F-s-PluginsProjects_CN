@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "LineTrace.h"
+#include "LineTraceText.generated.h"
 #include <stdio.h>
 
 
@@ -24,18 +25,19 @@ ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const LineTraceText::Strings strings(in_data);
 	
 	//-----------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ENABLED_BLACK,
-					UI_ENABLED2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_BLACK),
+					AETEXT_LABEL(strings, L10N_PARAM_ENABLED_ON),
 					TRUE,
 					0,
 					enabled_black
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_BORDER_BLACK,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BORDER_BLACK),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -47,7 +49,7 @@ ParamsSetup (
 					border_black
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_DRAW_BLACK, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DRAW_BLACK),
 					0x00,
 					0x00,
 					0x00,
@@ -55,15 +57,15 @@ ParamsSetup (
 					);
 	//-----------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ENABLED_RED,
-					UI_ENABLED2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_RED),
+					AETEXT_LABEL(strings, L10N_PARAM_ENABLED_ON),
 					TRUE,
 					0,
 					enabled_red
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_BORDER_RED,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BORDER_RED),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -75,7 +77,7 @@ ParamsSetup (
 					border_red
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_DRAW_RED, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DRAW_RED),
 					PF_MAX_CHAN8,
 					0x00,
 					0x00,
@@ -84,15 +86,15 @@ ParamsSetup (
 
 	//-----------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ENABLED_GREEN,
-					UI_ENABLED2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_GREEN),
+					AETEXT_LABEL(strings, L10N_PARAM_ENABLED_ON),
 					TRUE,
 					0,
 					enabled_green
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_BORDER_GREEN,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BORDER_GREEN),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -104,7 +106,7 @@ ParamsSetup (
 					border_green
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_DRAW_GREEN, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DRAW_GREEN),
 					0x00,
 					PF_MAX_CHAN8,
 					0x00,
@@ -112,15 +114,15 @@ ParamsSetup (
 					);
 	//-----------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ENABLED_BLUE,
-					UI_ENABLED2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_BLUE),
+					AETEXT_LABEL(strings, L10N_PARAM_ENABLED_ON),
 					TRUE,
 					0,
 					enabled_blue
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_BORDER_BLUE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BORDER_BLUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -132,7 +134,7 @@ ParamsSetup (
 					border_blue
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_DRAW_BLUE, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DRAW_BLUE),
 					0x00,
 					0x00,
 					PF_MAX_CHAN8,
@@ -140,15 +142,15 @@ ParamsSetup (
 					);
 	//-----------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ENABLED_YELLOW,
-					UI_ENABLED2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_YELLOW),
+					AETEXT_LABEL(strings, L10N_PARAM_ENABLED_ON),
 					TRUE,
 					0,
 					enabled_yellow
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_BORDER_YELLOW,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BORDER_YELLOW),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -160,7 +162,7 @@ ParamsSetup (
 					border_yellow
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_DRAW_YELLOW, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DRAW_YELLOW),
 					PF_MAX_CHAN8,
 					PF_MAX_CHAN8,
 					0x00,
@@ -168,15 +170,15 @@ ParamsSetup (
 					);
 	//-----------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_ENABLED_VIOLET,
-					UI_ENABLED2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_VIOLET),
+					AETEXT_LABEL(strings, L10N_PARAM_ENABLED_ON),
 					TRUE,
 					0,
 					enabled_violet
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	UI_BORDER_VIOLET,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BORDER_VIOLET),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -188,7 +190,7 @@ ParamsSetup (
 					border_violet
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	UI_DRAW_VIOLET, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DRAW_VIOLET),
 					PF_MAX_CHAN8,
 					0x00,
 					PF_MAX_CHAN8,
@@ -232,13 +234,13 @@ FilterImage8 (
 					p = WHT8;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK8;	
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT8;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK8;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT8;
 				}
@@ -319,13 +321,13 @@ FilterImage16 (
 					p = WHT16;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK16;	
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT16;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK16;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT16;
 				}
@@ -406,13 +408,13 @@ FilterImage32 (
 					p = WHT32;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK32;	
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT32;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK32;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT32;
 				}

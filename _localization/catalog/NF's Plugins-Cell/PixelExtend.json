@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_RANGE": {"useSource": true},
+        "L10N_PARAM_TARGET_COLOR_EN": {"useSource": true},
+        "L10N_PARAM_TARGET_COLOR": {"useSource": true},
+        "L10N_PARAM_TOP": {"useSource": true},
+        "L10N_PARAM_TOP_RIGHT": {"useSource": true},
+        "L10N_PARAM_RIGHT": {"useSource": true},
+        "L10N_PARAM_BOTTOM_RIGHT": {"useSource": true},
+        "L10N_PARAM_BOTTOM": {"useSource": true},
+        "L10N_PARAM_BOTTOM_LEFT": {"useSource": true},
+        "L10N_PARAM_LEFT": {"useSource": true},
+        "L10N_PARAM_TOP_LEFT": {"useSource": true},
+        "L10N_PARAM_NODRAW_COLOR_EN": {"useSource": true},
+        "L10N_PARAM_NODRAW_COLOR": {"useSource": true},
+        "L10N_PARAM_TARGET_ONLY": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_TOPIC": {"useSource": true},
+        "L10N_PARAM_EXTEND_TOPIC": {"useSource": true},
+        "L10N_PARAM_NODRAW_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Extends pixels."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_RANGE": "阈值",
+        "L10N_PARAM_TARGET_COLOR_EN": "启用方案",
+        "L10N_PARAM_TARGET_COLOR": "目标色",
+        "L10N_PARAM_TOP": "上",
+        "L10N_PARAM_TOP_RIGHT": "右上",
+        "L10N_PARAM_RIGHT": "右",
+        "L10N_PARAM_BOTTOM_RIGHT": "右下",
+        "L10N_PARAM_BOTTOM": "下",
+        "L10N_PARAM_BOTTOM_LEFT": "左下",
+        "L10N_PARAM_LEFT": "左",
+        "L10N_PARAM_TOP_LEFT": "左上",
+        "L10N_PARAM_NODRAW_COLOR_EN": "启用排除方案",
+        "L10N_PARAM_NODRAW_COLOR": "排除颜色",
+        "L10N_PARAM_TARGET_ONLY": "仅显示目标色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_TOPIC": "目标颜色",
+        "L10N_PARAM_EXTEND_TOPIC": "扩展",
+        "L10N_PARAM_NODRAW_TOPIC": "排除色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "扩展像素"
+      }
+    }
+  }
+}

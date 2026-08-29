@@ -33,7 +33,7 @@ enum {
 #define ID_COLOR_ENABLED(IDX) (ID_TCOLOR1_ENABLED + (IDX) * 2)
 
 //UIの表示文字列
-#define	STR_HYPERBOLIC		"hyperbolic"
+#define	L10N_PARAM_HYPERBOLIC		"hyperbolic"
 //UIのパラメータ
 #define COLOR_TABLE_COUNT	8
 typedef struct ParamInfo {

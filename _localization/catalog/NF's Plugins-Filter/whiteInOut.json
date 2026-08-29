@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_VALUE": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a simple fade to and from white."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_VALUE": "强度"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "简易的白入白出插件"
+      }
+    }
+  }
+}

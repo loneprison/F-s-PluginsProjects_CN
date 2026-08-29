@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "AlphaFix.h"
+#include "AlphaFixText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +18,14 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const AlphaFixText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 
@@ -79,8 +87,9 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	CParamsSetup cs(in_data, out_data);
+	const AlphaFixText::Strings strings(in_data);
 	err = cs.AddColor(
-		STR_BASE_COLOR,
+		AETEXT_PARAM(strings, L10N_PARAM_BASE_COLOR),
 		{ 255,0,0,0 },
 		ID_BASE_COLOR,
 		PF_ParamFlag_NONE
@@ -347,9 +356,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
-				break;		
+			case PF_Cmd_DO_DIALOG: {
+
+				AlphaFixText::OpenSettings(in_data, L"F's AlphaFix");
+				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

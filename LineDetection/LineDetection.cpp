@@ -7,6 +7,7 @@
 
 
 #include "LineDetection.h"
+#include "LineDetectionText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -20,11 +21,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const LineDetectionText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_DELTA_CB,
-					STR_CB,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_DELTA_CB),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_DELTA_CB
@@ -32,7 +34,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_DELTA_OPACITY,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_DELTA_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -46,8 +48,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ALPHA_CB,
-					STR_CB,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_CB),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_ALPHA_CB
@@ -55,7 +57,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_ALPHA_OPACITY,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_ALPHA_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -69,7 +71,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_LINE_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_LINE_COLOR),
 					0x0,
 					0x0,
 					0x0,

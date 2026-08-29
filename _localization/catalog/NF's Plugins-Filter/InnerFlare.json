@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_MAX": {"useSource": true},
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_HYPERBOLIC": {"useSource": true},
+        "L10N_PARAM_REVERSE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_MAX": "大小",
+        "L10N_PARAM_BLUR": "模糊度",
+        "L10N_PARAM_HYPERBOLIC": "偏差",
+        "L10N_PARAM_REVERSE": "反转"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "内发光"
+      }
+    }
+  }
+}

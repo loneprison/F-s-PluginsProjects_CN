@@ -35,12 +35,6 @@
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -54,9 +48,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +86,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -121,7 +109,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="AnimatedNoisePiPL.rc">
+    <ResourceCompile Include="$(IntDir)AnimatedNoisePiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -142,6 +130,9 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\AnimatedNoisePiPL.r">
@@ -149,8 +140,21 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuildStep Include="..\..\..\Util\AEFX_SuiteHelper.h">
+    <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
       <Filter>Header Files\AE</Filter>
-    </CustomBuildStep>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{0392470c-57d3-4fc9-bbba-324621580bab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Noise\AnimatedNoise.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

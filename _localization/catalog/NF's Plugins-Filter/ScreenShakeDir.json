@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_AMOUNT_PX": "Amount (px)",
+        "L10N_PARAM_AMOUNT_RND": "Amount Variation (%)",
+        "L10N_PARAM_DIR": "Direction (Rot)",
+        "L10N_PARAM_DIR_RND": "Direction Variation (Rot)",
+        "L10N_PARAM_RANDOM_SEED": {"useSource": true},
+        "L10N_PARAM_EDGE_MODE": "Edge Mode"
+      },
+      "Popup": {
+        "L10N_PARAM_EDGE_MODE_ITEMS": "Transparent|Extend|Tile|Mirror"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Anime-style screen shake with direction control."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_AMOUNT_PX": "幅度 (像素)",
+        "L10N_PARAM_AMOUNT_RND": "随机幅度 (%)",
+        "L10N_PARAM_DIR": "方向",
+        "L10N_PARAM_DIR_RND": "随机方向",
+        "L10N_PARAM_RANDOM_SEED": "随机种子",
+        "L10N_PARAM_EDGE_MODE": "边缘模式"
+      },
+      "Popup": {
+        "L10N_PARAM_EDGE_MODE_ITEMS": "透明|延伸|平铺|镜像"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "动画风格屏幕抖动，带方向指示版"
+      }
+    }
+  }
+}

@@ -48,31 +48,31 @@
 #include <math.h>
 
 
-#define	STR_SEED			"RandomSeed"
-#define	STR_TARGET_VALUE	"Value"
-#define	STR_TARGET_TOPIC	"Target"
-#define	STR_TARGET_MODE1	"Mode"
-#define	STR_TARGET_MODE2	"Color|BrightnessDelta|AlphaDelta"
-#define	STR_TARGET_COLOR	"Color"
-#define	STR_COLOR_RANGE		"Color_Range"
-#define	STR_DELTA_RANGE		"Delta_Range"
-#define	STR_CENTER			"Center"
-#define	STR_LENGTH_I_MAX	"Inside_Length"
-#define	STR_LENGTH_I_RND	"Inside_Length_Random"
-#define	STR_LENGTH_O_MAX	"Outside_Length"
-#define	STR_LENGTH_O_RND	"Outside_Length_Random"
-#define	STR_COLOR			"Color"
-#define	STR_OPACITY			"Opacity"
-#define	STR_OPACITY_RND		"Opacity_Random"
+#define	L10N_PARAM_RANDOM_SEED			"RandomSeed"
+#define	L10N_PARAM_VALUE	"Value"
+#define	L10N_PARAM_TARGET	"Target"
+#define	L10N_PARAM_MODE	"Mode"
+#define	L10N_PARAM_MODE_ITEMS	"Color|BrightnessDelta|AlphaDelta"
+#define	L10N_PARAM_TARGET_COLOR	"Color"
+#define	L10N_PARAM_COLOR_RANGE		"Color_Range"
+#define	L10N_PARAM_DELTA_RANGE		"Delta_Range"
+#define	L10N_PARAM_CENTER			"Center"
+#define	L10N_PARAM_INSIDE_LENGTH	"Inside_Length"
+#define	L10N_PARAM_INSIDE_LENGTH_RANDOM	"Inside_Length_Random"
+#define	L10N_PARAM_OUTSIDE_LENGTH	"Outside_Length"
+#define	L10N_PARAM_OUTSIDE_LENGTH_RANDOM	"Outside_Length_Random"
+#define	L10N_PARAM_COLOR			"Color"
+#define	L10N_PARAM_OPACITY			"Opacity"
+#define	L10N_PARAM_OPACITY_RANDOM		"Opacity_Random"
 
-#define	STR_POINT_COUNT		"Point_Count"
-#define	STR_POINT_LENGTH	"Point_Length"
+#define	L10N_PARAM_POINT_COUNT		"Point_Count"
+#define	L10N_PARAM_POINT_LENGTH	"Point_Length"
 
-#define	STR_BLOCK_VALUE		"Block_Value"
-#define	STR_BLOCK_SIZE		"Block_Size"
+#define	L10N_PARAM_BLOCK_VALUE		"Block_Value"
+#define	L10N_PARAM_BLOCK_SIZE		"Block_Size"
 
-#define	STR_ORG_CB1			"Original_Blend"
-#define	STR_ORG_CB2			"ON"
+#define	L10N_PARAM_ORIGINAL_BLEND			"Original_Blend"
+#define	L10N_PARAM_ON			"ON"
 //ユーザーインターフェースのID
 //ParamsSetup関数とRender関数のparamsパラメータのIDになる
 enum {
@@ -172,7 +172,7 @@ PF_Err FindTargetDeltaBright(CFsAE *ae , A_long delta_range);
 PF_Err FindTargetDeltaAlpha(CFsAE *ae , A_long delta_range);
 
 //blue
-PF_Err blockDraw(CFsAE *ae , A_long bSize, A_long bCount);
+PF_Err blockDraw(CFsAE *ae , A_long bSize, A_long bCount, A_long seed);
 
 
 PF_Err greenBlur(CFsAE *ae);

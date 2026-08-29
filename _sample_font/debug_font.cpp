@@ -1,4 +1,4 @@
-#include "debug_font.h"
+ï»¿#include "debug_font.h"
 #include "debug_font_1424.h"
 
 #define FONT_WIDTH_ 14
@@ -25,8 +25,8 @@ inline PF_PixelFloat _PX_8to32(PF_Pixel c)
     return r;
 }
 /**
- * ƒeƒ“ƒvƒŒ[ƒg‚É‚æ‚é‹¤’Ê•`‰æƒƒWƒbƒN
- * T: PF_Pixel8, PF_Pixel16, PF_PixelFloat ‚Ì‚¢‚¸‚ê‚©
+ * ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã«ã‚ˆã‚‹å…±é€šæç”»ãƒ­ã‚¸ãƒƒã‚¯
+ * T: PF_Pixel8, PF_Pixel16, PF_PixelFloat ã®ã„ãšã‚Œã‹
  */
 template <typename T>
 static void DrawDebugCharT(
@@ -43,9 +43,9 @@ static void DrawDebugCharT(
         int ty = y_off + y;
         if (ty < 0 || ty >= world->height) continue;
 
-        // s‚Ìæ“ªƒ|ƒCƒ“ƒ^‚ğƒoƒCƒg(char*)‚Åæ“¾
+        // è¡Œã®å…ˆé ­ãƒã‚¤ãƒ³ã‚¿ã‚’ãƒã‚¤ãƒˆ(char*)ã§å–å¾—
         char* row_base = (char*)world->data + (ty * world->rowbytes);
-        // T Œ^‚Ìƒ|ƒCƒ“ƒ^‚É•ÏŠ·i‚Ü‚¾ƒIƒtƒZƒbƒg‚Í‰Á‚¦‚È‚¢j
+        // T å‹ã®ãƒã‚¤ãƒ³ã‚¿ã«å¤‰æ›ï¼ˆã¾ã ã‚ªãƒ•ã‚»ãƒƒãƒˆã¯åŠ ãˆãªã„ï¼‰
         T* p_row = reinterpret_cast<T*>(row_base);
 
 
@@ -55,14 +55,14 @@ static void DrawDebugCharT(
             if (row_data & (0x8000 >> x)) {
                 int tx = x_off + x;
                 if (tx >= 0 && tx < world->width) {
-                    p_row[tx] = *color;  // x_off + x ‚ÌˆÊ’u‚É‘‚«‚Ş
+                    p_row[tx] = *color;  // x_off + x ã®ä½ç½®ã«æ›¸ãè¾¼ã‚€
                 }
             }
         }
     }
 }
 /**
- * [“x‚ğ”»•Ê‚µ‚Ä•`‰æ‚ğU‚è•ª‚¯‚éƒGƒ“ƒgƒŠ[ƒ|ƒCƒ“ƒg
+ * æ·±åº¦ã‚’åˆ¤åˆ¥ã—ã¦æç”»ã‚’æŒ¯ã‚Šåˆ†ã‘ã‚‹ã‚¨ãƒ³ãƒˆãƒªãƒ¼ãƒã‚¤ãƒ³ãƒˆ
  */
 static void DrawDebugStringImple(
     PF_InData* in_dataP,
@@ -107,10 +107,10 @@ static void DrawDebugStringImple(
     }
     case PF_PixelFormat_ARGB128:
     {
-        PF_PixelFloat color32 = _PX_8to32(color);  // _PX_8to32 ‚ğg—p
+        PF_PixelFloat color32 = _PX_8to32(color);  // _PX_8to32 ã‚’ä½¿ç”¨
         while (*str) {
             if (*str != ' ') DrawDebugCharT<PF_PixelFloat>(worldP, x, y, *str, &color32);
-            x += FONT_WIDTH_ - FONT_WIDTH_OFFSET_;  // FONT_WIDTH_ ‚É•ÏXiˆêŠÑ«‚Ì‚½‚ßj
+            x += FONT_WIDTH_ - FONT_WIDTH_OFFSET_;  // FONT_WIDTH_ ã«å¤‰æ›´ï¼ˆä¸€è²«æ€§ã®ãŸã‚ï¼‰
             str++;
         }
         break;

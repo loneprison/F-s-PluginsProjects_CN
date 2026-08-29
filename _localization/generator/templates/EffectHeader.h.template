@@ -1,0 +1,69 @@
+#pragma once
+
+#include "AeText.h"
+
+namespace {{NAMESPACE}} {
+
+namespace detail {
+
+inline constexpr char kRuntimeSuiteName[] = {{SUITE_NAME}};
+inline constexpr std::int32_t kRuntimeSuiteVersion = {{SUITE_VERSION}};
+
+{{DETAIL_KEYS}}
+
+} // namespace detail
+
+{{ROLE_DECLARATIONS}}
+
+{{STRING_TABLES}}
+
+{{VARIANT_BLOCKS}}
+
+inline constexpr AeText::VariantView kVariants[] = {
+{{VARIANT_ENTRIES}}
+};
+
+inline constexpr AeText::CatalogView kCatalog = {
+    sizeof(AeText::CatalogView),
+    AeText::kCatalogVersion,
+    kVariants,
+    static_cast<std::uint32_t>(sizeof(kVariants) / sizeof(kVariants[0])),
+    {{FALLBACK_INDEX}},
+};
+
+inline constexpr const AeText::CatalogView &Catalog()
+{
+    return kCatalog;
+}
+
+class Strings {
+public:
+    explicit Strings(PF_InData *in_data) noexcept
+        : text_(
+            in_data,
+            Catalog(),
+            detail::kRuntimeSuiteName,
+            detail::kRuntimeSuiteVersion)
+    {}
+
+{{ACCESSORS}}
+
+{{LEGACY_OPTIONS}}
+
+private:
+    AeText::Client text_;
+};
+
+inline void OpenSettings(PF_InData *in_data, const wchar_t *title) noexcept
+{
+    AeText::Client client(
+        in_data,
+        Catalog(),
+        detail::kRuntimeSuiteName,
+        detail::kRuntimeSuiteVersion);
+    client.OpenSettings(title);
+}
+
+} // namespace {{NAMESPACE}}
+
+{{WRAPPER_MACROS}}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MAX": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MAX": "半径"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "快速最大值"
+      }
+    }
+  }
+}

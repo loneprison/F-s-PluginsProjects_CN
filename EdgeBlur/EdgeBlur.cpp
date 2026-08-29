@@ -4,6 +4,7 @@
 */
 //-----------------------------------------------------------------------------------
 #include "EdgeBlur.h"
+#include "EdgeBlurText.generated.h"
 
 //-----------------------------------------------------------------------------------
 static PF_Err 
@@ -15,7 +16,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const EdgeBlurText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 
@@ -85,11 +93,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const EdgeBlurText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_BLUR,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_BLUR),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -100,7 +109,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_OFFSET,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_OFFSET),	//パラメータの名前
 					-50, 				//数値入力する場合の最小値
 					50,			//数値入力する場合の最大値
 					-36,				//スライダーの最小値 
@@ -407,9 +416,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				EdgeBlurText::OpenSettings(in_data, L"F's EdgeBlur");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

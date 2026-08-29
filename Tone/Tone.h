@@ -69,11 +69,11 @@ enum {
 #define LAST16		(COLOR_TABLE_LENGTH16-1)
 
 
-#define STR_Highlights_COLOR		"Highlights"
-#define STR_Midtones_COLOR			"Midtones"
-#define STR_Shadows_COLOR			"Shadows"
-#define STR_Midtones_OFFSET			"MidtonesOffset"
-#define STR_Blend_w_Original_FIXED	"Blend w. Original"
+#define L10N_PARAM_HIGHLIGHTS		"Highlights"
+#define L10N_PARAM_MIDTONES			"Midtones"
+#define L10N_PARAM_SHADOWS			"Shadows"
+#define L10N_PARAM_MIDTONES_OFFSET			"MidtonesOffset"
+#define L10N_PARAM_BLEND_WITH_ORIGINAL	"Blend w. Original"
 
 //パラメータの初期値
 #define Highlights_def_red		0xFF

@@ -6,6 +6,7 @@
 
 
 #include "MainLineRepaint.h"
+#include "MainLineRepaintText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,11 +20,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MainLineRepaintText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_Main_Color, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MAIN_COLOR),
 					0x00,
 					0x00,
 					0x00,
@@ -31,7 +33,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_level,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN

@@ -3,6 +3,8 @@
 #define AEINFO_H
 
 #include "AE_SDK.h"
+#include "../_localization/AeText.h"
+#include <string>
 
 
 typedef struct {
@@ -52,6 +54,28 @@ dlg.show();"
 //******************************************************************************
 class AEInfo {
 private:
+	static std::string EscapeAboutUtf8ScriptString(const char* text)
+	{
+		std::string escaped;
+		if (!text) {
+			return escaped;
+		}
+
+		escaped.reserve(std::char_traits<char>::length(text));
+		for (const char character : std::string(text)) {
+			switch (character) {
+			case '\\': escaped += "\\\\"; break;
+			case '"': escaped += "\\\""; break;
+			case '\b': escaped += "\\b"; break;
+			case '\f': escaped += "\\f"; break;
+			case '\n': escaped += "\\n"; break;
+			case '\r': escaped += "\\r"; break;
+			case '\t': escaped += "\\t"; break;
+			default: escaped += character; break;
+			}
+		}
+		return escaped;
+	}
 protected:
 	PF_PixelFormat		m_format;
 	A_long				m_frame;
@@ -272,32 +296,48 @@ public:
 		A_char* Dispname,
 		A_char* majorver,
 		A_char* minorver,
-		A_char* des
-		)
+		const char* script_description,
+		const char* legacy_description
+	)
 	{
-		PF_Err	err = PF_Err_NONE;
+		PF_Err err = PF_Err_NONE;
 		if (ae_plugin_idP != NULL) {
+			const std::string escaped_description = EscapeAboutUtf8ScriptString(script_description);
 			A_char scriptCode[2048] = { '\0' };
 
 			PF_SPRINTF(scriptCode, NFS_ABOUT_DIALOG,
 				Dispname,
 				majorver,
 				minorver,
-				des);
+				escaped_description.c_str());
 
-			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, TRUE, NULL, NULL));
-
+			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, FALSE, NULL, NULL));
 		}
 		else {
 			PF_SPRINTF(out_data->return_msg,
-				"%s, v%d.%d\r%s",
+				"%s, v%s.%s\r%s",
 				Dispname,
 				majorver,
 				minorver,
-				des);
+				legacy_description ? legacy_description : "");
 		}
 
 		return err;
+	}
+	PF_Err AboutBox
+	(
+		A_char* Dispname,
+		A_char* majorver,
+		A_char* minorver,
+		const AeText::AboutText &description
+	)
+	{
+		return AboutBox(
+			Dispname,
+			majorver,
+			minorver,
+			AeText::detail::AboutTextAccess::ScriptUtf8(description),
+			AeText::detail::AboutTextAccess::Legacy(description));
 	}
 #pragma region  Cmd
 

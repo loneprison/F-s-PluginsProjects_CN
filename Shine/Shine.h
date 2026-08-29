@@ -14,6 +14,7 @@
 
 
 #include "NFs_Target.h"
+#include "ShineText.generated.h"
 
 
 
@@ -48,12 +49,12 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_POS			"pos"
-#define	STR_LENGTH		"length"
-#define	STR_STRONG		"strong"
-#define	STR_ISCOLOR		"useColor"
-#define	STR_COLOR		"color"
-#define	STR_ON			"on"
+#define	L10N_PARAM_POS			"pos"
+#define	L10N_PARAM_LENGTH		"length"
+#define	L10N_PARAM_STRONG		"strong"
+#define	L10N_PARAM_USE_COLOR		"useColor"
+#define	L10N_PARAM_COLOR		"color"
+#define	L10N_PARAM_ON			"on"
 
 
 
@@ -91,12 +92,14 @@ public:
 		A_char MNV[64] = { '\0' };
 		PF_SPRINTF(MJV, "%d", MAJOR_VERSION);
 		PF_SPRINTF(MNV, "%d", MINOR_VERSION);
+		const ShineText::Strings strings(in_dataP);
+		const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
 
 		ERR(AboutBox(
 			NFS_DISPNAME,
 			MJV,
 			MNV,
-			NFS_DESCRIPTION));
+			description));
 
 		return err;
 
@@ -250,9 +253,11 @@ extern "C" {
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = ae.RespondtoAEGP(in_dataP, out_dataP, paramsP, outputP, extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ShineText::OpenSettings(in_dataP, L"F's Shine");
 				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = ae.HandleChangedParam(in_dataP,
 					out_dataP,

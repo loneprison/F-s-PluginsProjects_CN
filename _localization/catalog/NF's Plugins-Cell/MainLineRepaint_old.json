@@ -1,0 +1,25 @@
+{
+  "bindings": {
+    "About": {
+      "Description": "L10N_PLUGIN_DESC"
+    },
+    "Error": {
+      "GetParams": "L10N_ERR_GETPARAMS"
+    },
+    "Param": {
+      "MainColor": "L10N_PARAM_MAIN_COLOR"
+    }
+  },
+  "translations": {
+    "en": {
+      "L10N_ERR_GETPARAMS": "Parameter error. Sorry.",
+      "L10N_PLUGIN_DESC": "Removes the main lines from cel animation.",
+      "L10N_PARAM_MAIN_COLOR": "Main Line Color"
+    },
+    "zh": {
+      "L10N_ERR_GETPARAMS": "错误: 参数错误。",
+      "L10N_PLUGIN_DESC": "去除二值图像的主线",
+      "L10N_PARAM_MAIN_COLOR": "主线颜色"
+    }
+  }
+}

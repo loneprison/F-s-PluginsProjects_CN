@@ -5,9 +5,6 @@
       <UniqueIdentifier>{16385773-49f8-4efb-b433-c1f1f5bf2a8a}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{78bcef5c-d1c4-483c-8b0f-2a2e6af26372}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{6cf6b53f-5ec8-4189-9f4e-1d0f6a6a6af5}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
@@ -32,12 +29,6 @@
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\Paint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -54,9 +45,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +83,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -122,9 +107,12 @@
     <ClInclude Include="..\..\FsLibrary\FsGraphics.h">
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="PaintPiPL.rc">
+    <ResourceCompile Include="$(IntDir)PaintPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -160,10 +148,23 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphicsPaint.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\PaintPiPL.r">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{35D01D2E-2908-48C4-A0B4-6C54DF4442BE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-{Legacy}\Paint.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

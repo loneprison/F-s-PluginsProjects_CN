@@ -159,10 +159,11 @@ PF_Err ColorChangeFromPoint::ParamsSetup(
 	in_data = in_dataP;
 	out_data = out_dataP;
 	PF_ParamDef		def;
+	const ColorChangeFromPointText::Strings strings(in_dataP);
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_POINT,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_TARGET_POINT),			/*"New Center"*/
 		50,	// X
 		50,	// Y
 		0,	// Flag
@@ -172,7 +173,7 @@ PF_Err ColorChangeFromPoint::ParamsSetup(
 	//色の指定
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0x00,
 		0x00,

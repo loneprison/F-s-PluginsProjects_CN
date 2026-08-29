@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_VALUE": {"useSource": true},
+        "L10N_PARAM_SCANLINE": {"useSource": true},
+        "L10N_PARAM_CHANNEL": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_SCANLINE_ITEMS": {"useSource": true},
+        "L10N_PARAM_CHANNEL_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a maximum/minimum filter."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_VALUE": "半径",
+        "L10N_PARAM_SCANLINE": "方向",
+        "L10N_PARAM_CHANNEL": "通道"
+      },
+      "Popup": {
+        "L10N_PARAM_SCANLINE_ITEMS": "水平和垂直|水平|垂直",
+        "L10N_PARAM_CHANNEL_ITEMS": "RGB+Alpha|RGB|Alpha"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "最大最小值插件"
+      }
+    }
+  }
+}

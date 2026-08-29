@@ -6,6 +6,7 @@
 
 
 #include "Posterization8bit.h"
+#include "Posterization8bitText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const Posterization8bitText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LEVEL,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//パラメータの名前
 		2, 			//数値入力する場合の最小値
 		64,			//数値入力する場合の最大値
 		2,			//スライダーの最小値 
@@ -33,8 +35,8 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_G,
-					"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_GRAY_ONLY),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_GRAY

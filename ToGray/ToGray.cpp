@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "ToGray.h"
+#include "ToGrayText.generated.h"
 
 static PF_Err (*ToGrayFunc8)(
 			refconType	refcon, 
@@ -37,7 +38,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const ToGrayText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 
@@ -105,21 +113,22 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ToGrayText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_GRAY_MODE_POP1, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_MODE),
 						STR_GRAY_MODE_COUNT,	//メニューの数
 						STR_GRAY_MODE_DEF,	//デフォルト
-						STR_GRAY_MODE_POP2,
+						AETEXT_POPUP(strings, L10N_PARAM_MODE_ITEMS),
 						ID_GRAY_MODE
 						);
 
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_ORG_BLEND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLEND_ORIGINAL),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -870,9 +879,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ToGrayText::OpenSettings(in_data, L"F's ToGray");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

@@ -6,6 +6,7 @@
 
 
 #include "graytoneToColorize.h"
+#include "graytoneToColorizeText.generated.h"
 
 static PF_Err (*func8)(
 			refconType	refcon, 
@@ -38,29 +39,30 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const graytoneToColorizeText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_TARGET,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_TARGET),
 		STR_TARGET_COUNT,	//メニューの数
 		STR_TARGET_DEFLT,	//デフォルト
-		STR_TARGET_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_TARGET_ITEMS),
 		ID_TARGET
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL0, 0x9E, 0x87, 0x2A, ID_COL0);//9E872A
-	PF_ADD_COLOR(STR_COL1, 0xF2, 0xF3, 0x9C, ID_COL1);//F2F39C
-	PF_ADD_COLOR(STR_COL2, 0xA7, 0x99, 0x39, ID_COL2);//A79939
-	PF_ADD_COLOR(STR_COL3, 0xF8, 0xF0, 0x68, ID_COL3);//F8F068
-	PF_ADD_COLOR(STR_COL4, 0xBA, 0x9B, 0x0A, ID_COL4);//BA9B0A
-	PF_ADD_COLOR(STR_COL5, 0xD3, 0xBE, 0x11, ID_COL5);//D3BE11
-	PF_ADD_COLOR(STR_COL6, 0xF9, 0xDF, 0x4C, ID_COL6);//F9DF4C
-	PF_ADD_COLOR(STR_COL7, 0xFC, 0xF5, 0xCC, ID_COL7);//FCF5CC
-	PF_ADD_COLOR(STR_COL8, 0x9E, 0x87, 0x2A, ID_COL8);
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR0), 0x9E, 0x87, 0x2A, ID_COL0);//9E872A
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR1), 0xF2, 0xF3, 0x9C, ID_COL1);//F2F39C
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR2), 0xA7, 0x99, 0x39, ID_COL2);//A79939
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR3), 0xF8, 0xF0, 0x68, ID_COL3);//F8F068
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR4), 0xBA, 0x9B, 0x0A, ID_COL4);//BA9B0A
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR5), 0xD3, 0xBE, 0x11, ID_COL5);//D3BE11
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR6), 0xF9, 0xDF, 0x4C, ID_COL6);//F9DF4C
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR7), 0xFC, 0xF5, 0xCC, ID_COL7);//FCF5CC
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR8), 0x9E, 0x87, 0x2A, ID_COL8);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_REP,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_REPEAT),	//Name
 		1,							//VALID_MIN
 		10,						//VALID_MAX
 		1,							//SLIDER_MIN
@@ -74,8 +76,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_OFFSET_ON,
-		"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_OFFSET_ENABLED),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_OFFSET_ON
@@ -83,10 +85,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_OFFSET, 0, ID_OFFSET);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_OFFSET), 0, ID_OFFSET);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_OFFSET_SPEED,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_OFFSET_SPEED),	//Name
 		-10,							//VALID_MIN
 		10,						//VALID_MAX
 		-2,							//SLIDER_MIN

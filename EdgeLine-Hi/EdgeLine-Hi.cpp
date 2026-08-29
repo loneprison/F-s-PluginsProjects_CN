@@ -6,6 +6,7 @@
 
 
 #include "EdgeLine-Hi.h"
+#include "EdgeLine-HiText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,12 +20,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const EdgeLine_HiText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(STR_TARGET_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR),
 		0xFF,
 		0xFF,
 		0x00,
@@ -34,7 +36,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(STR_SAMPLE_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_SAMPLE_COLOR),
 		0xFF,
 		0x00,
 		0x00,
@@ -42,7 +44,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 		0,						//VALID_MIN
 		100,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -57,7 +59,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_SLIDER(STR_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LENGTH),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		100,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -68,12 +70,12 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ROT, 0, ID_ROT);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ROT), 0, ID_ROT);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(STR_DRAW_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_DRAW_COLOR),
 		0xFF,
 		0x00,
 		0xFF,
@@ -81,8 +83,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SCANFLAG,
-		STR_SCANFLAG2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SCAN_FLAG),
+		AETEXT_LABEL(strings, L10N_PARAM_SCAN_FLAG2),
 		FALSE,
 		0,
 		ID_SCANFLAG

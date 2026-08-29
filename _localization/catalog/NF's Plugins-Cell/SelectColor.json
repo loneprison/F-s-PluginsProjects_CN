@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET0": {"useSource": true},
+        "L10N_PARAM_COLOR0": {"useSource": true},
+        "L10N_PARAM_TARGET1": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_TARGET2": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_TARGET3": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_TARGET4": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_TARGET5": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_TARGET6": {"useSource": true},
+        "L10N_PARAM_COLOR6": {"useSource": true},
+        "L10N_PARAM_TARGET7": {"useSource": true},
+        "L10N_PARAM_COLOR7": "Original Color 7",
+        "L10N_PARAM_REVERSE": {"useSource": true},
+        "L10N_PARAM_TOLERANCE": "Tolerance"
+      },
+      "Label": {
+        "L10N_PARAM_ENABLE": "Enable",
+        "L10N_PARAM_REVERSE_ON": "Invert"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Creates a color mask from painted cels."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET0": "目标方案0",
+        "L10N_PARAM_COLOR0": "颜色0",
+        "L10N_PARAM_TARGET1": "目标方案1",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_TARGET2": "目标方案2",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_TARGET3": "目标方案3",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_TARGET4": "目标方案4",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_TARGET5": "目标方案5",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_TARGET6": "目标方案6",
+        "L10N_PARAM_COLOR6": "颜色6",
+        "L10N_PARAM_TARGET7": "目标方案7",
+        "L10N_PARAM_COLOR7": "颜色7",
+        "L10N_PARAM_REVERSE": "反转",
+        "L10N_PARAM_TOLERANCE": "阈值"
+      },
+      "Label": {
+        "L10N_PARAM_ENABLE": "开",
+        "L10N_PARAM_REVERSE_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "从上色单元创建颜色遮罩"
+      }
+    }
+  }
+}

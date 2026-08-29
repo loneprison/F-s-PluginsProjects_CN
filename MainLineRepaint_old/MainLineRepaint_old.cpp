@@ -4,6 +4,7 @@
 */
 
 #include "MainLineRepaint_old.h"
+#include "MainLineRepaint_oldText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -14,13 +15,15 @@ static PF_Err About (
 	PF_ParamDef		*params[],
 	PF_LayerDef		*output )
 {
+	const MainLineRepaint_oldText::Strings strings(in_data);
+	const auto description = strings.About(MainLineRepaint_oldText::AboutText::Description);
 	PF_SPRINTF(	out_data->return_msg, 
 				"%s, v%d.%d%d\r%s",
 				STR(StrID_Name), 
 				MAJOR_VERSION, 
 				MINOR_VERSION,
 				BUG_VERSION,
-				STR(StrID_Description)
+				description.legacy
 				);
 	return PF_Err_NONE;
 }
@@ -68,7 +71,8 @@ out_data->out_flags	|=
 out_data->out_flags	|=
 		PF_OutFlag_USE_OUTPUT_EXTENT	|
 		PF_OutFlag_PIX_INDEPENDENT	|
-		PF_OutFlag_DEEP_COLOR_AWARE;
+		PF_OutFlag_DEEP_COLOR_AWARE	|
+		PF_OutFlag_I_DO_DIALOG;
 
 	return err;
 }
@@ -114,11 +118,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MainLineRepaint_oldText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR(StrID_MY_Main_Color), 
+	PF_ADD_COLOR(	strings.Param(MainLineRepaint_oldText::ParamText::MainColor),
 					0x00,
 					0x00,
 					0x00,
@@ -163,10 +168,11 @@ static PF_Err Render (
 	CMainLineRepaint exe(in_data,out_data,params,output);
 	
 	if  ( exe.Enabled() == FALSE ) {
+		const MainLineRepaint_oldText::Strings strings(in_data);
 		PF_SPRINTF(	out_data->return_msg, 
 					"[%s] %s",
 					STR(StrID_Name),
-					STR(StrID_ERR_getParams)
+					strings.Error(MainLineRepaint_oldText::ErrorText::GetParams)
 					);
 		return err;
 	}
@@ -196,6 +202,11 @@ DllExport PF_Err EntryPointFunc(
 		case PF_Cmd_ABOUT:
 			err = About(in_data,out_data,params,output);
 			break;
+		case PF_Cmd_DO_DIALOG: {
+			const MainLineRepaint_oldText::Strings strings(in_data);
+			strings.Options(L"F's MainLineRepaint_old");
+			break;
+		}
 		case PF_Cmd_GLOBAL_SETUP:
 			err = GlobalSetup(in_data,out_data,params,output);
 			break;

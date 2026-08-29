@@ -1,247 +1,67 @@
-﻿# F's Plugins New and Next
-Adone After EffectsのEffectsPlugin集のソース一式とWindowsバイナリです。<br>
-(**No macOS support** / **不支持 macOS**)<br>
-　
+# ⚠️ 本项目尚未完成，Git 历史较为混乱，正在整理中
 
-昔から趣味でコツコツと作っていたものです。<br>
-趣味といっても僕自身日本のアニメ制作者なので業務に使えます。<br>
-<br>
+## F's Plugins 工程整理与维护
 
-ダウンロードは今ページの右上あたりにある<b>Releases</b>でできます。<br>
-2026/02/01 更新しました。大きなバグがない限りしばらく更新しません<br>
-<br>
+本分支基于原项目提交 `47a9d2c`，用于整理和维护 F's Plugins 工程。
 
-## <b>**残念なお知らせ**</b><br>
-2025年度からAdobeCCの料金がかなり高価に値上がりしたので、プライベートではとっても払えないので次回の更新はしないことにしました。
-その為F's Pluginsの更新は今以上にかなりスローペースになります。<br>
-一応僕も仕事でたまには使うのでAfter Effects自体のバージョンに合わせて再ビルドは行うつもりです(SDKの更新に合わせます)<br>
+## 项目目的
 
-## 今後の予定
-今後F's Pluginsの開発はメンテナンスにとどめて、NF-Pluginsという新しいプラグイン集を開発する予定です。<br>
-NF-Pluginsはあえて互換性(matchName)を無くしてモダンな開発環境を目指します。<br>
-F’sは、ラッパー関数の嵐でコードが読みにくくなっているので、NF-Pluginsではシンプルで他のプラグインへの移植性を重視する予定です。<br>
+1. 维护 F's Plugins，使其能够继续使用，并修复崩溃问题和 Bug。
+2. 引入可切换的 i18n 方案，避免为了兼容不同语言版本而准备多份插件。
 
+## 关于英文版本
 
-***
+我们并不推荐**中文用户**使用英文版本的插件。
 
-最近モチベーションが全然無くてメンテナンスさぼり気味です。自分でほとんど使わなくなってしまったせいですかな？<br>
-少しでもやる気が出るようにAmazonの欲しいものリストを試しに公開してみます。<br>
-* [bry-fulの欲しいものリスト(https://www.amazon.co.jp/hz/wishlist/ls/2ME5VSS8WJOX8?ref_=wl_sha)<br>
+由于这套插件主要由日本和中国的从业者使用，为了兼容 AE 23 及以上版本而强行使用英文版，可能会导致你的工程既无法兼容日本动画行业的工作环境——通常使用日文与英文混排的原版插件；也无法兼容中国动画行业的工作环境——相当一部分从业者仍停留在 AE 22，以继续使用没有乱码的中文插件搭配英文版 AE，或直接使用中文插件搭配中文版 AE。
 
+因此，除非你确定自己的工作环境需要英文版本，否则使用英文版反而可能给其他协作者带来困扰。
 
-## _tools フォルダについて<br>
-_toolsフォルダ内にはプラグイン開発に便利なツールを入れています。<br>
-今までC#で作ってましたが、PowerShellスクリプトに置き換えました。<br>
-詳細は_toolsフォルダ内のREADME.mdを見てください。<br>
+## 原代码部分的修改范围
 
+- 清理过时的 AEX 文件及与插件无关的内容，包括旧文档、旧工具等。未来可能会在其他分支或项目中重新编写文档。
+- 重新整理 Visual Studio 插件工程。这一项仅出于个人的整理习惯，并非项目继续使用所必需。
 
-## 関連プロジェクト ##
-F-s-PluginsProjects_TLed<br>
-(Oops, sorry!　^^;) 詳細はリンク先で<br>
-[https://github.com/ilyasok/F-s-PluginsProjects_TLed](https://github.com/ilyasok/F-s-PluginsProjects_TLed)
-<br>
-F's Plugins for MacOS<br>
-詳細はリンク先で<br>
-[https://github.com/CubeZeero/F-s-PluginsProjects_forMac](https://github.com/CubeZeero/F-s-PluginsProjects_forMac)<br>
+## 更新日志
+- 2026-02-26 第一次翻译校对,采用了直接改写宏的方案，这一方案预期未来会重新将其备份到旧分支中
+- 2026-08-24 第二次翻译校对和重写本地化方案
 
-DaVinci Resolve - Fusion 移植版<br>
-詳細はリンク先で<br>
-[https://github.com/akahito-ot/Fs-Plugins-Fusion-Ports](https://github.com/akahito-ot/Fs-Plugins-Fusion-Ports)<br>
+## 新增内容
 
-chinese translated version<br>
-[https://www.lookae.com/fsplugins/](https://www.lookae.com/fsplugins/)<br>
+- `F's Language Settings`
+- 集中式文本 catalog 生成链
+- 该插件为本地化核心文件，移除该文件则插件会默认以原文模式运行
+- 所有插件都内置并修改做了i18n化处理
 
-## ビルド時の注意 ##
-今回から**Directory.Build.props**/**Directory.Build.Targets**を使ってプロジェクト設定の一括変更を行っています。<br>
-VS2026でSDK2025を使うとものすごいWarnigが出るのでDirectory.Build.propsで抑制しています。プロパティのUIで変更しても上書きされるので注意です。<br>
-<br>
-出力ファイル名にDirectory.Build.Targetで指定して自動的に日付が入るようにしました。Debug時の出力先もここで変更しています。<br>
-<br>
-こんな便利な機能あるの知らなかった。<br>
-<br>
+### 已修复问题
 
-## 進捗
-バージョン管理の方法をいろいろ考えましたが、プラグインファイル名に日付を入れるという一番チープな方法を採用しました。<br>
-<br>
-Visual studio 2026に変更。SDKを2025に変更（まだ動作確認できていません）<br>
-Visual studioのプロジェクト設定を一括で変更できるDirectory.Build.props/Directory.Build.targetsを使って、出力ファイル名に日付を入れるようにしました。<br>
-<br>
-CellLineEraset.aexの高速化<br>
-MaxFast.aexの追加。<br>
-[FsCellLineEraser_20260123.zip](https://github.com/bryful/F-s-PluginsProjects/raw/refs/heads/master/_DL_windowsbinary/FsCellLineEraser_20260123.zip)<br>
-<br>
-TargetGrad.aex/TargetGradradical.aex<br>
-グラデーションエフェクトを追加<br>
-[FsTargetGrad_finalBeta.zip](https://github.com/bryful/F-s-PluginsProjects/raw/refs/heads/master/_DL_windowsbinary/FsTargetGrad_finalBeta.zip) からDLしてください。近いうちに正式版出します。
-<br>
-F's sputteringAlpha.aex/F's sputteringSplash.aexが内部エラーで落ちるバグに対処。<br>
-まだ原因が特定できていないので、直っていないかも。<br>
-MainLineReplaceも同様なバグがあったので修正。<br>
-[Fssputtering_MainLineReplace20250109.zip](https://github.com/bryful/F-s-PluginsProjects/raw/refs/heads/master/_DL_windowsbinary/Fssputtering_MainLineReplace20250109.zip)<br>
-[FssputteringAS20241229.zip](https://github.com/bryful/F-s-PluginsProjects/raw/refs/heads/master/_DL_windowsbinary/FssputteringAS20241229.zip)<br>
+> 截至 2026 年 8 月 24 日首次发布前。正式发布并提交 Git 前，需要再次仔细审查本节内容。
+- 无参数文本/原效果影响部分
+  - 补齐缺失16/32 bpc分支导致不渲染/不生效的问题
+      - **YuvControl**
+      - **VideoLine2nd**
+      - **PixelSelector**
+        - `Fill` `Color` `Opacity` 在 16/32 bpc 下不生效
+  - **Max、OpticalDiffusion、smokeThreshold**：修复 32 bpc Min/Minimax 临时缓冲区容量不足的问题；该问题会影响 Min/Max 与轮廓处理在切换或处理 32 bpc 时导致崩溃。
 
-AE2022のマルチフレームレンダーに対応させました。<br>
-***
+- 有效果影响的调整
+  - **Max、OpticalDiffusion**：修复 Min/Minimax 使用的白底转换中蓝色通道读取错误，以及 32 bpc 路径误用 16 bpc 转换的问题；此前透明像素参与 Min 处理时可能出现颜色错误。
+  - **grayToColorize**：修复 16 bpc Mat 结果被按 8 bpc 范围截断，以及 32 bpc 蓝色通道公式错误的问题；影响高位深下的 Mat 颜色输出。
+  - **LineTrace**：修复 “DrawBlack” 颜色参数被忽略的问题；此前固定为黑色。
+  - **TouchDraw**：修复块随机种子初始化在错误单元，导致 Block Value／Block Size 只作用于画面左上角小区域的问题；现在随机块会按 Seed 分布到整个画面。
+  - **TouchDraw、TouchDrawStraght**：修复块数量参数可能会在特定数值下完全不起作用
+  - **Max_Kasumi**：修复该效果在除完整分辨率下不生效的问题
 
-Fs_Target.hの
-```
-#if defined(SUPPORT_SMARTFX)
-#define FS_OUT_FLAGS2 134222921
-#else
-#define FS_OUT_FLAGS2 134217801
-#endif
-```
-に変えただけなので中国語バージョン作る時はそこだけの変更で良いはずです。
+- 有参数调整影响
+  - **RandomShift**：最小横幅长度参数错误显示为最大值标签。
+  - **smokeThreshold**：两个阴影线颜色参数错误显示为启用项标签的问题。
 
-CC2019用からgithubでバイナリーの配布も行います。
-**_DL_windowsbinary**フォルダの中に入っています。
+- 被不发布的插件部分
+  - **ShineParallel**：修复不可编译工程，该插件还存在效果错误实现的问题，但由于属于已遗弃插件因此不做修复。
+  - **ChannelBlur、Extract_Edge**：修复不可编译工程
 
+### 不随正式版本发布的插件
 
+部分插件因原作者写错文本而重新新增了副本。这些插件仍会参与编译，但计划在发布时归入 `Abandoned` 分类，不随正式版本发布。
 
-<br>
-
-# 変更点
-2026/0２/01<br>
-とりあえず今回の更新はこれで最後にします。<br>
-2025/07/21<br>
-プラグインファイル名の規則を変更。詳細は添付ファイル内の「必ず読んでください.txt」を見てください。<br>
-<br>
-2024/04/14<br>
-SDK2023でbuildし直しました。<br>
-<br>
-2022/03/15<br>
-AE2022のマルチフレームレンダリングに対応しました。 <br>
-<br>
-2020/11/11<br>
-NFsライブラリのひな型を作成しました。<br>
-<br>
-2020/08/15<br>
-コンパイラを VS2017からVS2019へ変更。<br>
-それに伴い、構造体メンバーのアライメントを16byteに変更。/Zp16<br>
-
-* F'sgrayToCountourLine.aexを追加
-ポスタリゼーションの変形バージョンです、諧調を均等に割らずにHi/Mid/Loで諧調を変えられます。
-* F's grayToWaveLine.aexを追加
-グレー画像を疑似３Dプロッタ風に描画します。昔のSF映画のモニタぽいものができます。
-
-2020/07/26
-CC2020 SDKに変更。
-
-2020/03/20
-CC2019 SDKに変更。
-数が多くなって使いにくくなったので、カテゴリーを整理しました。
-* F's Plugins-Cell
- アニメのスムージングなしのセルをターゲットにしたものです。
-* F's Plugins-Channel
- チャンネル操作系です。
-* F's Plugins-Colorize
- 色を付けるものです。
-* F's Plugins-Draw
- 描画系のものです。
-* F's Plugins-Filter
- フィルターエフェクト系です。
-* F's Plugins-Noise
- ノイズフィルタ系です。
-* F's Plugins-{Legacy}
- もう使って欲しくない。或いは使い道のないものです。
- デバッグ前のものや、紙飛行機作成補助プラグインとかになります。
-### 追加プラグイン
-* F's EdgeLine-Hi.aex  指定した2色の境界に線を描きます。その時描く向きを指定できます。
-* F's Flare.aex 白黒マスクにグローを付けます。透過光です。
-* F's graytoneToColorize.aex 簡易コロラマです。ゴールド処理やサーモグラフ処理に使います。
-* F's PixelExtend.aex 指定した色を指定した方向に膨張させます。
-* F's Posterization8bit.aex ポスタリゼーションです。標準と違って内部は8bit処理です。
-* F's Scanline.aex スキャンライン。昔の古いパソコンの偶数列が黒いラインの状態ができます。
-* F's YuvControl.aex YUV版のRGBAコントロールです。
-
-# 開発環境
-Visual studio 2026 Community C++
-
-AfterEffectsSDK CC2025
-SDKはCC2025を使用しています。
-
-# Setup
-プロジェクト等はSDKフォルダ内のExampleフォルダ内へ配置してください。
-
-こんな感じです。
-
-        /AfterEffectsSDK
-        └─Examples
-            ├─AEGP
-            ├─Effect
-            ├─F's PluginsProjects
-            │  ├─AlphaFix
-            │  ├─AlphaThreshold
-            │  ├─AnimatedNoise
-            <省略>
-            │  ├─PluginSkeleton
-            <省略>
-            │  ├─whiteInOut
-            ├─GP
-            ├─Headers
-            ├─Resources
-            ├─Template
-            ├─UI
-            └─Util
-
-# 使い方
-
-SDKはCC2025を想定しています。
-
-**NFsLibrary**ではCC2020以降のサポートとなります。
-
-F's PluginsProjectsフォルダを各バージョンのExamplesフォルダに移動すればできます。
-
-
-PluginのBinaryはAfter EffectsのPlug-insへコピーしてください。
-
-例)
-"C:\Program Files\Adobe\Adobe After Effects CC 2024\Support Files\Plug-ins"
-
-# デバッグ
-
-1. デバッグ構成時のプロパティでバイナリの出力先をインストールされたAEの**Plug-ins**フォルダに設定します。SDKでは"[Program Files]\Adobe\Common\Plug-ins\[**version**]\MediaCore\"が推奨されていますが、バージョンがこっそり上がって困ったことがありました。
-> C:\Program Files\Adobe\Adobe After Effects 2040\Support Files\Plug-ins\debug\
-2. プロパティ「デバッグ」のコマンドをAEの実行ファイルにします。
-> C:\Program Files\Adobe\Adobe After Effects 2040\Support Files\AfterFX.exe
-3. その他必要な項目（作業ディレクトリ）も設定します。
-4. 念のためにプラグインフォルダの設定をフルコントロールにしておきます。アクセス権が無くて書き出しができなことがあります。
-
-以上の設定を行えば、デバッグが可能になります。
-
-
-
-# ライセンス
-
-This software is released under the MIT License, see LICENSE.
-
-このソースコードを使用する時はMITライセンスに準じてください。
-独自にビルドして映像制作使う場合は、使用プラグインリスト等にここの[url](https://github.com/bryful)を入れてもらえればOKです（まぁ入れなくても僕は気にしません）
-
-このプログラムを映像制作に使用した場合も特に制限ありません。一応MITライセンスの条件である著作権表示および本許諾表示として
-
-**プラグイン協力 bry-ful**
-
-とクレジットしてくれると嬉しいです。プラグイン協力以外でも適当な肩書であれば別のものに変えても構いません。<br>
-
-パチンコパチスロ遊技機開発会社の方へ<br>
-使用に関しては特に制限ありません。許諾も必要ありません。使用料も発生しません。
-これは今後絶対に変わりません。
-
-
-
-# Authors
-
-bry-ful [Hiroshi Furuhashi]<br>
-github: [https://github.com/bryful](https://github.com/bryful)<br>
-twitter:[bryful](https://twitter.com/bryful)<br>
-
-# Thanks
-
-Nanae Furuhashi
-
-My daughter,
-May her soul rest in peace．
-
-
-
+> 这项分类与发布调整目前尚未完成。

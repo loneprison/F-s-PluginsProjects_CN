@@ -6,6 +6,7 @@
 
 
 #include "Spark_Test.h"
+#include "Spark_TestText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,11 +20,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const Spark_TestText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_START_P,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_START_POINT),			/*"New Center"*/
 		25,	// X
 		25,	// Y
 		0,	// Flag
@@ -33,7 +35,7 @@ static PF_Err ParamsSetup (
 	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_START_S,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_START_SIZE),	//Name
 		0,						//VALID_MIN
 		300,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -48,7 +50,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_LAST_P,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_LAST_POINT),			/*"New Center"*/
 		75,	// X
 		75,	// Y
 		0,	// Flag
@@ -58,7 +60,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LAST_S,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LAST_SIZE),	//Name
 		0,						//VALID_MIN
 		300,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -73,7 +75,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 //色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,
@@ -81,8 +83,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_BLEND,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_BLEND),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_BLEND

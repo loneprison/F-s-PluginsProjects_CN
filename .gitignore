@@ -276,5 +276,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-
+.venv/
+.pytest_cache/
+.ruff_cache/
+test-results/
+playwright-report/
+_localization/.cache/
 

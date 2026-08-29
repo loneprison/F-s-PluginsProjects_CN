@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <FsRolePrefix Condition="'$(FsProjectRole)'!='Production' and '$(FsProjectRole)'!='Support'">($(FsProjectRole))\</FsRolePrefix>
+    <FsRolePrefix Condition="'$(FsProjectRole)'=='Support'">_Support\</FsRolePrefix>
+    <FsIsolationSuffix Condition="'$(FsOutputIsolation)'!=''">$(FsOutputIsolation)\</FsIsolationSuffix>
+    <FsLayoutPrefix>$(FsAeCategory)\</FsLayoutPrefix>
+    <FsLayoutPrefix Condition="'$(FsProjectRole)'!='Production'">$(FsRolePrefix)</FsLayoutPrefix>
+    <FsRawOutDir>$(AE_PLUGIN_BUILD_DIR)\Fs_Plugins\$(FsLayoutPrefix)$(FsIsolationSuffix)</FsRawOutDir>
+    <FsConfigurationSuffix Condition="'$(Configuration)'=='Debug'">_d</FsConfigurationSuffix>
+    <FsRawTargetName>F's $(ProjectName)$(FsConfigurationSuffix)</FsRawTargetName>
+    <FsRawCounterpartTargetName Condition="'$(Configuration)'=='Debug'">F's $(ProjectName)</FsRawCounterpartTargetName>
+    <FsRawCounterpartTargetName Condition="'$(Configuration)'=='Release'">F's $(ProjectName)_d</FsRawCounterpartTargetName>
+    <FsRawCounterpartPath Condition="'$(FsRawCounterpartTargetName)'!=''">$(FsRawOutDir)$(FsRawCounterpartTargetName).aex</FsRawCounterpartPath>
+    <FsEscapedPluginBuildDir>$([MSBuild]::Escape($(AE_PLUGIN_BUILD_DIR)))</FsEscapedPluginBuildDir>
+    <FsEscapedAeCategory>$([MSBuild]::Escape($(FsAeCategory)))</FsEscapedAeCategory>
+    <FsEscapedOutputIsolation>$([MSBuild]::Escape($(FsOutputIsolation)))</FsEscapedOutputIsolation>
+    <FsEscapedCounterpartPath>$([MSBuild]::Escape($(FsRawCounterpartPath)))</FsEscapedCounterpartPath>
+    <OutDir>$([MSBuild]::Escape($(FsRawOutDir)))</OutDir>
+    <TargetName>$([MSBuild]::Escape($(FsRawTargetName)))</TargetName>
+    <TargetExt>.aex</TargetExt>
+    <TargetPath>$(OutDir)$(TargetName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <Link>
+      <OutputFile>$(TargetPath)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <Target Name="ValidateFsPluginBuild"
+          BeforeTargets="PrepareForBuild"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <Error Condition="'$(AE_PLUGIN_BUILD_DIR)'==''"
+           Text="AE_PLUGIN_BUILD_DIR must be set to an existing absolute base output directory; this repository appends Fs_Plugins." />
+    <Error Condition="'$(FsEscapedPluginBuildDir)'!='' and !$([System.IO.Path]::IsPathRooted($(AE_PLUGIN_BUILD_DIR)))"
+           Text="AE_PLUGIN_BUILD_DIR must be an absolute path: $(AE_PLUGIN_BUILD_DIR)" />
+    <Error Condition="'$(FsEscapedPluginBuildDir)'!='' and !Exists('$(FsEscapedPluginBuildDir)')"
+           Text="AE_PLUGIN_BUILD_DIR does not exist: $(AE_PLUGIN_BUILD_DIR)" />
+    <Error Condition="'$(Platform)'!='x64'"
+           Text="Only the x64 platform is supported; received $(Platform)." />
+    <Error Condition="'$(FsProjectRole)'!='Support' and '$(FsEscapedAeCategory)'==''"
+           Text="Directory.Build.PluginMap.props has no AE category for $(MSBuildProjectName)." />
+    <Error Condition="'$(FsProjectRole)'!='Production' and '$(FsProjectRole)'!='Tests' and '$(FsProjectRole)'!='Templates' and '$(FsProjectRole)'!='Abandoned' and '$(FsProjectRole)'!='Support'"
+           Text="Directory.Build.PluginMap.props has an invalid role for $(MSBuildProjectName): $(FsProjectRole)" />
+    <Error Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(FsEscapedAeCategory)', '[\/:*?&quot;&lt;&gt;|]'))"
+           Text="Directory.Build.PluginMap.props has an invalid output category for $(MSBuildProjectName): $(FsAeCategory)" />
+    <Error Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(FsEscapedOutputIsolation)', '[:*?&quot;&lt;&gt;|]'))"
+           Text="Directory.Build.PluginMap.props has an invalid output isolation for $(MSBuildProjectName): $(FsOutputIsolation)" />
+    <Exec Condition="'$(DesignTimeBuild)'!='true'"
+          Command="uv.exe run --locked --no-dev --project &quot;$(MSBuildThisFileDirectory)..\_localization\tools&quot; aetext check-classification --repository &quot;$(MSBuildThisFileDirectory)..&quot; --project &quot;$(MSBuildProjectFullPath)&quot;" />
+  </Target>
+
+  <Target Name="RemoveFsPluginCounterpart"
+          AfterTargets="Link"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and '$(FsEscapedCounterpartPath)'!='' and Exists('$(TargetPath)') and Exists('$(FsEscapedCounterpartPath)')">
+    <Delete Files="$(FsEscapedCounterpartPath)" />
+  </Target>
+</Project>

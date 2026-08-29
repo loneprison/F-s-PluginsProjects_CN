@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "Tolerance",
+        "L10N_PARAM_SRC_COLOR": "Source Color",
+        "L10N_PARAM_DST_COLOR": "Replacement Color"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Replaces a single color."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "阈值",
+        "L10N_PARAM_SRC_COLOR": "原始颜色",
+        "L10N_PARAM_DST_COLOR": "替换颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "单色替换"
+      }
+    }
+  }
+}

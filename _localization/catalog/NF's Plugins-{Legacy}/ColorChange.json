@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "Tolerance",
+        "L10N_PARAM_MODE": "Mode",
+        "L10N_PARAM_TARGET0": {"useSource": true},
+        "L10N_PARAM_SRCCOL0": "Source Color 0",
+        "L10N_PARAM_DSTCOL0": "Replacement Color 0",
+        "L10N_PARAM_TARGET1": {"useSource": true},
+        "L10N_PARAM_SRCCOL1": "Source Color 1",
+        "L10N_PARAM_DSTCOL1": "Replacement Color 1",
+        "L10N_PARAM_TARGET2": {"useSource": true},
+        "L10N_PARAM_SRCCOL2": "Source Color 2",
+        "L10N_PARAM_DSTCOL2": "Replacement Color 2",
+        "L10N_PARAM_TARGET3": {"useSource": true},
+        "L10N_PARAM_SRCCOL3": "Source Color 3",
+        "L10N_PARAM_DSTCOL3": "Replacement Color 3",
+        "L10N_PARAM_TARGET4": {"useSource": true},
+        "L10N_PARAM_SRCCOL4": "Source Color 4",
+        "L10N_PARAM_DSTCOL4": "Replacement Color 4",
+        "L10N_PARAM_TARGET5": {"useSource": true},
+        "L10N_PARAM_SRCCOL5": "Source Color 5",
+        "L10N_PARAM_DSTCOL5": "Replacement Color 5",
+        "L10N_PARAM_TARGET6": {"useSource": true},
+        "L10N_PARAM_SRCCOL6": "Source Color 6",
+        "L10N_PARAM_DSTCOL6": "Replacement Color 6",
+        "L10N_PARAM_TARGET7": {"useSource": true},
+        "L10N_PARAM_SRCCOL7": "Source Color 7",
+        "L10N_PARAM_DSTCOL7": "Replacement Color 7"
+      },
+      "Label": {
+        "L10N_PARAM_EXEC": "On"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Replaces specified colors."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "阈值",
+        "L10N_PARAM_MODE": "激活方案",
+        "L10N_PARAM_TARGET0": "方案0",
+        "L10N_PARAM_SRCCOL0": "原始颜色0",
+        "L10N_PARAM_DSTCOL0": "替换颜色0",
+        "L10N_PARAM_TARGET1": "方案1",
+        "L10N_PARAM_SRCCOL1": "原始颜色1",
+        "L10N_PARAM_DSTCOL1": "替换颜色1",
+        "L10N_PARAM_TARGET2": "方案2",
+        "L10N_PARAM_SRCCOL2": "原始颜色2",
+        "L10N_PARAM_DSTCOL2": "替换颜色2",
+        "L10N_PARAM_TARGET3": "方案3",
+        "L10N_PARAM_SRCCOL3": "原始颜色3",
+        "L10N_PARAM_DSTCOL3": "替换颜色3",
+        "L10N_PARAM_TARGET4": "方案4",
+        "L10N_PARAM_SRCCOL4": "原始颜色4",
+        "L10N_PARAM_DSTCOL4": "替换颜色4",
+        "L10N_PARAM_TARGET5": "方案5",
+        "L10N_PARAM_SRCCOL5": "原始颜色5",
+        "L10N_PARAM_DSTCOL5": "替换颜色5",
+        "L10N_PARAM_TARGET6": "方案6",
+        "L10N_PARAM_SRCCOL6": "原始颜色6",
+        "L10N_PARAM_DSTCOL6": "替换颜色6",
+        "L10N_PARAM_TARGET7": "方案7",
+        "L10N_PARAM_SRCCOL7": "原始颜色7",
+        "L10N_PARAM_DSTCOL7": "替换颜色7"
+      },
+      "Label": {
+        "L10N_PARAM_EXEC": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "替换指定颜色"
+      }
+    }
+  }
+}

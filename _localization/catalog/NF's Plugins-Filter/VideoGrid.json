@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_GRID_SIZE": "Grid Size",
+        "L10N_PARAM_MODE": "Mode",
+        "L10N_PARAM_HILIGHT": "Highlight (%)",
+        "L10N_PARAM_SHADOW": "Shadow (%)",
+        "L10N_PARAM_LINE_WIDTH": "Line Width"
+      },
+      "Label": {
+        "L10N_PARAM_MOSAIC": "Mosaic"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a video grid filter."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_GRID_SIZE": "网格尺寸",
+        "L10N_PARAM_MODE": "马赛克",
+        "L10N_PARAM_HILIGHT": "高光",
+        "L10N_PARAM_SHADOW": "阴影",
+        "L10N_PARAM_LINE_WIDTH": "边框宽度"
+      },
+      "Label": {
+        "L10N_PARAM_MOSAIC": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Video网格滤镜"
+      }
+    }
+  }
+}

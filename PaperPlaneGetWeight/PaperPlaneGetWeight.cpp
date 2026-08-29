@@ -6,6 +6,7 @@
 
 
 #include "PaperPlaneGetWeight.h"
+#include "PaperPlaneGetWeightText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,12 +20,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PaperPlaneGetWeightText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_CHECKBOX(STR_ISHALF,
-					"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_HALF_SIZE),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_ISHALF
@@ -32,7 +34,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(STR_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_COUNT),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					5,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -45,10 +47,10 @@ static PF_Err ParamsSetup (
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_POPUP(		STR_WEIGHT, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_WEIGHT),
 						STR_WEIGHT_COUNT,	//メニューの数
 						STR_WEIGHT_DFLT,	//デフォルト
-						STR_WEIGHT_ITEMS,
+						AETEXT_POPUP(strings, L10N_PARAM_WEIGHT_ITEMS),
 						ID_WEIGHT
 						);
 	//----------------------------------------------------------------

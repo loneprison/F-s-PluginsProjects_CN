@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "ChannelShift.h"
+#include "ChannelShiftText.generated.h"
 
 
 /*
@@ -25,20 +26,21 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ChannelShiftText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_RED_TOPIC, ID_RED_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_RED_TOPIC), ID_RED_TOPIC);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(	STR_RED_ROT, 
+	PF_ADD_ANGLE(	AETEXT_PARAM(strings, L10N_PARAM_RED_ROT),
 					0,
 					ID_RED_ROT
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_RED_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_RED_LENGTH),	//パラメータの名前
 					-30000, 				//数値入力する場合の最小値
 					30000,	//数値入力する場合の最大値
 					-100,				//スライダーの最小値 
@@ -54,16 +56,16 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_GREEN_TOPIC, ID_GREEN_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_GREEN_TOPIC), ID_GREEN_TOPIC);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(	STR_GREEN_ROT, 
+	PF_ADD_ANGLE(	AETEXT_PARAM(strings, L10N_PARAM_GREEN_ROT),
 					90.0,
 					ID_GREEN_ROT
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_GREEN_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_GREEN_LENGTH),	//パラメータの名前
 					-30000, 				//数値入力する場合の最小値
 					30000,	//数値入力する場合の最大値
 					-100,				//スライダーの最小値 
@@ -79,16 +81,16 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_BLUE_TOPIC, ID_BLUE_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_BLUE_TOPIC), ID_BLUE_TOPIC);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(	STR_BLUE_ROT, 
+	PF_ADD_ANGLE(	AETEXT_PARAM(strings, L10N_PARAM_BLUE_ROT),
 					180.0,
 					ID_BLUE_ROT
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_BLUE_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLUE_LENGTH),	//パラメータの名前
 					-30000, 				//数値入力する場合の最小値
 					30000,	//数値入力する場合の最大値
 					-100,				//スライダーの最小値 
@@ -104,16 +106,16 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
 	//def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_ALPHA_TOPIC, ID_ALPHA_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_ALPHA_TOPIC), ID_ALPHA_TOPIC);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(	STR_ALPHA_ROT, 
+	PF_ADD_ANGLE(	AETEXT_PARAM(strings, L10N_PARAM_ALPHA_ROT),
 					270.0,
 					ID_ALPHA_ROT
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_ALPHA_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_ALPHA_LENGTH),	//パラメータの名前
 					-30000, 				//数値入力する場合の最小値
 					30000,	//数値入力する場合の最大値
 					-100,				//スライダーの最小値 
@@ -128,10 +130,10 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 	PF_END_TOPIC(ID_ALPHA_TOPIC_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_EDGE_POP1, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_EDGE),
 						4,	//メニューの数
 						1,	//デフォルト
-						STR_EDGE_POP2,
+						AETEXT_POPUP(strings, L10N_PARAM_EDGE_ITEMS),
 						ID_EDGE_POP
 						);
 	//----------------------------------------------------------------

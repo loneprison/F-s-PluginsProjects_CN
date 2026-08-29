@@ -6,6 +6,7 @@
 #include "../FsLibrary_next/FsAEHeader.h"
 #include "Filter.h"
 #include "Filter_Target.h"
+#include "FilterText.generated.h"
 
 //=======================================================================================
 static PF_Err
@@ -18,9 +19,9 @@ About(
 	PF_Err	err = PF_Err_NONE;
 
 	CAE ae;
-	err = ae.About(in_data, out_data, params, output);
-
-
+	const FilterText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 
 	return PF_Err_NONE;
 }
@@ -273,9 +274,11 @@ EffectMain(
 		case PF_Cmd_COMPLETELY_GENERAL:
 			err = RespondtoAEGP(in_dataP, out_data, params, output, extraP);
 			break;
-		case PF_Cmd_DO_DIALOG:
-			//err = PopDialog(in_dataP,out_data,params,output);
+		case PF_Cmd_DO_DIALOG: {
+
+			FilterText::OpenSettings(in_dataP, L"F's Filter");
 			break;
+		}
 		case PF_Cmd_USER_CHANGED_PARAM:
 			err = HandleChangedParam(in_dataP,
 				out_data,

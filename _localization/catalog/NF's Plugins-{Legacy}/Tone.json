@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_HIGHLIGHTS": {"useSource": true},
+        "L10N_PARAM_MIDTONES": {"useSource": true},
+        "L10N_PARAM_SHADOWS": {"useSource": true},
+        "L10N_PARAM_MIDTONES_OFFSET": {"useSource": true},
+        "L10N_PARAM_BLEND_WITH_ORIGINAL": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Same as Tritone."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_HIGHLIGHTS": "高光",
+        "L10N_PARAM_MIDTONES": "中间调",
+        "L10N_PARAM_SHADOWS": "阴影",
+        "L10N_PARAM_MIDTONES_OFFSET": "中间调偏移",
+        "L10N_PARAM_BLEND_WITH_ORIGINAL": "与原始图像混合"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "与三色调相同"
+      }
+    }
+  }
+}

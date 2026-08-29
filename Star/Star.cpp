@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "Star.h"
+#include "StarText.generated.h"
 
 
 
@@ -20,11 +21,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const StarText::Strings strings(in_data);
 
 	//全体的なパラメータ
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_PAR,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -37,7 +39,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_STRONG_PAR,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_STRONG),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -51,26 +53,26 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ROT,0,ID_ROT); 
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ROT),0,ID_ROT);
 //----------------------------------------------------------------
 //********************************************************
 //********************************************************
 	//色関係
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_COLOR_TOPIC, ID_COLOR_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_COLOR_TOPIC), ID_COLOR_TOPIC);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_COLOR_KIND, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_COLOR_KIND),
 						STR_COLOR_KIND_CNT,	//メニューの数
 						STR_COLOR_KIND_DEF,	//デフォルト
-						STR_COLOR_KIND_POP,
+		AETEXT_POPUP(strings, L10N_PARAM_COLOR_KIND_ITEMS),
 						ID_COLOR_KIND
 						);
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR_A,
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR_A),
 					0xF7,
 					0xFF,
 					0xD2,
@@ -79,7 +81,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR_B, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR_B),
 					0xF0,
 					0xFF,
 					0x05,
@@ -87,7 +89,7 @@ static PF_Err ParamsSetup (
 					);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_COLOR_BORDER,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_COLOR_BORDER),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -107,10 +109,10 @@ static PF_Err ParamsSetup (
 //********************************************************
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_LINE1_TOPIC, ID_LINE1_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LINE1_TOPIC), ID_LINE1_TOPIC);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LINE1_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE1_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -120,7 +122,7 @@ static PF_Err ParamsSetup (
 					);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LINE1_STRONG,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LINE1_STRONG),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -134,7 +136,7 @@ static PF_Err ParamsSetup (
 //----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_LINE1_ANGLE,0,ID_LINE1_ROT); 
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_LINE1_ROT),0,ID_LINE1_ROT);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_END_TOPIC(ID_LINE1_TOPIC_END);
@@ -142,10 +144,10 @@ static PF_Err ParamsSetup (
 //********************************************************
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_LINE2_TOPIC, ID_LINE2_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LINE2_TOPIC), ID_LINE2_TOPIC);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LINE2_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE2_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -155,7 +157,7 @@ static PF_Err ParamsSetup (
 					);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LINE2_STRONG,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LINE2_STRONG),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -169,7 +171,7 @@ static PF_Err ParamsSetup (
 //----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_LINE2_ANGLE,45,ID_LINE1_ROT); 
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_LINE2_ROT),45,ID_LINE1_ROT);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_END_TOPIC(ID_LINE2_TOPIC_END);
@@ -178,10 +180,10 @@ static PF_Err ParamsSetup (
 //********************************************************
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_LINE3_TOPIC, ID_LINE3_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LINE3_TOPIC), ID_LINE3_TOPIC);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LINE3_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE3_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -191,7 +193,7 @@ static PF_Err ParamsSetup (
 					);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LINE3_STRONG,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LINE3_STRONG),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -205,7 +207,7 @@ static PF_Err ParamsSetup (
 //----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_LINE3_ANGLE,90,ID_LINE3_ROT); 
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_LINE3_ROT),90,ID_LINE3_ROT);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_END_TOPIC(ID_LINE3_TOPIC_END);
@@ -214,10 +216,10 @@ static PF_Err ParamsSetup (
 //********************************************************
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;
-	PF_ADD_TOPIC(STR_LINE4_TOPIC, ID_LINE4_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LINE4_TOPIC), ID_LINE4_TOPIC);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LINE4_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE4_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					500,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -227,7 +229,7 @@ static PF_Err ParamsSetup (
 					);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LINE4_STRONG,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LINE4_STRONG),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -241,7 +243,7 @@ static PF_Err ParamsSetup (
 //----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_LINE4_ANGLE,135,ID_LINE4_ROT); 
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_LINE4_ROT),135,ID_LINE4_ROT);
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_END_TOPIC(ID_LINE4_TOPIC_END);

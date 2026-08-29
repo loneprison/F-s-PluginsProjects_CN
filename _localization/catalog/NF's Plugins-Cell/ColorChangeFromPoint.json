@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET_POINT": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Replaces pixels matching the color at the specified point."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET_POINT": "锚点",
+        "L10N_PARAM_COLOR": "替换颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "按锚点颜色替换匹配像素"
+      }
+    }
+  }
+}

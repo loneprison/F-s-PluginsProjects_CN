@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -14,18 +14,18 @@
     <ProjectGuid>{82675920-EFDC-4880-84E3-4D234C1A86BC}</ProjectGuid>
     <RootNamespace>AlphaFix</RootNamespace>
     <ProjectName>AlphaFix</ProjectName>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v145</PlatformToolset>
+
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v145</PlatformToolset>
+
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,20 +41,20 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\Fs_Plugins_debug\</OutDir>
+
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
     <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">*.tlog;*.asm;*.exp;*.sbr;*.rr;*.rrc;*.res;*.cdf;*.cache;*.obj;*.ilk;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.manifest;*.pch;*.idb;*.lib;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\outAEX\</OutDir>
+
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.aex</TargetExt>
+
     <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='Release|x64'">*.tlog;*.asm;*.exp;*.sbr;*.rr;*.rrc;*.res;*.cdf;*.cache;*.obj;*.ilk;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.manifest;*.pch;*.idb;*.lib;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F's $(ProjectName)</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F's $(ProjectName)</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.aex</TargetExt>
+
+
+
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -70,8 +70,8 @@
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\Headers;..\..\..\Headers\SP;..\..\..\Resources;..\..\..\Util;..\F's PluginsProjects_2013\FsLibrary</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>MSWindows;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <StructMemberAlignment>16Bytes</StructMemberAlignment>
+
+
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderFile>AE_Effect.h</PrecompiledHeaderFile>
@@ -82,11 +82,10 @@
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -126,8 +125,8 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>..\..\..\Headers;..\..\..\Headers\SP;..\..\..\Headers\Win;..\..\..\Resources;..\..\..\Util</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>MSWindows;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <StructMemberAlignment>16Bytes</StructMemberAlignment>
+
+
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderFile>AE_Effect.h</PrecompiledHeaderFile>
@@ -140,13 +139,12 @@
       </BrowseInformation>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <DisableSpecificWarnings>4201;4103;4189;4505;4996;4100;4458;4456</DisableSpecificWarnings>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0411</Culture>
@@ -178,14 +176,11 @@
     <ClInclude Include="..\Fs_Target.h" />
     <ClInclude Include="..\..\..\Util\Smart_Utils.h" />
     <ClInclude Include="..\..\..\Util\String_Utils.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H" />
     <ClInclude Include="..\..\..\Headers\A.h" />
     <ClInclude Include="..\..\..\Headers\AE_Effect.h" />
     <ClInclude Include="..\..\..\Headers\AE_EffectCB.h" />
     <ClInclude Include="..\..\..\Headers\AE_EffectCBSuites.h" />
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h" />
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h" />
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h" />
     <ClInclude Include="..\..\..\Headers\AE_GeneralPlug.h" />
     <ClInclude Include="..\..\..\Headers\AE_GeneralPlugOld.h" />
@@ -198,32 +193,24 @@
     <ClInclude Include="..\..\..\Headers\PF_Masks.h" />
     <ClInclude Include="..\..\..\Headers\PR_Public.h" />
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h" />
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h" />
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h" />
     <ClInclude Include="..\..\..\Headers\PT_Public.h" />
-    <CustomBuildStep Include="..\..\..\Util\AEFX_SuiteHelper.h" />
-    <CustomBuildStep Include="..\..\..\Util\PF_Suite_Helper.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </CustomBuildStep>
+    <ClInclude Include="..\..\_localization\AeText.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\AlphaFixPiPL.r">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling the PiPL</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl /I "$(ProjectDir)..\..\..\Headers" /EP ".."\\"%(Filename).r" &gt; "$(IntDir)"\\"%(Filename).rr"
+      <Message>Compiling the PiPL</Message>
+      <Command>cl /I "$(ProjectDir)..\..\..\Headers" /EP "$(ProjectDir)..\%(Filename).r" &gt; "$(IntDir)%(Filename).rr"
 "$(ProjectDir)..\..\..\Resources\PiPLTool" "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).rrc"
-cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)"\\"%(Filename)".rc
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).rc;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling the PiPL</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl /I "$(ProjectDir)..\..\..\Headers" /EP ".."\\"%(Filename).r" &gt; "$(IntDir)"\\"%(Filename).rr"
-"$(ProjectDir)..\..\..\Resources\PiPLTool" "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).rrc"
-cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)"\\"%(Filename)".rc
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).rc;%(Outputs)</Outputs>
+cl /D "MSWindows" /EP "$(IntDir)%(Filename).rrc" &gt; "$(IntDir)%(Filename).rc"</Command>
+      <Outputs>$(IntDir)%(Filename).rc;%(Outputs)</Outputs>
+
+
+
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="AlphaFixPiPL.rc" />
+    <ResourceCompile Include="$(IntDir)AlphaFixPiPL.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp" />
@@ -240,6 +227,10 @@ cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BrowseInformation>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Channel\AlphaFix.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

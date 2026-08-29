@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "enabled": true,
+  "stages": [
+    {
+      "id": "pretranslated",
+      "label": "预翻译",
+      "color": "blue",
+      "enabled": true
+    },
+    {
+      "id": "needs-review",
+      "label": "待核对",
+      "color": "orange",
+      "enabled": true
+    },
+    {
+      "id": "reviewed",
+      "label": "已校对",
+      "color": "green",
+      "enabled": true
+    }
+  ],
+  "completedStageId": "reviewed",
+  "defaults": {
+    "manualEdit": "needs-review",
+    "pretranslation": "pretranslated"
+  },
+  "sourceChange": {
+    "reviewed": "needs-review"
+  }
+}

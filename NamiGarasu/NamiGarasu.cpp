@@ -6,6 +6,7 @@
 
 
 #include "NamiGarasu.h"
+#include "NamiGarasuText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,9 +20,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const NamiGarasuText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_Y,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_WAVE_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -37,11 +39,11 @@ static PF_Err ParamsSetup (
 	//角度
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_ANGLE(STR_ROT,45,ID_ROT); 
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ROT),45,ID_ROT);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FIXED(	STR_SPEED,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_SPEED),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					32000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -55,7 +57,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LEVEL,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_ADD_MAP),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -68,7 +70,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_NOISE,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_NOISE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -81,11 +83,11 @@ static PF_Err ParamsSetup (
 					);
 	//****************************************************************
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_TOPIC(STR_A, ID_TOPIC_A);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LAYER_A), ID_TOPIC_A);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_A_SIZE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_A_SIZE),	//パラメータの名前
 					1, 		//数値入力する場合の最小値
 					6,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -96,7 +98,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_A_VALUE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_A_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -109,7 +111,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FLOAT_SLIDER(STR_A_STRONG,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_A_STRONG),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -124,7 +126,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FLOAT_SLIDER(STR_A_SPEED,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_A_SPEED),	//Name
 						-500,					//VALID_MIN
 						500,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -139,7 +141,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_A_SEED,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_A_SEED),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					30000,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -153,11 +155,11 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_TOPIC_A_END);
 	//****************************************************************
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_TOPIC(STR_B, ID_TOPIC_B);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LAYER_B), ID_TOPIC_B);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_B_SIZE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_B_SIZE),	//パラメータの名前
 					1, 		//数値入力する場合の最小値
 					6,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -168,7 +170,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_B_VALUE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_B_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -181,7 +183,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FLOAT_SLIDER(STR_B_STRONG,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_B_STRONG),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -196,7 +198,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FLOAT_SLIDER(STR_B_SPEED,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_B_SPEED),	//Name
 						-500,					//VALID_MIN
 						500,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -211,7 +213,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_B_SEED,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_B_SEED),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					30000,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -224,11 +226,11 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_TOPIC_B_END);
 	//****************************************************************
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_TOPIC(STR_C, ID_TOPIC_C);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_LAYER_C), ID_TOPIC_C);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_C_SIZE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_C_SIZE),	//パラメータの名前
 					1, 		//数値入力する場合の最小値
 					6,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -239,7 +241,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_C_VALUE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_C_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -252,7 +254,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FLOAT_SLIDER(STR_C_STRONG,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_C_STRONG),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -267,7 +269,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_FLOAT_SLIDER(STR_C_SPEED,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_C_SPEED),	//Name
 						-500,						//VALID_MIN
 						500,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -282,7 +284,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(	STR_C_SEED,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_C_SEED),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					30000,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -296,15 +298,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_CHECKBOX(STR_DISPMAP,
-					"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_DISP_MAP),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_DISPMAP
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_X,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_X_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -317,7 +319,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_Y,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_Y_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 

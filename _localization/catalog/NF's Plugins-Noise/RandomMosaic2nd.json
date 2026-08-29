@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_AMOUNT": "Amount (%)",
+        "L10N_PARAM_STRENGTH": "Strength",
+        "L10N_PARAM_SIZE_X": "Horizontal Size",
+        "L10N_PARAM_SIZE_Y": "Vertical Size"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Random mosaic 2."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_AMOUNT": "数量",
+        "L10N_PARAM_STRENGTH": "随机亮度",
+        "L10N_PARAM_SIZE_X": "块宽度",
+        "L10N_PARAM_SIZE_Y": "块高度"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "随机马赛克2"
+      }
+    }
+  }
+}

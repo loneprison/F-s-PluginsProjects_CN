@@ -6,6 +6,7 @@
 
 
 #include "InnerFlare.h"
+#include "InnerFlareText.generated.h"
 #include <string>
 
 
@@ -20,17 +21,18 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const InnerFlareText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xff,
 		0xFF,
 		PF_MAX_CHAN8,
 		ID_COLOR
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MINMAX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAX),	//パラメータの名前
 		-1000, 		//数値入力する場合の最小値
 		1000,		//数値入力する場合の最大値
 		-10,		//スライダーの最小値 
@@ -39,7 +41,7 @@ static PF_Err ParamsSetup (
 		ID_MINMAX
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_BLUR,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		1000,		//数値入力する場合の最大値
 		0,		//スライダーの最小値 
@@ -48,7 +50,7 @@ static PF_Err ParamsSetup (
 		ID_BLUR
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HYPERBOLIC,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HYPERBOLIC),	//Name
 		-10,				//VALID_MIN
 		50,					//VALID_MAX
 		-2,					//SLIDER_MIN
@@ -63,8 +65,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_REVERCE,
-		"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_REVERSE),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_REVERCE

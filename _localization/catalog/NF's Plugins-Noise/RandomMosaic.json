@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_AMOUNT": "Amount",
+        "L10N_PARAM_SIZE_MAX": "Maximum Size",
+        "L10N_PARAM_SIZE_MIN": "Minimum Size",
+        "L10N_PARAM_ASPECT_RANDOM": "Aspect Variation",
+        "L10N_PARAM_BRIGHT_RANDOM": "Brightness Variation"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Random mosaic."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_AMOUNT": "数量",
+        "L10N_PARAM_SIZE_MAX": "最大尺寸",
+        "L10N_PARAM_SIZE_MIN": "最小尺寸",
+        "L10N_PARAM_ASPECT_RANDOM": "随机长宽比",
+        "L10N_PARAM_BRIGHT_RANDOM": "随机亮度"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "随机马赛克"
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
-#include "RimFill.h"
+ï»¿#include "RimFill.h"
 #include <vector>
 #include <type_traits>
 
 #define AE_CLAMP(val, min, max)  ((val) < (min) ? (min) : ((val) > (max) ? (max) : (val)))
 
 //-----------------------------------------------------------------------------------
-// ƒeƒ“ƒvƒŒ[ƒg—pƒwƒ‹ƒp[ŠÖ”
+// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆç”¨ãƒ˜ãƒ«ãƒ‘ãƒ¼é–¢æ•°
 //-----------------------------------------------------------------------------------
 
 template<typename T>
@@ -26,7 +26,7 @@ inline T GetTransparentPixel() {
 }
 
 //-----------------------------------------------------------------------------------
-// ƒRƒAƒƒWƒbƒNiƒeƒ“ƒvƒŒ[ƒgj
+// ã‚³ã‚¢ãƒ­ã‚¸ãƒƒã‚¯ï¼ˆãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆï¼‰
 //-----------------------------------------------------------------------------------
 
 template<typename T, int MAX_VAL_INT>
@@ -42,11 +42,11 @@ static PF_Err RimFillH(void* refconPV, A_long thread_idxL, A_long y, A_long itrt
 	std::vector<A_char> lineD(w, 0);
 	std::vector<A_char> lineT(w, 0);
 
-	// ƒAƒ‹ƒtƒ@Å‘å’l‚Ì’è‹`iƒsƒNƒZƒ‹Œ^‚ÌalphaŒ^‚ÆŠ®‘S‚Éˆê’v‚³‚¹‚éj
+	// ã‚¢ãƒ«ãƒ•ã‚¡æœ€å¤§å€¤ã®å®šç¾©ï¼ˆãƒ”ã‚¯ã‚»ãƒ«å‹ã®alphaå‹ã¨å®Œå…¨ã«ä¸€è‡´ã•ã›ã‚‹ï¼‰
 	using AlphaType = decltype(std::declval<T>().alpha);
 	const AlphaType ALPHA_MAX = (std::is_same_v<T, PF_PixelFloat> ? AlphaType(1.0f) : AlphaType(MAX_VAL_INT));
 
-	// 1. ƒoƒbƒtƒ@•¡Ê‚Æ–‘O”»’è
+	// 1. ãƒãƒƒãƒ•ã‚¡è¤‡å†™ã¨äº‹å‰åˆ¤å®š
 	for (A_long x = 0; x < w; x++) {
 		line_buf[x] = dst[x];
 		if (infoP->isWhite && IsWhitePixel(dst[x], static_cast<double>(ALPHA_MAX))) {
@@ -56,7 +56,7 @@ static PF_Err RimFillH(void* refconPV, A_long thread_idxL, A_long y, A_long itrt
 		lineT[x] = (line_buf[x].alpha == 0) ? 1 : 0;
 	}
 
-	// 2. ‹«ŠEŒŸo
+	// 2. å¢ƒç•Œæ¤œå‡º
 	for (A_long x = 0; x < w - 1; x++) {
 		if (line_buf[x].alpha != ALPHA_MAX && line_buf[x + 1].alpha == ALPHA_MAX) lineD[x] = 1;
 	}
@@ -64,7 +64,7 @@ static PF_Err RimFillH(void* refconPV, A_long thread_idxL, A_long y, A_long itrt
 		if (line_buf[x].alpha != ALPHA_MAX && line_buf[x - 1].alpha == ALPHA_MAX) lineD[x] = 2;
 	}
 
-	// 3. “h‚è‚Â‚Ô‚µ
+	// 3. å¡—ã‚Šã¤ã¶ã—
 	T customCol;
 	if constexpr (std::is_same_v<T, PF_Pixel8>) customCol = infoP->customColor;
 	else if constexpr (std::is_same_v<T, PF_Pixel16>) customCol = infoP->customColor16;
@@ -108,7 +108,7 @@ static PF_Err RimFillV(void* refconPV, A_long thread_idxL, A_long x, A_long itrt
 	std::vector<A_char> lineD(h, 0);
 	std::vector<A_char> lineT(h, 0);
 
-	// ƒAƒ‹ƒtƒ@Å‘å’l‚Ì’è‹`iƒsƒNƒZƒ‹Œ^‚ÌalphaŒ^‚ÆŠ®‘S‚Éˆê’v‚³‚¹‚éj
+	// ã‚¢ãƒ«ãƒ•ã‚¡æœ€å¤§å€¤ã®å®šç¾©ï¼ˆãƒ”ã‚¯ã‚»ãƒ«å‹ã®alphaå‹ã¨å®Œå…¨ã«ä¸€è‡´ã•ã›ã‚‹ï¼‰
 	using AlphaType = decltype(std::declval<T>().alpha);
 	const AlphaType ALPHA_MAX = (std::is_same_v<T, PF_PixelFloat> ? AlphaType(1.0f) : AlphaType(MAX_VAL_INT));
 
@@ -158,7 +158,7 @@ static PF_Err RimFillV(void* refconPV, A_long thread_idxL, A_long x, A_long itrt
 }
 
 //-----------------------------------------------------------------------------------
-// ƒwƒ‹ƒp[ŠÖ”iiterate_generic—pj
+// ãƒ˜ãƒ«ãƒ‘ãƒ¼é–¢æ•°ï¼ˆiterate_genericç”¨ï¼‰
 //-----------------------------------------------------------------------------------
 
 static PF_Err RimFillH8(void* r, A_long t, A_long y, A_long i) { return RimFillH<PF_Pixel8, PF_MAX_CHAN8>(r, t, y, i); }
@@ -171,7 +171,7 @@ static PF_Err RimFillH32(void* r, A_long t, A_long y, A_long i) { return RimFill
 static PF_Err RimFillV32(void* r, A_long t, A_long x, A_long i) { return RimFillV<PF_PixelFloat, 1>(r, t, x, i); }
 
 //-----------------------------------------------------------------------------------
-// À‘•ƒƒCƒ“
+// å®Ÿè£…ãƒ¡ã‚¤ãƒ³
 //-----------------------------------------------------------------------------------
 
 static PF_Err RimFill_SubImpl(CFsAE* ae, ParamInfo* infoP)

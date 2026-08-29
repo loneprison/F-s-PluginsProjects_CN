@@ -62,11 +62,11 @@ namespace M_MODE
 };
 //UIの表示文字列
 
-#define	STR_POPUP			"Mask"
-#define	STR_POPUP_ITEMS		"Red|Green|Blue|Yellow|Magenta|Cyan|Max"
+#define	L10N_PARAM_MASK			"Mask"
+#define	L10N_PARAM_MASK_ITEMS		"Red|Green|Blue|Yellow|Magenta|Cyan|Max"
 #define	STR_POPUP_COUNT		6
 #define	STR_POPUP_DFLT		1
-#define	STR_LEVEL		"Level"
+#define	L10N_PARAM_LEVEL		"Level"
 
 
 #define BD_HI	192

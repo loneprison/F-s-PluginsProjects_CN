@@ -6,6 +6,7 @@
 
 
 #include "YuvControl.h"
+#include "YuvControlText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const YuvControlText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_Y,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_Y),	//Name
 						-100,					//VALID_MIN
 						100,					//VALID_MAX
 						-100,					//SLIDER_MIN
@@ -35,14 +37,14 @@ static PF_Err ParamsSetup (
 						ID_Y
 						);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_UV_AUTO,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_UV_AUTO),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_UV_AUTO
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_U,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_U),	//Name
 		-100,					//VALID_MIN
 		100,					//VALID_MAX
 		-100,					//SLIDER_MIN
@@ -55,7 +57,7 @@ static PF_Err ParamsSetup (
 		ID_U
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_V,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_V),	//Name
 		-100,					//VALID_MIN
 		100,					//VALID_MAX
 		-100,					//SLIDER_MIN
@@ -375,10 +377,10 @@ static PF_Err
 	switch(ae->pixelFormat())
 	{
 	case PF_PixelFormat_ARGB128:
-		//ERR(ae->iterate32((refconType)infoP,FilterImage32));
+		ERR(ae->iterate32((refconType)infoP,FilterImage32));
 		break;
 	case PF_PixelFormat_ARGB64:
-		//ERR(ae->iterate16((refconType)infoP,FilterImage16));
+		ERR(ae->iterate16((refconType)infoP,FilterImage16));
 		break;
 	case PF_PixelFormat_ARGB32:
 		ERR(ae->iterate8((refconType)infoP,FilterImage8));

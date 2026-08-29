@@ -6,6 +6,7 @@
 
 
 #include "AlphaHyperbolic.h"
+#include "AlphaHyperbolicText.generated.h"
 #include <string>
 
 
@@ -20,9 +21,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const AlphaHyperbolicText::Strings strings(in_data);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HYPERBOLIC,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HYPERBOLIC),	//Name
 		-10,				//VALID_MIN
 		50,					//VALID_MAX
 		-2,					//SLIDER_MIN

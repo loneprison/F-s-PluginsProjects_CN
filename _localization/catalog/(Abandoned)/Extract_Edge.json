@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_EDGE": {"useSource": true},
+        "L10N_PARAM_LOW_LEVEL": {"useSource": true},
+        "L10N_PARAM_HIGH_LEVEL": {"useSource": true},
+        "L10N_PARAM_ALPHA_EDGE": {"useSource": true},
+        "L10N_PARAM_ALPHA_LEVEL": {"useSource": true},
+        "L10N_PARAM_USE_COLOR": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Outputs Lab lightness and edge components from 8-bpc images to the red and green channels."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_EDGE": "边缘",
+        "L10N_PARAM_LOW_LEVEL": "低阈值",
+        "L10N_PARAM_HIGH_LEVEL": "高阈值",
+        "L10N_PARAM_ALPHA_EDGE": "Alpha 边缘",
+        "L10N_PARAM_ALPHA_LEVEL": "Alpha 级别",
+        "L10N_PARAM_USE_COLOR": "使用颜色",
+        "L10N_PARAM_COLOR": "颜色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将 8 bpc 图像的 Lab 明度和边缘分量输出到红、绿通道。"
+      }
+    }
+  }
+}

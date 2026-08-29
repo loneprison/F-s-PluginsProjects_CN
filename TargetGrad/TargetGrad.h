@@ -81,45 +81,33 @@ enum {
 #define ID_COLOR_ENABLED(IDX) (ID_TCOLOR1_ENABLED + (IDX) * 2)
 
 //UIの表示文字列
-#define	STR_TARGET			"target"
-#define	STR_TARGET_ITEMS	"targetColors|alphaOn|all"
+#define L10N_PARAM_TARGET_MODE		"target"
+#define L10N_PARAM_TARGET_FORMAT	"target%d"
+#define L10N_PARAM_TARGET_ITEMS		"targetColors|alphaOn|all"
 #define	STR_TARGET_COUNT	3
 #define	STR_TARGET_DFLT		1
 
-#define	STR_TOPIC_COLOR		"targetColors"
-#define	STR_TARGET			"target"
-#define	STR_TARGET_CB		"targetEnabled"
-#define	STR_TARGET_CB2		"on"
+#define L10N_PARAM_TARGET_COLORS	"targetColors"
+#define L10N_PARAM_TARGET_ENABLED	"targetEnabled"
+#define L10N_PARAM_ON				"on"
 
-#define	STR_GRADCOLOR		"gradColor"
-#define	STR_INVERT			"swapPoint"
-#define	STR_INVERT2			"on"
-
-#define	STR_HYPERBOLIC		"hyperbolic"
-
-#define	STR_AUTO_POS		"autoPos"
-#define	STR_AUTO_POS2		"on"
-
-#define	STR_TOPIC_2POINT	"2Point"
-#define	STR_START			"start"
-#define	STR_LAST			"last"
-
-#define	STR_ROT				"rot"
-
-#define	STR_START_PER		"startPercent"
-#define	STR_LAST_PER		"lastPercent"
-
-#define	STR_OFFSET_X		"offsetX"
-#define	STR_OFFSET_Y		"offsetY"
-
-
-#define	STR_LAOD_CAP		"colorTable"
-#define	STR_LOAD_BTN		"load"
-#define	STR_SAVE_BTN		"save"
-
-#define	STR_GUIDE_ENABLED	"guideDraw"
-#define	STR_GUIDE_ENABLED2	"on"
-#define	STR_GUIDE_COLOR		"guideColor"
+#define L10N_PARAM_GRAD_COLOR		"gradColor"
+#define L10N_PARAM_SWAP_POINT		"swapPoint"
+#define L10N_PARAM_HYPERBOLIC		"hyperbolic"
+#define L10N_PARAM_AUTO_POS			"autoPos"
+#define L10N_PARAM_TWO_POINT		"2Point"
+#define L10N_PARAM_START			"start"
+#define L10N_PARAM_LAST				"last"
+#define L10N_PARAM_ROT				"rot"
+#define L10N_PARAM_START_PERCENT	"startPercent"
+#define L10N_PARAM_LAST_PERCENT		"lastPercent"
+#define L10N_PARAM_OFFSET_X			"offsetX"
+#define L10N_PARAM_OFFSET_Y			"offsetY"
+#define L10N_PARAM_COLOR_TABLE		"colorTable"
+#define L10N_PARAM_LOAD				"load"
+#define L10N_PARAM_SAVE				"save"
+#define L10N_PARAM_GUIDE_DRAW		"guideDraw"
+#define L10N_PARAM_GUIDE_COLOR		"guideColor"
 
 //UIのパラメータ
 #define COLOR_TABLE_COUNT	8

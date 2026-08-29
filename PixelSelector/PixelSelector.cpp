@@ -7,6 +7,7 @@
 
 
 #include "PixelSelector.h"
+#include "PixelSelectorText.generated.h"
 
 #include <stdio.h>
 #include "PixelSelector_def.h"
@@ -21,7 +22,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const PixelSelectorText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 
@@ -174,16 +182,20 @@ ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PixelSelectorText::Strings strings(in_data);
 	
 	//-----------------
 	AEFX_CLR_STRUCT(def);	
 	def.flags 	= 	PF_ParamFlag_START_COLLAPSED;	//
-	PF_ADD_TOPIC(UI_TOPIC,
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TOPIC),
 		PixelSelector_TOPIC
 		);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(UI_REV,UI_ON,FALSE,0,
+	PF_ADD_CHECKBOX(
+		AETEXT_PARAM(strings, L10N_PARAM_REVERSE),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
+		FALSE,0,
 		PixelSelector_REV
 		);
 	//-----------------
@@ -191,13 +203,16 @@ ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE			|
 						PF_ParamFlag_CANNOT_TIME_VARY	|
 						PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(UI_FILL,UI_ON,FALSE,0,
+	PF_ADD_CHECKBOX(
+		AETEXT_PARAM(strings, L10N_PARAM_FILL),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
+		FALSE,0,
 		PixelSelector_FILL
 		);
 	//-----------------
 	AEFX_CLR_STRUCT(def);
 	def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_COLOR(	UI_FILL_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_FILL_COLOR),
 					PF_MAX_CHAN8,	// Red
 					PF_MAX_CHAN8,	//Green
 					PF_MAX_CHAN8,	//Blue
@@ -206,7 +221,7 @@ ParamsSetup (
 	//-----------------
 	AEFX_CLR_STRUCT(def);
 	def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_PERCENT(	UI_FILL_OPA, 100,
+	PF_ADD_PERCENT(	AETEXT_PARAM(strings, L10N_PARAM_FILL_OPACITY), 100,
 					PixelSelector_FILL_OPACITY
 					);
 	//-----------------
@@ -214,12 +229,13 @@ ParamsSetup (
 	PF_END_TOPIC(PixelSelector_TOPIC_END);
 
 	char num[255] = {"\0"};
+	const char *target = AETEXT_TOPIC(strings, L10N_PARAM_TARGET);
 	A_long i;
 	for (i=0; i< PS_PRM_COUNT; i++){ 
 #ifdef AE_OS_WIN
-		sprintf_s(num,"target%d",i+1);
+		sprintf_s(num, "%s%d", target, i + 1);
 #else
-		sprintf(num,"target%d",i+1);
+		sprintf(num, "%s%d", target, i + 1);
 #endif
 		//*************************************************
 		AEFX_CLR_STRUCT(def);	
@@ -229,12 +245,15 @@ ParamsSetup (
 			);
 		//-----------------
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_CHECKBOX(UI_ENABLED,UI_ON,FALSE,0,
+		PF_ADD_CHECKBOX(
+			AETEXT_PARAM(strings, L10N_PARAM_ENABLED),
+			AETEXT_LABEL(strings, L10N_PARAM_ON),
+			FALSE,0,
 			PARAMS_IDX(i, paramsOffset_enabled)
 			);
 		//-----------------
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_COLOR(	UI_SRC_COLOR, 
+		PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR),
 						pr_colorDef[i%COLOR_DEF_SIZE][0],	// Red
 						pr_colorDef[i%COLOR_DEF_SIZE][1],	//Green
 						pr_colorDef[i%COLOR_DEF_SIZE][2],	//Blue
@@ -249,7 +268,7 @@ ParamsSetup (
 	}
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(UI_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,							//VALID_MIN
 						100,						//VALID_MAX
 						0,							//SLIDER_MIN
@@ -268,10 +287,10 @@ ParamsSetup (
 						PF_ParamFlag_CANNOT_TIME_VARY	|
 						PF_ParamFlag_CANNOT_INTERP;
 						
-	PF_ADD_POPUP(UI_POP1, 
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_DISP),
 				24,	//メニューの数
 				24,	//デフォルト
-				UI_POP2,
+				AETEXT_POPUP(strings, L10N_PARAM_DISP_ITEMS),
 				PixelSelector_POP
 				);
 
@@ -420,14 +439,14 @@ static PF_Err GetParams(CFsAE *ae, ParamInfo *infoP)
 	ERR(ae->GetCHECKBOX(PixelSelector_REV,&infoP->rev));
 	ERR(ae->GetCHECKBOX(PixelSelector_FILL,&infoP->fill));
 	ERR(ae->GetCOLOR(PixelSelector_FILL_COLOR,&infoP->col));
-	if ( !err){
-		infoP->col16 = CONV8TO16(infoP->col);
-		infoP->col32 = CONV8TO32(infoP->col);
-	}
 	PF_Fixed f;
 	ERR(ae->GetFIXED(PixelSelector_FILL_OPACITY,&f));
 	if (!err){
 		infoP->col.alpha = (A_u_char)( ((PF_MAX_CHAN8) * f/100) >>16 );
+	}
+	if ( !err){
+		infoP->col16 = CONV8TO16(infoP->col);
+		infoP->col32 = CONV8TO32(infoP->col);
 	}
 	PF_FpLong d;
 	ERR(ae->GetFLOAT(PixelSelector_LV,&d));
@@ -606,9 +625,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
-				break;		
+			case PF_Cmd_DO_DIALOG: {
+
+				PixelSelectorText::OpenSettings(in_data, L"F's PixelSelector");
+				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

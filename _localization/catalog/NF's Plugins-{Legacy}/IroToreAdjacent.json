@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LINE_ONLY": {"useSource": true},
+        "L10N_PARAM_NEW_COLOR": {"useSource": true},
+        "L10N_PARAM_VALUE": {"useSource": true},
+        "L10N_PARAM_LINE_MINMAX": {"useSource": true},
+        "L10N_PARAM_LINE_BLUR": {"useSource": true},
+        "L10N_PARAM_MAIN1_ON": {"useSource": true},
+        "L10N_PARAM_MAIN1": {"useSource": true},
+        "L10N_PARAM_MAIN2_ON": {"useSource": true},
+        "L10N_PARAM_MAIN2": {"useSource": true},
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_ADJ1_ON": {"useSource": true},
+        "L10N_PARAM_ADJ1": {"useSource": true},
+        "L10N_PARAM_ADJ2_ON": {"useSource": true},
+        "L10N_PARAM_ADJ2": {"useSource": true},
+        "L10N_PARAM_ADJ3_ON": {"useSource": true},
+        "L10N_PARAM_ADJ3": {"useSource": true},
+        "L10N_PARAM_ADJ4_ON": {"useSource": true},
+        "L10N_PARAM_ADJ4": {"useSource": true},
+        "L10N_PARAM_ADJ5_ON": {"useSource": true},
+        "L10N_PARAM_ADJ5": {"useSource": true},
+        "L10N_PARAM_ADJ6_ON": {"useSource": true},
+        "L10N_PARAM_ADJ6": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Forcibly converts main lines adjacent to the specified colors into colored lines."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LINE_ONLY": "仅线条",
+        "L10N_PARAM_NEW_COLOR": "颜色",
+        "L10N_PARAM_VALUE": "半径",
+        "L10N_PARAM_LINE_MINMAX": "最小/最大",
+        "L10N_PARAM_LINE_BLUR": "底色模糊度",
+        "L10N_PARAM_MAIN1_ON": "主线条方案1",
+        "L10N_PARAM_MAIN1": "主线色1",
+        "L10N_PARAM_MAIN2_ON": "主线条方案2",
+        "L10N_PARAM_MAIN2": "主线色2",
+        "L10N_PARAM_LEVEL": "阈值",
+        "L10N_PARAM_ADJ1_ON": "相邻方案1",
+        "L10N_PARAM_ADJ1": "相邻色1",
+        "L10N_PARAM_ADJ2_ON": "相邻方案2",
+        "L10N_PARAM_ADJ2": "相邻色2",
+        "L10N_PARAM_ADJ3_ON": "相邻方案3",
+        "L10N_PARAM_ADJ3": "相邻色3",
+        "L10N_PARAM_ADJ4_ON": "相邻方案4",
+        "L10N_PARAM_ADJ4": "相邻色4",
+        "L10N_PARAM_ADJ5_ON": "相邻方案5",
+        "L10N_PARAM_ADJ5": "相邻色5",
+        "L10N_PARAM_ADJ6_ON": "相邻方案6",
+        "L10N_PARAM_ADJ6": "相邻色6"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将与指定颜色相邻的主线强制转化为带颜色的线条"
+      }
+    }
+  }
+}

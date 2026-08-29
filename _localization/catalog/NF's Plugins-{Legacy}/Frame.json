@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_WIDTH": {"useSource": true},
+        "L10N_PARAM_HEIGHT": {"useSource": true},
+        "L10N_PARAM_LINE_COLOR": {"useSource": true},
+        "L10N_PARAM_SAFE_FRAME": {"useSource": true},
+        "L10N_PARAM_CENTER_LINE": {"useSource": true},
+        "L10N_PARAM_OUT_COLOR": {"useSource": true},
+        "L10N_PARAM_OUT_OPACITY": {"useSource": true},
+        "L10N_PARAM_LINE_HEIGHT": {"useSource": true},
+        "L10N_PARAM_SIZE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_SIZE_ITEMS": "Values Above|720x540|1024x576|1024x768|1280x720|1440x810|1920x1080"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws a frame."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_WIDTH": "宽度",
+        "L10N_PARAM_HEIGHT": "高度",
+        "L10N_PARAM_LINE_COLOR": "参考线颜色",
+        "L10N_PARAM_SAFE_FRAME": "安全框",
+        "L10N_PARAM_CENTER_LINE": "中心线",
+        "L10N_PARAM_OUT_COLOR": "框外颜色",
+        "L10N_PARAM_OUT_OPACITY": "框外不透明度",
+        "L10N_PARAM_LINE_HEIGHT": "线条宽度",
+        "L10N_PARAM_SIZE": "大小"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_SIZE_ITEMS": "自定义|720x540|1024x576|1024x768|1280x720|1440x810|1920x1080"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "绘制安全框"
+      }
+    }
+  }
+}

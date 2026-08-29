@@ -5,9 +5,6 @@
       <UniqueIdentifier>{03ae86d8-f27b-4fa2-ae61-5773846f6da8}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{e5f027ea-b985-4d0a-a56f-1d3bbc08266c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{88b31712-ad3b-419a-a7dc-33d3d7b990d8}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
@@ -29,17 +26,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Fs_Entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\TouchDraw.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
@@ -54,9 +48,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +86,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -125,9 +113,12 @@
     <ClInclude Include="..\FsTDpset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="TouchDrawPiPL.rc">
+    <ResourceCompile Include="$(IntDir)TouchDrawPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -148,14 +139,43 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
-    <ClCompile Include="..\ToutchDraw16.cpp" />
-    <ClCompile Include="..\ToutchDraw8.cpp" />
-    <ClCompile Include="..\FsTDblockDraw.cpp" />
-    <ClCompile Include="..\FsTDcopyAlpha.cpp" />
-    <ClCompile Include="..\FsTDFindTarget.cpp" />
-    <ClCompile Include="..\FsTDFindTargetDelta.cpp" />
-    <ClCompile Include="..\FsTDgreenBlur.cpp" />
-    <ClCompile Include="..\ToutchDraw32.cpp" />
+    <ClCompile Include="..\ToutchDraw16.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ToutchDraw8.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FsTDblockDraw.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FsTDcopyAlpha.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FsTDFindTarget.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FsTDFindTargetDelta.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FsTDgreenBlur.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ToutchDraw32.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{bdf83f32-5638-4fe7-a873-cfa9017c0fed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Draw\TouchDraw.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\TouchDrawPiPL.r">

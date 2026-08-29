@@ -72,36 +72,26 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_TARGET			"target"
-#define	STR_TARGET_ITEMS	"targetColors|alphaOn|all"
+#define L10N_PARAM_TARGET_MODE		"target"
+#define L10N_PARAM_TARGET_FORMAT	"target%d"
+#define L10N_PARAM_TARGET_ITEMS		"targetColors|alphaOn|all"
 #define	STR_TARGET_COUNT	3
 #define	STR_TARGET_DFLT		3
 
-#define	STR_TOPIC_COLOR		"targetColors"
-#define	STR_TARGET			"target"
-#define	STR_TARGET_CB		"targetEnabled"
-#define	STR_TARGET_CB2		"on"
-
-#define	STR_GRADCOLOR		"gradColor"
-#define	STR_INVERT			"invert"
-#define	STR_INVERT2			"on"
-
-
-#define	STR_CENTER			"center"
-
-#define	STR_BLUR			"radius"
-#define	STR_HYPERBOLIC		"hyperbolic"
-
-#define	STR_ASPECT			"aspect"
-
-#define	STR_ANGLE			"angle"
-
-#define	STR_FEATHER			"feather"
-
-
-#define	STR_LAOD_CAP		"colorTable"
-#define	STR_LOAD_BTN		"load"
-#define	STR_SAVE_BTN		"save"
+#define L10N_PARAM_TARGET_COLORS	"targetColors"
+#define L10N_PARAM_TARGET_ENABLED	"targetEnabled"
+#define L10N_PARAM_ON				"on"
+#define L10N_PARAM_GRAD_COLOR		"gradColor"
+#define L10N_PARAM_INVERT			"invert"
+#define L10N_PARAM_CENTER			"center"
+#define L10N_PARAM_RADIUS			"radius"
+#define L10N_PARAM_HYPERBOLIC		"hyperbolic"
+#define L10N_PARAM_ASPECT			"aspect"
+#define L10N_PARAM_ANGLE			"angle"
+#define L10N_PARAM_FEATHER			"feather"
+#define L10N_PARAM_COLOR_TABLE		"colorTable"
+#define L10N_PARAM_LOAD				"load"
+#define L10N_PARAM_SAVE				"save"
 
 
 //UIのパラメータ

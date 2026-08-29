@@ -6,6 +6,7 @@
 
 
 #include "Scanline.h"
+#include "ScanlineText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ScanlineText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_HEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HEIGHT),	//パラメータの名前
 		1, 			//数値入力する場合の最小値
 		20,			//数値入力する場合の最大値
 		2,			//スライダーの最小値 
@@ -32,7 +34,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL0,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL0),	//Name
 		-100,						//VALID_MIN
 		100,						//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -46,7 +48,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_OPACITY0,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_OPACITY0),	//Name
 		0,						//VALID_MIN
 		100,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -60,7 +62,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL1,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL1),	//Name
 		-100,						//VALID_MIN
 		100,						//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -74,7 +76,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_OPACITY1,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_OPACITY1),	//Name
 		0,						//VALID_MIN
 		100,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -90,10 +92,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_DIR,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_DIR),
 		2,	//メニューの数
 		1,	//デフォルト
-		STR_DIRSTR,
+		AETEXT_POPUP(strings, L10N_PARAM_DIR_ITEMS),
 		ID_DIR
 	);
 	//----------------------------------------------------------------

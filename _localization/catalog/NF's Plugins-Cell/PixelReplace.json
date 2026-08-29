@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET_FORMAT": {"useSource": true},
+        "L10N_PARAM_ENABLED": {"useSource": true},
+        "L10N_PARAM_SOURCE_COLOR": {"useSource": true},
+        "L10N_PARAM_REPLACE_COLOR": {"useSource": true},
+        "L10N_PARAM_REPLACE_OPACITY": {"useSource": true},
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_DISP": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_DISP_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Replaces colors."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET_FORMAT": "方案%d",
+        "L10N_PARAM_ENABLED": "启用",
+        "L10N_PARAM_SOURCE_COLOR": "目标颜色",
+        "L10N_PARAM_REPLACE_COLOR": "替换色",
+        "L10N_PARAM_REPLACE_OPACITY": "替换色不透明度",
+        "L10N_PARAM_LEVEL": "阈值",
+        "L10N_PARAM_DISP": "显示数量"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_DISP_ITEMS": "1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "替换颜色"
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
 
 
 #include "SelectColor.h"
+#include "SelectColorText.generated.h"
 
 PF_Err (*subFunc8)(refconType	refcon, A_long xL, A_long yL,PF_Pixel8	*inP, PF_Pixel8	*outP);
 PF_Err (*subFunc16)(refconType	refcon, A_long xL, A_long yL,PF_Pixel16	*inP, PF_Pixel16	*outP);
@@ -19,7 +20,9 @@ static PF_Err About (	PF_InData		*in_data,
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const SelectColorText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 //-------------------------------------------------------------------------------------------------
@@ -82,12 +85,13 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const SelectColorText::Strings strings(in_data);
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target0","実行する", FALSE,0, ID_TARGET0);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET0), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET0);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color0", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR0),
 					255,
 					0,
 					0,
@@ -95,54 +99,54 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target1","実行する", FALSE,0, ID_TARGET1);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET1), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET1);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color1", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 					0,
 					255,
 					0,
 					ID_SRCCOL1
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target2","実行する", FALSE,0, ID_TARGET2);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET2), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET2);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color2", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR2),
 					0,
 					0,
 					255,
 					ID_SRCCOL2
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target3","実行する", FALSE,0, ID_TARGET3);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET3), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET3);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color3", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR3),
 					0,
 					255,
 					255,
 					ID_SRCCOL3
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target4","実行する", FALSE,0, ID_TARGET4);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET4), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET4);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color4", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR4),
 					255,
 					0,
 					255,
 					ID_SRCCOL4
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target5","実行する", FALSE,0, ID_TARGET5);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET5), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET5);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color5", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR5),
 					255,
 					255,
 					0,
 					ID_SRCCOL5
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target6","実行する", FALSE,0, ID_TARGET6);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET6), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET6);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"color6", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR6),
 					255,
 					255,
 					255,
@@ -152,9 +156,9 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Target7","実行する", FALSE,0, ID_TARGET7);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET7), AETEXT_LABEL(strings, L10N_PARAM_ENABLE), FALSE,0, ID_TARGET7);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	"元の色7", 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR7),
 					0,
 					0,
 					0,
@@ -163,10 +167,10 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX("Rev","反転する", FALSE,0, ID_REV);
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_REVERSE), AETEXT_LABEL(strings, L10N_PARAM_REVERSE_ON), FALSE,0, ID_REV);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	"許容値",//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_TOLERANCE),//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					PF_MAX_CHAN8,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -685,9 +689,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				SelectColorText::OpenSettings(in_data, L"F's SelectColor");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

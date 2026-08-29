@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "ColorChangeEng.h"
+#include "ColorChangeEngText.generated.h"
 
 
 
@@ -22,6 +23,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ColorChangeEngText::Strings strings(in_data);
 
 	A_u_char		CT[8][3] = {
 		{0xFF,0x00,0x00},
@@ -46,7 +48,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LV,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LEVEL),//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					PF_MAX_CHAN8,	//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -56,22 +58,32 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_MODE1,STR_EXEC, TRUE,0, ID_ENABLE);
+	PF_ADD_CHECKBOX(
+		AETEXT_PARAM(strings, L10N_PARAM_MODE),
+		AETEXT_LABEL(strings, L10N_PARAM_EXEC),
+		TRUE,
+		0,
+		ID_ENABLE);
 
 
 	for (int i = 0; i < 8; i++) {
-		std::string str = STR_TARGET0 +std::to_string(i);
+		std::string str = std::string(AETEXT_PARAM(strings, L10N_PARAM_TARGET0)) + std::to_string(i);
 		AEFX_CLR_STRUCT(def);
-		PF_ADD_CHECKBOX(str.c_str(), STR_EXEC, FALSE, 0, ID_TARGET(i));
+		PF_ADD_CHECKBOX(
+			str.c_str(),
+			AETEXT_LABEL(strings, L10N_PARAM_EXEC),
+			FALSE,
+			0,
+			ID_TARGET(i));
 		AEFX_CLR_STRUCT(def);
-		str = STR_SRCCOL0 + std::to_string(i);
+		str = std::string(AETEXT_PARAM(strings, L10N_PARAM_SRCCOL0)) + std::to_string(i);
 		PF_ADD_COLOR(str.c_str(),
 			CT[i][0],
 			CT[i][1],
 			CT[i][2],
 			ID_SRCCOL(i)
 		);
-		str = STR_DSTCOL0 + std::to_string(i);
+		str = std::string(AETEXT_PARAM(strings, L10N_PARAM_DSTCOL0)) + std::to_string(i);
 		PF_ADD_COLOR(str.c_str(),
 			DT[i][0],
 			DT[i][1],

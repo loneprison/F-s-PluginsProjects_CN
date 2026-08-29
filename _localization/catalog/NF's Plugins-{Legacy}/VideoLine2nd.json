@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LINE_BRIGHTNESS": "Line Brightness (%)",
+        "L10N_PARAM_LINE_HEIGHT": "Line Height (dots)",
+        "L10N_PARAM_INTERVAL": "Interval Adjustment (dots)",
+        "L10N_PARAM_DIR": "Direction"
+      },
+      "Popup": {
+        "L10N_PARAM_DIR_ITEMS": "Horizontal|Vertical"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "A TV-style scanline effect (bug-fix version)."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LINE_BRIGHTNESS": "线条亮度",
+        "L10N_PARAM_LINE_HEIGHT": "线条宽度",
+        "L10N_PARAM_INTERVAL": "间距补正",
+        "L10N_PARAM_DIR": "方向"
+      },
+      "Popup": {
+        "L10N_PARAM_DIR_ITEMS": "水平|垂直"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "类似电视扫描线（修复版）"
+      }
+    }
+  }
+}

@@ -73,28 +73,28 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_ALPHA_REV			"InvertAlpha"
+#define	L10N_PARAM_INVERT_ALPHA			"InvertAlpha"
 
-#define	STR_ON					"on"
-#define	STR_TARGET_ENABLED0		"Enabled0"
-#define	STR_TARGET_COLOR0		"Color0"
-#define	STR_TAGET_BORDER0		"Border0"
-#define	STR_TAGET_SOFT0			"Softness0"
+#define	L10N_PARAM_ON					"on"
+#define	L10N_PARAM_ENABLED0		"Enabled0"
+#define	L10N_PARAM_COLOR0		"Color0"
+#define	L10N_PARAM_BORDER0		"Border0"
+#define	L10N_PARAM_SOFTNESS0			"Softness0"
 
-#define	STR_TARGET_ENABLED1		"Enabled1"
-#define	STR_TARGET_COLOR1		"Color1"
-#define	STR_TAGET_BORDER1		"Border1"
-#define	STR_TAGET_SOFT1			"Softness1"
+#define	L10N_PARAM_ENABLED1		"Enabled1"
+#define	L10N_PARAM_COLOR1		"Color1"
+#define	L10N_PARAM_BORDER1		"Border1"
+#define	L10N_PARAM_SOFTNESS1			"Softness1"
 
-#define	STR_TARGET_ENABLED2		"Enabled2"
-#define	STR_TARGET_COLOR2		"Color2"
-#define	STR_TAGET_BORDER2		"Border2"
-#define	STR_TAGET_SOFT2			"Softness2"
+#define	L10N_PARAM_ENABLED2		"Enabled2"
+#define	L10N_PARAM_COLOR2		"Color2"
+#define	L10N_PARAM_BORDER2		"Border2"
+#define	L10N_PARAM_SOFTNESS2			"Softness2"
 
-#define	STR_TARGET_ENABLED3		"Enabled3"
-#define	STR_TARGET_COLOR3		"Color3"
-#define	STR_TAGET_BORDER3		"Border3"
-#define	STR_TAGET_SOFT3			"Softness3"
+#define	L10N_PARAM_ENABLED3		"Enabled3"
+#define	L10N_PARAM_COLOR3		"Color3"
+#define	L10N_PARAM_BORDER3		"Border3"
+#define	L10N_PARAM_SOFTNESS3			"Softness3"
 
 
 //UIのパラメータ

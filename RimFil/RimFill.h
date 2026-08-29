@@ -35,14 +35,15 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_WIDTH			"width"
-#define	STR_MODE			"FillMethod"
-#define	STR_MODE_ITEMS		"CustomColor|AdjacentColor"
+#define	L10N_PARAM_WIDTH			"width"
+#define	L10N_PARAM_FILL_METHOD			"FillMethod"
+#define	L10N_PARAM_FILL_ITEMS		"CustomColor|AdjacentColor"
 #define	STR_MODE_COUNT		2
 #define	STR_MODE_DFLT		1
-#define	STR_CUSTOMCOLOR		"CustomColor"
+#define	L10N_PARAM_CUSTOM_COLOR		"CustomColor"
 
-#define	STR_WHITE		"Treat White as Transparent"
+#define	L10N_PARAM_WHITE_TRANS		"Treat White as Transparent"
+#define	L10N_PARAM_ON			"on"
 //UIのパラメータ
 typedef struct ParamInfo {
 	A_long			lineWidth;

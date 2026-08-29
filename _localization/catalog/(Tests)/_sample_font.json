@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_POSITION": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "A text drawing sample."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_POSITION": "位置"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "文字绘制示例。"
+      }
+    }
+  }
+}

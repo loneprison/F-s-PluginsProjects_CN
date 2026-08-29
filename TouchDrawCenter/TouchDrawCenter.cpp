@@ -6,6 +6,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "TouchDrawCenter.h"
+#include "TouchDrawCenterText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const TouchDrawCenterText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SEED,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_RANDOM_SEED),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					32000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -34,7 +36,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(STR_CENTER,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_CENTER),			/*"New Center"*/
 				50,	// X
 				50,	// Y
 				0,	// Flag
@@ -43,7 +45,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_MAX,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -57,7 +59,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LENGTH_RND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LENGTH_RANDOM),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -71,7 +73,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_Y,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_VALUE),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					3000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -83,7 +85,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 					0x00,
 					0x00,
 					0x00,
@@ -92,7 +94,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_OPACITY,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -106,7 +108,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_OPACITY_RND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_OPACITY_RANDOM),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -120,7 +122,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_POINT_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_POINT_COUNT),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -131,7 +133,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_POINT_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_POINT_LENGTH),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					300,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -147,8 +149,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ORG_CB1,
-					STR_ORG_CB2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ORIGINAL_BLEND),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_ORG

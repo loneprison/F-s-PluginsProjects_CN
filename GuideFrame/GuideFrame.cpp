@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "GuideFrame.h"
+#include "GuideFrameText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +18,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const GuideFrameText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -84,11 +87,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const GuideFrameText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_COLOR, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 					0xff,
 					0x00,
 					0x00,
@@ -97,7 +101,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(STR_TOPLEFT,			/*"New Center"*/ 
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_TOP_LEFT),			/*"New Center"*/
 				25,	// X
 				25,	// Y
 				0,	// Flag
@@ -106,7 +110,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(STR_BOTTOMRIGHT,			/*"New Center"*/ 
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_BOTTOM_RIGHT),			/*"New Center"*/
 				75,	// X
 				75,	// Y
 				0,	// Flag
@@ -115,8 +119,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CHK1,
-					STR_CHK2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_CHECK),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_CHK
@@ -124,8 +128,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SMOOTH1,
-					STR_SMOOTH2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SMOOTH),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_SMOOTH
@@ -641,9 +645,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
-				break;		
+			case PF_Cmd_DO_DIALOG: {
+
+				GuideFrameText::OpenSettings(in_data, L"F's GuideFrame");
+				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

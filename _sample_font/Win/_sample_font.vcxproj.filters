@@ -5,9 +5,6 @@
       <UniqueIdentifier>{425e0d07-4068-4b32-bca2-0132a7ea63df}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{8ce0fd4d-e8f8-4575-afa4-2a37ce770eb7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\AE">
       <UniqueIdentifier>{e22ef5fb-f4c9-45e4-a2c6-3be5d8fb112b}</UniqueIdentifier>
     </Filter>
@@ -35,12 +32,6 @@
     <ClInclude Include="..\Fs_Target.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -54,9 +45,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +83,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -111,7 +96,7 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
-      <Filter>Supporting code\AE</Filter>
+      <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsAE.h">
       <Filter>Header Files\Fs</Filter>
@@ -125,12 +110,12 @@
     <ClInclude Include="..\debug_font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\debug_font_812.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="_sample_fontPiPL.rc">
+    <ResourceCompile Include="$(IntDir)_sample_fontPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -151,7 +136,12 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
-    <ClCompile Include="..\debug_font.cpp" />
+    <ClCompile Include="..\debug_font.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\_sample_fontPiPL.r">
@@ -159,6 +149,18 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\debug_font_1424.png" />
+    <Image Include="..\debug_font_1424.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{64420018-EB74-4227-BCC1-619F95FED64C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\(Tests)\_sample_font.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

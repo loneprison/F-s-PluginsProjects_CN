@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MINMAX": {"useSource": true},
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_HYPERBOLIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MINMAX": "最大值",
+        "L10N_PARAM_BLUR": "模糊",
+        "L10N_PARAM_HYPERBOLIC": "双曲线"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "模糊样例"
+      }
+    }
+  }
+}

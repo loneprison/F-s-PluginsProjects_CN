@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ALPHA_LEVEL": {"useSource": true},
+        "L10N_PARAM_MATCH_LEVEL": {"useSource": true},
+        "L10N_PARAM_LIGHT_LEVEL": {"useSource": true},
+        "L10N_PARAM_MAIN_ON1": {"useSource": true},
+        "L10N_PARAM_MAIN_COLOR1": {"useSource": true},
+        "L10N_PARAM_MAIN_HS1": {"useSource": true},
+        "L10N_PARAM_MAIN_LEVEL1": {"useSource": true},
+        "L10N_PARAM_MAIN_ON2": {"useSource": true},
+        "L10N_PARAM_MAIN_COLOR2": {"useSource": true},
+        "L10N_PARAM_MAIN_HS2": {"useSource": true},
+        "L10N_PARAM_MAIN_LEVEL2": {"useSource": true},
+        "L10N_PARAM_MAIN_ON3": {"useSource": true},
+        "L10N_PARAM_MAIN_COLOR3": {"useSource": true},
+        "L10N_PARAM_MAIN_HS3": {"useSource": true},
+        "L10N_PARAM_MAIN_LEVEL3": {"useSource": true},
+        "L10N_PARAM_SUB_COUNT": {"useSource": true},
+        "L10N_PARAM_USER_COLOR_FORMAT": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC_MAIN": {"useSource": true},
+        "L10N_PARAM_TOPIC_SUB": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Converts colors to solid colors."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ALPHA_LEVEL": "Alpha 阈值",
+        "L10N_PARAM_MATCH_LEVEL": "色相/饱和度 阈值",
+        "L10N_PARAM_LIGHT_LEVEL": "亮度 阈值",
+        "L10N_PARAM_MAIN_ON1": "启用1",
+        "L10N_PARAM_MAIN_COLOR1": "主线颜色1",
+        "L10N_PARAM_MAIN_HS1": "主线颜色1_hs阈值",
+        "L10N_PARAM_MAIN_LEVEL1": "主线颜色1_色相饱和阈值",
+        "L10N_PARAM_MAIN_ON2": "启用2",
+        "L10N_PARAM_MAIN_COLOR2": "主线颜色2",
+        "L10N_PARAM_MAIN_HS2": "主线颜色2_hs阈值",
+        "L10N_PARAM_MAIN_LEVEL2": "主线颜色2_色相饱和阈值",
+        "L10N_PARAM_MAIN_ON3": "启用3",
+        "L10N_PARAM_MAIN_COLOR3": "主线颜色3",
+        "L10N_PARAM_MAIN_HS3": "主线颜色3_hs阈值",
+        "L10N_PARAM_MAIN_LEVEL3": "主线颜色3_色相饱和阈值",
+        "L10N_PARAM_SUB_COUNT": "匹配颜色数量",
+        "L10N_PARAM_USER_COLOR_FORMAT": "匹配颜色_%d"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC_MAIN": "线条颜色",
+        "L10N_PARAM_TOPIC_SUB": "匹配颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将颜色约束为指定的颜色"
+      }
+    }
+  }
+}
