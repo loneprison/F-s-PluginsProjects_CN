@@ -114,9 +114,10 @@ static PF_Err
 	{
 		return err;
 	}
-	if (ae->downSaleValue() != 1) {
-		return err;
-	}
+	// Temporarily disabled for non-full-resolution preview testing.
+	//if (ae->downSaleValue() != 1) {
+	//	return err;
+	//}
 	switch(ae->pixelFormat())
 	{
 	case PF_PixelFormat_ARGB128:

@@ -221,7 +221,7 @@ FilterImage8 (
 		}else{
 			if ( op<1) {
 				PF_FpShort op1 = 1- op;
-				p.blue	= RoundByteFpShort(p.blue * op + PF_MAX_CHAN8*op1);
+				p.red	= RoundByteFpShort(p.red * op + PF_MAX_CHAN8*op1);
 				p.green	= RoundByteFpShort(p.green* op + PF_MAX_CHAN8*op1);
 				p.blue	= RoundByteFpShort(p.blue * op + PF_MAX_CHAN8*op1);
 			}
@@ -232,13 +232,13 @@ FilterImage8 (
 					p = WHT8;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK8;	
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT8;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK8;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT8;
 				}
@@ -308,7 +308,7 @@ FilterImage16 (
 		}else{
 			if ( op<1) {
 				PF_FpShort op1 = 1- op;
-				p.blue	= RoundShortFpLong(p.blue * op + PF_MAX_CHAN16*op1);
+				p.red	= RoundShortFpLong(p.red * op + PF_MAX_CHAN16*op1);
 				p.green	= RoundShortFpLong(p.green* op + PF_MAX_CHAN16*op1);
 				p.blue	= RoundShortFpLong(p.blue * op + PF_MAX_CHAN16*op1);
 			}
@@ -319,13 +319,13 @@ FilterImage16 (
 					p = WHT16;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK16;	
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT16;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK16;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT16;
 				}
@@ -395,7 +395,7 @@ FilterImage32 (
 		}else{
 			if ( op<1) {
 				PF_FpShort op1 = 1- op;
-				p.blue	= RoundFpShortDouble(p.blue * op + op1);
+				p.red	= RoundFpShortDouble(p.red * op + op1);
 				p.green	= RoundFpShortDouble(p.green* op + op1);
 				p.blue	= RoundFpShortDouble(p.blue * op + op1);
 			}
@@ -406,13 +406,13 @@ FilterImage32 (
 					p = WHT32;	
 			}else if ( hls[HLS_L] < TARGET_BLACK){
 				if ( infoP->ParamTable[LT_BLACK].enabled == TRUE){
-					p = BLK32;	
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT32;	
 				}
 			}else if ( hls[HLS_S] < TARGET_GRAY){
 				if ( (infoP->ParamTable[LT_BLACK].border > hls[HLS_L])&&( infoP->ParamTable[LT_BLACK].enabled == TRUE)){
-					p = BLK32;
+					p = infoP->ParamTable[LT_BLACK].color;
 				}else{
 					p = WHT32;
 				}

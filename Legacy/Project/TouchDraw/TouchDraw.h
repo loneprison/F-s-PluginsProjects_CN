@@ -172,7 +172,7 @@ PF_Err FindTargetDeltaBright(CFsAE *ae , A_long delta_range);
 PF_Err FindTargetDeltaAlpha(CFsAE *ae , A_long delta_range);
 
 //blue
-PF_Err blockDraw(CFsAE *ae , A_long bSize, A_long bCount);
+PF_Err blockDraw(CFsAE *ae , A_long bSize, A_long bCount, A_long seed);
 
 
 PF_Err greenBlur(CFsAE *ae);
