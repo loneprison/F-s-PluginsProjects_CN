@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MODE": {"useSource": true},
+        "L10N_PARAM_BASE_ON": {"useSource": true},
+        "L10N_PARAM_BASE_COLOR": {"useSource": true},
+        "L10N_PARAM_BASE_OPACITY": {"useSource": true},
+        "L10N_PARAM_ENABLED": {"useSource": true},
+        "L10N_PARAM_REV": {"useSource": true},
+        "L10N_PARAM_BORDER": {"useSource": true},
+        "L10N_PARAM_INSIDE": {"useSource": true},
+        "L10N_PARAM_OUTSIDE": {"useSource": true},
+        "L10N_PARAM_MAX": {"useSource": true},
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_BLEND": {"useSource": true},
+        "L10N_PARAM_OPACITY": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": {"useSource": true},
+        "L10N_PARAM_REV_ITEMS": {"useSource": true},
+        "L10N_PARAM_BLEND_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC": {"useSource": true},
+        "L10N_PARAM_BORDER_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Creates a transmitted-light glow from black-and-white masks."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MODE": "提取模式",
+        "L10N_PARAM_BASE_ON": "显示图像",
+        "L10N_PARAM_BASE_COLOR": "着色",
+        "L10N_PARAM_BASE_OPACITY": "图像不透明度",
+        "L10N_PARAM_ENABLED": "启用_",
+        "L10N_PARAM_REV": "反向 (图像模式除外)_1",
+        "L10N_PARAM_BORDER": "启用边框_",
+        "L10N_PARAM_INSIDE": "内边框_",
+        "L10N_PARAM_OUTSIDE": "外边框_",
+        "L10N_PARAM_MAX": "扩展_",
+        "L10N_PARAM_BLUR": "模糊_",
+        "L10N_PARAM_COLOR": "颜色 (图像模式除外)_",
+        "L10N_PARAM_BLEND": "混合模式_",
+        "L10N_PARAM_OPACITY": "不透明度_"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "明亮度(反向)|明亮度|Alpha|原始图像",
+        "L10N_PARAM_REV_ITEMS": "无|反向|反向并保留原 Alpha",
+        "L10N_PARAM_BLEND_ITEMS": "屏幕|相加|正常"
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC": "发光_",
+        "L10N_PARAM_BORDER_TOPIC": "边框 (图像模式除外)_"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "发光滤镜"
+      }
+    }
+  }
+}

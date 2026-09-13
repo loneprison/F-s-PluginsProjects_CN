@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_EXTRACT_ENABLED": {"useSource": true},
+        "L10N_PARAM_BLACK_POINT": {"useSource": true},
+        "L10N_PARAM_WHITE_POINT": {"useSource": true},
+        "L10N_PARAM_BLACK_SOFTNESS": {"useSource": true},
+        "L10N_PARAM_WHITE_SOFTNESS": {"useSource": true},
+        "L10N_PARAM_INVERT": {"useSource": true},
+        "L10N_PARAM_USE_COUNT": {"useSource": true},
+        "L10N_PARAM_RANGE": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_COLOR6": {"useSource": true},
+        "L10N_PARAM_COLOR7": {"useSource": true},
+        "L10N_PARAM_COLOR8": {"useSource": true},
+        "L10N_PARAM_MINIMAX_1ST": {"useSource": true},
+        "L10N_PARAM_MINIMAX_2ND": {"useSource": true},
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_BLEND_MODE": {"useSource": true},
+        "L10N_PARAM_BLEND_OPACITY": {"useSource": true},
+        "L10N_PARAM_NOISE": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_BLEND_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_EXTRACT_TOPIC": {"useSource": true},
+        "L10N_PARAM_EXTRACT_COLOR_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "DF/Fog filter."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_EXTRACT_ENABLED": "启用提取",
+        "L10N_PARAM_BLACK_POINT": "黑场",
+        "L10N_PARAM_WHITE_POINT": "白场",
+        "L10N_PARAM_BLACK_SOFTNESS": "黑场柔和度",
+        "L10N_PARAM_WHITE_SOFTNESS": "白场柔和度",
+        "L10N_PARAM_INVERT": "反转",
+        "L10N_PARAM_USE_COUNT": "追加数量",
+        "L10N_PARAM_RANGE": "阈值",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_COLOR6": "颜色6",
+        "L10N_PARAM_COLOR7": "颜色7",
+        "L10N_PARAM_COLOR8": "颜色8",
+        "L10N_PARAM_MINIMAX_1ST": "最小最大1",
+        "L10N_PARAM_MINIMAX_2ND": "最小最大2",
+        "L10N_PARAM_BLUR": "模糊度",
+        "L10N_PARAM_BLEND_MODE": "混合模式",
+        "L10N_PARAM_BLEND_OPACITY": "混合不透明度",
+        "L10N_PARAM_NOISE": "杂色"
+      },
+      "Popup": {
+        "L10N_PARAM_BLEND_ITEMS": "无|正常|变亮|变暗|屏幕|相乘"
+      },
+      "Topic": {
+        "L10N_PARAM_EXTRACT_TOPIC": "提取亮度",
+        "L10N_PARAM_EXTRACT_COLOR_TOPIC": "追加选择的颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "DF/Fog滤镜"
+      }
+    }
+  }
+}

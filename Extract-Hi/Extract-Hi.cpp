@@ -6,6 +6,7 @@
 
 
 #include "Extract-Hi.h"
+#include "Extract-HiText.generated.h"
 
 static PF_FpLong(*levelFunc8)(PF_Pixel8		*col, ParamInfo *infoP);
 static PF_FpLong(*levelFunc16)(PF_Pixel16	*col, ParamInfo *infoP);
@@ -22,10 +23,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const Extract_HiText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_BORDER,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BORDER),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -39,7 +41,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_SOFTNESS,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -54,17 +56,17 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_TARGET,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_TARGET),
 		STR_TARGET_COUNT,	//メニューの数
 		STR_TARGET_DFLT,	//デフォルト
-		STR_TARGET_ITEM,
+		AETEXT_POPUP(strings, L10N_PARAM_TARGET_ITEMS),
 		ID_TARGET
 	);
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(STR_CUSTUM_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_CUSTOM_COLOR),
 		0xFF,
 		0x00,
 		0x00,
@@ -75,8 +77,8 @@ static PF_Err ParamsSetup (
 	//def.flags = PF_ParamFlag_SUPERVISE |
 		//PF_ParamFlag_CANNOT_TIME_VARY |
 		//PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_INVERT,
-		STR_INVERT_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_INVERT),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_INVERT
@@ -256,9 +258,9 @@ static PF_FpLong levelYellow16(PF_Pixel16	*col, ParamInfo *infoP)
 static PF_FpLong levelYellow32(PF_Pixel32	*col, ParamInfo *infoP)
 {
 	PF_Pixel32 col2;
-	col2.red = PF_MAX_CHAN16 - col->red;
-	col2.green = PF_MAX_CHAN16 - col->green;
-	col2.blue = PF_MAX_CHAN16 - col->blue;
+	col2.red = (PF_FpShort)(1.0 - col->red);
+	col2.green = (PF_FpShort)(1.0 - col->green);
+	col2.blue = (PF_FpShort)(1.0 - col->blue);
 	if (col2.red < 0) col2.red = 0;
 	if (col2.green < 0) col2.green = 0;
 	if (col2.blue < 0) col2.blue = 0;
@@ -471,13 +473,13 @@ static PF_Err
 		break;
 	case 6:
 		levelFunc8 = levelMagenta8;
-		levelFunc16 = levelCyan16;
-		levelFunc32 = levelCyan32;
+		levelFunc16 = levelMagenta16;
+		levelFunc32 = levelMagenta32;
 		break;
 	case 7:
 		levelFunc8 = levelYellow8;
-		levelFunc16 = levelLuminunce16;
-		levelFunc32 = levelLuminunce32;
+		levelFunc16 = levelYellow16;
+		levelFunc32 = levelYellow32;
 		break;
 	case 8:
 		levelFunc8 = levelRGBMax8;

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_RED": {"useSource": true},
+        "L10N_PARAM_GREEN": {"useSource": true},
+        "L10N_PARAM_BLUE": {"useSource": true},
+        "L10N_PARAM_YELLOW": {"useSource": true},
+        "L10N_PARAM_MAGENTA": {"useSource": true},
+        "L10N_PARAM_CYAN": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Creates a mask from RGBA values."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "强度",
+        "L10N_PARAM_RED": "红色",
+        "L10N_PARAM_GREEN": "绿色",
+        "L10N_PARAM_BLUE": "蓝色",
+        "L10N_PARAM_YELLOW": "黄色",
+        "L10N_PARAM_MAGENTA": "洋红",
+        "L10N_PARAM_CYAN": "青色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "根据RGBA值创建遮罩"
+      }
+    }
+  }
+}

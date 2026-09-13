@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET_COUNT": {"useSource": true},
+        "L10N_PARAM_TARGET_LEVEL": {"useSource": true},
+        "L10N_PARAM_TARGET_COL1": {"useSource": true},
+        "L10N_PARAM_TARGET_COL2": {"useSource": true},
+        "L10N_PARAM_TARGET_COL3": {"useSource": true},
+        "L10N_PARAM_TARGET_COL4": {"useSource": true},
+        "L10N_PARAM_TARGET_COL5": {"useSource": true},
+        "L10N_PARAM_TARGET_COL6": {"useSource": true},
+        "L10N_PARAM_TARGET_COL7": {"useSource": true},
+        "L10N_PARAM_TARGET_COL8": {"useSource": true},
+        "L10N_PARAM_ANGLE": {"useSource": true},
+        "L10N_PARAM_START_OVER": {"useSource": true},
+        "L10N_PARAM_LAST_OVER": {"useSource": true},
+        "L10N_PARAM_START_COL": {"useSource": true},
+        "L10N_PARAM_LAST_COL": {"useSource": true},
+        "L10N_PARAM_GUIDE_SHOW": {"useSource": true},
+        "L10N_PARAM_GUIDE_COLOR": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a gradient to cel areas."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET_COUNT": "方案数量",
+        "L10N_PARAM_TARGET_LEVEL": "阈值",
+        "L10N_PARAM_TARGET_COL1": "颜色1",
+        "L10N_PARAM_TARGET_COL2": "颜色2",
+        "L10N_PARAM_TARGET_COL3": "颜色3",
+        "L10N_PARAM_TARGET_COL4": "颜色4",
+        "L10N_PARAM_TARGET_COL5": "颜色5",
+        "L10N_PARAM_TARGET_COL6": "颜色6",
+        "L10N_PARAM_TARGET_COL7": "颜色7",
+        "L10N_PARAM_TARGET_COL8": "颜色8",
+        "L10N_PARAM_ANGLE": "角度",
+        "L10N_PARAM_START_OVER": "起点偏移",
+        "L10N_PARAM_LAST_OVER": "终点偏移",
+        "L10N_PARAM_START_COL": "起始颜色",
+        "L10N_PARAM_LAST_COL": "结束颜色",
+        "L10N_PARAM_GUIDE_SHOW": "显示参考线",
+        "L10N_PARAM_GUIDE_COLOR": "参考线颜色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_TOPIC": "方案"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "用于二值图像区域的渐变"
+      }
+    }
+  }
+}

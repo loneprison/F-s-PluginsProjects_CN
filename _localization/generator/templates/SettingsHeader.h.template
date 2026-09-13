@@ -1,0 +1,23 @@
+#pragma once
+
+#include <cstdint>
+
+namespace {{NAMESPACE}} {
+
+inline constexpr char kRuntimeSuiteName[] = {{SUITE_NAME}};
+inline constexpr std::int32_t kRuntimeSuiteVersion = {{SUITE_VERSION}};
+inline constexpr std::int32_t kRuntimeSuiteInternalVersion = {{SUITE_INTERNAL_VERSION}};
+inline constexpr wchar_t kConfigDirectoryName[] = {{CONFIG_DIRECTORY}};
+inline constexpr wchar_t kConfigFileName[] = {{CONFIG_FILE}};
+inline constexpr wchar_t kInvalidConfigBackupFileName[] = {{CONFIG_BACKUP_FILE}};
+inline constexpr wchar_t kConfigMutexName[] = {{CONFIG_MUTEX}};
+
+enum class Text : std::uint32_t {
+{{ENUM_ENTRIES}}
+};
+
+{{LANGUAGE_TABLES}}
+
+inline constexpr std::uint32_t kTextCount = {{TEXT_COUNT}};
+
+} // namespace {{NAMESPACE}}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "zh": {
+      "L10N_PARAM_AMOUNT": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:33031aae840c5c61f9aeda31b54078ce784aeb57157f5a60e973a3bf9a9283c9",
+          "translation": "sha256-v1:d72f13f7c2bb49137cab6c3fd640d05ddcaef6c8ed8432a4d830e6b85132c5e7"
+        }
+      },
+      "L10N_PARAM_SIZE_MAX": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:b0e69f234d1fd95832ee7e6dd0b4bef7c19301f29f55efd967ca12de761a7253",
+          "translation": "sha256-v1:a0d57eb79bdd014494d256e9fe4fee6b3cb63fdf47efc70fed1285f4003c9f01"
+        }
+      },
+      "L10N_PARAM_SIZE_MIN": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9ecf6700835c105547465674c419cf5d8463f60e75ac18e2f6bd36b9ff79ab0a",
+          "translation": "sha256-v1:de4943318757b080e1bc953578f2447d7665cef2f7ef19e9f0f2e7e61e43d30d"
+        }
+      },
+      "L10N_PARAM_ASPECT_RANDOM": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:0d3b1d5e5b33e64fdbb01e1b4a5624b75379c087bcecf5caa1ce21e34409aa82",
+          "translation": "sha256-v1:5b2ce74548c4f2df93823155aa1892c3eae59ed9bab4113c2aff0b9dc913f629"
+        }
+      },
+      "L10N_PARAM_BRIGHT_RANDOM": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:5440fb7f1bf3a86e308a8b7232ca8a6e9408efbabffca87fa68e565197edcd6f",
+          "translation": "sha256-v1:ed993b34b48bb88a711c7d06d88ee1d71ccc620f19e0f9d6c6f3e9b0aaa17b06"
+        }
+      },
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:333677cb0bd4efd0944ec8aba882541fbe6bcc920b56e418db81600413c65eb7",
+          "translation": "sha256-v1:0da832abb0b30353b9f49f4b766702491f62115af3761506f0075cfe96c05e11"
+        }
+      }
+    },
+    "en": {
+      "L10N_PARAM_AMOUNT": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:33031aae840c5c61f9aeda31b54078ce784aeb57157f5a60e973a3bf9a9283c9",
+          "translation": "sha256-v1:1d3d9167fe9ba1aa71cd152aea52b7d68b1dc2f214770e10e4ac30a74b0b5199"
+        }
+      },
+      "L10N_PARAM_SIZE_MAX": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:b0e69f234d1fd95832ee7e6dd0b4bef7c19301f29f55efd967ca12de761a7253",
+          "translation": "sha256-v1:a288dd059653cd25d4430828648628cd588f6b1e60dc4ed31c17fede2379c670"
+        }
+      },
+      "L10N_PARAM_SIZE_MIN": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9ecf6700835c105547465674c419cf5d8463f60e75ac18e2f6bd36b9ff79ab0a",
+          "translation": "sha256-v1:3732e6386ce1534760aebcec0fe07b68067f24565d9796c6a7725d8f1c62b539"
+        }
+      },
+      "L10N_PARAM_ASPECT_RANDOM": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:0d3b1d5e5b33e64fdbb01e1b4a5624b75379c087bcecf5caa1ce21e34409aa82",
+          "translation": "sha256-v1:bc3a924b40679b20f9f907fccb94c0b20f23cac96f7feb1a31a2dc0613caad0e"
+        }
+      },
+      "L10N_PARAM_BRIGHT_RANDOM": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:5440fb7f1bf3a86e308a8b7232ca8a6e9408efbabffca87fa68e565197edcd6f",
+          "translation": "sha256-v1:0bb793210ac265cc561866781de3459bf4cdb3f12daa00754a06b91cb617b942"
+        }
+      },
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:333677cb0bd4efd0944ec8aba882541fbe6bcc920b56e418db81600413c65eb7",
+          "translation": "sha256-v1:85a2511757820ad25bc0150c4e92432b68765cffea44f53a7e2dae2da58f720e"
+        }
+      }
+    }
+  }
+}

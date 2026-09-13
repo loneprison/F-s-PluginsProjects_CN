@@ -39,19 +39,19 @@
 
 
 
-#define	STR_SEED			"RandomSeed"
-#define	STR_CENTER			"Center"
-#define	STR_LENGTH_MAX		"Length"
-#define	STR_LENGTH_RND		"Length_Random"
-#define	STR_Y			"Value"
-#define	STR_COLOR			"Color"
-#define	STR_OPACITY			"Opacity"
-#define	STR_OPACITY_RND		"Opacity_Random"
+#define	L10N_PARAM_RANDOM_SEED			"RandomSeed"
+#define	L10N_PARAM_CENTER			"Center"
+#define	L10N_PARAM_LENGTH		"Length"
+#define	L10N_PARAM_LENGTH_RANDOM		"Length_Random"
+#define	L10N_PARAM_VALUE			"Value"
+#define	L10N_PARAM_COLOR			"Color"
+#define	L10N_PARAM_OPACITY			"Opacity"
+#define	L10N_PARAM_OPACITY_RANDOM		"Opacity_Random"
 
-#define	STR_POINT_COUNT		"Point_Count"
-#define	STR_POINT_LENGTH	"Point_Length"
-#define	STR_ORG_CB1			"Original_Blend"
-#define	STR_ORG_CB2			"ON"
+#define	L10N_PARAM_POINT_COUNT		"Point_Count"
+#define	L10N_PARAM_POINT_LENGTH	"Point_Length"
+#define	L10N_PARAM_ORIGINAL_BLEND			"Original_Blend"
+#define	L10N_PARAM_ON			"ON"
 
 
 //ユーザーインターフェースのID

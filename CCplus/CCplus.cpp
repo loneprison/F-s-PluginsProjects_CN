@@ -4,6 +4,7 @@
 */
 //-----------------------------------------------------------------------------------
 #include "CCplus.h"
+#include "CCplusText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,11 +18,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const CCplusText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(StrORG_REV1,
-					StrORG_REV2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_ORG_REV_LABEL),
+					AETEXT_LABEL(strings, L10N_ORG_REV_ON),
 					TRUE,
 					0,
 					ID_ORG_REV
@@ -29,7 +31,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	StrCOLOR_START, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_COLOR_START),
 					0xFF,
 					0xFF,
 					0xFF,
@@ -37,7 +39,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	StrCOLOR_CENTER, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_COLOR_CENTER),
 					0x80,
 					0x80,
 					0xFF,
@@ -45,7 +47,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	StrCOLOR_END, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_COLOR_END),
 					0x0,
 					0x0,
 					0xFF,
@@ -53,7 +55,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	StrCOLOR_CENTER_POS,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_COLOR_CENTER_POS),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -66,7 +68,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	StrALPHA_START,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_ALPHA_START),	//パラメータの名前
 					-200, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -79,7 +81,7 @@ static PF_Err ParamsSetup (
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	StrALPHA_END,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_ALPHA_END),	//パラメータの名前
 					-200, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -93,7 +95,7 @@ static PF_Err ParamsSetup (
 
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	StrNOISE_VALUE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_NOISE_VALUE),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					64,		//数値入力する場合の最大値
 					0,		//スライダーの最小値 

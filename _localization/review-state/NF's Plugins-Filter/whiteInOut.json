@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "zh": {
+      "L10N_PARAM_VALUE": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:173e2e8eaed786129d1538dfe8c39b23688ca5cace4a89066265279cb950ba22",
+          "translation": "sha256-v1:523c186ae1780350bd3c174c860f3c76fa683d4ebe654c9d8f2932b7ac2631de"
+        }
+      },
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:efc4fbc41540dafb87f9255c569f1489a17255aa6c44aa537df867aa6d3e5eea",
+          "translation": "sha256-v1:324f2dc9bfb098e8d09eb78f8cbf455df81e2d74e7413d951e11c0cff1bd7495"
+        }
+      }
+    },
+    "en": {
+      "L10N_PARAM_VALUE": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:173e2e8eaed786129d1538dfe8c39b23688ca5cace4a89066265279cb950ba22",
+          "translation": "sha256-v1:1ffd1ad1dec773736795f2c606792d3ec4f598c3bce339e40d7f6c658acaa3fd"
+        }
+      },
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:efc4fbc41540dafb87f9255c569f1489a17255aa6c44aa537df867aa6d3e5eea",
+          "translation": "sha256-v1:51a86a7eaf63da6b065c63c9d1423a1c52e432bf2b2ae5d9734e5396a6c3bc26"
+        }
+      }
+    }
+  }
+}

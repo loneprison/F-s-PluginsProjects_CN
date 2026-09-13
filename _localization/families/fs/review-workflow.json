@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "enabled": true,
+  "stages": [
+    {
+      "id": "pretranslated",
+      "labels": {
+        "en": "Pretranslated",
+        "zh-CN": "预翻译",
+        "ja": "事前翻訳"
+      },
+      "color": "blue",
+      "enabled": true
+    },
+    {
+      "id": "needs-review",
+      "labels": {
+        "en": "Needs review",
+        "zh-CN": "待核对",
+        "ja": "要レビュー"
+      },
+      "color": "orange",
+      "enabled": true
+    },
+    {
+      "id": "reviewed",
+      "labels": {
+        "en": "Reviewed",
+        "zh-CN": "已校对",
+        "ja": "レビュー済み"
+      },
+      "color": "green",
+      "enabled": true
+    }
+  ],
+  "completedStageId": "reviewed",
+  "defaults": {
+    "manualEdit": "needs-review",
+    "pretranslation": "pretranslated"
+  },
+  "sourceChange": {
+    "reviewed": "needs-review"
+  }
+}

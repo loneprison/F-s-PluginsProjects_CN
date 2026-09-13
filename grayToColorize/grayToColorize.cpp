@@ -6,6 +6,7 @@
 
 
 #include "grayToColorize.h"
+#include "grayToColorizeText.generated.h"
 
 static PF_Err (*func8)(
 			refconType	refcon, 
@@ -38,9 +39,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const grayToColorizeText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_ALPHA_THRESHOLD,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_THRESHOLD),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -55,7 +57,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_COL1, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 					0xFF,
 					0xF9,
 					0x9C,
@@ -64,7 +66,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_COL2, //F5DD6D
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR2), //F5DD6D
 					0xF5,
 					0xDD,
 					0x6D,
@@ -73,7 +75,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_COL3, //F3A447
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR3), //F3A447
 					0xF3,
 					0xA4,
 					0x47,
@@ -82,7 +84,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_COL4, //DB9039
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR4), //DB9039
 					0xDB,
 					0x90,
 					0x38,
@@ -91,7 +93,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_COL5, //F3C186
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_COLOR5), //F3C186
 					0xF3, 
 					0xC1,
 					0x86,
@@ -100,8 +102,8 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_CHECKBOX(STR_MAT_CB,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_MAT),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_MAT_CB
@@ -109,7 +111,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(	STR_MAT_COL, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_MAT_COLOR),
 					0xFF,
 					0xFF,
 					0xFF,
@@ -207,9 +209,9 @@ exec16 (
 	//Matカラー
 	if (niP->mat_on){
 		PF_Pixel16 m = niP->mat_color;
-		c.red	= RoundByteLong((A_long)c.alpha*((A_long)c.red   -  (A_long)m.red)/PF_MAX_CHAN16 + (A_long)m.red);
-		c.green = RoundByteLong((A_long)c.alpha*((A_long)c.green -  (A_long)m.green)/PF_MAX_CHAN16 + (A_long)m.green);
-		c.blue	= RoundByteLong((A_long)c.alpha*((A_long)c.blue -   (A_long)m.blue)/PF_MAX_CHAN16 + (A_long)m.blue);
+		c.red	= RoundShortFpLong((A_long)c.alpha*((A_long)c.red   -  (A_long)m.red)/PF_MAX_CHAN16 + (A_long)m.red);
+		c.green = RoundShortFpLong((A_long)c.alpha*((A_long)c.green -  (A_long)m.green)/PF_MAX_CHAN16 + (A_long)m.green);
+		c.blue	= RoundShortFpLong((A_long)c.alpha*((A_long)c.blue -   (A_long)m.blue)/PF_MAX_CHAN16 + (A_long)m.blue);
 	}
 	//******************
 	//アルファー
@@ -249,7 +251,7 @@ exec32 (
 		PF_PixelFloat m = niP->mat_color;
 		c.red	= RoundFpShortDouble(c.alpha*(c.red   -  m.red) + m.red);
 		c.green = RoundFpShortDouble(c.alpha*(c.green -  m.green) + m.green);
-		c.blue	= RoundFpShortDouble(c.alpha*(c.blue -   m.blue)/ + m.blue);
+		c.blue	= RoundFpShortDouble(c.alpha*(c.blue -   m.blue) + m.blue);
 	}
 	//******************
 	//アルファー

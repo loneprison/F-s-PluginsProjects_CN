@@ -20,12 +20,6 @@
 //CAEクラスの読み込み
 #include "../FsLibrary_next/CAE.h"
 
-#ifdef AE_OS_WIN
-#define SPRINTF(STR,IDX) sprintf_s(num, "%s%d", STR, IDX)
-#else
-#define SPRINTF(STR,IDX) sprintf_(num, "%s%d", STR, IDX)
-#endif
-
 enum
 {
 	ID_TOPIC =0,
@@ -64,34 +58,34 @@ enum
 //ID_NUM_PARAMS
 
 //UIの表示文字列
-#define	STR_ON				"on"
-#define	STR_BASE_ENABLED	"BaseEnabled"
-#define	STR_BASE_OPACITY	"BaseOpacity"
+#define	L10N_PARAM_ON				"on"
+#define	L10N_PARAM_BASE_ENABLED	"BaseEnabled"
+#define	L10N_PARAM_BASE_OPACITY	"BaseOpacity"
 
-#define	STR_TOPIC			"Filter_"
-#define	STR_ENABLED			"Enabled_"
-#define	STR_EXTRACT			"Extract_"
-#define	STR_EXTRACT_ITEMS	"None|Hi|Low"
+#define	L10N_PARAM_TOPIC			"Filter_"
+#define	L10N_PARAM_ENABLED			"Enabled_"
+#define	L10N_PARAM_EXTRACT			"Extract_"
+#define	L10N_PARAM_EXTRACT_ITEMS	"None|Hi|Low"
 #define	STR_EXTRACT_COUNT	3
 #define	STR_EXTRACT_DFLT	1
-#define	STR_BORDER_HI		"border_hi_"
-#define	STR_SOFTNESS_HI		"softness_hi_"
-#define	STR_BORDER_LO		"border_lo_"
-#define	STR_SOFTNESS_LO		"softness_lo_"
-#define	STR_BRIGHT			"Brightness_"
+#define	L10N_PARAM_BORDER_HI		"border_hi_"
+#define	L10N_PARAM_SOFTNESS_HI		"softness_hi_"
+#define	L10N_PARAM_BORDER_LO		"border_lo_"
+#define	L10N_PARAM_SOFTNESS_LO		"softness_lo_"
+#define	L10N_PARAM_BRIGHTNESS			"Brightness_"
 
-#define	STR_MINMAX			"MinToMax_"
-#define	STR_MAX				"Max_"
-#define	STR_BLUR			"Blur_"
-#define	STR_OPACITY			"Opacity_"
-#define	STR_BLEND			"Blend_"
-#define	STR_BLEND_ITEMS		"Normal|Add|Screen|Lighten|LighterColor|Multiply|Darken|DarkerColor|Overlay"
+#define	L10N_PARAM_MINMAX			"MinToMax_"
+#define	L10N_PARAM_MAX				"Max_"
+#define	L10N_PARAM_BLUR			"Blur_"
+#define	L10N_PARAM_OPACITY			"Opacity_"
+#define	L10N_PARAM_BLEND			"Blend_"
+#define	L10N_PARAM_BLEND_ITEMS		"Normal|Add|Screen|Lighten|LighterColor|Multiply|Darken|DarkerColor|Overlay"
 #define	STR_BLEND_COUNT		9
 #define	STR_BLEND_DFLT		1
-#define	STR_FILTER_OPACITY	"FilterOpacity"
+#define	L10N_PARAM_FILTER_OPACITY	"FilterOpacity"
 
-#define	STR_NOISE			"Noise"
-#define	STR_ALPHA_ON		"Alpha_ON"
+#define	L10N_PARAM_NOISE			"Noise"
+#define	L10N_PARAM_ALPHA_ON		"Alpha_ON"
 
 enum EXTRACT_MODE
 {

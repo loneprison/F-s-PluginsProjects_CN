@@ -43,12 +43,12 @@
 
 
 	
-#define STR_COLOR			"color"
-#define STR_TOPLEFT			"TopLeft"
-#define STR_BOTTOMRIGHT		"BottomRight"
-#define STR_CHK1			"Check"
-#define STR_CHK2			"on"
-#define STR_SMOOTH1			"Smooth"
+#define L10N_PARAM_COLOR			"color"
+#define L10N_PARAM_TOP_LEFT			"TopLeft"
+#define L10N_PARAM_BOTTOM_RIGHT		"BottomRight"
+#define L10N_PARAM_CHECK			"Check"
+#define L10N_PARAM_ON			"on"
+#define L10N_PARAM_SMOOTH			"Smooth"
 #define STR_SMOOTH2			"on"
 
 

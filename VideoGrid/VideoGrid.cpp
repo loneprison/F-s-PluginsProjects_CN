@@ -6,6 +6,7 @@
 
 
 #include "VideoGrid.h"
+#include "VideoGridText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +18,14 @@ static PF_Err About (	PF_InData		*in_data,
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const VideoGridText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 //-------------------------------------------------------------------------------------------------
@@ -83,10 +91,11 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const VideoGridText::Strings strings(in_data);
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_GRIDSIZE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_GRID_SIZE),	//パラメータの名前
 					2, 			//数値入力する場合の最小値
 					128,		//数値入力する場合の最大値
 					2,			//スライダーの最小値 
@@ -97,11 +106,16 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	//2個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_MODE1,STR_MODE2, FALSE,0, ID_MODE);
+	PF_ADD_CHECKBOX(
+		AETEXT_PARAM(strings, L10N_PARAM_MODE),
+		AETEXT_LABEL(strings, L10N_PARAM_MOSAIC),
+		FALSE,
+		0,
+		ID_MODE);
 
 	//3個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_HILIGHT,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_HILIGHT),	//パラメータの名前
 				0, 				//数値入力する場合の最小値
 				200,			//数値入力する場合の最大値
 				0,			//スライダーの最小値 
@@ -114,7 +128,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 				);
 	//4個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_SHADOW,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_SHADOW),	//パラメータの名前
 				0, 				//数値入力する場合の最小値
 				200,	//数値入力する場合の最大値
 				0,				//スライダーの最小値 
@@ -126,7 +140,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 				ID_SHADOW
 				);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_HEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE_WIDTH),	//パラメータの名前
 					1, 			//数値入力する場合の最小値
 					16,		//数値入力する場合の最大値
 					1,			//スライダーの最小値 
@@ -471,9 +485,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				VideoGridText::OpenSettings(in_data, L"F's VideoGrid");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

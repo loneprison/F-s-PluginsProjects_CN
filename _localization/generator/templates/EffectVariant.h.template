@@ -1,0 +1,15 @@
+inline constexpr AeText::StringTable k{{SYMBOL}}RoleTables[] = {
+{{ROLE_TABLES}}
+};
+
+inline constexpr char k{{SYMBOL}}Id[] = {{ID_LITERAL}};
+
+inline constexpr AeText::VariantView k{{SYMBOL}}Variant = {
+    sizeof(AeText::VariantView),
+    sizeof(k{{SYMBOL}}Id) - 1,
+    k{{SYMBOL}}Id,
+    k{{SYMBOL}}RoleTables,
+    AeText::kTextRoleCount,
+    {{ABOUT_UTF8}},
+    {{ERROR_UTF8}},
+};

@@ -9,6 +9,31 @@
 #include "FsAEHeader.h"
 #include "FsVersion.h"
 #include "FsUtils.h"
+#include "../_localization/AeText.h"
+
+#define CAE_ABOUT_DIALOG	"var  FsAbout = function()\r\n\
+{\r\n\
+	var strName = \"%s\";\r\n\
+	var strVersion = \"ver %d.%d [%s]\";\r\n\
+	var strDis = \"%s\";\r\n\
+	var strMyName = \"https://github.com/bryful : bryful@gmail.com \";\r\n\
+    var nanae = \"Nanae Furuhashi - My beloved daughter. May she rest in peace.\";\r\n\
+	var winObj = new Window(\"dialog\", \"NF's Plugins\", [ 0,  0,  480, 180] );\r\n\
+\
+	var edFsName = winObj.add(\"edittext\", [  30,   10,   30+ 440,   10+  20], strName, { readonly:true, borderless:true });\r\n\
+	var edFsVersion = winObj.add(\"edittext\", [  30,   40,   30+ 440,   40+ 20], strVersion, { readonly:true, borderless:true });\r\n\
+	var edFsDis = winObj.add(\"edittext\", [  30,   70,   30+ 440,   70+  20], strDis, { readonly:true, borderless:true });\r\n\
+	var edMyName = winObj.add(\"edittext\", [  30,  100,   30+ 440,  100+  20], strMyName, { readonly:true, borderless:true });\r\n\
+    var stNana = winObj.add(\"statictext\", [  30,  130,   30+ 440,  130+  20], nanae, { readonly:true, borderless:true });\r\n\
+	var btnOK = winObj.add(\"button\", [ 360,  140,  360+ 100,  140+  24], \"OK\" , { name:\"ok\" });\r\n\
+	this.show = function()\r\n\
+	{\r\n\
+		winObj.center();\r\n\
+		return winObj.show();\r\n\
+	}\r\n\
+}\r\n\
+var dlg = new FsAbout;\r\n\
+dlg.show();\r\n"
 
 #define FLOAT_PAR(x) do{x/=100;if(x<-1) x=1;else if(x>1) x=1;}while(0)
 
@@ -344,15 +369,19 @@ public:
 	//*********************************************************************************
 	//その他の処理
 	//*********************************************************************************
-	PF_Err About
+private:
+	PF_Err RunAbout
 	(
 		PF_InData		*in_data,
 		PF_OutData		*out_data,
 		PF_ParamDef		*params[],
-		PF_LayerDef		*output)
+		PF_LayerDef		*output,
+		const char		*script_description,
+		const char		*legacy_description,
+		A_Boolean		platform_encodingB)
 	{
 		PF_Err	err				= PF_Err_NONE;
-		CAE::suitesP	= new AEGP_SuiteHandler(in_data->pica_basicP);
+		AEGP_SuiteHandler suites(in_data->pica_basicP);
 		if (in_data->global_data){
 			ae_plugin_idH	= in_data->global_data;
 			ae_plugin_idP = reinterpret_cast<ae_global_dataP>(DH(in_data->global_data));
@@ -364,29 +393,65 @@ public:
 		if (ae_plugin_idP!=NULL){
 			//スクリプトでダイアログ表示だけど使わない
 			A_char scriptCode[1024*4] = {'\0'}; 
-			PF_SPRINTF(	scriptCode,FS_ABOUT_STR,
+			PF_SPRINTF(	scriptCode,CAE_ABOUT_DIALOG,
 				FS_NAME, 
 				MAJOR_VERSION, 
 				MINOR_VERSION, 
-				FS_DESCRIPTION,
-				FS_CREATER,
-				FS_CATEGORY
+				__DATE__,
+				script_description
 			);
 			
-			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, TRUE, NULL, NULL));
+			ERR(suites.UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, platform_encodingB, NULL, NULL));
 		}
 		else {
 
 			PF_SPRINTF(out_data->return_msg,
-				"%s, v%d.%d\r%s",
+				"%s, v%d.%d (%s)\r%s",
 				FS_NAME,
 				MAJOR_VERSION,
 				MINOR_VERSION,
-				FS_DESCRIPTION);
+				__DATE__,
+				legacy_description);
 		}
 		m_resultErr = err;
 		m_mode		= AE_ABOUT;
 		return err;
+	}
+
+public:
+	PF_Err About
+	(
+		PF_InData		*in_data,
+		PF_OutData		*out_data,
+		PF_ParamDef		*params[],
+		PF_LayerDef		*output)
+	{
+		return RunAbout(
+			in_data,
+			out_data,
+			params,
+			output,
+			FS_DESCRIPTION,
+			FS_DESCRIPTION,
+			TRUE);
+	}
+
+	PF_Err About
+	(
+		PF_InData		*in_data,
+		PF_OutData		*out_data,
+		PF_ParamDef		*params[],
+		PF_LayerDef		*output,
+		const AeText::AboutText &description)
+	{
+		return RunAbout(
+			in_data,
+			out_data,
+			params,
+			output,
+			AeText::detail::AboutTextAccess::ScriptUtf8(description),
+			AeText::detail::AboutTextAccess::Legacy(description),
+			FALSE);
 	}
 	//*********************************************************************************
 	PF_Err GlobalSetup

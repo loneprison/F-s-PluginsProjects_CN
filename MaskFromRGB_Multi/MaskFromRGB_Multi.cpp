@@ -6,6 +6,7 @@
 
 
 #include "MaskFromRGB_Multi.h"
+#include "MaskFromRGB_MultiText.generated.h"
 
 static PF_Err (*func8)(
 			refconType	refcon, 
@@ -38,9 +39,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MaskFromRGB_MultiText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,						//VALID_MIN
 						5000,					//VALID_MAX
 						50,						//SLIDER_MIN
@@ -57,8 +59,8 @@ static PF_Err ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_R,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_RED),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_R
@@ -68,8 +70,8 @@ static PF_Err ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_G,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_GREEN),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_G
@@ -79,8 +81,8 @@ static PF_Err ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_B,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_BLUE),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_B
@@ -90,8 +92,8 @@ static PF_Err ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_Y,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_YELLOW),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_Y
@@ -101,8 +103,8 @@ static PF_Err ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_M,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_MAGENTA),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_M
@@ -112,8 +114,8 @@ static PF_Err ParamsSetup (
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_CHECKBOX(STR_C,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_CYAN),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_C

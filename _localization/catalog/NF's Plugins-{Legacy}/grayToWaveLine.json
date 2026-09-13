@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_SAMPLE_X_COUNT": {"useSource": true},
+        "L10N_PARAM_SAMPLE_Y_COUNT": {"useSource": true},
+        "L10N_PARAM_DRAW_POS": {"useSource": true},
+        "L10N_PARAM_GRAPH_X_SCALE": {"useSource": true},
+        "L10N_PARAM_GRAPH_Y_MAX": {"useSource": true},
+        "L10N_PARAM_GRAPH_TILT": {"useSource": true},
+        "L10N_PARAM_GRAPH_X_OFFSET": {"useSource": true},
+        "L10N_PARAM_GRAPH_Y_OFFSET": {"useSource": true},
+        "L10N_PARAM_LINE_HEIGHT": {"useSource": true},
+        "L10N_PARAM_GRAPH_COLOR": {"useSource": true},
+        "L10N_PARAM_BASE_COLOR": {"useSource": true},
+        "L10N_PARAM_MODE": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws a graph from grayscale footage."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_SAMPLE_X_COUNT": "X采样数",
+        "L10N_PARAM_SAMPLE_Y_COUNT": "Y采样数",
+        "L10N_PARAM_DRAW_POS": "位置",
+        "L10N_PARAM_GRAPH_X_SCALE": "X缩放",
+        "L10N_PARAM_GRAPH_Y_MAX": "最大高度",
+        "L10N_PARAM_GRAPH_TILT": "图形倾斜",
+        "L10N_PARAM_GRAPH_X_OFFSET": "图形X偏移",
+        "L10N_PARAM_GRAPH_Y_OFFSET": "图形Y偏移",
+        "L10N_PARAM_LINE_HEIGHT": "波形宽度",
+        "L10N_PARAM_GRAPH_COLOR": "波形颜色",
+        "L10N_PARAM_BASE_COLOR": "基线颜色",
+        "L10N_PARAM_MODE": "显示模式"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "波形+基线|仅波形|仅基线"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "由灰度图绘制图形"
+      }
+    }
+  }
+}

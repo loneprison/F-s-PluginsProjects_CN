@@ -13,18 +13,15 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E08EF309-965E-48B8-B74C-9D494A685FC7}</ProjectGuid>
     <RootNamespace>Paint</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -40,20 +37,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\Fs_Plugins_debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
     <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">*.tlog;*.asm;*.exp;*.sbr;*.rr;*.rrc;*.res;*.cdf;*.cache;*.obj;*.ilk;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.manifest;*.pch;*.idb;*.lib;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\outAEX\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
     <ExtensionsToDeleteOnClean Condition="'$(Configuration)|$(Platform)'=='Release|x64'">*.tlog;*.asm;*.exp;*.sbr;*.rr;*.rrc;*.res;*.cdf;*.cache;*.obj;*.ilk;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.manifest;*.pch;*.idb;*.lib;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.aex</TargetExt>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F's $(ProjectName)</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F's $(ProjectName)</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.aex</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -69,8 +60,6 @@
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\Headers;..\..\..\Headers\SP;..\..\..\Resources;..\..\..\Util;..\F's PluginsProjects_2013\FsLibrary</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>MSWindows;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <StructMemberAlignment>16Bytes</StructMemberAlignment>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderFile>AE_Effect.h</PrecompiledHeaderFile>
@@ -81,7 +70,6 @@
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -124,8 +112,6 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>..\..\..\Headers;..\..\..\Headers\SP;..\..\..\Resources;..\..\..\Util;..\F's PluginsProjects_2013\FsLibrary</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>MSWindows;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <StructMemberAlignment>16Bytes</StructMemberAlignment>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderFile>AE_Effect.h</PrecompiledHeaderFile>
@@ -138,7 +124,6 @@
       </BrowseInformation>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>
       </DebugInformationFormat>
@@ -181,44 +166,30 @@
     <ClInclude Include="..\..\..\Headers\FIEL_Public.h" />
     <ClInclude Include="..\..\..\Headers\PF_Masks.h" />
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h" />
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h" />
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h" />
     <ClInclude Include="..\..\..\Headers\PR_Public.h" />
     <ClInclude Include="..\..\..\Headers\PT_Public.h" />
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h" />
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h" />
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h" />
     <ClInclude Include="..\..\..\Util\entry.h" />
     <ClInclude Include="..\..\..\Util\Param_Utils.h" />
     <ClInclude Include="..\..\..\Util\Smart_Utils.h" />
     <ClInclude Include="..\..\..\Util\String_Utils.h" />
     <ClInclude Include="..\Paint.h" />
     <ClInclude Include="..\Fs_Target.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H" />
-    <CustomBuildStep Include="..\..\..\Util\AEFX_SuiteHelper.h" />
-    <CustomBuildStep Include="..\..\..\Util\PF_Suite_Helper.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </CustomBuildStep>
+    <ClInclude Include="..\..\_localization\AeText.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\PaintPiPL.r">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling the PiPL</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl /I "$(ProjectDir)..\..\..\Headers" /EP ".."\\"%(Filename).r" &gt; "$(IntDir)"\\"%(Filename).rr"
+      <Message>Compiling the PiPL</Message>
+      <Command>cl /I "$(ProjectDir)..\..\..\Headers" /EP "$(ProjectDir)..\%(Filename).r" &gt; "$(IntDir)%(Filename).rr"
 "$(ProjectDir)..\..\..\Resources\PiPLTool" "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).rrc"
-cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)"\\"%(Filename)".rc
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).rc;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling the PiPL</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl /I "$(ProjectDir)..\..\..\Headers" /EP ".."\\"%(Filename).r" &gt; "$(IntDir)"\\"%(Filename).rr"
-"$(ProjectDir)..\..\..\Resources\PiPLTool" "$(IntDir)%(Filename).rr" "$(IntDir)%(Filename).rrc"
-cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)"\\"%(Filename)".rc
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).rc;%(Outputs)</Outputs>
+cl /D "MSWindows" /EP "$(IntDir)%(Filename).rrc" &gt; "$(IntDir)%(Filename).rc"</Command>
+      <Outputs>$(IntDir)%(Filename).rc;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="PaintPiPL.rc" />
+    <ResourceCompile Include="$(IntDir)PaintPiPL.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp" />
@@ -240,6 +211,14 @@ cl /D "MSWindows" /EP $(IntDir)%(Filename).rrc &gt;               "$(ProjectDir)
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BrowseInformation>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-{Legacy}\Paint.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

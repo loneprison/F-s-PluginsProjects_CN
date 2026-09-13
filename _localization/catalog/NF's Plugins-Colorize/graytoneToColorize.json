@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET": {"useSource": true},
+        "L10N_PARAM_COLOR0": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_COLOR6": {"useSource": true},
+        "L10N_PARAM_COLOR7": {"useSource": true},
+        "L10N_PARAM_COLOR8": {"useSource": true},
+        "L10N_PARAM_REPEAT": {"useSource": true},
+        "L10N_PARAM_OFFSET_ENABLED": {"useSource": true},
+        "L10N_PARAM_OFFSET": {"useSource": true},
+        "L10N_PARAM_OFFSET_SPEED": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Quickly colors footage, version 2."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET": "通道",
+        "L10N_PARAM_COLOR0": "颜色0",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_COLOR6": "颜色6",
+        "L10N_PARAM_COLOR7": "颜色7",
+        "L10N_PARAM_COLOR8": "颜色8",
+        "L10N_PARAM_REPEAT": "重复",
+        "L10N_PARAM_OFFSET_ENABLED": "启用偏移",
+        "L10N_PARAM_OFFSET": "偏移",
+        "L10N_PARAM_OFFSET_SPEED": "偏移速度"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": "亮度|红|绿|蓝|Alpha"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "给素材快速上色2"
+      }
+    }
+  }
+}

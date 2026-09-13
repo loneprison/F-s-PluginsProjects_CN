@@ -6,6 +6,7 @@
 
 
 #include "MaxBlur.h"
+#include "MaxBlurText.generated.h"
 #include <string>
 
 
@@ -20,8 +21,9 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MaxBlurText::Strings strings(in_data);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MINMAX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAX),	//パラメータの名前
 		-1000, 		//数値入力する場合の最小値
 		1000,		//数値入力する場合の最大値
 		-10,		//スライダーの最小値 
@@ -30,7 +32,7 @@ static PF_Err ParamsSetup (
 		ID_MINMAX
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_BLUR,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		1000,		//数値入力する場合の最大値
 		0,		//スライダーの最小値 
@@ -39,7 +41,7 @@ static PF_Err ParamsSetup (
 		ID_BLUR
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HYPERBOLIC,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HYPERBOLIC),	//Name
 		-10,				//VALID_MIN
 		50,					//VALID_MAX
 		-2,					//SLIDER_MIN

@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "RandomShift.h"
+#include "RandomShiftText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +18,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const RandomShiftText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -84,9 +87,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const RandomShiftText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_Y,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_AMOUNT),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					32000,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -96,7 +100,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SHIFTMAX,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SHIFT_MAX),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					2000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -106,7 +110,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SHIFTMIN,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SHIFT_MIN),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					2000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -116,7 +120,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LENGTHMAX,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LEN_MAX),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					2000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -126,7 +130,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LENGTHMAX,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LEN_MIN),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					2000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -136,7 +140,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_HEIGHTMAX,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_HEIGHT_MAX),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -146,7 +150,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_HEIGHTMIN,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_HEIGHT_MIN),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -157,7 +161,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_VERSHIFT_VALUE,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_VER_SHIFT),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1000,		//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -500,9 +504,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				RandomShiftText::OpenSettings(in_data, L"F's RandomShift");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "ScreenShakeMM.h"
+#include "ScreenShakeMMText.generated.h"
 
 
 /*
@@ -24,7 +25,9 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const ScreenShakeMMText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -94,10 +97,11 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ScreenShakeMMText::Strings strings(in_data);
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_MM,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_AMOUNT_MM),	//パラメータの名前
 					0, 		//数値入力する場合の最小値
 					400,	//数値入力する場合の最大値
 					0,		//スライダーの最小値 
@@ -111,7 +115,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	AEFX_CLR_STRUCT(def);
 
-	PF_ADD_SLIDER(	STR_VALUE_RND,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_AMOUNT_RND),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -121,10 +125,10 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 					);
 	
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_DIR,15.0,ID_DIR);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_DIR),15.0,ID_DIR);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_DIR_RND,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_DIR_RND),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					360,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -134,7 +138,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 					);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_RANDOMSEED,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_RANDOM_SEED),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					99,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -144,15 +148,15 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 					);
 
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_EDGE_STATUS1, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_EDGE_MODE),
 						4,	//メニューの数
 						1,	//デフォルト
-						STR_EDGE_STATUS2,
+						AETEXT_POPUP(strings, L10N_PARAM_EDGE_MODE_ITEMS),
 						ID_EDGE_STATUS
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_DPI,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_DPI),	//パラメータの名前
 					10, 		//数値入力する場合の最小値
 					400,		//数値入力する場合の最大値
 					10,			//スライダーの最小値 
@@ -534,9 +538,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				ScreenShakeMMText::OpenSettings(in_data, L"F's ScreenShakeMM");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

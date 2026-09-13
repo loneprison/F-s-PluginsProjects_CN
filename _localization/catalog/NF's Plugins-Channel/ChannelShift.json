@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_RED_ROT": {"useSource": true},
+        "L10N_PARAM_RED_LENGTH": {"useSource": true},
+        "L10N_PARAM_GREEN_ROT": {"useSource": true},
+        "L10N_PARAM_GREEN_LENGTH": {"useSource": true},
+        "L10N_PARAM_BLUE_ROT": {"useSource": true},
+        "L10N_PARAM_BLUE_LENGTH": {"useSource": true},
+        "L10N_PARAM_ALPHA_ROT": {"useSource": true},
+        "L10N_PARAM_ALPHA_LENGTH": {"useSource": true},
+        "L10N_PARAM_EDGE": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_EDGE_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_RED_TOPIC": {"useSource": true},
+        "L10N_PARAM_GREEN_TOPIC": {"useSource": true},
+        "L10N_PARAM_BLUE_TOPIC": {"useSource": true},
+        "L10N_PARAM_ALPHA_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Shifts each image channel independently."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_RED_ROT": "红色角度",
+        "L10N_PARAM_RED_LENGTH": "红色偏移",
+        "L10N_PARAM_GREEN_ROT": "绿色角度",
+        "L10N_PARAM_GREEN_LENGTH": "绿色偏移",
+        "L10N_PARAM_BLUE_ROT": "蓝色角度",
+        "L10N_PARAM_BLUE_LENGTH": "蓝色偏移",
+        "L10N_PARAM_ALPHA_ROT": "Alpha角度",
+        "L10N_PARAM_ALPHA_LENGTH": "Alpha偏移",
+        "L10N_PARAM_EDGE": "边缘处理"
+      },
+      "Popup": {
+        "L10N_PARAM_EDGE_ITEMS": "无|扩展|平铺|镜像"
+      },
+      "Topic": {
+        "L10N_PARAM_RED_TOPIC": "红色",
+        "L10N_PARAM_GREEN_TOPIC": "绿色",
+        "L10N_PARAM_BLUE_TOPIC": "蓝色",
+        "L10N_PARAM_ALPHA_TOPIC": "Alpha"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "按通道偏移图像"
+      }
+    }
+  }
+}

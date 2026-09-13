@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ALPHA_THRESHOLD": {"useSource": true},
+        "L10N_PARAM_HILIGHT_ENABLED": {"useSource": true},
+        "L10N_PARAM_SHADOW1_ENABLED": {"useSource": true},
+        "L10N_PARAM_SHADOW2_ENABLED": {"useSource": true},
+        "L10N_PARAM_HILIGHT": {"useSource": true},
+        "L10N_PARAM_SHADOW1": {"useSource": true},
+        "L10N_PARAM_SHADOW2": {"useSource": true},
+        "L10N_PARAM_HILIGHT_COLOR": {"useSource": true},
+        "L10N_PARAM_NORMAL_COLOR": {"useSource": true},
+        "L10N_PARAM_SHADOW1_COLOR": {"useSource": true},
+        "L10N_PARAM_SHADOW2_COLOR": {"useSource": true},
+        "L10N_PARAM_LINE_WEIGHT": {"useSource": true},
+        "L10N_PARAM_NORMAL_LINE_ENABLED": {"useSource": true},
+        "L10N_PARAM_SHADOW1_LINE_ENABLED": {"useSource": true},
+        "L10N_PARAM_SHADOW2_LINE_ENABLED": {"useSource": true},
+        "L10N_PARAM_NORMAL_LINE": {"useSource": true},
+        "L10N_PARAM_SHADOW1_LINE": {"useSource": true},
+        "L10N_PARAM_SHADOW2_LINE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_OUTLINE": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Gives realistic smoke a cel-shaded look."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ALPHA_THRESHOLD": "Alpha 阈值",
+        "L10N_PARAM_HILIGHT_ENABLED": "启用高光",
+        "L10N_PARAM_SHADOW1_ENABLED": "启用阴影1",
+        "L10N_PARAM_SHADOW2_ENABLED": "启用阴影2",
+        "L10N_PARAM_HILIGHT": "高光",
+        "L10N_PARAM_SHADOW1": "阴影1",
+        "L10N_PARAM_SHADOW2": "阴影2",
+        "L10N_PARAM_HILIGHT_COLOR": "高光颜色",
+        "L10N_PARAM_NORMAL_COLOR": "正常颜色",
+        "L10N_PARAM_SHADOW1_COLOR": "阴影1颜色",
+        "L10N_PARAM_SHADOW2_COLOR": "阴影2颜色",
+        "L10N_PARAM_LINE_WEIGHT": "描边大小",
+        "L10N_PARAM_NORMAL_LINE_ENABLED": "启用正常描边",
+        "L10N_PARAM_SHADOW1_LINE_ENABLED": "启用阴影1描边",
+        "L10N_PARAM_SHADOW2_LINE_ENABLED": "启用阴影2描边",
+        "L10N_PARAM_NORMAL_LINE": "正常描边",
+        "L10N_PARAM_SHADOW1_LINE": "阴影1描边",
+        "L10N_PARAM_SHADOW2_LINE": "阴影2描边"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Topic": {
+        "L10N_PARAM_OUTLINE": "描边"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将真实烟雾转为动画风格"
+      }
+    }
+  }
+}

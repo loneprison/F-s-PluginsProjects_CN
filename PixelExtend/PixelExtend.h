@@ -114,28 +114,24 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TARGET_TOPIC			"Target"
-#define	STR_RANGE					"Range"
-#define	STR_ON						"on"
-#define	STR_TARGET_COLOR_ENABLED	"ColorEnabled"
-#define	STR_TARGET_COLOR			"Color"
-
-#define	STR_DIR_TOPIC				"Extend"
-#define	STR_TOP						"Top"
-#define	STR_TOP_RIGHT				"Top_Right"
-#define	STR_RIGHT					"Right"
-#define	STR_BOTTOM_RIGHT			"Bottom_Right"
-#define	STR_BOTTOM					"Bottom"
-#define	STR_BOTTOM_LEFT				"Bottom_Left"
-#define	STR_LEFT					"Left"
-#define	STR_TOP_LEFT				"Top_Left"
-
-#define	STR_NONE_TOPIC				"NoDraw"
-#define	STR_NONE_COLOR_ENABLED		"NoColorEnabled"
-#define	STR_NONE_COLOR				"NoColor"
-
-
-#define	STR_TARGET_ONLY				"TargetOnly"
+#define L10N_PARAM_TARGET_TOPIC			"Target"
+#define L10N_PARAM_RANGE					"Range"
+#define L10N_PARAM_ON						"on"
+#define L10N_PARAM_TARGET_COLOR_EN		"TargetColorEnabled"
+#define L10N_PARAM_TARGET_COLOR			"TargetColor"
+#define L10N_PARAM_EXTEND_TOPIC			"Extend"
+#define L10N_PARAM_TOP						"Top"
+#define L10N_PARAM_TOP_RIGHT				"Top_Right"
+#define L10N_PARAM_RIGHT					"Right"
+#define L10N_PARAM_BOTTOM_RIGHT			"Bottom_Right"
+#define L10N_PARAM_BOTTOM					"Bottom"
+#define L10N_PARAM_BOTTOM_LEFT				"Bottom_Left"
+#define L10N_PARAM_LEFT						"Left"
+#define L10N_PARAM_TOP_LEFT				"Top_Left"
+#define L10N_PARAM_NODRAW_TOPIC			"NoDraw"
+#define L10N_PARAM_NODRAW_COLOR_EN		"NoneColorEnabled"
+#define L10N_PARAM_NODRAW_COLOR			"NoneColor"
+#define L10N_PARAM_TARGET_ONLY				"TargetOnly"
 
 //UIのパラメータ
 typedef struct ParamInfo {

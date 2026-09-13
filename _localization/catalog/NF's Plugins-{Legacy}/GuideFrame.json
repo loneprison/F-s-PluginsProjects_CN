@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_TOP_LEFT": {"useSource": true},
+        "L10N_PARAM_BOTTOM_RIGHT": {"useSource": true},
+        "L10N_PARAM_CHECK": {"useSource": true},
+        "L10N_PARAM_SMOOTH": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Defines a guide region."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_TOP_LEFT": "左上",
+        "L10N_PARAM_BOTTOM_RIGHT": "右下",
+        "L10N_PARAM_CHECK": "检查",
+        "L10N_PARAM_SMOOTH": "平滑"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "范围指定"
+      }
+    }
+  }
+}

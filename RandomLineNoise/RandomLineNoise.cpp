@@ -6,6 +6,7 @@
 
 
 #include "RandomLineNoise.h"
+#include "RandomLineNoiseText.generated.h"
 
 
 
@@ -19,7 +20,9 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const RandomLineNoiseText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -87,12 +90,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const RandomLineNoiseText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//１個目のパラメータ
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_Y,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_NOISE_AMOUNT),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					10000,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -102,7 +106,7 @@ static PF_Err ParamsSetup (
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_STRONG,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_NOISE_STRONG),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -116,7 +120,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LENGTH_MIN,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LEN_MIN),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1024,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -125,7 +129,7 @@ static PF_Err ParamsSetup (
 					ID_LENGTH_MIN
 					);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_LENGTH_MAX,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LEN_MAX),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					1024,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -138,8 +142,8 @@ static PF_Err ParamsSetup (
 	//４個目のパラメータ
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_COLOR1,
-					STR_COLOR2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_NOISE_COLOR),
+					AETEXT_LABEL(strings, L10N_PARAM_COLOR),
 					FALSE,
 					0,
 					ID_COLOR
@@ -148,7 +152,7 @@ static PF_Err ParamsSetup (
 	//４個目のパラメータ
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_WEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_NOISE_WIDTH),	//パラメータの名前
 					1, 				//数値入力する場合の最小値
 					16,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -160,8 +164,8 @@ static PF_Err ParamsSetup (
 	//４個目のパラメータ
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_VERTUAL1,
-					STR_VERTUAL2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_VERTICAL),
+					AETEXT_LABEL(strings, L10N_PARAM_VERTICAL_SHORT),
 					FALSE,
 					0,
 					ID_VERTUAL
@@ -529,9 +533,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				RandomLineNoiseText::OpenSettings(in_data, L"F's RandomLineNoise");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

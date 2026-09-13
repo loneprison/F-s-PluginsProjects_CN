@@ -40,24 +40,24 @@
 
 #include "../FsLibrary/FsScreenShake.h"
 
-#define	STR_RED_TOPIC		"Red"
-#define	STR_RED_ROT			"Red_Rot"
-#define	STR_RED_LENGTH		"Red_Length"
+#define	L10N_PARAM_RED_TOPIC		"Red"
+#define	L10N_PARAM_RED_ROT			"Red_Rot"
+#define	L10N_PARAM_RED_LENGTH		"Red_Length"
 
-#define	STR_GREEN_TOPIC		"Green"
-#define	STR_GREEN_ROT		"Green_Rot"
-#define	STR_GREEN_LENGTH	"Green_Length"
+#define	L10N_PARAM_GREEN_TOPIC		"Green"
+#define	L10N_PARAM_GREEN_ROT		"Green_Rot"
+#define	L10N_PARAM_GREEN_LENGTH	"Green_Length"
 
-#define	STR_BLUE_TOPIC		"Blue"
-#define	STR_BLUE_ROT		"Blue_Rot"
-#define	STR_BLUE_LENGTH		"Blue_Length"
+#define	L10N_PARAM_BLUE_TOPIC		"Blue"
+#define	L10N_PARAM_BLUE_ROT		"Blue_Rot"
+#define	L10N_PARAM_BLUE_LENGTH		"Blue_Length"
 
-#define	STR_ALPHA_TOPIC		"Alpha"
-#define	STR_ALPHA_ROT		"Alpha_Rot"
-#define	STR_ALPHA_LENGTH	"Alpha_Length"
+#define	L10N_PARAM_ALPHA_TOPIC		"Alpha"
+#define	L10N_PARAM_ALPHA_ROT		"Alpha_Rot"
+#define	L10N_PARAM_ALPHA_LENGTH	"Alpha_Length"
 
-#define	STR_EDGE_POP1		"Edge"
-#define	STR_EDGE_POP2		"none|extend|tile|mirror"
+#define	L10N_PARAM_EDGE		"Edge"
+#define	L10N_PARAM_EDGE_ITEMS		"none|extend|tile|mirror"
 
 #ifdef TEST_MODE
 	#define	STR_TEST_TIME_CB1	"Time Disp"

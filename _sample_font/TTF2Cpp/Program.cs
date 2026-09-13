@@ -1,12 +1,12 @@
-using System;
+ï»¿using System;
 using System.Text;
 using System.IO;
 using SkiaSharp;
 
-//string fontPath = "x8y12pxTheStrongGamer.ttf"; // ƒtƒHƒ“ƒgƒtƒ@ƒCƒ‹‚ÌƒpƒX
+//string fontPath = "x8y12pxTheStrongGamer.ttf"; // ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
 string fontPath = "x14y24pxHeadUpDaisy.ttf";
 int width = 14;
-int height = 24; // 8x12ƒsƒNƒZƒ‹‚É‡‚í‚¹‚é‚½‚ß‚ÌƒTƒCƒY’²®
+int height = 24; // 8x12ãƒ”ã‚¯ã‚»ãƒ«ã«åˆã‚ã›ã‚‹ãŸã‚ã®ã‚µã‚¤ã‚ºèª¿æ•´
 string arrayName = "debug_font_1424";
 
 StringBuilder cppArray = new StringBuilder();
@@ -28,32 +28,31 @@ using (var typeface = SKTypeface.FromFile(fontPath))
 			bmpCanvas.Clear(SKColors.Black);
 
 
+			using (var font = new SKFont(typeface, height))
 			using (var paint = new SKPaint())
 			{
-				paint.Typeface = typeface;
-				paint.TextSize = height;
 				paint.Color = SKColors.White;
 				paint.IsAntialias = false;
-				paint.SubpixelText = false;
-				paint.LcdRenderText = false;
+				font.Subpixel = false;
+				font.Edging = SKFontEdging.Alias;
 
 				using (var surface = SKSurface.Create(new SKImageInfo(width, height, SKColorType.Rgba8888, SKAlphaType.Premul)))
 				{
 					var canvas = surface.Canvas;
 
-					// ASCII 0x21 (!) ‚©‚ç 0x7E (~) ‚Ü‚Å
+					// ASCII 0x21 (!) ã‹ã‚‰ 0x7E (~) ã¾ã§
 					for (int c = 0x21; c <= 0x7E; c++)
 					{
 						char character = (char)c;
 
 						canvas.Clear(SKColors.Black);
-						// ƒtƒHƒ“ƒg‚É‚æ‚Á‚Ä‚Í•`‰æˆÊ’u‚Ì”÷’²®‚ª•K—v
-						canvas.DrawText(character.ToString(), 0, 19, paint);
+						// ãƒ•ã‚©ãƒ³ãƒˆã«ã‚ˆã£ã¦ã¯æç”»ä½ç½®ã®å¾®èª¿æ•´ãŒå¿…è¦
+						canvas.DrawText(character.ToString(), 0, 19, SKTextAlign.Left, font, paint);
 
 						int ix = (c - 0x21) % 16;
 						int iy = (c - 0x21) / 16;
 
-						// surface‚ÌƒXƒiƒbƒvƒVƒ‡ƒbƒg‚ğbmpCanvas‚É•`‰æ
+						// surfaceã®ã‚¹ãƒŠãƒƒãƒ—ã‚·ãƒ§ãƒƒãƒˆã‚’bmpCanvasã«æç”»
 						using (var image = surface.Snapshot())
 						{
 							bmpCanvas.DrawImage(image, ix * width, iy * height);
@@ -66,7 +65,7 @@ using (var typeface = SKTypeface.FromFile(fontPath))
 									ushort rowByte = 0;
 									for (int x = 0; x < width; x++)
 									{
-										// ‹P“x‚ªˆê’èˆÈã‚ÌƒsƒNƒZƒ‹‚ğu1v‚Æ‚·‚é
+										// è¼åº¦ãŒä¸€å®šä»¥ä¸Šã®ãƒ”ã‚¯ã‚»ãƒ«ã‚’ã€Œ1ã€ã¨ã™ã‚‹
 										SKColor pixel = pixmap.GetPixelColor(x, y);
 										if (pixel.Red > 128)
 										{
@@ -99,7 +98,7 @@ using (var typeface = SKTypeface.FromFile(fontPath))
 		}
 		
 
-		// ‘S•¶š‚ğ‚Ü‚Æ‚ß‚½‰æ‘œ‚ğ•Û‘¶
+		// å…¨æ–‡å­—ã‚’ã¾ã¨ã‚ãŸç”»åƒã‚’ä¿å­˜
 		using (var stream = File.OpenWrite($"{arrayName}.png"))
 		{
 			bmp.Encode(stream, SKEncodedImageFormat.Png, 100);

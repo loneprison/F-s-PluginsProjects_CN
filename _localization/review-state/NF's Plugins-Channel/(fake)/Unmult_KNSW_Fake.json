@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "zh": {
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:2c830bbf7923fdf39546542b347b60bd9681222ec6cc04f650528adefe4407d4",
+          "translation": "sha256-v1:269682de75ddc78f608a1d92cdb1be002b299318771785feec67d5237a6b6ce1"
+        }
+      }
+    },
+    "en": {
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:2c830bbf7923fdf39546542b347b60bd9681222ec6cc04f650528adefe4407d4",
+          "translation": "sha256-v1:a1c246e6d82e8615a60001ed6744eb5051edde2b83928ff6323068ac73ab0a6e"
+        }
+      }
+    }
+  }
+}

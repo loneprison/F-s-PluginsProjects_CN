@@ -1,17 +1,17 @@
-#include "CellLineEraser.h"
+ï»¿#include "CellLineEraser.h"
 
-// ‹P“x’è”
+// è¼åº¦å®šæ•°
 #define LUME_R 30
 #define LUME_G 59
 #define LUME_B 11
 
-/* ”»’è—pƒ}ƒNƒi–½–¼‹K‘¥‚ğŒµçj */
+/* åˆ¤å®šç”¨ãƒã‚¯ãƒ­ï¼ˆå‘½åè¦å‰‡ã‚’å³å®ˆï¼‰ */
 #define IS_MARKER(P)      ((P)->red == 0 && (P)->green == 0 && (P)->blue == 0)
 #define IS_TRANSPARENT(P) ((P)->alpha == 0)
 
 
-/* ƒeƒ“ƒvƒŒ[ƒg”Å”’”»’è */
-/* ƒeƒ“ƒvƒŒ[ƒg”Å”’”»’èiƒ\[ƒXƒR[ƒh“à‚Å‚Ìg—p—pj */
+/* ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆç‰ˆç™½åˆ¤å®š */
+/* ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆç‰ˆç™½åˆ¤å®šï¼ˆã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰å†…ã§ã®ä½¿ç”¨ç”¨ï¼‰ */
 template <typename T>
 inline bool IS_WHITE(const T* p) {
 	if constexpr (std::is_same_v<T, PF_Pixel8>)
@@ -21,7 +21,7 @@ inline bool IS_WHITE(const T* p) {
 	else
 		return (p->red >= 1.0f && p->green >= 1.0f && p->blue >= 1.0f);
 }
-/* 16/32bit‚ÌF‚ğ”äŠr‚Ì‚İ8bit‚ÖŒ¸F‚µ‚Ä”»’è‚·‚é */
+/* 16/32bitã®è‰²ã‚’æ¯”è¼ƒæ™‚ã®ã¿8bitã¸æ¸›è‰²ã—ã¦åˆ¤å®šã™ã‚‹ */
 template <typename T>
 static bool IsTargetColor(const T* p, const FillInfo* info) {
 	if (p->alpha == 0) return false;
@@ -48,7 +48,7 @@ static bool IsTargetColor(const T* p, const FillInfo* info) {
 	return false;
 }
 
-/* ƒpƒX1Fƒ^[ƒQƒbƒg‚ğƒ}[ƒJ[(0,0,0)‚É“ˆê */
+/* ãƒ‘ã‚¹1ï¼šã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ãƒãƒ¼ã‚«ãƒ¼(0,0,0)ã«çµ±ä¸€ */
 template <typename T>
 static PF_Err UnifyToMarkerIterate(void* refcon, A_long x, A_long y, T* in, T* out) {
 	FillInfo* info = reinterpret_cast<FillInfo*>(refcon);
@@ -63,7 +63,7 @@ static PF_Err UnifyToMarkerIterate(void* refcon, A_long x, A_long y, T* in, T* o
 			out->alpha = 0;
 		}
 		else if (IS_MARKER(in)) {
-			// ƒ}[ƒJ[(0,0,0)‚Æ‚ÌÕ“Ë‚ğ‰ñ”ğ‚·‚é‚½‚ß‚É‹É¬’l‚ğ‘ã“ü
+			// ãƒãƒ¼ã‚«ãƒ¼(0,0,0)ã¨ã®è¡çªã‚’å›é¿ã™ã‚‹ãŸã‚ã«æ¥µå°å€¤ã‚’ä»£å…¥
 			if constexpr (std::is_same_v<T, PF_Pixel8>) { out->red = out->green = out->blue = 1; }
 			else if constexpr (std::is_same_v<T, PF_Pixel16>) { out->red = out->green = out->blue = 128; }
 			else { out->red = out->green = out->blue = 0.004f; }
@@ -74,7 +74,7 @@ static PF_Err UnifyToMarkerIterate(void* refcon, A_long x, A_long y, T* in, T* o
 	return PF_Err_NONE;
 }
 
-/* ƒpƒX2FˆÃ‚¢F‚ÅZH */
+/* ãƒ‘ã‚¹2ï¼šæš—ã„è‰²ã§æµ¸é£Ÿ */
 template <typename T>
 static PF_Err DarkestFillIterate(void* refcon, A_long x, A_long y, T* in, T* out) {
 	FillInfo* info = reinterpret_cast<FillInfo*>(refcon);
@@ -101,7 +101,7 @@ static PF_Err DarkestFillIterate(void* refcon, A_long x, A_long y, T* in, T* out
 	return PF_Err_NONE;
 }
 
-/* ÅIƒpƒXF“h‚èc‚µˆ— */
+/* æœ€çµ‚ãƒ‘ã‚¹ï¼šå¡—ã‚Šæ®‹ã—å‡¦ç† */
 template <typename T>
 static PF_Err FinalFillIterate(void* refcon, A_long x, A_long y, T* in, T* out) {
 	FillInfo* info = reinterpret_cast<FillInfo*>(refcon);
@@ -123,7 +123,7 @@ static PF_Err FinalFillIterate(void* refcon, A_long x, A_long y, T* in, T* out) 
 	return PF_Err_NONE;
 }
 
-/* ÀsƒGƒ“ƒWƒ“ */
+/* å®Ÿè¡Œã‚¨ãƒ³ã‚¸ãƒ³ */
 template <typename T>
 static PF_Err ExecuteProcess(CFsAE* ae, FillInfo* infoP) {
 	PF_Err err = PF_Err_NONE;
@@ -136,14 +136,14 @@ static PF_Err ExecuteProcess(CFsAE* ae, FillInfo* infoP) {
 	ERR(ae->NewWorld(ae->out->width(), ae->out->height(), ae->pixelFormat(), &temp));
 	if (err) return err;
 
-	// STEP 1: ƒ}[ƒJ[‰»
+	// STEP 1: ãƒãƒ¼ã‚«ãƒ¼åŒ–
 	if constexpr (std::is_same_v<T, PF_Pixel8>) err = ae->iterate8(infoP, UnifyToMarkerIterate<T>);
 	else if constexpr (std::is_same_v<T, PF_Pixel16>) err = ae->iterate16(infoP, UnifyToMarkerIterate<T>);
 	else err = ae->iterate32(infoP, UnifyToMarkerIterate<T>);
 
 	PF_COPY(ae->output, &temp, NULL, NULL);
 
-	// STEP 2: ”½•œ“h‚è‚Â‚Ô‚µ
+	// STEP 2: åå¾©å¡—ã‚Šã¤ã¶ã—
 	PF_EffectWorld* srcP = &temp;
 	PF_EffectWorld* dstP = ae->output;
 	for (int i = 0; i < 100; i++) {
@@ -163,7 +163,7 @@ static PF_Err ExecuteProcess(CFsAE* ae, FillInfo* infoP) {
 	}
 	if (srcP != ae->output) PF_COPY(srcP, ae->output, NULL, NULL);
 
-	// STEP 3: ÅIƒpƒX
+	// STEP 3: æœ€çµ‚ãƒ‘ã‚¹
 	if constexpr (std::is_same_v<T, PF_Pixel8>) ae->iterate8(infoP, FinalFillIterate<T>);
 	else if constexpr (std::is_same_v<T, PF_Pixel16>) ae->iterate16(infoP, FinalFillIterate<T>);
 	else ae->iterate32(infoP, FinalFillIterate<T>);

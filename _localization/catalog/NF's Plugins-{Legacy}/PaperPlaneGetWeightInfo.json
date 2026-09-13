@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_DRAW_GRAPH": {"useSource": true},
+        "L10N_PARAM_GLUE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Calculates and displays a paper airplane's weight and center of gravity."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_DRAW_GRAPH": "绘制分布图",
+        "L10N_PARAM_GLUE": "胶水重量补偿"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "计算并显示纸飞机的重量和重心。"
+      }
+    }
+  }
+}

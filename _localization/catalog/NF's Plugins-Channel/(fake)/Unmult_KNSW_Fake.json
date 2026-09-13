@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "About": {
+        "L10N_PLUGIN_DESC": "伪 KNSW 反预乘"
+      }
+    }
+  }
+}

@@ -32,7 +32,7 @@ enum {
 
 
 //UIの表示文字列
-#define	STR_MAX				"max"
+#define	L10N_PARAM_MAX				"max"
 
 
 typedef struct ParamInfo {

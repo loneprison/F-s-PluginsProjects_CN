@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "HLS_Reverse.h"
+#include "HLS_ReverseText.generated.h"
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 static PF_Err 
@@ -16,7 +17,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const HLS_ReverseText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -82,11 +90,12 @@ ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const HLS_ReverseText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_HUE,
-					STR_REV,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_HUE),
+					AETEXT_LABEL(strings, L10N_PARAM_REVERSE),
 					FALSE,
 					0,
 					ID_HUE
@@ -94,8 +103,8 @@ ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_LUM,
-					STR_REV,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_LIGHTNESS),
+					AETEXT_LABEL(strings, L10N_PARAM_REVERSE),
 					TRUE,
 					0,
 					ID_LUM
@@ -104,8 +113,8 @@ ParamsSetup (
 	//----------------------------------------------------------------
 	//チェックボックス
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_SAT,
-					STR_REV,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_SATURATION),
+					AETEXT_LABEL(strings, L10N_PARAM_REVERSE),
 					FALSE,
 					0,
 					ID_SAT
@@ -114,7 +123,7 @@ ParamsSetup (
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_ORG_BLEND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_BLEND_ORIGINAL),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					100,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -489,9 +498,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				HLS_ReverseText::OpenSettings(in_data, L"F's HLS_Reverse");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

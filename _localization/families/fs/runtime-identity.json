@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "suite": {
+    "name": "F's Text Suite",
+    "version": 1,
+    "internalVersion": 1
+  },
+  "config": {
+    "directoryName": "F-s-Plugins",
+    "fileName": "language.json",
+    "invalidBackupFileName": "language.invalid.json",
+    "mutexName": "Local\\FsPluginsLanguageConfig"
+  }
+}

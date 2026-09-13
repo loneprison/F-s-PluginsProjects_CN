@@ -9,6 +9,7 @@
 #define FSENRTY_H
 
 #include "Fs_Target.h"
+#include "CellGradText.generated.h"
 
 #include "AEConfig.h"
 #include "entry.h"
@@ -45,7 +46,9 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const CellGradText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -199,9 +202,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
-				break;		
+			case PF_Cmd_DO_DIALOG: {
+
+				CellGradText::OpenSettings(in_data, L"F's CellGrad");
+				break;
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

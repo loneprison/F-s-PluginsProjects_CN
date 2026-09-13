@@ -58,10 +58,10 @@ enum {
 	ID_NUM_PARAMS
 };
 
-#define STR_Y		"量(%)"
-#define STR_STRENGTH	"強さ"
-#define STR_SIZEX		"横サイズ"
-#define STR_SIZEY		"縦サイズ"
+#define L10N_PARAM_AMOUNT		"量(%)"
+#define L10N_PARAM_STRENGTH	"強さ"
+#define L10N_PARAM_SIZE_X		"横サイズ"
+#define L10N_PARAM_SIZE_Y		"縦サイズ"
 
 extern "C" {
 DllExport

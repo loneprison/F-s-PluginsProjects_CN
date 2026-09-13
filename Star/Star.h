@@ -91,37 +91,37 @@ enum {
 	skScreen,
 };
 
-#define	STR_LENGTH_PAR		"Length(%)"
-#define	STR_STRONG_PAR		"Strong(%)"
-#define	STR_ROT				"Rot"
-#define	STR_COLOR_TOPIC		"Color"
-#define	STR_COLOR_KIND		"Kind"
-#define	STR_COLOR_KIND_POP	"A To B|B To A|A Only|B Only|Screen"
+#define	L10N_PARAM_LENGTH		"Length(%)"
+#define	L10N_PARAM_STRONG		"Strong(%)"
+#define	L10N_PARAM_ROT				"Rot"
+#define	L10N_PARAM_COLOR_TOPIC		"Color"
+#define	L10N_PARAM_COLOR_KIND		"Kind"
+#define	L10N_PARAM_COLOR_KIND_ITEMS	"A To B|B To A|A Only|B Only|Screen"
 #define	STR_COLOR_KIND_CNT	5
 #define	STR_COLOR_KIND_DEF	1
-#define	STR_COLOR_A			"Color A"
-#define	STR_COLOR_B			"Color B"
-#define	STR_COLOR_BORDER	"Color Border(%)"
+#define	L10N_PARAM_COLOR_A			"Color A"
+#define	L10N_PARAM_COLOR_B			"Color B"
+#define	L10N_PARAM_COLOR_BORDER	"Color Border(%)"
 
-#define	STR_LINE1_TOPIC		"Line1"
-#define	STR_LINE1_LENGTH	"Line1 Length"
-#define	STR_LINE1_STRONG	"Line1 Strong"
-#define	STR_LINE1_ANGLE		"Line1 Rot"
+#define	L10N_PARAM_LINE1_TOPIC		"Line1"
+#define	L10N_PARAM_LINE1_LENGTH	"Line1 Length"
+#define	L10N_PARAM_LINE1_STRONG	"Line1 Strong"
+#define	L10N_PARAM_LINE1_ROT		"Line1 Rot"
 
-#define	STR_LINE2_TOPIC		"Line2"
-#define	STR_LINE2_LENGTH	"Line2 Length"
-#define	STR_LINE2_STRONG	"Line2 Strong"
-#define	STR_LINE2_ANGLE		"Line2 Rot"
+#define	L10N_PARAM_LINE2_TOPIC		"Line2"
+#define	L10N_PARAM_LINE2_LENGTH	"Line2 Length"
+#define	L10N_PARAM_LINE2_STRONG	"Line2 Strong"
+#define	L10N_PARAM_LINE2_ROT		"Line2 Rot"
 
-#define	STR_LINE3_TOPIC		"Line3"
-#define	STR_LINE3_LENGTH	"Line3 Length"
-#define	STR_LINE3_STRONG	"Line3 Strong"
-#define	STR_LINE3_ANGLE		"Line3 Rot"
+#define	L10N_PARAM_LINE3_TOPIC		"Line3"
+#define	L10N_PARAM_LINE3_LENGTH	"Line3 Length"
+#define	L10N_PARAM_LINE3_STRONG	"Line3 Strong"
+#define	L10N_PARAM_LINE3_ROT		"Line3 Rot"
 
-#define	STR_LINE4_TOPIC		"Line4"
-#define	STR_LINE4_LENGTH	"Line4 Length"
-#define	STR_LINE4_STRONG	"Line4 Strong"
-#define	STR_LINE4_ANGLE		"Line4 Rot"
+#define	L10N_PARAM_LINE4_TOPIC		"Line4"
+#define	L10N_PARAM_LINE4_LENGTH	"Line4 Length"
+#define	L10N_PARAM_LINE4_STRONG	"Line4 Strong"
+#define	L10N_PARAM_LINE4_ROT		"Line4 Rot"
 
 typedef struct LineInfo{
 	A_long		length;

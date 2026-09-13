@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_RANDOM_SEED": {"useSource": true},
+        "L10N_PARAM_VALUE": {"useSource": true},
+        "L10N_PARAM_MODE": {"useSource": true},
+        "L10N_PARAM_TARGET_COLOR": {"useSource": true},
+        "L10N_PARAM_COLOR_RANGE": {"useSource": true},
+        "L10N_PARAM_DELTA_RANGE": {"useSource": true},
+        "L10N_PARAM_CENTER": {"useSource": true},
+        "L10N_PARAM_INSIDE_LENGTH": {"useSource": true},
+        "L10N_PARAM_INSIDE_LENGTH_RANDOM": {"useSource": true},
+        "L10N_PARAM_OUTSIDE_LENGTH": {"useSource": true},
+        "L10N_PARAM_OUTSIDE_LENGTH_RANDOM": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_OPACITY": {"useSource": true},
+        "L10N_PARAM_OPACITY_RANDOM": {"useSource": true},
+        "L10N_PARAM_POINT_COUNT": {"useSource": true},
+        "L10N_PARAM_POINT_LENGTH": {"useSource": true},
+        "L10N_PARAM_BLOCK_VALUE": {"useSource": true},
+        "L10N_PARAM_BLOCK_SIZE": {"useSource": true},
+        "L10N_PARAM_ORIGINAL_BLEND": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws concentrated touch lines."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_RANDOM_SEED": "随机种子",
+        "L10N_PARAM_VALUE": "数量",
+        "L10N_PARAM_MODE": "生成模式",
+        "L10N_PARAM_TARGET_COLOR": "目标颜色",
+        "L10N_PARAM_COLOR_RANGE": "目标颜色阈值",
+        "L10N_PARAM_DELTA_RANGE": "亮度阈值",
+        "L10N_PARAM_CENTER": "中心点",
+        "L10N_PARAM_INSIDE_LENGTH": "内侧长度",
+        "L10N_PARAM_INSIDE_LENGTH_RANDOM": "内侧长度随机",
+        "L10N_PARAM_OUTSIDE_LENGTH": "外侧长度",
+        "L10N_PARAM_OUTSIDE_LENGTH_RANDOM": "外侧长度随机",
+        "L10N_PARAM_COLOR": "线条颜色",
+        "L10N_PARAM_OPACITY": "不透明度",
+        "L10N_PARAM_OPACITY_RANDOM": "不透明度随机",
+        "L10N_PARAM_POINT_COUNT": "点数量",
+        "L10N_PARAM_POINT_LENGTH": "点间距",
+        "L10N_PARAM_BLOCK_VALUE": "块数量",
+        "L10N_PARAM_BLOCK_SIZE": "块尺寸",
+        "L10N_PARAM_ORIGINAL_BLEND": "与原始图像混合"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "目标颜色|亮度|Alpha"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET": "设置"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "绘制集中线"
+      }
+    }
+  }
+}

@@ -1,15 +1,16 @@
-//-----------------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------------
 /*
 	F's Plugins for VS2010/VS2012
 */
 //-----------------------------------------------------------------------------------
 
 #include "Max.h"
+#include "MaxText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
-//AfterEffexts�Ƀp�����[�^��ʒB����
-//Param_Utils.h���Q�Ƃ̂���
+//AfterEffextsにパラメータを通達する
+//Param_Utils.hを参照のこと
 static PF_Err ParamsSetup (
 	PF_InData		*in_data,
 	PF_OutData		*out_data,
@@ -18,41 +19,42 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MaxText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
-	//�����̃X���C�_�[�o�[
+	//整数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_MAX,	//�p�����[�^�̖��O
-					-512, 				//���l���͂���ꍇ�̍ŏ��l
-					512,			//���l���͂���ꍇ�̍ő�l
-					-50,				//�X���C�_�[�̍ŏ��l 
-					50,			//�X���C�_�[�̍ő�l
-					0,				//�f�t�H���g�̒l
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_VALUE),	//パラメータの名前
+					-512, 				//数値入力する場合の最小値
+					512,			//数値入力する場合の最大値
+					-50,				//スライダーの最小値 
+					50,			//スライダーの最大値
+					0,				//デフォルトの値
 					ID_MAX
 					);
 	
 	//----------------------------------------------------------------
-	//�|�b�v�A�b�v���j���[
+	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_DIR1, 
-						3,	//���j���[�̐�
-						1,	//�f�t�H���g
-						STR_DIR2,
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_SCANLINE),
+						3,	//メニューの数
+						1,	//デフォルト
+						AETEXT_POPUP(strings, L10N_PARAM_SCANLINE_ITEMS),
 						ID_DIR
 						);
 	//----------------------------------------------------------------
-	//�|�b�v�A�b�v���j���[
+	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_CH1, 
-						3,	//���j���[�̐�
-						1,	//�f�t�H���g
-						STR_CH2,
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_CHANNEL),
+						3,	//メニューの数
+						1,	//デフォルト
+						AETEXT_POPUP(strings, L10N_PARAM_CHANNEL_ITEMS),
 						ID_CHANNEL
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_OUT,
-					"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_OUT_ONLY),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_OUT
@@ -184,7 +186,7 @@ Render (
 }
 //-----------------------------------------------------------------------------------
 /*
-	SmartFX�Ή��̏ꍇ�A�܂����̊֐����Ă΂�ăp�����[�^�̊l�����s��
+	SmartFX対応の場合、まずこの関数が呼ばれてパラメータの獲得を行う
 */
 #if defined(SUPPORT_SMARTFX)
 static PF_Err

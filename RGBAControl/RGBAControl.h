@@ -51,10 +51,10 @@ enum {
 	ID_NUM_PARAMS
 };
 
-#define STR_RED		"Red(%)"
-#define STR_GREEN	"Green(%)"
-#define STR_BLUE	"Blue(%)"
-#define STR_ALPHA	"Alpha(%)"
+#define L10N_PARAM_RED		"Red(%)"
+#define L10N_PARAM_GREEN	"Green(%)"
+#define L10N_PARAM_BLUE	"Blue(%)"
+#define L10N_PARAM_ALPHA	"Alpha(%)"
 
 //ＡＥ上のパラメータは -100 ～ 100の値を取るが
 //内部では -1 ～ 1の値とする

@@ -15,12 +15,17 @@
 
 #include "FsUtils.h"
 #include "FsBuffer.h"
+#include "../_localization/AeText.h"
+#if !defined(MAJOR_VERSION) || !defined(MINOR_VERSION) || !defined(BUG_VERSION) || \
+	!defined(STAGE_VERSION) || !defined(BUILD_VERSION) || !defined(FS_VERSION)
 #include "FsVersion.h"
+#endif
 
 #ifndef NO_USE_FSGRAPHICS
 	#include "FsGraphics.h"
 #endif
 
+#include <string>
 #include <vector>
 enum
 {
@@ -119,6 +124,25 @@ typedef struct{
 //******************************************************************************
 class CFsAE{
 private:
+	static std::string EscapeAboutUtf8ScriptString(const char *text)
+	{
+		std::string escaped;
+		escaped.reserve(std::char_traits<char>::length(text));
+		for (const char character : std::string(text)) {
+			switch (character) {
+			case '\\': escaped += "\\\\"; break;
+			case '"': escaped += "\\\""; break;
+			case '\b': escaped += "\\b"; break;
+			case '\f': escaped += "\\f"; break;
+			case '\n': escaped += "\\n"; break;
+			case '\r': escaped += "\\r"; break;
+			case '\t': escaped += "\\t"; break;
+			default: escaped += character; break;
+			}
+		}
+		return escaped;
+	}
+
 protected:
 	PF_PixelFormat		m_format;
 	A_long				m_frame;
@@ -411,7 +435,9 @@ public:
 		PF_InData		*in_dataP,
 		PF_OutData		*out_dataP,
 		PF_ParamDef		*paramsP[],
-		PF_LayerDef		*outputP)
+		PF_LayerDef		*outputP,
+		const char		*script_description,
+		const char		*legacy_description)
 	{
 		(void)paramsP;  // 未使用パラメータの警告を抑制
 		(void)outputP;  // 未使用パラメータの警告を抑制
@@ -427,16 +453,16 @@ public:
 			m_frame	=(in_dataP->current_time/in_dataP->time_step); 
 		}
 		if (ae_plugin_idP!=NULL){
-			
+			const std::string escaped_description = EscapeAboutUtf8ScriptString(script_description);
 			A_char scriptCode[2048] = {'\0'}; 
 			PF_SPRINTF(	scriptCode,FS_ABOUT_DIALOG,
 				FS_NAME, 
 				MAJOR_VERSION, 
 				MINOR_VERSION, 
 				__DATE__,
-				FS_DESCRIPTION);
+				escaped_description.c_str());
 			
-			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, TRUE, NULL, NULL));
+			ERR(suitesP->UtilitySuite5()->AEGP_ExecuteScript(ae_plugin_idP->my_id, scriptCode, FALSE, NULL, NULL));
 
 		}else{
 			PF_SPRINTF(	out_dataP->return_msg, 
@@ -445,11 +471,27 @@ public:
 				MAJOR_VERSION, 
 				MINOR_VERSION, 
 				__DATE__,
-				FS_DESCRIPTION);
+				legacy_description);
 		}
 		m_resultErr = err;
 		m_mode		= FsAE_ABOUT;
 		return err;
+	}
+	PF_Err About
+	(
+		PF_InData		*in_dataP,
+		PF_OutData		*out_dataP,
+		PF_ParamDef		*paramsP[],
+		PF_LayerDef		*outputP,
+		const AeText::AboutText &description)
+	{
+		return About(
+			in_dataP,
+			out_dataP,
+			paramsP,
+			outputP,
+			AeText::detail::AboutTextAccess::ScriptUtf8(description),
+			AeText::detail::AboutTextAccess::Legacy(description));
 	}
 	//*********************************************************************************
 	PF_Err GlobalSetup

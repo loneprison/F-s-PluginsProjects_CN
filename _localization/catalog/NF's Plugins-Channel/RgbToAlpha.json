@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_FILL_COLOR": "Fill Color",
+        "L10N_PARAM_CUSTOM_COLOR": "Custom Color",
+        "L10N_PARAM_REVERSE_ALPHA": "Invert Alpha"
+      },
+      "Label": {
+        "L10N_PARAM_REV": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_FILL_ITEMS": "White|Black|Custom Color"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Writes RGB values to the alpha channel."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_FILL_COLOR": "填充颜色",
+        "L10N_PARAM_CUSTOM_COLOR": "自定义颜色",
+        "L10N_PARAM_REVERSE_ALPHA": "反转Alpha"
+      },
+      "Label": {
+        "L10N_PARAM_REV": "反转"
+      },
+      "Popup": {
+        "L10N_PARAM_FILL_ITEMS": "白色|黑色|自定义"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "将RGB值写入Alpha。"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_WIDTH": {"useSource": true},
+        "L10N_PARAM_FILL_METHOD": {"useSource": true},
+        "L10N_PARAM_CUSTOM_COLOR": {"useSource": true},
+        "L10N_PARAM_WHITE_TRANS": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_FILL_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_WIDTH": "宽度",
+        "L10N_PARAM_FILL_METHOD": "填充方式",
+        "L10N_PARAM_CUSTOM_COLOR": "指定颜色",
+        "L10N_PARAM_WHITE_TRANS": "在白色像素上填充"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_FILL_ITEMS": "指定颜色|相邻颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "对素材边缘扩展填充"
+      }
+    }
+  }
+}

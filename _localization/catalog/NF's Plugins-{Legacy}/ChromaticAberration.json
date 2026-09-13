@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_RED": {"useSource": true},
+        "L10N_PARAM_GREEN": {"useSource": true},
+        "L10N_PARAM_BLUE": {"useSource": true},
+        "L10N_PARAM_CENTER": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_RED": "红色",
+        "L10N_PARAM_GREEN": "绿色",
+        "L10N_PARAM_BLUE": "蓝色",
+        "L10N_PARAM_CENTER": "中心点"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "色差"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_LEVEL": {"useSource": true},
+        "L10N_PARAM_GRAY_ONLY": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies posterization using 8-bit internal processing."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_LEVEL": "级别",
+        "L10N_PARAM_GRAY_ONLY": "仅灰度"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "色调分离，内部全部按8Bit处理"
+      }
+    }
+  }
+}

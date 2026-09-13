@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET_MODE": {"useSource": true},
+        "L10N_PARAM_TARGET_ENABLED": {"useSource": true},
+        "L10N_PARAM_TARGET_FORMAT": {"useSource": true},
+        "L10N_PARAM_GRAD_COLOR": {"useSource": true},
+        "L10N_PARAM_INVERT": {"useSource": true},
+        "L10N_PARAM_CENTER": {"useSource": true},
+        "L10N_PARAM_RADIUS": {"useSource": true},
+        "L10N_PARAM_FEATHER": {"useSource": true},
+        "L10N_PARAM_HYPERBOLIC": {"useSource": true},
+        "L10N_PARAM_ASPECT": {"useSource": true},
+        "L10N_PARAM_ANGLE": {"useSource": true},
+        "L10N_PARAM_COLOR_TABLE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true},
+        "L10N_PARAM_LOAD": {"useSource": true},
+        "L10N_PARAM_SAVE": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_COLORS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET_MODE": "模式",
+        "L10N_PARAM_TARGET_ENABLED": "目标方案",
+        "L10N_PARAM_TARGET_FORMAT": "颜色%d",
+        "L10N_PARAM_GRAD_COLOR": "渐变颜色",
+        "L10N_PARAM_INVERT": "反转",
+        "L10N_PARAM_CENTER": "中心",
+        "L10N_PARAM_RADIUS": "半径",
+        "L10N_PARAM_FEATHER": "羽化",
+        "L10N_PARAM_HYPERBOLIC": "偏差",
+        "L10N_PARAM_ASPECT": "宽高比",
+        "L10N_PARAM_ANGLE": "角度",
+        "L10N_PARAM_COLOR_TABLE": "颜色表"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开",
+        "L10N_PARAM_LOAD": "加载",
+        "L10N_PARAM_SAVE": "保存"
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": "指定目标颜色|仅Alpha|全部"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_COLORS": "目标颜色"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "在指定目标上生成径向渐变色"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_POS": {"useSource": true},
+        "L10N_PARAM_LENGTH": {"useSource": true},
+        "L10N_PARAM_STRONG": {"useSource": true},
+        "L10N_PARAM_USE_COLOR": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_POS": "位置",
+        "L10N_PARAM_LENGTH": "长度",
+        "L10N_PARAM_STRONG": "强度",
+        "L10N_PARAM_USE_COLOR": "填充颜色",
+        "L10N_PARAM_COLOR": "颜色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "伪shine插件"
+      }
+    }
+  }
+}

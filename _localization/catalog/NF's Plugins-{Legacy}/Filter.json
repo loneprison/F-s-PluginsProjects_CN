@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_BASE_ENABLED": {"useSource": true},
+        "L10N_PARAM_BASE_OPACITY": {"useSource": true},
+        "L10N_PARAM_FILTER_OPACITY": {"useSource": true},
+        "L10N_PARAM_ENABLED": {"useSource": true},
+        "L10N_PARAM_EXTRACT": {"useSource": true},
+        "L10N_PARAM_BORDER_HI": {"useSource": true},
+        "L10N_PARAM_SOFTNESS_HI": {"useSource": true},
+        "L10N_PARAM_BORDER_LO": {"useSource": true},
+        "L10N_PARAM_SOFTNESS_LO": {"useSource": true},
+        "L10N_PARAM_BRIGHTNESS": {"useSource": true},
+        "L10N_PARAM_MINMAX": {"useSource": true},
+        "L10N_PARAM_MAX": {"useSource": true},
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_OPACITY": {"useSource": true},
+        "L10N_PARAM_BLEND": {"useSource": true},
+        "L10N_PARAM_NOISE": {"useSource": true},
+        "L10N_PARAM_ALPHA_ON": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_EXTRACT_ITEMS": {"useSource": true},
+        "L10N_PARAM_BLEND_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_BASE_ENABLED": "显示原始图像",
+        "L10N_PARAM_BASE_OPACITY": "原始图像不透明度",
+        "L10N_PARAM_FILTER_OPACITY": "滤镜不透明度",
+        "L10N_PARAM_ENABLED": "激活滤镜_",
+        "L10N_PARAM_EXTRACT": "提取_",
+        "L10N_PARAM_BORDER_HI": "高光阈值_",
+        "L10N_PARAM_SOFTNESS_HI": "高光柔和度_",
+        "L10N_PARAM_BORDER_LO": "阴影阈值_",
+        "L10N_PARAM_SOFTNESS_LO": "阴影柔和度_",
+        "L10N_PARAM_BRIGHTNESS": "亮度_",
+        "L10N_PARAM_MINMAX": "最小/最大_",
+        "L10N_PARAM_MAX": "扩展_",
+        "L10N_PARAM_BLUR": "模糊_",
+        "L10N_PARAM_OPACITY": "不透明度_",
+        "L10N_PARAM_BLEND": "混合模式_",
+        "L10N_PARAM_NOISE": "杂色",
+        "L10N_PARAM_ALPHA_ON": "关闭Alpha"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_EXTRACT_ITEMS": "无|高光|阴影",
+        "L10N_PARAM_BLEND_ITEMS": "正常|相加|屏幕|变亮|较浅颜色|相乘|变暗|较深颜色|叠加"
+      },
+      "Topic": {
+        "L10N_PARAM_TOPIC": "滤镜_"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "多层滤镜效果"
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "_sample_font.h"
+#include "_sample_fontText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,7 +18,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const _sample_fontText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 
@@ -79,12 +82,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const _sample_fontText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 					0xFF,
 					0xFF,
 					0xFF,
@@ -92,7 +96,7 @@ static PF_Err ParamsSetup (
 					);
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_POS,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POSITION),			/*"New Center"*/
 		50,	// X
 		50,	// Y
 		0,	// Flag
@@ -312,9 +316,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				_sample_fontText::OpenSettings(in_data, L"F's _sample_font");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

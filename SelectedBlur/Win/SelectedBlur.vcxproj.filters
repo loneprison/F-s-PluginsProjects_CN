@@ -5,9 +5,6 @@
       <UniqueIdentifier>{27fecfd0-ae6d-4a74-bb1c-f53fccee8117}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{872b7e45-915a-47e5-be6c-a074f560dd3a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{b2aa43ef-d231-4cd8-8013-a05fae9dd6ae}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
@@ -35,12 +32,6 @@
     <ClInclude Include="..\SelectedBlur.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -54,9 +45,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +83,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -122,20 +107,29 @@
     <ClInclude Include="..\..\FsLibrary\FsGraphics.h">
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2013\F%27s SelectedBlur\Fs_Entry.h">
+    <ClInclude Include="..\Fs_Entry.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="SelectedBlurPiPL.rc">
+    <ResourceCompile Include="$(IntDir)SelectedBlurPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SelectedBlur.cpp" />
-    <ClCompile Include="..\SelectedBlurSub16.cpp" />
-    <ClCompile Include="..\SelectedBlurSub32.cpp" />
-    <ClCompile Include="..\SelectedBlurSub8.cpp" />
+    <ClCompile Include="..\SelectedBlurSub16.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SelectedBlurSub32.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SelectedBlurSub8.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\Util\AEFX_SuiteHelper.c">
       <Filter>Supporting code\AE</Filter>
     </ClCompile>
@@ -151,10 +145,23 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\SelectedBlurPiPL.r">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{5CFEBC2A-5882-436A-A59C-93E14C0CD705}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Cell\SelectedBlur.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ENABLED_BLACK": {"useSource": true},
+        "L10N_PARAM_BORDER_BLACK": {"useSource": true},
+        "L10N_PARAM_DRAW_BLACK": {"useSource": true},
+        "L10N_PARAM_ENABLED_RED": {"useSource": true},
+        "L10N_PARAM_BORDER_RED": {"useSource": true},
+        "L10N_PARAM_DRAW_RED": {"useSource": true},
+        "L10N_PARAM_ENABLED_GREEN": {"useSource": true},
+        "L10N_PARAM_BORDER_GREEN": {"useSource": true},
+        "L10N_PARAM_DRAW_GREEN": {"useSource": true},
+        "L10N_PARAM_ENABLED_BLUE": {"useSource": true},
+        "L10N_PARAM_BORDER_BLUE": {"useSource": true},
+        "L10N_PARAM_DRAW_BLUE": {"useSource": true},
+        "L10N_PARAM_ENABLED_YELLOW": {"useSource": true},
+        "L10N_PARAM_BORDER_YELLOW": {"useSource": true},
+        "L10N_PARAM_DRAW_YELLOW": {"useSource": true},
+        "L10N_PARAM_ENABLED_VIOLET": {"useSource": true},
+        "L10N_PARAM_BORDER_VIOLET": {"useSource": true},
+        "L10N_PARAM_DRAW_VIOLET": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ENABLED_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Binarizes the image."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ENABLED_BLACK": "黑",
+        "L10N_PARAM_BORDER_BLACK": "黑阈值",
+        "L10N_PARAM_DRAW_BLACK": "填充黑",
+        "L10N_PARAM_ENABLED_RED": "红",
+        "L10N_PARAM_BORDER_RED": "红阈值",
+        "L10N_PARAM_DRAW_RED": "填充红",
+        "L10N_PARAM_ENABLED_GREEN": "绿",
+        "L10N_PARAM_BORDER_GREEN": "绿阈值",
+        "L10N_PARAM_DRAW_GREEN": "填充绿",
+        "L10N_PARAM_ENABLED_BLUE": "蓝",
+        "L10N_PARAM_BORDER_BLUE": "蓝阈值",
+        "L10N_PARAM_DRAW_BLUE": "填充蓝",
+        "L10N_PARAM_ENABLED_YELLOW": "黄",
+        "L10N_PARAM_BORDER_YELLOW": "黄阈值",
+        "L10N_PARAM_DRAW_YELLOW": "填充黄",
+        "L10N_PARAM_ENABLED_VIOLET": "紫",
+        "L10N_PARAM_BORDER_VIOLET": "紫阈值",
+        "L10N_PARAM_DRAW_VIOLET": "填充紫"
+      },
+      "Label": {
+        "L10N_PARAM_ENABLED_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "快速二值化临摹 (仿RETAS TraceMan)"
+      }
+    }
+  }
+}

@@ -58,8 +58,18 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_ON				"ON"
-#define	STR_ON2				"on"
+#define	L10N_PARAM_ON				"ON"
+#define	L10N_PARAM_ON_VALUE				"on"
+#define	L10N_PARAM_POS0			"pos0"
+#define	L10N_PARAM_POS1			"pos1"
+#define	L10N_PARAM_POS2			"pos2"
+#define	L10N_PARAM_POS3			"pos3"
+#define	L10N_PARAM_POS4			"pos4"
+#define	L10N_PARAM_POS5			"pos5"
+#define	L10N_PARAM_POS6			"pos6"
+#define	L10N_PARAM_POS7			"pos7"
+#define	L10N_PARAM_POS8			"pos8"
+#define	L10N_PARAM_POS9			"pos9"
 
 
 //UIのパラメータ

@@ -58,9 +58,19 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_ON				"ON"
-#define	STR_ON2				"on"
+#define	L10N_PARAM_ON				"ON"
+#define	L10N_PARAM_ON_VALUE				"on"
 #define	STR_COLOR			"color"
+#define	L10N_PARAM_COLOR0			"color0"
+#define	L10N_PARAM_COLOR1			"color1"
+#define	L10N_PARAM_COLOR2			"color2"
+#define	L10N_PARAM_COLOR3			"color3"
+#define	L10N_PARAM_COLOR4			"color4"
+#define	L10N_PARAM_COLOR5			"color5"
+#define	L10N_PARAM_COLOR6			"color6"
+#define	L10N_PARAM_COLOR7			"color7"
+#define	L10N_PARAM_COLOR8			"color8"
+#define	L10N_PARAM_COLOR9			"color9"
 
 
 //UIのパラメータ

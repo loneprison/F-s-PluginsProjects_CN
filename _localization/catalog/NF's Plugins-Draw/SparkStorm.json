@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_SEED": {"useSource": true},
+        "L10N_PARAM_SEED_POS": {"useSource": true},
+        "L10N_PARAM_SEED_MOVE": {"useSource": true},
+        "L10N_PARAM_OFFSET": {"useSource": true},
+        "L10N_PARAM_SEED_DRAW": {"useSource": true},
+        "L10N_PARAM_WIPE": {"useSource": true},
+        "L10N_PARAM_START0": {"useSource": true},
+        "L10N_PARAM_START1": {"useSource": true},
+        "L10N_PARAM_LAST0": {"useSource": true},
+        "L10N_PARAM_LAST1": {"useSource": true},
+        "L10N_PARAM_DRAW_COUNT": {"useSource": true},
+        "L10N_PARAM_FIRST_RAND_X": {"useSource": true},
+        "L10N_PARAM_FIRST_RAND_Y": {"useSource": true},
+        "L10N_PARAM_LAST_RAND_X": {"useSource": true},
+        "L10N_PARAM_LAST_RAND_Y": {"useSource": true},
+        "L10N_PARAM_LINE_SIZE": {"useSource": true},
+        "L10N_PARAM_LINE_MOVE": {"useSource": true},
+        "L10N_PARAM_SUB_COUNT": {"useSource": true},
+        "L10N_PARAM_FOLD_COUNT": {"useSource": true},
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_BLEND": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Draws anime-style lightning in a storm pattern."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_SEED": "全局随机种子",
+        "L10N_PARAM_SEED_POS": "位置随机种子",
+        "L10N_PARAM_SEED_MOVE": "形态随机种子",
+        "L10N_PARAM_OFFSET": "偏移",
+        "L10N_PARAM_SEED_DRAW": "绘制随机种子",
+        "L10N_PARAM_WIPE": "擦除 (%)",
+        "L10N_PARAM_START0": "起点0",
+        "L10N_PARAM_START1": "起点1",
+        "L10N_PARAM_LAST0": "终点0",
+        "L10N_PARAM_LAST1": "终点1",
+        "L10N_PARAM_DRAW_COUNT": "绘制数量",
+        "L10N_PARAM_FIRST_RAND_X": "起点随机 X",
+        "L10N_PARAM_FIRST_RAND_Y": "起点随机 Y",
+        "L10N_PARAM_LAST_RAND_X": "终点随机 X",
+        "L10N_PARAM_LAST_RAND_Y": "终点随机 Y",
+        "L10N_PARAM_LINE_SIZE": "线条大小",
+        "L10N_PARAM_LINE_MOVE": "湍流强度",
+        "L10N_PARAM_SUB_COUNT": "分叉支数",
+        "L10N_PARAM_FOLD_COUNT": "湍流复杂度",
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_BLEND": "在原始图像上合成"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "绘制动画风格闪电，风暴版"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MODE": {"useSource": true},
+        "L10N_PARAM_MAT_COLOR": "Matte Color"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "Premultiplied to Straight|Straight to Premultiplied"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Switches between straight and premultiplied alpha."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MODE": "模式",
+        "L10N_PARAM_MAT_COLOR": "预乘遮罩颜色"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "直接转预乘|预乘转直接"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "切换素材的Alpha遮罩方式为直接或预乘"
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
 
 
 #include "NoiseHiLo_RGB.h"
+#include "NoiseHiLo_RGBText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const NoiseHiLo_RGBText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HI_POS,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HIGH_POS),	//Name
 						5,						//VALID_MIN
 						30,						//VALID_MAX
 						5,						//SLIDER_MIN
@@ -36,7 +38,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LO_POS,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LOW_POS),	//Name
 						5,						//VALID_MIN
 						30,						//VALID_MAX
 						5,						//SLIDER_MIN
@@ -50,7 +52,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HI_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HIGH_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -64,7 +66,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_MD_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MID_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN
@@ -78,7 +80,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LO_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LOW_LEVEL),	//Name
 						0,						//VALID_MIN
 						100,					//VALID_MAX
 						0,						//SLIDER_MIN

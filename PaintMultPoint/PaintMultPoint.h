@@ -42,21 +42,15 @@
 //#include "FsAE.h"
 
 
-#define	STR_TOPIC			"Point_%d"
-#define	STR_EXECUTED_CB1	"塗りつぶす_%d"
-#define	STR_EXECUTED_CB2	"ON"
-#define	STR_POS				"位置_%d"
-#define	STR_COLOR			"ペイント色_%d"
+#define	L10N_PARAM_TOPIC_FMT			"Point_%d"
+#define	L10N_PARAM_EXECUTE_FMT	"塗りつぶす_%d"
+#define	L10N_PARAM_ON	"ON"
+#define	L10N_PARAM_POS_FMT				"位置_%d"
+#define	L10N_PARAM_COLOR_FMT			"ペイント色_%d"
 
-#ifdef AE_OS_WIN
-#define	STR_GUIDE_CB1		"ガイド表示_%d"
-#define	STR_GUIDE_ALL_CB2	"非表示"
-#define STR_GUIDE_ALL_CB1 "ガイドをすべて非表示にする"
-#else
-#define	STR_GUIDE_CB1		"ガイド表\示_%d"
-#define	STR_GUIDE_ALL_CB2	"非表\示"
-#define STR_GUIDE_ALL_CB1 "ガイドをすべて非表\示にする"
-#endif
+#define	L10N_PARAM_GUIDE_FMT		"ガイド表示_%d"
+#define	L10N_PARAM_GUIDE_ALL_OFF	"非表示"
+#define L10N_PARAM_GUIDE_ALL "ガイドをすべて非表示にする"
 
 
 typedef struct{

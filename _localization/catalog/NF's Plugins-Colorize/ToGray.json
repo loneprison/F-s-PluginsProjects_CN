@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_MODE": {"useSource": true},
+        "L10N_PARAM_BLEND_ORIGINAL": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Converts to grayscale using various methods."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_MODE": "模式",
+        "L10N_PARAM_BLEND_ORIGINAL": "与原始图像混合"
+      },
+      "Popup": {
+        "L10N_PARAM_MODE_ITEMS": "(Y)uv|h(L)s|(R+G+B)/3|(R)gb|r(G)b|rg(B)|RGB最大|(L)ab"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "多种不同方法的灰度化"
+      }
+    }
+  }
+}

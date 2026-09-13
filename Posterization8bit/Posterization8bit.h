@@ -49,8 +49,9 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_LEVEL			"level"
-#define	STR_G				"grayOnly"
+#define	L10N_PARAM_LEVEL			"level"
+#define	L10N_PARAM_GRAY_ONLY				"grayOnly"
+#define	L10N_PARAM_ON				"on"
 
 //UIのパラメータ
 typedef struct ParamInfo {

@@ -6,6 +6,7 @@
 
 
 #include "TargetGradRadical.h"
+#include "TargetGradRadicalText.generated.h"
 #include <string>
 
 static json PixelToJson(PF_Pixel8 p)
@@ -201,6 +202,7 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const TargetGradRadicalText::Strings strings(in_data);
 
 	PixelTable table =loadPref();
 	A_u_char defP[8][3] = {
@@ -230,34 +232,39 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_TARGET,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_TARGET_MODE),
 		STR_TARGET_COUNT,	//メニューの数
 		table.targetColorMode,	//デフォルト
-		STR_TARGET_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_TARGET_ITEMS),
 		ID_TARGET
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_TOPIC_COLOR, ID_TOPIC_COLOR);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET_COLORS), ID_TOPIC_COLOR);
 	//----------------------------------------------------------------
 
 	std::string str;
+	char indexed_target[255] = { '\0' };
 	for (A_long i = 0; i < COLOR_TABLE_COUNT; i++) {
 		AEFX_CLR_STRUCT(def);
 		//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-		str = STR_TARGET_CB + std::to_string(i + 1);
+		str = std::string(AETEXT_PARAM(strings, L10N_PARAM_TARGET_ENABLED)) + std::to_string(i + 1);
 		PF_ADD_CHECKBOX(str.c_str(),
-			STR_TARGET_CB2,
+			AETEXT_LABEL(strings, L10N_PARAM_ON),
 			(PF_Boolean)table.targetEnabled[i],
 			0,
 			ID_COLOR_ENABLED(i)
 		);
 		AEFX_CLR_STRUCT(def);
 		//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-		str = STR_TARGET + std::to_string(i + 1);
+#ifdef AE_OS_WIN
+		sprintf_s(indexed_target, AETEXT_PARAM(strings, L10N_PARAM_TARGET_FORMAT), i + 1);
+#else
+		sprintf(indexed_target, AETEXT_PARAM(strings, L10N_PARAM_TARGET_FORMAT), i + 1);
+#endif
 		PF_ADD_COLOR(
-			str.c_str(),
+			indexed_target,
 			table.target[i].red,
 			table.target[i].green,
 			table.target[i].blue,
@@ -272,7 +279,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_COLOR(
-		STR_GRADCOLOR,
+		AETEXT_PARAM(strings, L10N_PARAM_GRAD_COLOR),
 		table.gradColor.red,
 		table.gradColor.green,
 		table.gradColor.blue,
@@ -281,15 +288,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_CHECKBOX(STR_INVERT,
-		STR_INVERT2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_INVERT),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		table.invert,
 		0,
 		ID_INVERT
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_CENTER,
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_CENTER),
 		50,	// X
 		50,	// Y
 		0,	// Flag
@@ -297,7 +304,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_BLUR,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_RADIUS),	//Name
 		0,						//VALID_MIN
 		4000,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -312,7 +319,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FEATHER,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_FEATHER),	//Name
 		0.02f,						//VALID_MIN
 		100,					//VALID_MAX
 		0.02f,						//SLIDER_MIN
@@ -327,7 +334,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HYPERBOLIC,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HYPERBOLIC),	//Name
 		0,						//VALID_MIN
 		50,					//VALID_MAX
 		0,					//SLIDER_MIN
@@ -341,7 +348,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_ASPECT,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_ASPECT),	//Name
 		0,						//VALID_MIN
 		2000,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -355,20 +362,20 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ANGLE, 0, ID_ANGLE);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ANGLE), 0, ID_ANGLE);
 
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_BUTTON(STR_LAOD_CAP,
-		STR_LOAD_BTN,
+	PF_ADD_BUTTON(AETEXT_PARAM(strings, L10N_PARAM_COLOR_TABLE),
+		AETEXT_LABEL(strings, L10N_PARAM_LOAD),
 		0,
 		PF_ParamFlag_SUPERVISE,
 		ID_LOAD_BTN);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_BUTTON("",
-		STR_SAVE_BTN,
+		AETEXT_LABEL(strings, L10N_PARAM_SAVE),
 		0,
 		PF_ParamFlag_SUPERVISE,
 		ID_SAVE_BTN);

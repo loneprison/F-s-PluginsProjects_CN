@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "locales": {
+    "zh": {
+      "L10N_PARAM_ALPHA_LEVEL": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:2bb6962beadef4f43e98af76329bb04e4f68fb260a75e88dcd302def3f780408",
+          "translation": "sha256-v1:9ea200cae996bcb2075875d04c4c970494898827aa550849a42d6171cc2a3278"
+        }
+      },
+      "L10N_PARAM_MATCH_LEVEL": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:d7a4a84472938fc0c69e81179f276fc3b160507e15a212e2c12f5e2564915618",
+          "translation": "sha256-v1:da9d1036dcb9ba8debca5cace80fdfa6639c0c7e17781343ef14614f401acbad"
+        }
+      },
+      "L10N_PARAM_LIGHT_LEVEL": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9c20b9a372f75b850c404b6f7f8a976b28d1236994819dfc84619fade1fc2150",
+          "translation": "sha256-v1:79213fff6d4ebf1b45d9d7a65302772e7fed6a6459c6056bb060caede4468d3c"
+        }
+      },
+      "L10N_PARAM_MAIN_ON1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:177361b9263db426276d90d4afc3e1937ddda6c2f71d1876818854b8b8e5a443",
+          "translation": "sha256-v1:af5511b89c5bb16d24259f0cd94f8e3e7d78d88132a09e7fe997d38ab560aa10"
+        }
+      },
+      "L10N_PARAM_MAIN_COLOR1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:0d65c79d19dc550735e7436cbe02c11bbc9b4b1d19215e92ac91be61f811de91",
+          "translation": "sha256-v1:29df6c885c95e3bfa32afb99de451f745c5affb91f9d3991bc7d83d8a080e058"
+        }
+      },
+      "L10N_PARAM_MAIN_HS1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:91eeb6bdd78e8c45ab35db4299ba9f02b11eb900dc58c9d1ad7bdbd7ad8999a7",
+          "translation": "sha256-v1:31f85a01afe6f8b072f25d7267965420e08848a01f89893ac0adcae509d71ea4"
+        }
+      },
+      "L10N_PARAM_MAIN_LEVEL1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:dc03a8d394edd6ca9e959cda9be5cf4bd61adb8ad459f008d246f4bb46a73198",
+          "translation": "sha256-v1:cb359e6eb05f1c0f9387837cd147716dc5bc80ad49411d0bbf18b552ee75b35c"
+        }
+      },
+      "L10N_PARAM_MAIN_ON2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:fc61bf99bfe341d421c8457ab8c282a817b10df687bf098299b4fdd4dbbfa45c",
+          "translation": "sha256-v1:a3d93c04d44e79a4f0dd119b0a35dad355d8a2b615c3fbca840b3f2746faccac"
+        }
+      },
+      "L10N_PARAM_MAIN_COLOR2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:5ad8046515f86129a7a01b151e6cf9e08b2fa90e2eee50bfbb10cbb2c763bbb3",
+          "translation": "sha256-v1:5619ebe7ece0e21befe3acf26bd412a5cde0ebe416d7e1487815d0ca5b24e1f6"
+        }
+      },
+      "L10N_PARAM_MAIN_HS2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:808c1f6eacb90fb7e5a1f0a3cace1d6e9017dc27b73093d6d80914b79d40c627",
+          "translation": "sha256-v1:dec8ce74553e505c2af3097d826658e50b9a40e72a6d98ad0793e9a4bbbd7412"
+        }
+      },
+      "L10N_PARAM_MAIN_LEVEL2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:641b57148e99619a786c7141a1861858ca80aa8afe0ada49b922c02042f9892d",
+          "translation": "sha256-v1:9f99cf89f7d85dd037f26400e0cbc936563e2d0bd784c3eb3d056443876060a3"
+        }
+      },
+      "L10N_PARAM_MAIN_ON3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:438638bfc3834b79f68c83962a0e4419d3da32c47d3b83a3aae2094960fe9109",
+          "translation": "sha256-v1:0a6f82cc1c97cf104f967f23d829e58b04d708393faafaa3fb3af8fa14fd9dac"
+        }
+      },
+      "L10N_PARAM_MAIN_COLOR3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:fa5e3163725ecfc47ffa1389138f5dad36dd772c5f9b317f17dd5461ef19acb5",
+          "translation": "sha256-v1:31e00efd80fc3a242c703db8018270a1e0f84efdaf296d336626c4f349367d9e"
+        }
+      },
+      "L10N_PARAM_MAIN_HS3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:94e834494d063e08457b5bee16134032e569f88785ddd0909df90b13c9c6974b",
+          "translation": "sha256-v1:462e3d0c6adcff84a96d0dc45187bfb367e5733cae1472634b0cac9191176449"
+        }
+      },
+      "L10N_PARAM_MAIN_LEVEL3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:f7a055117ee9ffc96fd0cf81dc3b82f5c7b24368fa3315100f2bde1d5c79ea86",
+          "translation": "sha256-v1:83ea6f8c964aa226b257747ba25e33ca06b8ab80b6c9e44ff66f91143072ade2"
+        }
+      },
+      "L10N_PARAM_SUB_COUNT": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:6bfb345375cc889b2af15c5fbac8276a46d4ded4c659bac56ec9a8cec822d442",
+          "translation": "sha256-v1:5d91699155e5386c54d8d06bc334e1f02707ea9bc01729dba1b889a77f912d83"
+        }
+      },
+      "L10N_PARAM_USER_COLOR_FORMAT": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9ba8505a306e6e434dc46a4273a8ae051f5c9b8869aec8fe5d713f9833d21f9d",
+          "translation": "sha256-v1:d0f8c986aa7d36db3fa8e533509b0fe5408d59fb86709c2105df89f913f30e4e"
+        }
+      },
+      "L10N_PARAM_ON": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:81ee649cc3f5a59a5157d1d291a2f561ba50bc1cb1da02a2a3d27ad7001ba063",
+          "translation": "sha256-v1:21e05349d7ed8a3ad01d14600aa312b6eec71ef2fb59d4f070b58d4bef4f752a"
+        }
+      },
+      "L10N_PARAM_TOPIC_MAIN": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9e973e14d50e3cca34c546640c76e55de19c094b17c7aaee5ef9cd3c759dd76d",
+          "translation": "sha256-v1:d0b1e842cef8e6097e9b6522098eec35403c9080af2c1cae408eb1c2a08c8697"
+        }
+      },
+      "L10N_PARAM_TOPIC_SUB": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:7826f46eff9529eeb243a98d0c1f3b00f140f3f5bfe6fd173279a95d5441fde9",
+          "translation": "sha256-v1:98fb24b8922d5f1e5242d98a694713f81e8e29bd70401f729356b6abd7a44f9c"
+        }
+      },
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:33ddee1cebc76735077ae40baae012a8e81a2af4124d709cb2c039f533a616b1",
+          "translation": "sha256-v1:2a5f7619e89c5ff031776a433115d46cb70b80ab7d4d42447c5b8ef4a2e71717"
+        }
+      }
+    },
+    "en": {
+      "L10N_PARAM_ALPHA_LEVEL": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:2bb6962beadef4f43e98af76329bb04e4f68fb260a75e88dcd302def3f780408",
+          "translation": "sha256-v1:f40ceb4516e70b8e9814b624e14ab371420485c778072cfca8d7d9131a74b582"
+        }
+      },
+      "L10N_PARAM_MATCH_LEVEL": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:d7a4a84472938fc0c69e81179f276fc3b160507e15a212e2c12f5e2564915618",
+          "translation": "sha256-v1:935716be36b0023291afdcc4ad18b14ff94b45fced569b1d4cc88a195bc3e55e"
+        }
+      },
+      "L10N_PARAM_LIGHT_LEVEL": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9c20b9a372f75b850c404b6f7f8a976b28d1236994819dfc84619fade1fc2150",
+          "translation": "sha256-v1:0d4c78e879494230a44d66291e17dab5d2490ad8d329654e4c212e14cbda07c8"
+        }
+      },
+      "L10N_PARAM_MAIN_ON1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:177361b9263db426276d90d4afc3e1937ddda6c2f71d1876818854b8b8e5a443",
+          "translation": "sha256-v1:6f73aa9798ba6013d2fc3ce599bd738fb779d17836c099eb8a475ffc4257f2a7"
+        }
+      },
+      "L10N_PARAM_MAIN_COLOR1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:0d65c79d19dc550735e7436cbe02c11bbc9b4b1d19215e92ac91be61f811de91",
+          "translation": "sha256-v1:64a5b17ef07e7edf0059e7f5ed78e083de3e7efeb08467c4c83585a0aadf728c"
+        }
+      },
+      "L10N_PARAM_MAIN_HS1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:91eeb6bdd78e8c45ab35db4299ba9f02b11eb900dc58c9d1ad7bdbd7ad8999a7",
+          "translation": "sha256-v1:b62628246cb612d64ccadc46b6b0ba6541a8312e6312a0095ecd3cac196a91a8"
+        }
+      },
+      "L10N_PARAM_MAIN_LEVEL1": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:dc03a8d394edd6ca9e959cda9be5cf4bd61adb8ad459f008d246f4bb46a73198",
+          "translation": "sha256-v1:15249ba808fe22c6cf63c370cfd6851bdbd73b9ea51ac0a273e0dd45b22a1e2e"
+        }
+      },
+      "L10N_PARAM_MAIN_ON2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:fc61bf99bfe341d421c8457ab8c282a817b10df687bf098299b4fdd4dbbfa45c",
+          "translation": "sha256-v1:3237c9c8b7ccabc4ff95a5b8a3654dab9ccfed4c9761e672094ace4079543e24"
+        }
+      },
+      "L10N_PARAM_MAIN_COLOR2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:5ad8046515f86129a7a01b151e6cf9e08b2fa90e2eee50bfbb10cbb2c763bbb3",
+          "translation": "sha256-v1:8e1963c866dc37f37771a2cb730467e65425ca8ef1d81b092cfc9aefa8527417"
+        }
+      },
+      "L10N_PARAM_MAIN_HS2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:808c1f6eacb90fb7e5a1f0a3cace1d6e9017dc27b73093d6d80914b79d40c627",
+          "translation": "sha256-v1:f6829a48c461cfa5b6f2240643eb822c5443b8d74f62e88fa7bf274194ee8d99"
+        }
+      },
+      "L10N_PARAM_MAIN_LEVEL2": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:641b57148e99619a786c7141a1861858ca80aa8afe0ada49b922c02042f9892d",
+          "translation": "sha256-v1:c545e9f096b3f3bde62da7312e9d57b76869f6a839f7fefce05ee3a528c260b2"
+        }
+      },
+      "L10N_PARAM_MAIN_ON3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:438638bfc3834b79f68c83962a0e4419d3da32c47d3b83a3aae2094960fe9109",
+          "translation": "sha256-v1:e3c6468304276aa85568ee860d7896dc9fc0e76a480dda117b2d456c79639ec9"
+        }
+      },
+      "L10N_PARAM_MAIN_COLOR3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:fa5e3163725ecfc47ffa1389138f5dad36dd772c5f9b317f17dd5461ef19acb5",
+          "translation": "sha256-v1:5da94cd528302d35676d2900324872cb5db2cbdb30cc2a60aede4faddda77947"
+        }
+      },
+      "L10N_PARAM_MAIN_HS3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:94e834494d063e08457b5bee16134032e569f88785ddd0909df90b13c9c6974b",
+          "translation": "sha256-v1:24e9678e358f1596aa5583a03830a5924dbfb94c998a1534d31aee1bf82fc39f"
+        }
+      },
+      "L10N_PARAM_MAIN_LEVEL3": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:f7a055117ee9ffc96fd0cf81dc3b82f5c7b24368fa3315100f2bde1d5c79ea86",
+          "translation": "sha256-v1:86edf09454db692ee98e4f6f5f4e453c2a2553333b330577bad285e9e00c577d"
+        }
+      },
+      "L10N_PARAM_SUB_COUNT": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:6bfb345375cc889b2af15c5fbac8276a46d4ded4c659bac56ec9a8cec822d442",
+          "translation": "sha256-v1:d7359b56f98d21c6a0a31708871dc57b120fd35f83157a756e77299b76c4784b"
+        }
+      },
+      "L10N_PARAM_USER_COLOR_FORMAT": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9ba8505a306e6e434dc46a4273a8ae051f5c9b8869aec8fe5d713f9833d21f9d",
+          "translation": "sha256-v1:5dc3f9ef558d17c06a3ed6df27789d8579f35e954d360cf3bfca61bd2b18eb82"
+        }
+      },
+      "L10N_PARAM_ON": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:81ee649cc3f5a59a5157d1d291a2f561ba50bc1cb1da02a2a3d27ad7001ba063",
+          "translation": "sha256-v1:f7d338dc6c1dfc5454266382be3e54dbabdf63c415cf31ca9a07e475aab106f5"
+        }
+      },
+      "L10N_PARAM_TOPIC_MAIN": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:9e973e14d50e3cca34c546640c76e55de19c094b17c7aaee5ef9cd3c759dd76d",
+          "translation": "sha256-v1:1fe390e940b6f076ae32c141a58d951e40750fe2e7ef6b3d2d41d98f889c0576"
+        }
+      },
+      "L10N_PARAM_TOPIC_SUB": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:7826f46eff9529eeb243a98d0c1f3b00f140f3f5bfe6fd173279a95d5441fde9",
+          "translation": "sha256-v1:51461ec1d67a3dfe99af859abb7f8a751b25e5a161918abe841eb329504626f7"
+        }
+      },
+      "L10N_PLUGIN_DESC": {
+        "stage": "reviewed",
+        "reviewedAgainst": {
+          "source": "sha256-v1:33ddee1cebc76735077ae40baae012a8e81a2af4124d709cb2c039f533a616b1",
+          "translation": "sha256-v1:45a39e835d8ca022e69d901139f85a872325b49bbb93a321cd6523d46af174f4"
+        }
+      }
+    }
+  }
+}

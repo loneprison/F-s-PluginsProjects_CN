@@ -6,6 +6,7 @@
 
 
 #include "InnerFlareRot.h"
+#include "InnerFlareRotText.generated.h"
 #include <string>
 
 
@@ -20,10 +21,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const InnerFlareRotText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xff,
 		0xFF,
 		PF_MAX_CHAN8,
@@ -31,10 +33,10 @@ static PF_Err ParamsSetup (
 	);
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ROT, 0, ID_ROT);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ROT), 0, ID_ROT);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LENGTH,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LENGTH),	//Name
 		-0,							//VALID_MIN
 		1000,						//VALID_MAX
 		0,							//SLIDER_MIN
@@ -47,7 +49,7 @@ static PF_Err ParamsSetup (
 		ID_LENGTH
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_OFFSET,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_OFFSET),	//Name
 		0,						//VALID_MIN
 		10,							//VALID_MAX
 		1,							//SLIDER_MIN
@@ -60,7 +62,7 @@ static PF_Err ParamsSetup (
 		ID_OFFSET
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_BLUR,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BLUR),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		1000,		//数値入力する場合の最大値
 		0,		//スライダーの最小値 
@@ -69,7 +71,7 @@ static PF_Err ParamsSetup (
 		ID_BLUR
 	);
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HYPERBOLIC,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HYPERBOLIC),	//Name
 		-10,				//VALID_MIN
 		50,					//VALID_MAX
 		-2,					//SLIDER_MIN

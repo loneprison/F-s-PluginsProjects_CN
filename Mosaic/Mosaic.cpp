@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "Mosaic.h"
+#include "MosaicText.generated.h"
 
 //-------------------------------------------------------------------------------------------------
 // Aboutダイアログ
@@ -16,7 +17,9 @@ static PF_Err About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const MosaicText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(in_data, out_data, params, output, description);
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -76,11 +79,12 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MosaicText::Strings strings(in_data);
 
 	//----------------------------------------------------
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_SIZE,//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_SIZE),//パラメータの名前
 					1, 				//数値入力する場合の最小値
 					1920,			//数値入力する場合の最大値
 					1,				//スライダーの最小値 
@@ -91,7 +95,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	//----------------------------------------------------
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POINT(STR_POS			/*"New Center"*/, 
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POSITION)			/*"New Center"*/,
 				50,	// X
 				50,	// Y
 				0,	// Flag
@@ -99,7 +103,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 				);
 	//----------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_RAND,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_FLICKER),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					100,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -112,16 +116,16 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_RAND_GRAY,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_FLICKER_GRAY),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_RAND_GRAY
 					);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_FRAME_RAND_ON,
-					STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_FRAME_FLICKER),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					FALSE,
 					0,
 					ID_FRAME_RAND_ON
@@ -367,9 +371,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				MosaicText::OpenSettings(in_data, L"F's Mosaic");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

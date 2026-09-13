@@ -5,9 +5,6 @@
       <UniqueIdentifier>{f874816d-f7a3-41e3-a832-f44a0d324b10}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{3f428961-d7b3-4bb9-8ea5-6c6ef6caf3d2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{7f227d3d-2de0-4103-873d-8a225715b872}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
@@ -27,6 +24,9 @@
     <Filter Include="Supporting code\Fs">
       <UniqueIdentifier>{57ee8d47-0991-4ca6-b3f0-9654ce6ab277}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{ed1502f6-e17a-4d9b-8a48-190b94c7939c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Fs_Target.h">
@@ -34,12 +34,6 @@
     </ClInclude>
     <ClInclude Include="..\sputteringAlpha.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
@@ -54,9 +48,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -95,9 +86,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -122,18 +110,21 @@
     <ClInclude Include="..\..\FsLibrary\FsGraphics.h">
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2013\F%27s sputteringAlpha\Fs_Entry.h">
+    <ClInclude Include="..\Fs_Entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsBuffer.h">
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsSputtering.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Fs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="sputteringAlphaPiPL.rc">
+    <ResourceCompile Include="$(IntDir)sputteringAlphaPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -154,13 +145,27 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
-    <ClCompile Include="..\sputteringAlpha8.cpp" />
-    <ClCompile Include="..\sputteringAlpha16.cpp" />
-    <ClCompile Include="..\sputteringAlpha32.cpp" />
+    <ClCompile Include="..\sputteringAlpha8.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sputteringAlpha16.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sputteringAlpha32.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\sputteringAlphaPiPL.r">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Draw\sputteringAlpha.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

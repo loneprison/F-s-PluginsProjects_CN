@@ -15,7 +15,7 @@
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define FS_DESCRIPTION	"範囲指定"
+#define L10N_PLUGIN_DESC	"範囲指定"
 
 //-----------------------------------------------------------------------------------
 //プラグインが表示されるメニュー名
@@ -25,6 +25,7 @@
 //#define NO_USE_FSGRAPHICS	//これを有効にするとFsGraphics関係がインクルードされない
 
 //-----------------------------------------------------------------------------------
+#define FS_VERSION_PROFILE 310
 #include "../FsLibrary/FsVersion.h"
 
 
@@ -40,7 +41,7 @@ out_data->out_flags
 	PF_OutFlag_I_DO_DIALOG				32
 */
 
-#define FS_OUT_FLAGS	33556032	//通常はこちら
+#define FS_OUT_FLAGS	33556064	//通常はこちら
 //#define FS_OUT_FLAGS	33556036	//こっちを有効にすると毎フレームごとに描画する。NON_PARAM_VARYを動作中に切り替えるときもこちらに
 //#define FS_OUT_FLAGS	1600		//8bitのみ
 

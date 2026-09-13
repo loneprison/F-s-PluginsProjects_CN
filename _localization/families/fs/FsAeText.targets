@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <AeTextCatalogName>$(MSBuildProjectName)</AeTextCatalogName>
+    <AeTextCatalogName Condition="'$(MSBuildProjectName)'=='FsLanguageSettings'">Settings</AeTextCatalogName>
+    <AeTextCatalogKind>Effect</AeTextCatalogKind>
+    <AeTextCatalogKind Condition="'$(MSBuildProjectName)'=='FsLanguageSettings'">Settings</AeTextCatalogKind>
+    <AeTextNamespace>$([System.Text.RegularExpressions.Regex]::Replace('$(MSBuildProjectName)', '[^A-Za-z0-9_]', '_'))Text</AeTextNamespace>
+    <AeTextNamespace Condition="'$(MSBuildProjectName)'=='FsLanguageSettings'">FsLanguageSettingsText</AeTextNamespace>
+    <AeTextCatalogDirectory>$(MSBuildThisFileDirectory)..\..\catalog\$(FsLayoutPrefix)$(FsIsolationSuffix)</AeTextCatalogDirectory>
+    <AeTextCatalogDirectory Condition="'$(MSBuildProjectName)'=='FsLanguageSettings'">$(MSBuildThisFileDirectory)..\..\catalog\</AeTextCatalogDirectory>
+    <AeTextCatalogPath>$(AeTextCatalogDirectory)$(AeTextCatalogName).json</AeTextCatalogPath>
+    <AeTextFamilyDefinitionPath>$(MSBuildThisFileDirectory)generation.json</AeTextFamilyDefinitionPath>
+    <AeTextRuntimeIdentityPath>$(MSBuildThisFileDirectory)runtime-identity.json</AeTextRuntimeIdentityPath>
+    <AeTextDefaultVariantId Condition="'$(AeTextDefaultVariantId)'==''">source</AeTextDefaultVariantId>
+    <AeTextCustomBuild Condition="'$(AeTextCustomBuild)'==''">false</AeTextCustomBuild>
+    <AeTextSingleLanguage Condition="'$(AeTextSingleLanguage)'==''">false</AeTextSingleLanguage>
+    <BuildSteps Condition="'$(MSBuildProjectName)'=='FsLanguageSettings' and '$(AeTextSingleLanguage)'=='true' and '$(AeTextPublicationValidation)'!='true'">SkipFsLanguageSettingsForSingleLanguageBuild</BuildSteps>
+  </PropertyGroup>
+
+  <Target Name="ValidateFsAeTextBuildMode"
+          BeforeTargets="PrepareForBuild"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <Error Condition="'$(AeTextPublicationValidation)'=='true' and '$(AeTextDefaultVariantId)'!='source'"
+           Text="F's publication builds require the source Variant as the compiled fallback." />
+    <Error Condition="'$(AeTextCustomBuild)'!='true' and '$(AeTextDefaultVariantId)'!='source'"
+           Text="A non-source fallback is allowed only when AeTextCustomBuild=true." />
+    <Error Condition="'$(AeTextCustomBuild)'!='true' and '$(AeTextSingleLanguage)'=='true'"
+           Text="Single-language generation is allowed only when AeTextCustomBuild=true." />
+  </Target>
+
+  <Target Name="SkipFsLanguageSettingsForSingleLanguageBuild"
+          DependsOnTargets="ValidateAeTextBuildMode;ValidateFsAeTextBuildMode"
+          Condition="'$(MSBuildProjectName)'=='FsLanguageSettings' and '$(AeTextSingleLanguage)'=='true' and '$(AeTextPublicationValidation)'!='true'">
+    <Message Text="Skipping F's Language Settings for a fixed single-language build."
+             Importance="high" />
+  </Target>
+</Project>

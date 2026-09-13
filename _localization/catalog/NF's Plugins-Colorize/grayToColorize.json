@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ALPHA_THRESHOLD": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_MAT": {"useSource": true},
+        "L10N_PARAM_MAT_COLOR": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Quickly colors footage."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ALPHA_THRESHOLD": "Alpha阈值",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_MAT": "遮罩",
+        "L10N_PARAM_MAT_COLOR": "遮罩颜色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "给素材快速上色"
+      }
+    }
+  }
+}

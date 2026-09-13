@@ -50,14 +50,14 @@ enum {
 	ID_NUM_PARAMS
 	};
 
-#define STR_POP1	"塗りつぶし色"
-#define STR_POP2	"白|黒|指定色"
+#define L10N_PARAM_FILL_COLOR	"塗りつぶし色"
+#define L10N_PARAM_FILL_ITEMS	"白|黒|指定色"
 #define STR_POP		3
 #define STR_POP_DEF	1
 
-#define STR_COLOR	"指定色"
-#define STR_REV1	"Alphaを反転"
-#define STR_REV2	"Rev"
+#define L10N_PARAM_CUSTOM_COLOR	"指定色"
+#define L10N_PARAM_REVERSE_ALPHA	"Alphaを反転"
+#define L10N_PARAM_REV	"Rev"
 
 typedef struct ParamInfo8{
 	PF_Pixel8	col;

@@ -6,6 +6,7 @@
 
 
 #include "Star_Colorful.h"
+#include "Star_ColorfulText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,23 +20,24 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const Star_ColorfulText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_TOPIC0, ID_TOPIC0);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET_TOPIC), ID_TOPIC0);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_TARGET_KIND,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_TARGET),
 		STR_TARGET_COUNT,	//メニューの数
 		STR_TARGET_DFLT,	//デフォルト
-		STR_TARGET_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_TARGET_ITEMS),
 		ID_TAGET_KIND
 	);
 	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_BORDER,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TARGET_BORDER),	//Name
 		50,						//VALID_MIN
 		100,						//VALID_MAX
 		50,						//SLIDER_MIN
@@ -49,7 +51,7 @@ static PF_Err ParamsSetup (
 		);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_SOFT,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TARGET_SOFTNESS),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -64,7 +66,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR),
 		0xFF,
 		0x00,
 		0x00,
@@ -72,8 +74,8 @@ static PF_Err ParamsSetup (
 	);	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_TARGET_MASK,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET_DISP),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_TARGET_MASK
@@ -84,10 +86,10 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_TOPIC0_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_TOPICA, ID_TOPICA);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_CONTROL_TOPIC), ID_TOPICA);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LENGTH,//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LENGTH),//Name
 		0,						//VALID_MIN
 		600,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -101,7 +103,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_OPACITY,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_OPACITY),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -117,18 +119,18 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ROT, 0, ID_ROT);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_ROT), 0, ID_ROT);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_AUTOROLLING,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_AUTO_ROLLING),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_AUTOROLLING
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_ROLLINGSPEED,//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_ROLLING_SPEED),//Name
 		-720,						//VALID_MIN
 		720,						//VALID_MAX
 		-180,						//SLIDER_MIN
@@ -148,20 +150,20 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_TOPIC1, ID_TOPIC1);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_COLOR_TOPIC), ID_TOPIC1);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_COLOR_KIND,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_COLOR_KIND),
 		STR_COLOR_COUNT,	//メニューの数
 		STR_COLOR_DFLT,	//デフォルト
-		STR_COLOR_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_COLOR_ITEMS),
 		ID_COLOR_KIND
 	);
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0xFF,
 		0x00,
@@ -169,7 +171,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_BRIGHT,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_COLOR_BRIGHTNESS),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -184,7 +186,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_RAINBOW_OFFSET,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_RAINBOW_OFFSET),	//Name
 						-30000,						//VALID_MIN
 						+30000,						//VALID_MAX
 						-1,						//SLIDER_MIN
@@ -198,7 +200,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_RAINBOW_DELTA,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_RAINBOW_DELTA),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -215,10 +217,10 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_TOPIC1_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_TOPIC2, ID_TOPIC2);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_STAR_DETAIL), ID_TOPIC2);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_VER_LEN,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_VERTICAL_LENGTH),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -229,10 +231,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_VER_ROT, 0, ID_VER_ROT);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_VERTICAL_ROT), 0, ID_VER_ROT);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_VER_OPACITY,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_VERTICAL_OPACITY),	//Name
 						0,							//VALID_MIN
 						100,						//VALID_MAX
 						0,							//SLIDER_MIN
@@ -246,7 +248,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_HOR_LEN,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HORIZON_LENGTH),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -257,10 +259,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_HOR_ROT, 90, ID_HOR_ROT);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_HORIZON_ROT), 90, ID_HOR_ROT);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_HOR_OPACITY,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HORIZON_OPACITY),	//Name
 		0,							//VALID_MIN
 		100,						//VALID_MAX
 		0,							//SLIDER_MIN
@@ -274,7 +276,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_DIA_LEN,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_DIAGONAL_LENGTH),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -285,14 +287,14 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_DIA_ROT, 45, ID_DIA_ROT);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_DIAGONAL_ROT), 45, ID_DIA_ROT);
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_DIA_ROT2, -45, ID_DIA_ROT2);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_DIAGONAL2_ROT), -45, ID_DIA_ROT2);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_DIA_OPACITY,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_DIAGONAL_OPACITY),	//Name
 		0,							//VALID_MIN
 		100,						//VALID_MAX
 		0,							//SLIDER_MIN
@@ -312,10 +314,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_BLEND,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_BLEND),
 		STR_BLEND_COUNT,	//メニューの数
 		STR_BLEND_DFLT,	//デフォルト
-		STR_BLEND_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_BLEND_ITEMS),
 		ID_BLEND
 	);
 	//----------------------------------------------------------------

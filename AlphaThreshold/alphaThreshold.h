@@ -48,7 +48,7 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_A				"AlphaThreshold"
+#define	L10N_PARAM_ALPHA_THRESHOLD				"AlphaThreshold"
 
 
 //UIのパラメータ

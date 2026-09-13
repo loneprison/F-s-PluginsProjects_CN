@@ -37,16 +37,16 @@ enum {
 
 //UIの表示文字列
 
-#define	STR_START_P		"start_point"
-#define	STR_START_S		"start_side"
-#define	STR_LAST_P		"last_point"
-#define	STR_LAST_S		"last_size"
+#define L10N_PARAM_START_POINT	"start_point"
+#define L10N_PARAM_START_SIZE	"start_side"
+#define L10N_PARAM_LAST_POINT	"last_point"
+#define L10N_PARAM_LAST_SIZE		"last_size"
 
 
 
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+#define L10N_PARAM_COLOR	"color"
+#define L10N_PARAM_BLEND	"blend"
+#define L10N_PARAM_ON		"on"
 
 
 

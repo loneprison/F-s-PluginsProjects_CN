@@ -6,6 +6,7 @@
 
 
 #include "ColorMatKey.h"
+#include "ColorMatKeyText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,12 +20,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ColorMatKeyText::Strings strings(in_data);
 
 	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ALPHA_REV,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_INVERT_ALPHA),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_REV
@@ -32,15 +34,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_TARGET_ENABLED0,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED0),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_TARGET_ENABLE0
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COLOR0,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR0),
 		0xFF,
 		0x00,
 		0x00,
@@ -48,7 +50,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_BORDER0,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BORDER0),	//Name
 		50,						//VALID_MIN
 		100,						//VALID_MAX
 		50,						//SLIDER_MIN
@@ -62,7 +64,7 @@ static PF_Err ParamsSetup (
 		);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_SOFT0,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS0),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -78,15 +80,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_TARGET_ENABLED1,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED1),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_TARGET_ENABLE1
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COLOR1,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 		0x00,
 		0xFF,
 		0x00,
@@ -94,7 +96,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_BORDER1,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BORDER1),	//Name
 		50,						//VALID_MIN
 		100,						//VALID_MAX
 		50,						//SLIDER_MIN
@@ -108,7 +110,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_SOFT1,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS1),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -123,15 +125,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_TARGET_ENABLED2,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED2),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_TARGET_ENABLE2
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COLOR2,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR2),
 		0x00,
 		0x00,
 		0xFF,
@@ -139,7 +141,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_BORDER2,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BORDER2),	//Name
 		50,						//VALID_MIN
 		100,						//VALID_MAX
 		50,						//SLIDER_MIN
@@ -153,7 +155,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_SOFT2,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS2),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -168,15 +170,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 //----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_TARGET_ENABLED3,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED3),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_TARGET_ENABLE3
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_TARGET_COLOR3,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR3),
 		0xFF,
 		0x00,
 		0xFF,
@@ -184,7 +186,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_BORDER3,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BORDER3),	//Name
 		50,						//VALID_MIN
 		100,						//VALID_MAX
 		50,						//SLIDER_MIN
@@ -198,7 +200,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_TAGET_SOFT3,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS3),	//Name
 		0,						//VALID_MIN
 		100,					//VALID_MAX
 		0,						//SLIDER_MIN

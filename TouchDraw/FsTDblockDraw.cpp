@@ -99,10 +99,11 @@ void blockDraw32(CFsGraph *g,A_long bSize,A_long bCount)
 	}
 }
 //-------------------------------------------------------------------------------------------------
-PF_Err blockDraw(CFsAE *ae , A_long bSize, A_long bCount)
+PF_Err blockDraw(CFsAE *ae , A_long bSize, A_long bCount, A_long seed)
 {
 	PF_Err	err = PF_Err_NONE;
 
+	F_SRAND(seed);
 	switch(ae->pixelFormat())
 	{
 	case PF_PixelFormat_ARGB128:

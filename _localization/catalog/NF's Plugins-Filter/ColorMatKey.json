@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_INVERT_ALPHA": {"useSource": true},
+        "L10N_PARAM_ENABLED0": {"useSource": true},
+        "L10N_PARAM_COLOR0": {"useSource": true},
+        "L10N_PARAM_BORDER0": {"useSource": true},
+        "L10N_PARAM_SOFTNESS0": {"useSource": true},
+        "L10N_PARAM_ENABLED1": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_BORDER1": {"useSource": true},
+        "L10N_PARAM_SOFTNESS1": {"useSource": true},
+        "L10N_PARAM_ENABLED2": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_BORDER2": {"useSource": true},
+        "L10N_PARAM_SOFTNESS2": {"useSource": true},
+        "L10N_PARAM_ENABLED3": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_BORDER3": {"useSource": true},
+        "L10N_PARAM_SOFTNESS3": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Color matte key."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_INVERT_ALPHA": "反转 Alpha",
+        "L10N_PARAM_ENABLED0": "提取方案1",
+        "L10N_PARAM_COLOR0": "颜色1",
+        "L10N_PARAM_BORDER0": "阈值1",
+        "L10N_PARAM_SOFTNESS0": "柔和度1",
+        "L10N_PARAM_ENABLED1": "提取方案2",
+        "L10N_PARAM_COLOR1": "颜色2",
+        "L10N_PARAM_BORDER1": "阈值2",
+        "L10N_PARAM_SOFTNESS1": "柔和度2",
+        "L10N_PARAM_ENABLED2": "提取方案3",
+        "L10N_PARAM_COLOR2": "颜色3",
+        "L10N_PARAM_BORDER2": "阈值3",
+        "L10N_PARAM_SOFTNESS2": "柔和度3",
+        "L10N_PARAM_ENABLED3": "提取方案4",
+        "L10N_PARAM_COLOR3": "颜色4",
+        "L10N_PARAM_BORDER3": "阈值4",
+        "L10N_PARAM_SOFTNESS3": "柔和度4"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "颜色遮罩键"
+      }
+    }
+  }
+}

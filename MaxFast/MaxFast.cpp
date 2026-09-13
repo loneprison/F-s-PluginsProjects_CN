@@ -6,6 +6,7 @@
 
 
 #include "MaxFast.h"
+#include "MaxFastText.generated.h"
 #include <string>
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MaxFastText::Strings strings(in_data);
 
 	
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MAX,	//Name
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MAX),	//Name
 		-2000,				//VALID_MIN
 		2000,				//VALID_MAX
 		-200,				//SLIDER_MIN

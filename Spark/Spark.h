@@ -57,38 +57,38 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_WIPE		"wipe(%)"
+#define	L10N_PARAM_SEED		"seed"
+#define	L10N_PARAM_SEED_POS		"seedPos"
+#define	L10N_PARAM_SEED_MOVE	"seedMove"
+#define	L10N_PARAM_WIPE		"wipe(%)"
 
-#define	STR_OFFSET		"offset"
+#define	L10N_PARAM_OFFSET		"offset"
 
-#define	STR_START		"start"
-#define	STR_LAST		"last"
+#define	L10N_PARAM_START		"start"
+#define	L10N_PARAM_LAST		"last"
 
-#define	STR_STARTRANDX	"startRandX"
-#define	STR_STARTRANDY	"startRandY"
+#define	L10N_PARAM_START_RAND_X	"startRandX"
+#define	L10N_PARAM_START_RAND_Y	"startRandY"
 
-#define	STR_LASTRANDX	"lastRandX"
-#define	STR_LASTRANDY	"lastRandY"
+#define	L10N_PARAM_LAST_RAND_X	"lastRandX"
+#define	L10N_PARAM_LAST_RAND_Y	"lastRandY"
 
-#define	STR_LASTRANDR	"LastRandRot"
-#define	STR_LASTROTSEED "LastRotSeed"
-
-
-#define	STR_LINESIZE	"lineSize"
-#define	STR_LINEMOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_DRAWCOUNT	"drawCount"
-#define	STR_SUBCOUNT	"subCount"
+#define	L10N_PARAM_LAST_RAND_ROT	"LastRandRot"
+#define	L10N_PARAM_LAST_ROT_SEED "LastRotSeed"
 
 
+#define	L10N_PARAM_LINE_SIZE	"lineSize"
+#define	L10N_PARAM_LINE_MOVE	"lineMove"
+#define	L10N_PARAM_FOLD_COUNT	"foldCount"
+#define	L10N_PARAM_DRAW_COUNT	"drawCount"
+#define	L10N_PARAM_SUB_COUNT	"subCount"
 
 
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+
+
+#define	L10N_PARAM_COLOR		"color"
+#define	L10N_PARAM_BLEND		"blend"
+#define	L10N_PARAM_ON			"on"
 
 
 

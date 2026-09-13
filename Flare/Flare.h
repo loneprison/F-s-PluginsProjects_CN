@@ -39,12 +39,6 @@
 
 
 
-#ifdef AE_OS_WIN
-#define SPRINTF(STR,IDX) sprintf_s(num, "%s%d", STR, IDX)
-#else
-#define SPRINTF(STR,IDX) sprintf_(num, "%s%d", STR, IDX)
-#endif
-
 //ユーザーインターフェースのID
 //ParamsSetup関数とRender関数のparamsパラメータのIDになる
 enum {
@@ -101,36 +95,36 @@ enum BLEND
 };
 
 //UIの表示文字列
-#define	STR_ON				"on"
-#define	STR_BASE_ON			"baseOn"
-#define	STR_BASE_COLOR		"baseColor"
-#define	STR_BASE_OPACITY	"baseOpacity"
+#define	L10N_PARAM_ON				"on"
+#define	L10N_PARAM_BASE_ON			"baseOn"
+#define	L10N_PARAM_BASE_COLOR		"baseColor"
+#define	L10N_PARAM_BASE_OPACITY	"baseOpacity"
 
-#define	STR_MODE1			"mode"
-#define	STR_MODE1_ITEMS		"WhitebackMask|BlackbackMask|Alpha|Image"
+#define	L10N_PARAM_MODE			"mode"
+#define	L10N_PARAM_MODE_ITEMS		"WhitebackMask|BlackbackMask|Alpha|Image"
 #define	STR_MODE1_COUNT		4
 #define	STR_MODE1_DEFL		3
 
-#define	STR_TOPIC			"flare_"
-#define	STR_ENABLED			"enabled_"
+#define	L10N_PARAM_TOPIC			"flare_"
+#define	L10N_PARAM_ENABLED			"enabled_"
 
-#define	STR_BORDER_TOPIC	"border(except_image)_"
-#define	STR_BORDER			"border_"
-#define	STR_INSIDE			"inside_"
-#define	STR_OUTSIDE			"outside_"
+#define	L10N_PARAM_BORDER_TOPIC	"border(except_image)_"
+#define	L10N_PARAM_BORDER			"border_"
+#define	L10N_PARAM_INSIDE			"inside_"
+#define	L10N_PARAM_OUTSIDE			"outside_"
 
-#define	STR_REV				"reverse(except_image)_"
-#define	STR_REV_ITEMS		"none|reverse|reverseAndOriginalAlpha"
+#define	L10N_PARAM_REV				"reverse(except_image)_"
+#define	L10N_PARAM_REV_ITEMS		"none|reverse|reverseAndOriginalAlpha"
 #define	STR_REV_COUNT		3
 #define	STR_REV_DEFL		1
-#define	STR_MAX				"max_"
-#define	STR_BLUR			"blur_"
-#define	STR_COLOR			"color(except_image)_"
-#define	STR_BLEND			"blend_"
-#define	STR_BLEND_ITEMS		"screen|add|normal"
+#define	L10N_PARAM_MAX				"max_"
+#define	L10N_PARAM_BLUR			"blur_"
+#define	L10N_PARAM_COLOR			"color(except_image)_"
+#define	L10N_PARAM_BLEND			"blend_"
+#define	L10N_PARAM_BLEND_ITEMS		"screen|add|normal"
 #define	STR_BLEND_COUNT		3
 #define	STR_BLEND_DFLT		1
-#define	STR_OPACITY			"opacity_"
+#define	L10N_PARAM_OPACITY			"opacity_"
 
 
 

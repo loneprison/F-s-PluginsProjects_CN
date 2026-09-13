@@ -53,18 +53,18 @@
 #define	StrDescription			"CCplus bry-ful AfterEffects EffectPlugin"
 #define	StrMADEBY				"bry-ful"
 
-#define	StrORG_REV1				"original_reverce"	//PF_Pixel
-#define	StrORG_REV2				"on"	//PF_Pixel
+#define	L10N_ORG_REV_LABEL				"original_reverce"	//PF_Pixel
+#define	L10N_ORG_REV_ON				"on"	//PF_Pixel
 
-#define	StrCOLOR_START			"start_color"
-#define	StrCOLOR_CENTER			"center_color"//PF_Pixel
-#define	StrCOLOR_END			"end_color"//PF_Pixel
-#define	StrCOLOR_CENTER_POS		"center_color_pos(%)"
+#define	L10N_COLOR_START			"start_color"
+#define	L10N_COLOR_CENTER			"center_color"//PF_Pixel
+#define	L10N_COLOR_END			"end_color"//PF_Pixel
+#define	L10N_COLOR_CENTER_POS		"center_color_pos(%)"
 
-#define	StrALPHA_START			"start_alpha(%)"	//透明にする
-#define	StrALPHA_END			"end_alpha(%)"//透明にする
+#define	L10N_ALPHA_START			"start_alpha(%)"	//透明にする
+#define	L10N_ALPHA_END			"end_alpha(%)"//透明にする
 
-#define	StrNOISE_VALUE			"noise_value"//ノイズを強さ
+#define	L10N_NOISE_VALUE			"noise_value"//ノイズを強さ
 
 #define	StrERR_getFsAEParams	"画像バッファーサイズエラーです。御免なさい。"
 #define	StrERR_getParams		"パラメータエラーです。御免なさい。"

@@ -1,12 +1,10 @@
-﻿# TTF2Cpp
+# TTF2Cpp
 
-ttfフォントファイルをC++のコードに変える物です。
+TTF フォントを C++ コードへ変換する C# ツールです。
 
-# x14y24pxHeadUpDaisy.ttf
+## x14y24pxHeadUpDaisy.ttf
 
-とりあえずフォント(x14y24pxHeadUpDaisy.ttf)は[<b>x0y0pxFreeFont</b>](https://hicchicc.github.io/00ff/)
-さんのものを使わせてもらっています。<br>
-<br>
-C# 2026<br>
-<br>
-bry-ful<br>
+同梱フォントは [x0y0pxFreeFont](https://hicchicc.github.io/00ff/) の
+`x14y24pxHeadUpDaisy.ttf` です。
+
+bry-ful, 2026

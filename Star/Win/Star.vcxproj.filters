@@ -1,12 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Header Files">
       <UniqueIdentifier>{13eba119-cc81-452a-a930-fb4b695efd42}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
-    </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{21288698-44b4-4b31-bce8-6343105574e9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{a86c23c8-9be8-4981-ad01-4817ee256c30}</UniqueIdentifier>
@@ -27,6 +24,9 @@
     <Filter Include="Supporting code\Fs">
       <UniqueIdentifier>{eccd6114-fe8d-43a2-b684-34e314a24585}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{8b540024-0eaa-48a9-8f08-c743fe9f7a60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Fs_Target.h">
@@ -34,12 +34,6 @@
     </ClInclude>
     <ClInclude Include="..\Star.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
@@ -80,9 +74,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -96,9 +87,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\entry.h">
@@ -122,12 +110,15 @@
     <ClInclude Include="..\..\FsLibrary\FsUtils.h">
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2013\F%27s Star\Fs_Entry.h">
+    <ClInclude Include="..\Fs_Entry.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="StarPiPL.rc">
+    <ResourceCompile Include="$(IntDir)StarPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -148,14 +139,30 @@
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
-    <ClCompile Include="..\StarBuf.cpp" />
-    <ClCompile Include="..\StarDraw.cpp" />
-    <ClCompile Include="..\StarMask.cpp" />
-    <ClCompile Include="..\StarTargetCopy.cpp" />
+    <ClCompile Include="..\StarBuf.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StarDraw.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StarMask.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StarTargetCopy.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\StarPiPL.r">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Filter\Star.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -79,28 +79,28 @@ enum{
 //パラメータUI用の文字列
 
 
-#define UI_ENABLED_BLACK	"Black"
-#define UI_ENABLED_RED		"Red"
-#define UI_ENABLED_GREEN	"Green"
-#define UI_ENABLED_BLUE		"Blue"
-#define UI_ENABLED_YELLOW	"Yellow"
-#define UI_ENABLED_VIOLET	"Violet"
-#define UI_ENABLED2			"ON"
+#define L10N_PARAM_ENABLED_BLACK	"Black"
+#define L10N_PARAM_ENABLED_RED		"Red"
+#define L10N_PARAM_ENABLED_GREEN	"Green"
+#define L10N_PARAM_ENABLED_BLUE		"Blue"
+#define L10N_PARAM_ENABLED_YELLOW	"Yellow"
+#define L10N_PARAM_ENABLED_VIOLET	"Violet"
+#define L10N_PARAM_ENABLED_ON			"ON"
 
-#define UI_DRAW_BLACK		"DrawBlack"
-#define UI_DRAW_RED			"DrawRed"
-#define UI_DRAW_GREEN		"DrawGreen"
-#define UI_DRAW_BLUE		"DrawBlue"
-#define UI_DRAW_YELLOW		"DrawYellow"
-#define UI_DRAW_VIOLET		"DrawViolet"
+#define L10N_PARAM_DRAW_BLACK		"DrawBlack"
+#define L10N_PARAM_DRAW_RED			"DrawRed"
+#define L10N_PARAM_DRAW_GREEN		"DrawGreen"
+#define L10N_PARAM_DRAW_BLUE		"DrawBlue"
+#define L10N_PARAM_DRAW_YELLOW		"DrawYellow"
+#define L10N_PARAM_DRAW_VIOLET		"DrawViolet"
 
 
-#define UI_BORDER_BLACK		"BlackBorder"
-#define UI_BORDER_RED		"RedBorder"
-#define UI_BORDER_GREEN		"GreenBorder"
-#define UI_BORDER_BLUE		"BlueBorder"
-#define UI_BORDER_YELLOW	"YellowBorder"
-#define UI_BORDER_VIOLET	"VioletBorder"
+#define L10N_PARAM_BORDER_BLACK		"BlackBorder"
+#define L10N_PARAM_BORDER_RED		"RedBorder"
+#define L10N_PARAM_BORDER_GREEN		"GreenBorder"
+#define L10N_PARAM_BORDER_BLUE		"BlueBorder"
+#define L10N_PARAM_BORDER_YELLOW	"YellowBorder"
+#define L10N_PARAM_BORDER_VIOLET	"VioletBorder"
 
 
 

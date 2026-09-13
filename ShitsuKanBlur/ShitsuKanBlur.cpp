@@ -6,6 +6,7 @@
 
 
 #include "ShitsuKanBlur.h"
+#include "ShitsuKanBlurText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,23 +20,24 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ShitsuKanBlurText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_COL_TOPICS0, ID_COLOR_TOPICS0);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET_COLORS), ID_COLOR_TOPICS0);
 	//----------------------------------------------------------------
 	//Color0
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR0,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED0),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR0
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR0,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR0),
 		0xFF,
 		0x00,
 		0x00,
@@ -44,15 +46,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color1
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR1,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED1),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR1
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR1,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR1),
 		0x00,
 		0xFF,
 		0x00,
@@ -61,15 +63,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color2
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR2,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED2),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR2
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR2,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR2),
 		0x00,
 		0x00,
 		0xFF,
@@ -78,15 +80,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color3
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR3,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED3),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR3
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR3,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR3),
 		0xFF,
 		0xFF,
 		0x00,
@@ -95,15 +97,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color4
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR4,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED4),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR4
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR4,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR4),
 		0xFF,
 		0x00,
 		0x00,
@@ -112,15 +114,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color5
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR5,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED5),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR5
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR5,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR5),
 		0x00,
 		0xFF,
 		0x00,
@@ -129,15 +131,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color6
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR6,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED6),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR6
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR6,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR6),
 		0x00,
 		0x00,
 		0xFF,
@@ -146,15 +148,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color7
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR7,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED7),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR7
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR7,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR7),
 		0x00,
 		0xFF,
 		0xFF,
@@ -166,19 +168,19 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.flags = PF_ParamFlag_START_COLLAPSED;	//これをつけると表示時に開いた状態になる
-	PF_ADD_TOPIC(STR_COL_TOPICS1, ID_COLOR_TOPICS1);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET_EX_COLORS), ID_COLOR_TOPICS1);
 	//----------------------------------------------------------------
 	//Color0
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX0,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX0),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX0
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX0,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR0),
 		0xFF,
 		0x00,
 		0x00,
@@ -187,15 +189,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color1
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX1,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX1),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX1
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX1,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR1),
 		0x00,
 		0xFF,
 		0x00,
@@ -204,15 +206,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color2
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX2,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX2),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX2
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX2,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR2),
 		0x00,
 		0x00,
 		0xFF,
@@ -221,15 +223,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color3
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX3,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX3),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX3
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX3,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR3),
 		0xFF,
 		0xFF,
 		0x00,
@@ -238,15 +240,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color4
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX4,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX4),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX4
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX4,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR4),
 		0xFF,
 		0x00,
 		0x00,
@@ -255,15 +257,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color5
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX5,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX5),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX5
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX5,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR5),
 		0x00,
 		0xFF,
 		0x00,
@@ -272,15 +274,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color6
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX6,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX6),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX6
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX6,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR6),
 		0x00,
 		0x00,
 		0xFF,
@@ -289,15 +291,15 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//Color7
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_COLOR_EX7,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ENABLED_EX7),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_COLOR_EX7
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_COLOR_EX7,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EX_COLOR7),
 		0x00,
 		0xFF,
 		0xFF,
@@ -309,13 +311,13 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_ANGLE, 0, ID_ANGLE);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_DIRECTION), 0, ID_ANGLE);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_HI_TOPICS, ID_HI_TOPICS);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_HILIGHT_TOPIC), ID_HI_TOPICS);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(STR_FLT_HI_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_LENGTH),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		200,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -329,7 +331,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_SLIDER(STR_FLT_HI_BLUR,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_BLUR),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -340,7 +342,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_HILIGHT_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_LV),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,					//SLIDER_MIN
@@ -354,7 +356,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_HILIGHT_R,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_RED),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -368,7 +370,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_HILIGHT_G,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_GREEN),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -382,7 +384,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_HILIGHT_B,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_HILIGHT_BLUE),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -399,10 +401,10 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_HI_TOPICS_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_SW_TOPICS, ID_SW_TOPICS);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_SHADOW_TOPIC), ID_SW_TOPICS);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(STR_FLT_SW_LENGTH,	//パラメータの名前
+	PF_ADD_FIXED(AETEXT_PARAM(strings, L10N_PARAM_SHADOW_LENGTH),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		200,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -416,7 +418,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	//def.ui_flags = PF_PUI_DISABLED;
-	PF_ADD_SLIDER(STR_FLT_SW_BLUR,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW_BLUR),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -425,7 +427,7 @@ static PF_Err ParamsSetup (
 		ID_ADD_SW_BLUR
 	);	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_SHADOW_LV,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW_LV),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -439,7 +441,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_SHADOW_R,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW_RED),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -453,7 +455,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_SHADOW_G,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW_GREEN),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -467,7 +469,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FLT_SHADOW_B,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SHADOW_BLUE),	//Name
 		-200,					//VALID_MIN
 		200,					//VALID_MAX
 		-100,						//SLIDER_MIN
@@ -485,7 +487,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_NOISE,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_NOISE),	//Name
 		0,					//VALID_MIN
 		50,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -500,23 +502,23 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_EDGE1,
-		STR_CBX_EDGE2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_OUT_OF_SCREEN),
+		AETEXT_LABEL(strings, L10N_PARAM_EDGE_REPEAT),
 		FALSE,
 		0,
 		ID_CBX_EDGE
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POPUP(STR_PUP_DRAW,
+	PF_ADD_POPUP(AETEXT_PARAM(strings, L10N_PARAM_BLEND),
 		STR_PUP_COUNT,	//メニューの数
 		STR_PUP_DFLT,	//デフォルト
-		STR_PUP_ITEMS,
+		AETEXT_POPUP(strings, L10N_PARAM_BLEND_ITEMS),
 		ID_PUP_DRAW
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COL_MASKCOLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_MASK_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,
@@ -524,8 +526,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CBX_WHITE,
-		STR_CBX_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_WHITE_KEY),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CBX_WHITE

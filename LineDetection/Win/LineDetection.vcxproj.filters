@@ -5,9 +5,6 @@
       <UniqueIdentifier>{ec065898-bce2-426f-b2b7-6efef936f9e8}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{67d60e51-45a1-44be-9d16-3dc7f6d4e676}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{69cd1033-00b8-4425-8757-dfcb72b83fdc}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
@@ -35,13 +32,7 @@
     <ClInclude Include="..\LineDetection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\F%27s PluginsProjects_2013\F%27s LineDetection\Fs_Entry.h">
+    <ClInclude Include="..\Fs_Entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\FsLibrary\FsAE.h">
@@ -101,9 +92,6 @@
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -114,9 +102,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\entry.h">
@@ -132,18 +117,25 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Util\AEFX_SuiteHelper.h">
-      <Filter>Supporting code\AE</Filter>
+      <Filter>Header Files\AE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="LineDetectionPiPL.rc">
+    <ResourceCompile Include="$(IntDir)LineDetectionPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\LineDetection.cpp" />
-    <ClCompile Include="..\LineDetect8.cpp" />
-    <ClCompile Include="..\LineDetect16.cpp" />
+    <ClCompile Include="..\LineDetect8.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LineDetect16.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\Util\AEFX_SuiteHelper.c">
       <Filter>Supporting code\AE</Filter>
     </ClCompile>
@@ -177,11 +169,26 @@
     <ClCompile Include="..\..\FsLibrary\FsMosaic.cpp">
       <Filter>Supporting code\Fs</Filter>
     </ClCompile>
-    <ClCompile Include="..\LineDetect32.cpp" />
+    <ClCompile Include="..\LineDetect32.cpp">
+      <Filter>Supporting code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\LineDetectionPiPL.r">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{7370d50d-3430-4504-927a-45e4866d020c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-Filter\LineDetection.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

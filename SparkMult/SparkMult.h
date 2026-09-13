@@ -62,40 +62,40 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_SEED		"seed"
-#define	STR_SEEDPOS		"seedPos"
-#define	STR_SEEDMOVE	"seedMove"
-#define	STR_OFFSET		"offset"
-#define	STR_WIPE		"wipe(%)"
+#define	L10N_PARAM_SEED		"seed"
+#define	L10N_PARAM_SEED_POS		"seedPos"
+#define	L10N_PARAM_SEED_MOVE	"seedMove"
+#define	L10N_PARAM_OFFSET		"offset"
+#define	L10N_PARAM_WIPE		"wipe(%)"
 
-#define	STR_POINT_COUNT	"pointCount"
-#define	STR_0_P			"point0"
-#define	STR_1_P			"point1"
-#define	STR_2_P			"point2"
-#define	STR_3_P			"point3"
-#define	STR_4_P			"point4"
-#define	STR_5_P			"point5"
-#define	STR_6_P			"point6"
+#define	L10N_PARAM_POINT_COUNT	"pointCount"
+#define	L10N_PARAM_POINT0			"point0"
+#define	L10N_PARAM_POINT1			"point1"
+#define	L10N_PARAM_POINT2			"point2"
+#define	L10N_PARAM_POINT3			"point3"
+#define	L10N_PARAM_POINT4			"point4"
+#define	L10N_PARAM_POINT5			"point5"
+#define	L10N_PARAM_POINT6			"point6"
 
-#define	STR_START_RX	"first_randX"
-#define	STR_START_RY	"first_randY"
-#define	STR_MID_RX		"mid_randX"
-#define	STR_MID_RY		"mid_randY"
-#define	STR_LAST_RX		"last_randX"
-#define	STR_LAST_RY		"last_randY"
+#define	L10N_PARAM_FIRST_RAND_X	"first_randX"
+#define	L10N_PARAM_FIRST_RAND_Y	"first_randY"
+#define	L10N_PARAM_MID_RAND_X		"mid_randX"
+#define	L10N_PARAM_MID_RAND_Y		"mid_randY"
+#define	L10N_PARAM_LAST_RAND_X		"last_randX"
+#define	L10N_PARAM_LAST_RAND_Y		"last_randY"
 
-#define	STR_LINESIZE	"lineSize"
-#define	STR_LINEMOVE	"lineMove"
-#define	STR_FOLDCOUNT	"foldCount"
-#define	STR_DRAWCOUNT	"drawCount"
-#define	STR_SUBCOUNT	"subCount"
-
-
+#define	L10N_PARAM_LINE_SIZE	"lineSize"
+#define	L10N_PARAM_LINE_MOVE	"lineMove"
+#define	L10N_PARAM_FOLD_COUNT	"foldCount"
+#define	L10N_PARAM_DRAW_COUNT	"drawCount"
+#define	L10N_PARAM_SUB_COUNT	"subCount"
 
 
-#define	STR_COLOR		"color"
-#define	STR_BLEND		"blend"
-#define	STR_ON			"on"
+
+
+#define	L10N_PARAM_COLOR		"color"
+#define	L10N_PARAM_BLEND		"blend"
+#define	L10N_PARAM_ON			"on"
 
 
 

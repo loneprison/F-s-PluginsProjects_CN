@@ -6,6 +6,7 @@
 
 
 #include "Extract_Edge.h"
+#include "Extract_EdgeText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,11 +20,12 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const Extract_EdgeText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CB_EDGE,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_EDGE),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_CB_EDGE
@@ -31,7 +33,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_FLOAT_SLIDER(
-		STR_LO_LV,	//Name
+		AETEXT_PARAM(strings, L10N_PARAM_LOW_LEVEL),	//Name
 		0,			//VALID_MIN
 		100,		//VALID_MAX
 		0,			//SLIDER_MIN
@@ -46,7 +48,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_FLOAT_SLIDER(
-		STR_HI_LV,	//Name
+		AETEXT_PARAM(strings, L10N_PARAM_HIGH_LEVEL),	//Name
 		0,			//VALID_MIN
 		100,		//VALID_MAX
 		0,			//SLIDER_MIN
@@ -60,8 +62,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CB_ALPHA,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_EDGE),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_CB_ALPHA
@@ -69,7 +71,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_FLOAT_SLIDER(
-		STR_ALPHA_LV,	//Name
+		AETEXT_PARAM(strings, L10N_PARAM_ALPHA_LEVEL),	//Name
 		0,			//VALID_MIN
 		100,		//VALID_MAX
 		0,			//SLIDER_MIN
@@ -83,15 +85,15 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CB_COLOR,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_USE_COLOR),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_CB_COLOR
 	);	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,

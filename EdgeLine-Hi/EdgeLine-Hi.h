@@ -57,14 +57,14 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_TARGET_COLOR	"TargetColor"
-#define	STR_SAMPLE_COLOR	"SampleColor"
-#define	STR_LENGTH			"Length(px)"
-#define	STR_ROT				"Rot"
-#define	STR_LEVEL			"Level(%)"
-#define	STR_DRAW_COLOR		"frame rander"
-#define	STR_SCANFLAG		"scanFlag"
-#define	STR_SCANFLAG2		"GiveUpSoon"
+#define	L10N_PARAM_TARGET_COLOR	"TargetColor"
+#define	L10N_PARAM_SAMPLE_COLOR	"SampleColor"
+#define	L10N_PARAM_LENGTH			"Length(px)"
+#define	L10N_PARAM_ROT				"Rot"
+#define	L10N_PARAM_LEVEL			"Level(%)"
+#define	L10N_PARAM_DRAW_COLOR		"frame rander"
+#define	L10N_PARAM_SCAN_FLAG		"scanFlag"
+#define	L10N_PARAM_SCAN_FLAG2		"GiveUpSoon"
 
 
 

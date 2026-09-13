@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_HIGH_POS": {"useSource": true},
+        "L10N_PARAM_LOW_POS": {"useSource": true},
+        "L10N_PARAM_HIGH_LEVEL": {"useSource": true},
+        "L10N_PARAM_MID_LEVEL": {"useSource": true},
+        "L10N_PARAM_LOW_LEVEL": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Adds noise separately to bright and dark areas of the alpha channel."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_HIGH_POS": "高光范围",
+        "L10N_PARAM_LOW_POS": "阴影范围",
+        "L10N_PARAM_HIGH_LEVEL": "高光杂色数量",
+        "L10N_PARAM_MID_LEVEL": "中间调杂色数量",
+        "L10N_PARAM_LOW_LEVEL": "阴影杂色数量"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "按Alpha通道亮/暗区域分别添加噪声的滤镜"
+      }
+    }
+  }
+}

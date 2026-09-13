@@ -50,7 +50,7 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Y			"value"
+#define	L10N_PARAM_VALUE			"value"
 
 //UIのパラメータ
 typedef struct ParamInfo {

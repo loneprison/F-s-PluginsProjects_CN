@@ -6,6 +6,7 @@
 
 
 #include "PaperPlaneGetWeightInfo.h"
+#include "PaperPlaneGetWeightInfoText.generated.h"
 
 #include <stdio.h>
 #include "AEDebugAngel.h"
@@ -21,12 +22,13 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PaperPlaneGetWeightInfoText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_CHECKBOX(STR_DRAW_GRAPH,
-					"on",
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_DRAW_GRAPH),
+					AETEXT_LABEL(strings, L10N_PARAM_ON),
 					TRUE,
 					0,
 					ID_DRAW_GRAPH
@@ -34,7 +36,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
 	def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
-	PF_ADD_SLIDER(STR_GLUE,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GLUE),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		25,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ENABLED0": {"useSource": true},
+        "L10N_PARAM_COLOR0": {"useSource": true},
+        "L10N_PARAM_ENABLED1": {"useSource": true},
+        "L10N_PARAM_COLOR1": {"useSource": true},
+        "L10N_PARAM_ENABLED2": {"useSource": true},
+        "L10N_PARAM_COLOR2": {"useSource": true},
+        "L10N_PARAM_ENABLED3": {"useSource": true},
+        "L10N_PARAM_COLOR3": {"useSource": true},
+        "L10N_PARAM_ENABLED4": {"useSource": true},
+        "L10N_PARAM_COLOR4": {"useSource": true},
+        "L10N_PARAM_ENABLED5": {"useSource": true},
+        "L10N_PARAM_COLOR5": {"useSource": true},
+        "L10N_PARAM_ENABLED6": {"useSource": true},
+        "L10N_PARAM_COLOR6": {"useSource": true},
+        "L10N_PARAM_ENABLED7": {"useSource": true},
+        "L10N_PARAM_COLOR7": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX0": {"useSource": true},
+        "L10N_PARAM_EX_COLOR0": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX1": {"useSource": true},
+        "L10N_PARAM_EX_COLOR1": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX2": {"useSource": true},
+        "L10N_PARAM_EX_COLOR2": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX3": {"useSource": true},
+        "L10N_PARAM_EX_COLOR3": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX4": {"useSource": true},
+        "L10N_PARAM_EX_COLOR4": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX5": {"useSource": true},
+        "L10N_PARAM_EX_COLOR5": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX6": {"useSource": true},
+        "L10N_PARAM_EX_COLOR6": {"useSource": true},
+        "L10N_PARAM_ENABLED_EX7": {"useSource": true},
+        "L10N_PARAM_EX_COLOR7": {"useSource": true},
+        "L10N_PARAM_DIRECTION": {"useSource": true},
+        "L10N_PARAM_HILIGHT_LENGTH": {"useSource": true},
+        "L10N_PARAM_HILIGHT_BLUR": {"useSource": true},
+        "L10N_PARAM_HILIGHT_LV": {"useSource": true},
+        "L10N_PARAM_HILIGHT_RED": {"useSource": true},
+        "L10N_PARAM_HILIGHT_GREEN": {"useSource": true},
+        "L10N_PARAM_HILIGHT_BLUE": {"useSource": true},
+        "L10N_PARAM_SHADOW_LENGTH": {"useSource": true},
+        "L10N_PARAM_SHADOW_BLUR": {"useSource": true},
+        "L10N_PARAM_SHADOW_LV": {"useSource": true},
+        "L10N_PARAM_SHADOW_RED": {"useSource": true},
+        "L10N_PARAM_SHADOW_GREEN": {"useSource": true},
+        "L10N_PARAM_SHADOW_BLUE": {"useSource": true},
+        "L10N_PARAM_NOISE": {"useSource": true},
+        "L10N_PARAM_OUT_OF_SCREEN": {"useSource": true},
+        "L10N_PARAM_BLEND": {"useSource": true},
+        "L10N_PARAM_MASK_COLOR": {"useSource": true},
+        "L10N_PARAM_WHITE_KEY": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true},
+        "L10N_PARAM_EDGE_REPEAT": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_BLEND_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_COLORS": {"useSource": true},
+        "L10N_PARAM_TARGET_EX_COLORS": {"useSource": true},
+        "L10N_PARAM_HILIGHT_TOPIC": {"useSource": true},
+        "L10N_PARAM_SHADOW_TOPIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies simple texture effects to selected colors."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ENABLED0": "目标方案0",
+        "L10N_PARAM_COLOR0": "颜色0",
+        "L10N_PARAM_ENABLED1": "目标方案1",
+        "L10N_PARAM_COLOR1": "颜色1",
+        "L10N_PARAM_ENABLED2": "目标方案2",
+        "L10N_PARAM_COLOR2": "颜色2",
+        "L10N_PARAM_ENABLED3": "目标方案3",
+        "L10N_PARAM_COLOR3": "颜色3",
+        "L10N_PARAM_ENABLED4": "目标方案4",
+        "L10N_PARAM_COLOR4": "颜色4",
+        "L10N_PARAM_ENABLED5": "目标方案5",
+        "L10N_PARAM_COLOR5": "颜色5",
+        "L10N_PARAM_ENABLED6": "方案6",
+        "L10N_PARAM_COLOR6": "颜色6",
+        "L10N_PARAM_ENABLED7": "方案7",
+        "L10N_PARAM_COLOR7": "颜色7",
+        "L10N_PARAM_ENABLED_EX0": "扩展方案0",
+        "L10N_PARAM_EX_COLOR0": "扩展色0",
+        "L10N_PARAM_ENABLED_EX1": "扩展方案1",
+        "L10N_PARAM_EX_COLOR1": "扩展色1",
+        "L10N_PARAM_ENABLED_EX2": "扩展方案2",
+        "L10N_PARAM_EX_COLOR2": "扩展色2",
+        "L10N_PARAM_ENABLED_EX3": "扩展方案3",
+        "L10N_PARAM_EX_COLOR3": "扩展色3",
+        "L10N_PARAM_ENABLED_EX4": "扩展方案4",
+        "L10N_PARAM_EX_COLOR4": "扩展色4",
+        "L10N_PARAM_ENABLED_EX5": "扩展方案5",
+        "L10N_PARAM_EX_COLOR5": "扩展色5",
+        "L10N_PARAM_ENABLED_EX6": "扩展方案6",
+        "L10N_PARAM_EX_COLOR6": "扩展色6",
+        "L10N_PARAM_ENABLED_EX7": "扩展方案7",
+        "L10N_PARAM_EX_COLOR7": "扩展色7",
+        "L10N_PARAM_DIRECTION": "方向",
+        "L10N_PARAM_HILIGHT_LENGTH": "高光距离",
+        "L10N_PARAM_HILIGHT_BLUR": "高光模糊",
+        "L10N_PARAM_HILIGHT_LV": "高光亮度",
+        "L10N_PARAM_HILIGHT_RED": "高光_R红",
+        "L10N_PARAM_HILIGHT_GREEN": "高光_G绿",
+        "L10N_PARAM_HILIGHT_BLUE": "高光_B蓝",
+        "L10N_PARAM_SHADOW_LENGTH": "阴影距离",
+        "L10N_PARAM_SHADOW_BLUR": "阴影模糊",
+        "L10N_PARAM_SHADOW_LV": "阴影亮度",
+        "L10N_PARAM_SHADOW_RED": "阴影_R红",
+        "L10N_PARAM_SHADOW_GREEN": "阴影_G绿",
+        "L10N_PARAM_SHADOW_BLUE": "阴影_B蓝",
+        "L10N_PARAM_NOISE": "杂色",
+        "L10N_PARAM_OUT_OF_SCREEN": "重复边缘",
+        "L10N_PARAM_BLEND": "混合模式",
+        "L10N_PARAM_MASK_COLOR": "遮罩颜色",
+        "L10N_PARAM_WHITE_KEY": "去除白色"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开",
+        "L10N_PARAM_EDGE_REPEAT": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_BLEND_ITEMS": "全部|仅目标颜色|仅高光遮罩|仅阴影遮罩"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_COLORS": "目标颜色",
+        "L10N_PARAM_TARGET_EX_COLORS": "扩展目标颜色",
+        "L10N_PARAM_HILIGHT_TOPIC": "高光",
+        "L10N_PARAM_SHADOW_TOPIC": "阴影"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "对指定颜色进行浮雕处理"
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <AeTextCustomVariantMode Condition="'$(AeTextCustomBuild)'=='true' and '$(AeTextSingleLanguage)'!='true'">multilingual-$(AeTextDefaultVariantId)</AeTextCustomVariantMode>
+    <AeTextCustomVariantMode Condition="'$(AeTextCustomBuild)'=='true' and '$(AeTextSingleLanguage)'=='true'">single-$(AeTextDefaultVariantId)</AeTextCustomVariantMode>
+    <IntDir Condition="'$(AeTextCustomVariantMode)'!=''">$(IntDir)AeTextCustom\$(AeTextCustomVariantMode)\</IntDir>
+    <AeTextRepositoryRoot>$(MSBuildThisFileDirectory)..</AeTextRepositoryRoot>
+    <AeTextGeneratorPath>$(MSBuildThisFileDirectory)GenerateTextCatalog.ps1</AeTextGeneratorPath>
+    <AeTextToolsProject>$(MSBuildThisFileDirectory)tools</AeTextToolsProject>
+    <AeTextGeneratedDirectory>$(IntDir)Localization\</AeTextGeneratedDirectory>
+    <AeTextGeneratedHeader>$(AeTextGeneratedDirectory)$(AeTextCatalogName)Text.generated.h</AeTextGeneratedHeader>
+    <AeTextSourceList>$(AeTextGeneratedDirectory)$(AeTextCatalogName)Text.sources.txt</AeTextSourceList>
+    <AeTextBindingReport>$(AeTextGeneratedDirectory)$(AeTextCatalogName)Text.bindings.json</AeTextBindingReport>
+    <AeTextByteReport>$(AeTextBindingReport).bytes.json</AeTextByteReport>
+    <AeTextPublicationMarker>$(AeTextGeneratedHeader).publication-validation</AeTextPublicationMarker>
+    <AeTextEscapedCatalogPath>$([MSBuild]::Escape($(AeTextCatalogPath)))</AeTextEscapedCatalogPath>
+    <AeTextEscapedDefaultVariantId>$([MSBuild]::Escape($(AeTextDefaultVariantId)))</AeTextEscapedDefaultVariantId>
+    <AeTextSingleLanguageArgument Condition="'$(AeTextSingleLanguage)'=='true'">-SingleLanguage</AeTextSingleLanguageArgument>
+    <AeTextEffectArguments Condition="'$(AeTextCatalogKind)'=='Effect'">-SourceListPath &quot;$(AeTextSourceList)&quot; -BindingReportPath &quot;$(AeTextBindingReport)&quot; -DefaultVariantId &quot;$(AeTextDefaultVariantId)&quot; $(AeTextSingleLanguageArgument)</AeTextEffectArguments>
+    <AeTextGenerationStamp>$(AeTextGeneratedDirectory)$(AeTextCatalogName)Text.generation-stamp</AeTextGenerationStamp>
+    <AeTextGenerationOutputs>$(AeTextGeneratedHeader)</AeTextGenerationOutputs>
+    <AeTextGenerationOutputs Condition="'$(AeTextCatalogKind)'=='Effect'">$(AeTextGenerationOutputs);$(AeTextBindingReport);$(AeTextByteReport)</AeTextGenerationOutputs>
+    <AeTextGenerationOutputs Condition="'$(AeTextPublicationValidation)'=='true'">$(AeTextGenerationOutputs);$(AeTextPublicationMarker)</AeTextGenerationOutputs>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and Exists('$(AeTextEscapedCatalogPath)')">
+    <ComputeCompileInputsTargets>GenerateAeTextCatalog;$(ComputeCompileInputsTargets)</ComputeCompileInputsTargets>
+    <GeneratedFilesOutputGroupDependsOn>GenerateAeTextCatalog;$(GeneratedFilesOutputGroupDependsOn)</GeneratedFilesOutputGroupDependsOn>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and Exists('$(AeTextEscapedCatalogPath)')">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(AeTextGeneratedDirectory);$(MSBuildThisFileDirectory);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions Condition="'$(AeTextCatalogKind)'=='Effect' and '$(AeTextSingleLanguage)'=='true'">AETEXTCLIENT_RUNTIME_DISABLED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and Exists('$(AeTextEscapedCatalogPath)')">
+    <AeTextGeneratorInput Include="$(MSBuildThisFileDirectory)generator\*.ps1;$(MSBuildThisFileDirectory)generator\templates\*.template;$(MSBuildThisFileDirectory)tools\pyproject.toml;$(MSBuildThisFileDirectory)tools\uv.lock;$(MSBuildThisFileDirectory)tools\src\aetext\*.py;$(MSBuildThisFileDirectory)tools\src\aetext\core\*.py;$(MSBuildThisFileDirectory)tools\src\aetext\cpp\*.py;$(MSBuildThisFileDirectory)tools\src\aetext\catalog\*.py;$(MSBuildThisFileDirectory)tools\src\aetext\build\*.py;$(MSBuildThisFileDirectory)AeText.h;$(MSBuildThisFileDirectory)core\*.h;$(AeTextFamilyDefinitionPath);$(AeTextRuntimeIdentityPath)" />
+    <Clean Include="$(AeTextGeneratedHeader);$(AeTextSourceList);$(AeTextBindingReport);$(AeTextByteReport);$(AeTextPublicationMarker);$(AeTextGenerationStamp)" />
+    <GeneratedFilesOutputGroup Include="$(AeTextGeneratedHeader)" />
+  </ItemGroup>
+
+  <Target Name="ValidateAeTextBuildMode"
+          BeforeTargets="PrepareForBuild"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj'">
+    <Error Condition="'$(AeTextCustomBuild)'!='true' and '$(AeTextCustomBuild)'!='false'"
+           Text="AeTextCustomBuild must be true or false." />
+    <Error Condition="'$(AeTextSingleLanguage)'!='true' and '$(AeTextSingleLanguage)'!='false'"
+           Text="AeTextSingleLanguage must be true or false." />
+    <Error Condition="'$(AeTextEscapedDefaultVariantId)'=='' or !$([System.Text.RegularExpressions.Regex]::IsMatch('$(AeTextEscapedDefaultVariantId)', '^[A-Za-z0-9][A-Za-z0-9._-]*$'))"
+           Text="AeTextDefaultVariantId must be a nonempty stable ASCII Variant ID." />
+    <Error Condition="'$(AeTextPublicationValidation)'=='true' and '$(AeTextCustomBuild)'=='true'"
+           Text="Publication validation cannot be combined with a custom build." />
+    <Error Condition="'$(AeTextPublicationValidation)'=='true' and '$(AeTextSingleLanguage)'=='true'"
+           Text="Publication validation cannot be combined with single-language generation." />
+  </Target>
+
+  <Target Name="PrepareAeTextGeneration"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and Exists('$(AeTextEscapedCatalogPath)')">
+    <MakeDir Directories="$(AeTextGeneratedDirectory)" />
+    <ItemGroup Condition="'$(AeTextCatalogKind)'=='Effect'">
+      <AeTextEvaluatedSource Include="@(ClCompile->'%(FullPath)');@(ClInclude->'%(FullPath)')" />
+      <AeTextEvaluatedSource Remove="@(AeTextEvaluatedSource)"
+                             Condition="'$(DesignTimeBuild)'=='true' and !Exists('%(AeTextEvaluatedSource.Identity)')" />
+    </ItemGroup>
+    <Error Condition="'$(AeTextCatalogKind)'=='Effect' and '$(DesignTimeBuild)'!='true' and !Exists('%(AeTextEvaluatedSource.Identity)')"
+           Text="AeText source input does not exist: %(AeTextEvaluatedSource.Identity)" />
+    <WriteLinesToFile Condition="'$(AeTextCatalogKind)'=='Effect'"
+                      File="$(AeTextSourceList)"
+                      Lines="@(AeTextEvaluatedSource)"
+                      Overwrite="true"
+                      WriteOnlyWhenDifferent="true" />
+    <ItemGroup>
+      <AeTextGenerationSourceList Include="$(AeTextSourceList)" Condition="'$(AeTextCatalogKind)'=='Effect'" />
+      <AeTextMissingOutput Include="$(AeTextGenerationOutputs)" />
+      <AeTextMissingOutput Remove="@(AeTextMissingOutput)" Condition="Exists('%(Identity)')" />
+    </ItemGroup>
+    <Delete Files="$(AeTextGenerationStamp)" Condition="'@(AeTextMissingOutput)'!=''" />
+  </Target>
+
+  <Target Name="GenerateAeTextCatalog"
+          BeforeTargets="ClCompile"
+          DependsOnTargets="PrepareAeTextGeneration"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and Exists('$(AeTextEscapedCatalogPath)')"
+          Inputs="$(AeTextCatalogPath);@(AeTextEvaluatedSource);@(AeTextGenerationSourceList);$(AeTextGeneratorPath);@(AeTextGeneratorInput);$(MSBuildProjectFullPath);$(MSBuildAllProjects)"
+          Outputs="$(AeTextGenerationStamp)">
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(AeTextGeneratorPath)&quot; -InputPath &quot;$(AeTextCatalogPath)&quot; -OutputPath &quot;$(AeTextGeneratedHeader)&quot; -Namespace &quot;$(AeTextNamespace)&quot; -Kind $(AeTextCatalogKind) -ProjectRoot &quot;$(AeTextRepositoryRoot)&quot; -FamilyDefinitionPath &quot;$(AeTextFamilyDefinitionPath)&quot; -RuntimeIdentityPath &quot;$(AeTextRuntimeIdentityPath)&quot; $(AeTextEffectArguments) $(AeTextPublicationValidationArgument)" />
+    <Touch Condition="'$(AeTextPublicationValidation)'=='true'" Files="$(AeTextPublicationMarker)" AlwaysCreate="true" />
+    <Touch Files="$(AeTextGenerationStamp)" AlwaysCreate="true" />
+  </Target>
+
+  <Target Name="ValidateAeTextPublicationReview"
+          BeforeTargets="ClCompile"
+          DependsOnTargets="GenerateAeTextCatalog"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and Exists('$(AeTextEscapedCatalogPath)') and '$(AeTextPublicationValidation)'=='true'">
+    <ItemGroup Condition="'$(AeTextCatalogKind)'=='Effect'">
+      <AeTextPublicationSource Include="@(ClCompile->'%(FullPath)');@(ClInclude->'%(FullPath)')" />
+      <AeTextPublicationSource Remove="@(AeTextPublicationSource)"
+                               Condition="'$(DesignTimeBuild)'=='true' and !Exists('%(AeTextPublicationSource.Identity)')" />
+    </ItemGroup>
+    <WriteLinesToFile Condition="'$(AeTextCatalogKind)'=='Effect'" File="$(AeTextSourceList)"
+                      Lines="@(AeTextPublicationSource)"
+                      Overwrite="true"
+                      WriteOnlyWhenDifferent="true" />
+    <Exec Command="uv.exe run --locked --no-dev --project &quot;$(AeTextToolsProject)&quot; aetext validate-publication-review --kind $(AeTextCatalogKind) --catalog &quot;$(AeTextCatalogPath)&quot; --family &quot;$(AeTextFamilyDefinitionPath)&quot; --source-list &quot;$(AeTextSourceList)&quot; --project-root &quot;$(AeTextRepositoryRoot)&quot;" />
+  </Target>
+
+  <!-- Explicit inventory hook used by current repository validation and manifest tooling. -->
+  <Target Name="WriteAeTextInventoryManifest"
+          Condition="'$(MSBuildProjectExtension)'=='.vcxproj' and '$(AeTextInventoryOutput)'!=''">
+    <ItemGroup>
+      <AeTextInventoryLine Include="PROJECT|$(MSBuildProjectFullPath)|$(MSBuildProjectName)|$(AeTextCatalogPath)|$(AeTextNamespace)|$(FsProjectRole)|$(FsAeCategory)|$(AeTextFamilyDefinitionPath)" />
+      <AeTextInventoryLine Include="@(ClCompile->'COMPILE|%(FullPath)')" />
+      <AeTextInventoryLine Include="@(ClInclude->'INCLUDE|%(FullPath)')" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(AeTextInventoryOutput)"
+                      Lines="@(AeTextInventoryLine)"
+                      Overwrite="true"
+                      Encoding="UTF-8" />
+  </Target>
+</Project>

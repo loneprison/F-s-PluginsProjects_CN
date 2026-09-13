@@ -6,8 +6,8 @@
 
 
 #include "Filter.h"
-#include <stdio.h>
 #include "Filter_def.h"
+#include "FilterText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -21,18 +21,19 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const FilterText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_BASE_ENABLED,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_BASE_ENABLED),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_BASE_ENABLED
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_BASE_OPACITY,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BASE_OPACITY),	//Name
 						0,						//VALID_MIN
 						100,						//VALID_MAX
 						0,						//SLIDER_MIN
@@ -46,7 +47,7 @@ static PF_Err ParamsSetup (
 						);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_FILTER_OPACITY,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_FILTER_OPACITY),	//Name
 		0,						//VALID_MIN
 		300,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -64,7 +65,7 @@ static PF_Err ParamsSetup (
 	for (int i = 0; i < PARAMSET_COUNT; i++)
 	{
 #pragma region topic
-		SPRINTF(STR_TOPIC, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_TOPIC(strings, L10N_PARAM_TOPIC), i + 1);
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_START_COLLAPSED;
 		PF_ADD_TOPIC(num, ID_NUM(i,ID_TOPIC));
@@ -73,10 +74,10 @@ static PF_Err ParamsSetup (
 
 #pragma region enabled
 		//enabled
-		SPRINTF(STR_ENABLED, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_ENABLED), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_CHECKBOX(num,
-			STR_ON,
+			AETEXT_LABEL(strings, L10N_PARAM_ON),
 			FLT_Enabled[i],
 			0,
 			ID_NUM(i, ID_BASE_ENABLED)
@@ -85,19 +86,19 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region extract
-		SPRINTF(STR_EXTRACT, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_EXTRACT), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_POPUP(num,
 			STR_EXTRACT_COUNT,	//メニューの数
 			FLT_EXTRACT_MODE[i],	//デフォルト
-			STR_EXTRACT_ITEMS,
+			AETEXT_POPUP(strings, L10N_PARAM_EXTRACT_ITEMS),
 			ID_NUM(i, ID_EXTRACT)
 		);
 #pragma endregion
 		//----------------------------------------------------------------
 
 #pragma region border_hi
-		SPRINTF(STR_BORDER_HI, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_BORDER_HI), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_FLOAT_SLIDER(num,	//Name
 			50,						//VALID_MIN
@@ -115,7 +116,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region softness_hi
-		SPRINTF(STR_SOFTNESS_HI, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS_HI), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_FLOAT_SLIDER(num,	//Name
 			0,						//VALID_MIN
@@ -133,7 +134,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region border_lo
-		SPRINTF(STR_BORDER_LO, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_BORDER_LO), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_FLOAT_SLIDER(num,	//Name
 			0,						//VALID_MIN
@@ -151,7 +152,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region softness_lo
-		SPRINTF(STR_SOFTNESS_LO, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_SOFTNESS_LO), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_FLOAT_SLIDER(num,	//Name
 			0,						//VALID_MIN
@@ -167,7 +168,7 @@ static PF_Err ParamsSetup (
 		);
 #pragma endregion
 #pragma region brightness
-		SPRINTF(STR_BRIGHT, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_BRIGHTNESS), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_FLOAT_SLIDER(num,	//Name
 			-50,				//VALID_MIN
@@ -185,7 +186,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region minmax
-		SPRINTF(STR_MINMAX, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_MINMAX), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_SLIDER(num,	//パラメータの名前
 			0, 			//数値入力する場合の最小値
@@ -199,7 +200,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region max
-		SPRINTF(STR_MAX, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_MAX), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_SLIDER(num,	//パラメータの名前
 			0, 					//数値入力する場合の最小値
@@ -213,7 +214,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region blur
-		SPRINTF(STR_BLUR, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_BLUR), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_SLIDER(num,	//パラメータの名前
 			0, 					//数値入力する場合の最小値
@@ -227,7 +228,7 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region opacity
-		SPRINTF(STR_OPACITY, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_OPACITY), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_FLOAT_SLIDER(num,	//Name
 			0,						//VALID_MIN
@@ -245,12 +246,12 @@ static PF_Err ParamsSetup (
 		//----------------------------------------------------------------
 
 #pragma region blend
-		SPRINTF(STR_BLEND, i + 1);
+		PF_SPRINTF(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_BLEND), i + 1);
 		AEFX_CLR_STRUCT(def);
 		PF_ADD_POPUP(num,
 			STR_BLEND_COUNT,	//メニューの数
 			FLT_BLEND_MODE[i],	//デフォルト
-			STR_BLEND_ITEMS,
+			AETEXT_POPUP(strings, L10N_PARAM_BLEND_ITEMS),
 			ID_NUM(i, ID_BLEND)
 		);
 #pragma endregion
@@ -268,7 +269,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_NOISE,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_NOISE),	//Name
 		0,							//VALID_MIN
 		100,						//VALID_MAX
 		0,							//SLIDER_MIN
@@ -282,8 +283,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ALPHA_ON,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ALPHA_ON),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_ALPHA_ON

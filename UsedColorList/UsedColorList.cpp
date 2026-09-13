@@ -68,10 +68,11 @@ PF_Err UsedColorList::ParamsSetup(
 	in_data = in_dataP;
 	out_data = out_dataP;
 	PF_ParamDef		def;
+	const UsedColorListText::Strings strings(in_dataP);
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_POS0,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS_START),			/*"New Center"*/
 		50,	// X
 		50,	// Y
 		0,	// Flag
@@ -80,7 +81,7 @@ PF_Err UsedColorList::ParamsSetup(
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_POS1,			/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS_END),			/*"New Center"*/
 		75,	// X
 		75,	// Y
 		0,	// Flag
@@ -89,7 +90,7 @@ PF_Err UsedColorList::ParamsSetup(
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_ExceptColor0,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EXCEPT_COLOR0),
 		0xFF,
 		0x0,
 		0x0,
@@ -98,7 +99,7 @@ PF_Err UsedColorList::ParamsSetup(
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_ExceptColor1,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EXCEPT_COLOR1),
 		0x00,
 		0xFF,
 		0x0,
@@ -107,7 +108,7 @@ PF_Err UsedColorList::ParamsSetup(
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_ExceptColor2,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_EXCEPT_COLOR2),
 		0x00,
 		0x00,
 		0xFF,
@@ -115,15 +116,15 @@ PF_Err UsedColorList::ParamsSetup(
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ISDISP,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_DISP),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		TRUE,
 		0,
 		ID_ISDISP
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_GRID_WIDTH,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRID_WIDTH),	//パラメータの名前
 		10, 		//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		10,				//スライダーの最小値 
@@ -133,7 +134,7 @@ PF_Err UsedColorList::ParamsSetup(
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_GRID_HEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_GRID_HEIGHT),	//パラメータの名前
 		10, 		//数値入力する場合の最小値
 		300,			//数値入力する場合の最大値
 		10,				//スライダーの最小値 

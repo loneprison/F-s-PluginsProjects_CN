@@ -39,13 +39,13 @@
 #include "../FsLibrary/FsScreenShake.h"
 
 
-#define	STR_Y			"大きさ(px)"
-#define	STR_VALUE_RND		"大きさのばらつき(%)"
-#define	STR_DIR				"方向(Rot)"
-#define	STR_DIR_RND			"方向のばらつき(Rot)"
-#define	STR_RANDOMSEED		"Random Seed"
-#define	STR_EDGE_STATUS1	"縁の処理"
-#define	STR_EDGE_STATUS2	"透明|伸ばす|繰り返す1|繰り返す2"
+#define	L10N_PARAM_AMOUNT_PX			"大きさ(px)"
+#define	L10N_PARAM_AMOUNT_RND		"大きさのばらつき(%)"
+#define	L10N_PARAM_DIR				"方向(Rot)"
+#define	L10N_PARAM_DIR_RND			"方向のばらつき(Rot)"
+#define	L10N_PARAM_RANDOM_SEED		"Random Seed"
+#define	L10N_PARAM_EDGE_MODE	"縁の処理"
+#define	L10N_PARAM_EDGE_MODE_ITEMS	"透明|伸ばす|繰り返す1|繰り返す2"
 
 #ifdef TEST_MODE
 	#define	STR_TEST_TIME_CB1	"Time Disp"

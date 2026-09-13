@@ -82,37 +82,37 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_EXTRACT_ENABLED			"Extract Enabled"
-#define	STR_EXTRACT_TOPIC			"Extract lightness"
-#define	STR_EXTRACT_BLACK_POINT		"Black Point"
-#define	STR_EXTRACT_WHITE_POINT		"White Point"
-#define	STR_EXTRACT_BLACK_SOFTNESS	"Black Softness"
-#define	STR_EXTRACT_WHITE_SOFTNESS	"White Softness"
-#define	STR_EXTRACT_INVERT			"Invert"
+#define	L10N_PARAM_EXTRACT_ENABLED			"Extract Enabled"
+#define	L10N_PARAM_EXTRACT_TOPIC			"Extract lightness"
+#define	L10N_PARAM_BLACK_POINT		"Black Point"
+#define	L10N_PARAM_WHITE_POINT		"White Point"
+#define	L10N_PARAM_BLACK_SOFTNESS	"Black Softness"
+#define	L10N_PARAM_WHITE_SOFTNESS	"White Softness"
+#define	L10N_PARAM_INVERT			"Invert"
 
-#define	STR_EXTRACT_COLOR_TOPIC		"Extract TargetColor"
-#define	STR_EXTRACT_COLOR_COUNT		"Use Count"
-#define	STR_EXTRACT_COLOR_RANGE		"Range"
-#define STR_EXTRACT_COL1			"Color1"
-#define STR_EXTRACT_COL2			"Color2"
-#define STR_EXTRACT_COL3			"Color3"
-#define STR_EXTRACT_COL4			"Color4"
-#define STR_EXTRACT_COL5			"Color5"
-#define STR_EXTRACT_COL6			"Color6"
-#define STR_EXTRACT_COL7			"Color7"
-#define STR_EXTRACT_COL8			"Color8"
+#define	L10N_PARAM_EXTRACT_COLOR_TOPIC		"Extract TargetColor"
+#define	L10N_PARAM_USE_COUNT		"Use Count"
+#define	L10N_PARAM_RANGE		"Range"
+#define L10N_PARAM_COLOR1			"Color1"
+#define L10N_PARAM_COLOR2			"Color2"
+#define L10N_PARAM_COLOR3			"Color3"
+#define L10N_PARAM_COLOR4			"Color4"
+#define L10N_PARAM_COLOR5			"Color5"
+#define L10N_PARAM_COLOR6			"Color6"
+#define L10N_PARAM_COLOR7			"Color7"
+#define L10N_PARAM_COLOR8			"Color8"
 
-#define	STR_MINIMAX_1ST				"Minimax 1st"
-#define	STR_MINIMAX_2ND				"Minimax 2nd"
-#define	STR_BLUR					"Blur"
+#define	L10N_PARAM_MINIMAX_1ST				"Minimax 1st"
+#define	L10N_PARAM_MINIMAX_2ND				"Minimax 2nd"
+#define	L10N_PARAM_BLUR					"Blur"
 
-#define	STR_BLEND_MODE				"Blend mode"
-#define	STR_BLEND_ITEMS				"None|Normal|Lighten|Darkne|Screen|Multiply"
+#define	L10N_PARAM_BLEND_MODE				"Blend mode"
+#define	L10N_PARAM_BLEND_ITEMS				"None|Normal|Lighten|Darkne|Screen|Multiply"
 #define	STR_BLEND_COUNT				6
 #define	STR_BLEND_DFLT				2
-#define	STR_BLEND_OPACITY			"Blend Opacity"
+#define	L10N_PARAM_BLEND_OPACITY			"Blend Opacity"
 
-#define	STR_NOISE_VALUE				"Noise"
+#define	L10N_PARAM_NOISE				"Noise"
 
 namespace BLEND_MODE
 {

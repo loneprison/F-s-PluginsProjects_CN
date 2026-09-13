@@ -6,7 +6,7 @@
 
 
 #include "PixelExtend.h"
-#include <stdio.h>
+#include "PixelExtendText.generated.h"
 
 //-------------------------------------------------------------------------------------------------
 //AfterEffextsにパラメータを通達する
@@ -19,6 +19,7 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const PixelExtendText::Strings strings(in_data);
 	char num[255] = { "\0" };
 
 	A_u_char defCol[8][3]=
@@ -35,10 +36,10 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_TARGET_TOPIC, ID_TARGET_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_TARGET_TOPIC), ID_TARGET_TOPIC);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_RANGE,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_RANGE),	//Name
 		0,						//VALID_MIN
 		100,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -55,23 +56,23 @@ static PF_Err ParamsSetup (
 	{
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "TargetColorEnabled%d", i);
+		sprintf_s(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR_EN), i);
 #else
-		sprintf(num, "TargetColorEnabled%d", i);
+		sprintf(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR_EN), i);
 #endif
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
 		PF_ADD_CHECKBOX(num,
-			STR_ON,
+			AETEXT_LABEL(strings, L10N_PARAM_ON),
 			FALSE,
 			0,
 			ID_TARGET_COLOR0_ENABLED + i * 2
 		);
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "TargetColor%d", i);
+		sprintf_s(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR), i);
 #else
-		sprintf(num, "TargetColor%d", i);
+		sprintf(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_TARGET_COLOR), i);
 #endif
 		//色の指定
 		AEFX_CLR_STRUCT(def);
@@ -88,10 +89,10 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_TARGET_TOPIC_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_DIR_TOPIC, ID_DIR_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_EXTEND_TOPIC), ID_DIR_TOPIC);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_TOP,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TOP),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -101,7 +102,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_TOP_RIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TOP_RIGHT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -111,7 +112,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_RIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_RIGHT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -121,7 +122,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_BOTTOM_RIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BOTTOM_RIGHT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -131,7 +132,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_BOTTOM,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BOTTOM),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -141,7 +142,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_BOTTOM_LEFT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_BOTTOM_LEFT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -151,7 +152,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LEFT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEFT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -161,7 +162,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_TOP_LEFT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_TOP_LEFT),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		EXPAND_MAX,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -174,29 +175,29 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_DIR_TOPIC_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_TOPIC(STR_NONE_TOPIC, ID_NONE_TOPIC);
+	PF_ADD_TOPIC(AETEXT_TOPIC(strings, L10N_PARAM_NODRAW_TOPIC), ID_NONE_TOPIC);
 	//----------------------------------------------------------------
 	for (int i = 0; i < 8; i++)
 	{
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "NoneColorEnabled%d", i);
+		sprintf_s(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_NODRAW_COLOR_EN), i);
 #else
-		sprintf(num, "NoneColorEnabled%d", i);
+		sprintf(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_NODRAW_COLOR_EN), i);
 #endif
 		AEFX_CLR_STRUCT(def);
 		def.flags = PF_ParamFlag_CANNOT_TIME_VARY;//これをつけるとキーフレームが撃てなくなる
 		PF_ADD_CHECKBOX(num,
-			STR_ON,
+			AETEXT_LABEL(strings, L10N_PARAM_ON),
 			FALSE,
 			0,
 			ID_NONE_COLOR0_ENABLED + i * 2
 		);
 		//----------------------------------------------------------------
 #ifdef AE_OS_WIN
-		sprintf_s(num, "NoneColor%d", i);
+		sprintf_s(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_NODRAW_COLOR), i);
 #else
-		sprintf(num, "NoneColor%d", i);
+		sprintf(num, "%s%d", AETEXT_PARAM(strings, L10N_PARAM_NODRAW_COLOR), i);
 #endif
 		//色の指定
 		AEFX_CLR_STRUCT(def);
@@ -213,8 +214,8 @@ static PF_Err ParamsSetup (
 	PF_END_TOPIC(ID_NONE_TOPIC_END);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_TARGET_ONLY,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_TARGET_ONLY),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_TARGET_ONLY

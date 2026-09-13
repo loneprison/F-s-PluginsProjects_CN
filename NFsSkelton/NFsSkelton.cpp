@@ -84,9 +84,10 @@ PF_Err NFsSkelton::ParamsSetup(
 	in_data = in_dataP;
 	out_data = out_dataP;
 	PF_ParamDef		def;
+	const NFsSkeltonText::Strings strings(in_dataP);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_VALUE,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_VALUE),	//Name
 		0,						//VALID_MIN
 		400,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -100,8 +101,8 @@ PF_Err NFsSkelton::ParamsSetup(
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_CHECK,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_CHECK),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_CHECK

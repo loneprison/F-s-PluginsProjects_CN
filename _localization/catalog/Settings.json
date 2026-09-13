@@ -1,0 +1,294 @@
+{
+  "entries": [
+    {
+      "id": "L10N_SETTINGS_WINDOW_HEADING",
+      "token": "WindowHeading",
+      "zh": "语言设置",
+      "en": "Language Settings",
+      "ja": "言語設定"
+    },
+    {
+      "id": "L10N_SETTINGS_WINDOW_UI_LANGUAGE",
+      "token": "WindowUiLanguage",
+      "zh": "界面语言",
+      "en": "Interface language",
+      "ja": "表示言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_GROUP",
+      "token": "StatusGroup",
+      "zh": "运行状态",
+      "en": "Runtime status",
+      "ja": "動作状況"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_AE_LANGUAGE",
+      "token": "StatusAeLanguage",
+      "zh": "AE 语言",
+      "en": "After Effects language",
+      "ja": "After Effects の言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_AE_VERSION",
+      "token": "StatusAeVersion",
+      "zh": "AE 版本",
+      "en": "After Effects version",
+      "ja": "After Effects のバージョン"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_WINDOWS_LANGUAGE",
+      "token": "StatusWindowsLanguage",
+      "zh": "Windows 的“非 Unicode 程序的语言”",
+      "en": "Windows language for non-Unicode programs",
+      "ja": "Windows の「Unicode 対応ではないプログラムの言語」"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CURRENT_LANGUAGE",
+      "token": "StatusCurrentLanguage",
+      "zh": "当前会话语言",
+      "en": "Current session language",
+      "ja": "現在のセッションの言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_NEXT_LANGUAGE",
+      "token": "StatusNextLanguage",
+      "zh": "下次启动语言",
+      "en": "Language on next launch",
+      "ja": "次回起動時の言語"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_SAVE_AND_RESTART",
+      "token": "StatusSaveAndRestart",
+      "zh": "保存并重启 After Effects 后生效。",
+      "en": "Save and restart After Effects to apply this change.",
+      "ja": "保存して After Effects を再起動すると、変更が反映されます。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_RESTART",
+      "token": "StatusRestart",
+      "zh": "重启 After Effects 后生效。",
+      "en": "Restart After Effects to apply this change.",
+      "ja": "After Effects を再起動すると、変更が反映されます。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_NO_CONFIG",
+      "token": "StatusNoConfig",
+      "zh": "尚未保存设置，当前使用自动模式。",
+      "en": "No settings have been saved. Automatic mode is currently in use.",
+      "ja": "設定はまだ保存されていません。現在は自動モードを使用しています。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_INVALID_CONFIG",
+      "token": "StatusInvalidConfig",
+      "zh": "无法读取设置，当前窗口为只读。请稍后重试。",
+      "en": "The settings could not be read. This window is read-only. Try again later.",
+      "ja": "設定を読み込めません。現在のウィンドウは読み取り専用です。しばらくしてから、もう一度お試しください。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_REPAIRED",
+      "token": "StatusConfigRepaired",
+      "zh": "设置无效，已恢复默认设置。",
+      "en": "The settings were invalid and have been restored to their defaults.",
+      "ja": "設定が無効だったため、既定値に戻しました。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_FIELDS_REPAIRED",
+      "token": "StatusConfigFieldsRepaired",
+      "zh": "部分设置无效，无效项已恢复为默认值。",
+      "en": "Some settings were invalid and have been restored to their defaults.",
+      "ja": "一部の設定が無効だったため、無効な項目を既定値に戻しました。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_BACKUP_FAILED",
+      "token": "StatusConfigBackupFailed",
+      "zh": "设置无效，无法备份原设置；当前使用修复后的设置。",
+      "en": "The settings are invalid, and the original settings could not be backed up. Repaired settings are currently in use.",
+      "ja": "設定が無効です。元の設定をバックアップできなかったため、現在は修復後の設定を使用しています。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_REPAIR_WRITE_FAILED",
+      "token": "StatusConfigRepairWriteFailed",
+      "zh": "设置无效，修复后的设置无法保存。",
+      "en": "The settings are invalid, and the repaired settings could not be saved.",
+      "ja": "設定が無効で、修復後の設定を保存できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_VERSION_COMPATIBILITY",
+      "token": "StatusConfigVersionCompatibility",
+      "zh": "设置文件版本不兼容或内容损坏，保存后会重置部分设置。",
+      "en": "The settings file has an incompatible version or is damaged. Saving will reset some settings.",
+      "ja": "設定ファイルのバージョンに互換性がないか、ファイルが破損しています。保存すると一部の設定がリセットされます。"
+    },
+    {
+      "id": "L10N_SETTINGS_STATUS_CONFIG_VERSION_DEFAULTS",
+      "token": "StatusConfigVersionDefaults",
+      "zh": "部分设置已使用默认值。",
+      "en": "Some settings are using their default values.",
+      "ja": "一部の設定では既定値を使用しています。"
+    },
+    {
+      "id": "L10N_SETTINGS_COMPATIBILITY_GROUP",
+      "token": "CompatibilityGroup",
+      "zh": "兼容性提示",
+      "en": "Compatibility notice",
+      "ja": "互換性に関する注意"
+    },
+    {
+      "id": "L10N_SETTINGS_PLUGIN_LANGUAGE_GROUP",
+      "token": "PluginLanguageGroup",
+      "zh": "插件语言",
+      "en": "Plugin language",
+      "ja": "プラグインの言語"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_AUTO",
+      "token": "ModeAuto",
+      "zh": "自动",
+      "en": "Automatic",
+      "ja": "自動"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_ENGLISH",
+      "token": "ModeEnglish",
+      "zh": "英语",
+      "en": "English",
+      "ja": "英語"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_ORIGINAL",
+      "token": "ModeOriginal",
+      "zh": "原文",
+      "en": "Original",
+      "ja": "原文"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_CHINESE",
+      "token": "ModeSimplifiedChinese",
+      "zh": "简体中文",
+      "en": "Simplified Chinese",
+      "ja": "中国語（簡体字）"
+    },
+    {
+      "id": "L10N_SETTINGS_MODE_ORIGINAL_FOR_ZH",
+      "token": "ModeOriginalForSimplifiedChinese",
+      "zh": "原文（兼容简体中文环境）",
+      "en": "Original (for Simplified Chinese environments)",
+      "ja": "原文（簡体字中国語環境向け）"
+    },
+    {
+      "id": "L10N_SETTINGS_VALUE_UNAVAILABLE",
+      "token": "ValueUnavailable",
+      "zh": "无法获取",
+      "en": "Unavailable",
+      "ja": "取得できません"
+    },
+    {
+      "id": "L10N_SETTINGS_VALUE_UNKNOWN",
+      "token": "ValueUnknown",
+      "zh": "未知",
+      "en": "Unknown",
+      "ja": "不明"
+    },
+    {
+      "id": "L10N_SETTINGS_BUTTON_SAVE",
+      "token": "ButtonSave",
+      "zh": "保存",
+      "en": "Save",
+      "ja": "保存"
+    },
+    {
+      "id": "L10N_SETTINGS_BUTTON_CANCEL",
+      "token": "ButtonCancel",
+      "zh": "取消",
+      "en": "Cancel",
+      "ja": "キャンセル"
+    },
+    {
+      "id": "L10N_SETTINGS_BUTTON_BACK",
+      "token": "ButtonBack",
+      "zh": "返回",
+      "en": "Back",
+      "ja": "戻る"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_CONFIG_DIRECTORY_UNAVAILABLE",
+      "token": "SaveErrorConfigDirectoryUnavailable",
+      "zh": "无法使用本地设置目录。",
+      "en": "The local settings folder is unavailable.",
+      "ja": "ローカル設定フォルダーを使用できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_CONFIG_BUSY",
+      "token": "SaveErrorConfigBusy",
+      "zh": "另一个 After Effects 实例正在使用设置文件，请稍后重试。",
+      "en": "Another After Effects instance is using the settings file. Try again later.",
+      "ja": "別の After Effects インスタンスが設定ファイルを使用しています。しばらくしてから、もう一度お試しください。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_DIRECTORY_CREATION_FAILED",
+      "token": "SaveErrorDirectoryCreationFailed",
+      "zh": "无法创建本地设置目录。",
+      "en": "The local settings folder could not be created.",
+      "ja": "ローカル設定フォルダーを作成できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_TEMPORARY_FILE_CREATION_FAILED",
+      "token": "SaveErrorTemporaryFileCreationFailed",
+      "zh": "无法创建临时设置文件。",
+      "en": "The temporary settings file could not be created.",
+      "ja": "一時設定ファイルを作成できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_SAVE_ERROR_SAFE_REPLACE_FAILED",
+      "token": "SaveErrorSafeReplaceFailed",
+      "zh": "无法安全保存语言设置。",
+      "en": "The language settings could not be saved safely.",
+      "ja": "言語設定を安全に保存できません。"
+    },
+    {
+      "id": "L10N_SETTINGS_MESSAGE_INCOMPATIBLE",
+      "token": "MessageIncompatible",
+      "zh": "当前环境可能无法正确显示所选语言，文字可能出现乱码。",
+      "en": "The selected language may not display correctly in the current environment and may appear as garbled text.",
+      "ja": "現在の環境では、選択した言語が正しく表示されず、文字化けする可能性があります。"
+    }
+  ],
+  "references": [
+    "L10N_SETTINGS_WINDOW_HEADING",
+    "L10N_SETTINGS_WINDOW_UI_LANGUAGE",
+    "L10N_SETTINGS_STATUS_GROUP",
+    "L10N_SETTINGS_STATUS_AE_LANGUAGE",
+    "L10N_SETTINGS_STATUS_AE_VERSION",
+    "L10N_SETTINGS_STATUS_WINDOWS_LANGUAGE",
+    "L10N_SETTINGS_STATUS_CURRENT_LANGUAGE",
+    "L10N_SETTINGS_STATUS_NEXT_LANGUAGE",
+    "L10N_SETTINGS_STATUS_SAVE_AND_RESTART",
+    "L10N_SETTINGS_STATUS_RESTART",
+    "L10N_SETTINGS_STATUS_NO_CONFIG",
+    "L10N_SETTINGS_STATUS_INVALID_CONFIG",
+    "L10N_SETTINGS_STATUS_CONFIG_REPAIRED",
+    "L10N_SETTINGS_STATUS_CONFIG_FIELDS_REPAIRED",
+    "L10N_SETTINGS_STATUS_CONFIG_BACKUP_FAILED",
+    "L10N_SETTINGS_STATUS_CONFIG_REPAIR_WRITE_FAILED",
+    "L10N_SETTINGS_STATUS_CONFIG_VERSION_COMPATIBILITY",
+    "L10N_SETTINGS_STATUS_CONFIG_VERSION_DEFAULTS",
+    "L10N_SETTINGS_COMPATIBILITY_GROUP",
+    "L10N_SETTINGS_PLUGIN_LANGUAGE_GROUP",
+    "L10N_SETTINGS_MODE_AUTO",
+    "L10N_SETTINGS_MODE_ENGLISH",
+    "L10N_SETTINGS_MODE_ORIGINAL",
+    "L10N_SETTINGS_MODE_CHINESE",
+    "L10N_SETTINGS_MODE_ORIGINAL_FOR_ZH",
+    "L10N_SETTINGS_VALUE_UNAVAILABLE",
+    "L10N_SETTINGS_VALUE_UNKNOWN",
+    "L10N_SETTINGS_BUTTON_SAVE",
+    "L10N_SETTINGS_BUTTON_CANCEL",
+    "L10N_SETTINGS_BUTTON_BACK",
+    "L10N_SETTINGS_SAVE_ERROR_CONFIG_DIRECTORY_UNAVAILABLE",
+    "L10N_SETTINGS_SAVE_ERROR_CONFIG_BUSY",
+    "L10N_SETTINGS_SAVE_ERROR_DIRECTORY_CREATION_FAILED",
+    "L10N_SETTINGS_SAVE_ERROR_TEMPORARY_FILE_CREATION_FAILED",
+    "L10N_SETTINGS_SAVE_ERROR_SAFE_REPLACE_FAILED",
+    "L10N_SETTINGS_MESSAGE_INCOMPATIBLE"
+  ]
+}

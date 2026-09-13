@@ -14,7 +14,7 @@
 
 //-----------------------------------------------------------------------------------
 //プラグインの説明に使われる文字
-#define NFS_DESCRIPTION	"Fake shine"
+#define L10N_PLUGIN_DESC	"Fake shine"
 
 	//-----------------------------------------------------------------------------------
 	//プラグインが表示されるメニュー名
@@ -47,7 +47,7 @@ out_data->out_flags
 	PF_OutFlag_I_DO_DIALOG				32
 */
 
-#define NFS_OUT_FLAGS	33556032	//通常はこちら
+#define NFS_OUT_FLAGS	33556064	//通常はこちら
 //#define NFS_OUT_FLAGS	33556036	//こっちを有効にすると毎フレームごとに描画する。NON_PARAM_VARYを動作中に切り替えるときもこちらに
 //#define NFS_OUT_FLAGS	1600		//8bitのみ
 

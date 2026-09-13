@@ -3,13 +3,13 @@
   <ItemGroup>
     <ClCompile Include="..\ChromaticAberration.cpp" />
     <ClCompile Include="..\..\..\Util\AEFX_SuiteHelper.c">
-      <Filter>Header Files\AE</Filter>
+      <Filter>Supporting code\AE</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Util\AEGP_SuiteHandler.cpp">
-      <Filter>Header Files\AE</Filter>
+      <Filter>Supporting code\AE</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Util\MissingSuiteError.cpp">
-      <Filter>Header Files\AE</Filter>
+      <Filter>Supporting code\AE</Filter>
     </ClCompile>
     <ClCompile Include="..\..\FsLibrary\FsGraphics.cpp">
       <Filter>Supporting code\Fs</Filter>
@@ -53,10 +53,17 @@
     <ClCompile Include="..\..\..\Util\Smart_Utils.cpp">
       <Filter>Supporting code\AE</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\_localization\core\AeTextClient.cpp">
+      <Filter>Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Fs_Entry.h" />
-    <ClInclude Include="..\ChromaticAberration.h" />
+    <ClInclude Include="..\Fs_Entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ChromaticAberration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\Headers\A.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -73,9 +80,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectSuites.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Util\AE_EffectSuitesHelper.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\AE_EffectUI.h">
@@ -99,12 +103,6 @@
     <ClInclude Include="..\..\..\Util\AEGP_SuiteHandler.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\devstudio\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Util\entry.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
@@ -121,9 +119,6 @@
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKAESupport.h">
-      <Filter>Header Files\AE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Headers\PrSDKAEUI.h">
       <Filter>Header Files\AE</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Headers\PrSDKPixelFormat.h">
@@ -169,9 +164,14 @@
       <Filter>Header Files\Fs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\NFsLibrary\resource.h">
-      <Filter>Header Files\AE\N</Filter>
+      <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Fs_Target.h" />
+    <ClInclude Include="..\Fs_Target.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_localization\AeText.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -195,9 +195,6 @@
     <Filter Include="Supporting code\AE">
       <UniqueIdentifier>{166bc5a9-489e-439e-bb26-0bb9a8f258df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\AE\N">
-      <UniqueIdentifier>{0fe330fb-621e-48ae-9a30-8a8958dc4efd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\ChromaticAberrationPiPL.r">
@@ -205,14 +202,30 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChromaticAberrationPiPL.rc">
+    <ResourceCompile Include="$(IntDir)ChromaticAberrationPiPL.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
     <ResourceCompile Include="..\..\NFsLibrary\Resource.rc">
-      <Filter>Header Files\AE\N</Filter>
+      <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\NFsLibrary\_about_thum.png" />
+    <Image Include="..\..\NFsLibrary\_about_thum.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{D92CC2F7-494A-428D-AADB-C3AFC713FC34}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\_localization\catalog\NF's Plugins-{Legacy}\ChromaticAberration.json">
+      <Filter>Localization</Filter>
+    </None>
   </ItemGroup>
 </Project>

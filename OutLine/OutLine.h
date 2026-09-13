@@ -49,9 +49,9 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Y			"Value"
-#define	STR_COLOR			"Color"
-#define	STR_LEVEL			"Level(%)"
+#define	L10N_PARAM_VALUE			"Value"
+#define	L10N_PARAM_COLOR			"Color"
+#define	L10N_PARAM_LEVEL			"Level(%)"
 
 
 //UIのパラメータ

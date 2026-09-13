@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_ALPHA_THRESHOLD": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_ALPHA_THRESHOLD": "Alpha 阈值"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Alpha 通道阈值化"
+      }
+    }
+  }
+}

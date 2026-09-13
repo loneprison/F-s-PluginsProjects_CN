@@ -6,6 +6,7 @@
 
 
 #include "MaskFromRGB.h"
+#include "MaskFromRGBText.generated.h"
 
 static PF_Err (*func8)(
 			refconType	refcon, 
@@ -38,22 +39,23 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const MaskFromRGBText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
 	def.flags		=	PF_ParamFlag_SUPERVISE	|
 					PF_ParamFlag_CANNOT_TIME_VARY |
 					PF_ParamFlag_CANNOT_INTERP;
-	PF_ADD_POPUP(		STR_POPUP, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_MASK),
 						STR_POPUP_COUNT,	//メニューの数
 						STR_POPUP_DFLT,	//デフォルト
-						STR_POPUP_ITEMS,
+						AETEXT_POPUP(strings, L10N_PARAM_MASK_ITEMS),
 						ID_POPUP
 						);
 	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LEVEL,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//Name
 						0,						//VALID_MIN
 						5000,					//VALID_MAX
 						50,						//SLIDER_MIN

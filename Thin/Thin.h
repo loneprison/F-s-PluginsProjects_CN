@@ -63,23 +63,23 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_Y			"ThinValue"
-#define	STR_ON				"on"
-#define	STR_COLOR1_ON		"EnabledColor1"
-#define	STR_COLOR2_ON		"EnabledColor2"
-#define	STR_COLOR3_ON		"EnabledColor3"
-#define	STR_COLOR4_ON		"EnabledColor4"
+#define	L10N_PARAM_THIN_VALUE			"ThinValue"
+#define	L10N_PARAM_ON				"on"
+#define	L10N_PARAM_ENABLED_COLOR1		"EnabledColor1"
+#define	L10N_PARAM_ENABLED_COLOR2		"EnabledColor2"
+#define	L10N_PARAM_ENABLED_COLOR3		"EnabledColor3"
+#define	L10N_PARAM_ENABLED_COLOR4		"EnabledColor4"
 
-#define	STR_COLOR1			"Color1"
-#define	STR_COLOR2			"Color2"
-#define	STR_COLOR3			"Color3"
-#define	STR_COLOR4			"Color4"
+#define	L10N_PARAM_COLOR1			"Color1"
+#define	L10N_PARAM_COLOR2			"Color2"
+#define	L10N_PARAM_COLOR3			"Color3"
+#define	L10N_PARAM_COLOR4			"Color4"
 
-#define	STR_WHITE			"NoWhite"
-#define	STR_ALPHAZERO		"NoAlphaZero"
-#define	STR_EDGE		"EdgeFilter"
+#define	L10N_PARAM_NO_WHITE			"NoWhite"
+#define	L10N_PARAM_NO_ALPHA_ZERO		"NoAlphaZero"
+#define	L10N_PARAM_EDGE_FILTER		"EdgeFilter"
 
-#define	STR_LEVEL			"level"
+#define	L10N_PARAM_LEVEL			"level"
 
 #define COLOR_MAX	4
 //UIのパラメータ

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_RANGE": {"useSource": true},
+        "L10N_PARAM_ENABLE": "Enable",
+        "L10N_PARAM_TARGET0": {"useSource": true},
+        "L10N_PARAM_TARGET1": {"useSource": true},
+        "L10N_PARAM_TARGET2": {"useSource": true},
+        "L10N_PARAM_TARGET3": {"useSource": true},
+        "L10N_PARAM_TARGET4": {"useSource": true},
+        "L10N_PARAM_TARGET5": {"useSource": true},
+        "L10N_PARAM_TARGET6": {"useSource": true},
+        "L10N_PARAM_TARGET7": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Blurs only selected colors. CS6 compatibility test version."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_BLUR": "模糊度",
+        "L10N_PARAM_RANGE": "阈值",
+        "L10N_PARAM_ENABLE": "方案",
+        "L10N_PARAM_TARGET0": "颜色0",
+        "L10N_PARAM_TARGET1": "颜色1",
+        "L10N_PARAM_TARGET2": "颜色2",
+        "L10N_PARAM_TARGET3": "颜色3",
+        "L10N_PARAM_TARGET4": "颜色4",
+        "L10N_PARAM_TARGET5": "颜色5",
+        "L10N_PARAM_TARGET6": "颜色6",
+        "L10N_PARAM_TARGET7": "颜色7"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "仅模糊所选颜色。CS6兼容测试版"
+      }
+    }
+  }
+}

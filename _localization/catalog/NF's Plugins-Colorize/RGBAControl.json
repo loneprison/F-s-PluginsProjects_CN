@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_RED": {"useSource": true},
+        "L10N_PARAM_GREEN": {"useSource": true},
+        "L10N_PARAM_BLUE": {"useSource": true},
+        "L10N_PARAM_ALPHA": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Adjusts the brightness of individual RGB channels."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_RED": "红",
+        "L10N_PARAM_GREEN": "绿",
+        "L10N_PARAM_BLUE": "蓝",
+        "L10N_PARAM_ALPHA": "Alpha"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "RGB单独亮度调整"
+      }
+    }
+  }
+}

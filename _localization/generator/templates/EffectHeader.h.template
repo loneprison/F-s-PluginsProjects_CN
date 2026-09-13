@@ -1,0 +1,60 @@
+#pragma once
+
+#include "AeText.h"
+
+namespace {{NAMESPACE}} {
+
+namespace detail {
+
+{{RUNTIME_IDENTITY}}
+
+{{DETAIL_KEYS}}
+
+} // namespace detail
+
+
+
+{{STRING_TABLES}}
+
+{{VARIANT_BLOCKS}}
+
+inline constexpr AeText::VariantView kVariants[] = {
+{{VARIANT_ENTRIES}}
+};
+
+inline constexpr AeText::CatalogView kCatalog = {
+    sizeof(AeText::CatalogView),
+    AeText::kCatalogVersion,
+    kVariants,
+    static_cast<std::uint32_t>(sizeof(kVariants) / sizeof(kVariants[0])),
+    {{FALLBACK_INDEX}},
+};
+
+inline constexpr const AeText::CatalogView &Catalog()
+{
+    return kCatalog;
+}
+
+class Strings {
+public:
+    explicit Strings(PF_InData *in_data) noexcept
+        : text_(
+{{CLIENT_ARGUMENTS}})
+    {}
+
+{{ACCESSORS}}
+
+
+
+private:
+    AeText::Client text_;
+};
+
+inline void OpenSettings(PF_InData *in_data, const wchar_t *title) noexcept
+{
+{{OPEN_SETTINGS_BODY}}
+}
+
+} // namespace {{NAMESPACE}}
+
+{{WRAPPER_MACROS}}

@@ -6,6 +6,7 @@
 
 
 #include "SparkMult.h"
+#include "SparkMultText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const SparkMultText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_SEED,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SEED),	//パラメータの名前
 		-30000, 				//数値入力する場合の最小値
 		30000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -32,7 +34,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_SEEDPOS,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SEED_POS),	//パラメータの名前
 		-30000, 				//数値入力する場合の最小値
 		30000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -42,7 +44,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_SEEDMOVE,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SEED_MOVE),	//パラメータの名前
 		-30000, 				//数値入力する場合の最小値
 		30000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -53,10 +55,10 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//角度
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_ANGLE(STR_OFFSET, 0, ID_OFFSET);
+	PF_ADD_ANGLE(AETEXT_PARAM(strings, L10N_PARAM_OFFSET), 0, ID_OFFSET);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_WIPE,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_WIPE),	//Name
 		0,						//VALID_MIN
 		200,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -70,7 +72,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_POINT_COUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_POINT_COUNT),	//パラメータの名前
 		2, 				//数値入力する場合の最小値
 		7,			//数値入力する場合の最大値
 		2,				//スライダーの最小値 
@@ -81,7 +83,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_0_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT0),		/*"New Center"*/
 		0,	// X
 		0,	// Y
 		0,	// Flag
@@ -90,7 +92,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_1_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT1),		/*"New Center"*/
 		10,	// X
 		10,	// Y
 		0,	// Flag
@@ -99,7 +101,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 //位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_2_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT2),		/*"New Center"*/
 		20,	// X
 		20,	// Y
 		0,	// Flag
@@ -107,7 +109,7 @@ static PF_Err ParamsSetup (
 	);	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_3_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT3),		/*"New Center"*/
 		30,	// X
 		30,	// Y
 		0,	// Flag
@@ -116,7 +118,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_4_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT4),		/*"New Center"*/
 		40,	// X
 		40,	// Y
 		0,	// Flag
@@ -125,7 +127,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_5_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT5),		/*"New Center"*/
 		50,	// X
 		50,	// Y
 		0,	// Flag
@@ -134,7 +136,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 //位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_6_P,		/*"New Center"*/
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POINT6),		/*"New Center"*/
 		60,	// X
 		60,	// Y
 		0,	// Flag
@@ -142,7 +144,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_START_RX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_FIRST_RAND_X),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -152,7 +154,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_START_RY,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_FIRST_RAND_Y),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -162,7 +164,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MID_RX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MID_RAND_X),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -172,7 +174,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MID_RY,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_MID_RAND_Y),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -182,7 +184,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LAST_RX,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LAST_RAND_X),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -192,7 +194,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LAST_RY,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LAST_RAND_Y),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		500,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -202,7 +204,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_LINESIZE,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LINE_SIZE),	//Name
 		0,						//VALID_MIN
 		300,						//VALID_MAX
 		0,						//SLIDER_MIN
@@ -216,7 +218,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LINEMOVE,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LINE_MOVE),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		2000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -226,7 +228,7 @@ static PF_Err ParamsSetup (
 	);	
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_SUBCOUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_SUB_COUNT),	//パラメータの名前
 		0, 				//数値入力する場合の最小値
 		10,			//数値入力する場合の最大値
 		0,				//スライダーの最小値 
@@ -236,7 +238,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_FOLDCOUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_FOLD_COUNT),	//パラメータの名前
 		1, 				//数値入力する場合の最小値
 		5,			//数値入力する場合の最大値
 		1,				//スライダーの最小値 
@@ -246,7 +248,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_DRAWCOUNT,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_DRAW_COUNT),	//パラメータの名前
 		1, 				//数値入力する場合の最小値
 		50,			//数値入力する場合の最大値
 		1,				//スライダーの最小値 
@@ -259,7 +261,7 @@ static PF_Err ParamsSetup (
 	//----------------------------------------------------------------
 //色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,
@@ -267,8 +269,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_BLEND,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_BLEND),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_BLEND

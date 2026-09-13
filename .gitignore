@@ -60,7 +60,7 @@ dlldata.c
 # DNX
 project.lock.json
 project.fragment.lock.json
-artifacts/
+_build/
 
 *_i.c
 *_p.c
@@ -276,5 +276,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+.venv/
 
-
+# Regenerable cache files
+.pytest_cache/
+.ruff_cache/
+_localization/.cache/
+_localization/catalog/**/*.save-lock

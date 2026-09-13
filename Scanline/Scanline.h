@@ -53,13 +53,13 @@ enum {
 };
 
 //UIの表示文字列
-#define	STR_HEIGHT		"ラインの太さ(pixel)"
-#define	STR_LEVEL0		"奇数列ラインの明るさ(%)"
-#define	STR_OPACITY0	"奇数列ラインの不透明度(%)"
-#define	STR_LEVEL1		"偶数列ラインの明るさ(%)"
-#define	STR_OPACITY1	"偶数列ラインの不透明度(%)"
-#define STR_DIR		"方向"
-#define STR_DIRSTR	"水平|垂直"
+#define	L10N_PARAM_HEIGHT		"ラインの太さ(pixel)"
+#define	L10N_PARAM_LEVEL0		"奇数列ラインの明るさ(%)"
+#define	L10N_PARAM_OPACITY0	"奇数列ラインの不透明度(%)"
+#define	L10N_PARAM_LEVEL1		"偶数列ラインの明るさ(%)"
+#define	L10N_PARAM_OPACITY1	"偶数列ラインの不透明度(%)"
+#define L10N_PARAM_DIR		"方向"
+#define L10N_PARAM_DIR_ITEMS	"水平|垂直"
 
 //UIのパラメータ
 typedef struct ParamInfo {

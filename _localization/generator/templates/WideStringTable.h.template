@@ -1,0 +1,3 @@
+inline constexpr const wchar_t *{{NAME}}[] = {
+{{LITERALS}}
+};

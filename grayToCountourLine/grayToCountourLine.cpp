@@ -6,6 +6,7 @@
 
 
 #include "grayToCountourLine.h"
+#include "grayToCountourLineText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,9 +20,10 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const grayToCountourLineText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LO,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_COUNT_LO),	//パラメータの名前
 		1, 					//数値入力する場合の最小値
 		10,					//数値入力する場合の最大値
 		1,					//スライダーの最小値 
@@ -31,7 +33,7 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_MID,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_COUNT_MID),	//パラメータの名前
 		1, 					//数値入力する場合の最小値
 		10,					//数値入力する場合の最大値
 		1,					//スライダーの最小値 
@@ -42,7 +44,7 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_HI,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_COUNT_HI),	//パラメータの名前
 		1, 					//数値入力する場合の最小値
 		10,					//数値入力する場合の最大値
 		1,					//スライダーの最小値 
@@ -52,8 +54,8 @@ static PF_Err ParamsSetup (
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_DRAW_COL,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_DRAW_COLOR),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_DRAW_COL

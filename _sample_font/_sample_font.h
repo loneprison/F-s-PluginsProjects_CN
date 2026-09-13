@@ -62,8 +62,8 @@ enum {
 	ID_POS,
 	ID_NUM_PARAMS
 	};
-#define	STR_COLOR		"color"
-#define	STR_POS			"pos"
+#define L10N_PARAM_COLOR		"color"
+#define L10N_PARAM_POSITION	"pos"
 
 
 //-------------------------------------------------------------------

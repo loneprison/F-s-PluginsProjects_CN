@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_TARGET_MODE": {"useSource": true},
+        "L10N_PARAM_TARGET_ENABLED": {"useSource": true},
+        "L10N_PARAM_TARGET_FORMAT": {"useSource": true},
+        "L10N_PARAM_GRAD_COLOR": {"useSource": true},
+        "L10N_PARAM_SWAP_POINT": {"useSource": true},
+        "L10N_PARAM_HYPERBOLIC": {"useSource": true},
+        "L10N_PARAM_START": {"useSource": true},
+        "L10N_PARAM_LAST": {"useSource": true},
+        "L10N_PARAM_AUTO_POS": {"useSource": true},
+        "L10N_PARAM_ROT": {"useSource": true},
+        "L10N_PARAM_START_PERCENT": {"useSource": true},
+        "L10N_PARAM_LAST_PERCENT": {"useSource": true},
+        "L10N_PARAM_OFFSET_X": {"useSource": true},
+        "L10N_PARAM_OFFSET_Y": {"useSource": true},
+        "L10N_PARAM_GUIDE_DRAW": {"useSource": true},
+        "L10N_PARAM_GUIDE_COLOR": {"useSource": true},
+        "L10N_PARAM_COLOR_TABLE": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true},
+        "L10N_PARAM_LOAD": {"useSource": true},
+        "L10N_PARAM_SAVE": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_COLORS": {"useSource": true},
+        "L10N_PARAM_TWO_POINT": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_TARGET_MODE": "模式",
+        "L10N_PARAM_TARGET_ENABLED": "目标方案",
+        "L10N_PARAM_TARGET_FORMAT": "颜色%d",
+        "L10N_PARAM_GRAD_COLOR": "渐变颜色",
+        "L10N_PARAM_SWAP_POINT": "交换颜色",
+        "L10N_PARAM_HYPERBOLIC": "偏差",
+        "L10N_PARAM_START": "渐变起点",
+        "L10N_PARAM_LAST": "渐变终点",
+        "L10N_PARAM_AUTO_POS": "自适应位置",
+        "L10N_PARAM_ROT": "旋转",
+        "L10N_PARAM_START_PERCENT": "起点百分比",
+        "L10N_PARAM_LAST_PERCENT": "终点百分比",
+        "L10N_PARAM_OFFSET_X": "X 偏移",
+        "L10N_PARAM_OFFSET_Y": "Y 偏移",
+        "L10N_PARAM_GUIDE_DRAW": "绘制参考线",
+        "L10N_PARAM_GUIDE_COLOR": "参考线颜色",
+        "L10N_PARAM_COLOR_TABLE": "颜色表"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开",
+        "L10N_PARAM_LOAD": "加载",
+        "L10N_PARAM_SAVE": "保存"
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": "指定目标颜色|仅Alpha|全部"
+      },
+      "Topic": {
+        "L10N_PARAM_TARGET_COLORS": "目标颜色",
+        "L10N_PARAM_TWO_POINT": "渐变端点"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "在指定目标上生成渐变色"
+      }
+    }
+  }
+}

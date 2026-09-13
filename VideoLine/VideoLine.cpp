@@ -6,6 +6,7 @@
 //-----------------------------------------------------------------------------------
 
 #include "VideoLine.h"
+#include "VideoLineText.generated.h"
 
 PF_Err (*subFunc8)(refconType	refcon, A_long xL, A_long yL,PF_Pixel8	*inP, PF_Pixel8	*outP);
 PF_Err (*subFunc16)(refconType	refcon, A_long xL, A_long yL,PF_Pixel16	*inP, PF_Pixel16	*outP);
@@ -21,7 +22,14 @@ About (
 {
 	PF_Err	err				= PF_Err_NONE;
 	CFsAE ae;
-	err = ae.About(in_data,out_data,params,output);
+	const VideoLineText::Strings strings(in_data);
+	const auto description = AETEXT_ABOUT(strings, L10N_PLUGIN_DESC);
+	err = ae.About(
+		in_data,
+		out_data,
+		params,
+		output,
+		description);
 	return err;
 }
 //-----------------------------------------------------------------------------------
@@ -89,10 +97,11 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const VideoLineText::Strings strings(in_data);
 
 	//１個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_BRIGHT,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LINE_BRIGHTNESS),	//パラメータの名前
 					0, 				//数値入力する場合の最小値
 					200,			//数値入力する場合の最大値
 					0,				//スライダーの最小値 
@@ -106,7 +115,7 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	//2個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_HEIGHT,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_LINE_HEIGHT),	//パラメータの名前
 					1, 			//数値入力する場合の最小値
 					100,		//数値入力する場合の最大値
 					1,			//スライダーの最小値 
@@ -118,10 +127,15 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	//3個目のパラメータ
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_REV1,STR_REV2, FALSE,0, ID_REV);
+	PF_ADD_CHECKBOX(
+		AETEXT_PARAM(strings, L10N_PARAM_LINE_POSITION),
+		AETEXT_LABEL(strings, L10N_PARAM_REVERSE),
+		FALSE,
+		0,
+		ID_REV);
 
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(	STR_INTER,	//パラメータの名前
+	PF_ADD_SLIDER(	AETEXT_PARAM(strings, L10N_PARAM_INTERVAL),	//パラメータの名前
 					-100, 		//数値入力する場合の最小値
 					100,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -132,16 +146,16 @@ static PF_Err ParamsSetup (PF_InData		*in_data,
 
 	//ポップアップメニュー
 	AEFX_CLR_STRUCT(def);	
-	PF_ADD_POPUP(		STR_DIR, 
+	PF_ADD_POPUP(		AETEXT_PARAM(strings, L10N_PARAM_DIR),
 						2,	//メニューの数
 						1,	//デフォルト
-						STR_DIRSTR,
+						AETEXT_POPUP(strings, L10N_PARAM_DIR_ITEMS),
 						ID_DIR
 						);
 
 	AEFX_CLR_STRUCT(def);
 	PF_ADD_ANGLE(
-					STR_OFFSET,
+					AETEXT_PARAM(strings, L10N_PARAM_OFFSET),
 					0,
 					ID_OFFSET); 
 
@@ -614,9 +628,11 @@ EntryPointFunc (
 			case PF_Cmd_COMPLETELY_GENERAL:
 				err = RespondtoAEGP(in_data,out_data,params,output,extraP);
 				break;
-			case PF_Cmd_DO_DIALOG:
-				//err = PopDialog(in_data,out_data,params,output);
+			case PF_Cmd_DO_DIALOG: {
+
+				VideoLineText::OpenSettings(in_data, L"F's VideoLine");
 				break;		
+			}
 			case PF_Cmd_USER_CHANGED_PARAM:
 				err = HandleChangedParam(	in_data,
 											out_data,

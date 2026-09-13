@@ -6,6 +6,7 @@
 
 
 #include "ExpsPos.h"
+#include "ExpsPosText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ExpsPosText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ON,
-		STR_ON2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ON),
+		AETEXT_LABEL(strings, L10N_PARAM_ON_VALUE),
 		TRUE,
 		0,
 		ID_ON
@@ -30,16 +32,16 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 //位置の指定
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos0", 00, 00, 0, ID_POS0);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos1", 10, 10, 0, ID_POS1);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos2", 20, 20, 0, ID_POS2);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos3", 30, 30, 0, ID_POS3);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos4", 40, 40, 0, ID_POS4);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos5", 50, 50, 0, ID_POS5);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos6", 60, 60, 0, ID_POS6);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos7", 70, 70, 0, ID_POS7);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos8", 80, 80, 0, ID_POS8);
-	AEFX_CLR_STRUCT(def); PF_ADD_POINT("pos9", 90, 90, 0, ID_POS9);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS0), 00, 00, 0, ID_POS0);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS1), 10, 10, 0, ID_POS1);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS2), 20, 20, 0, ID_POS2);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS3), 30, 30, 0, ID_POS3);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS4), 40, 40, 0, ID_POS4);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS5), 50, 50, 0, ID_POS5);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS6), 60, 60, 0, ID_POS6);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS7), 70, 70, 0, ID_POS7);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS8), 80, 80, 0, ID_POS8);
+	AEFX_CLR_STRUCT(def); PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS9), 90, 90, 0, ID_POS9);
 	//----------------------------------------------------------------
 	out_data->num_params = 	ID_NUM_PARAMS; 
 

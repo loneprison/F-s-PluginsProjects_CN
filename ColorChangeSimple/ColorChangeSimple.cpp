@@ -6,6 +6,7 @@
 
 
 #include "ColorChangeSimple.h"
+#include "ColorChangeSimpleText.generated.h"
 
 
 PF_Err (*subFunc8)(refconType	refcon, A_long xL, A_long yL,PF_Pixel8	*inP, PF_Pixel8	*outP);
@@ -22,11 +23,12 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ColorChangeSimpleText::Strings strings(in_data);
 
 	//----------------------------------------------------------------
 	//固定小数のスライダーバー
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FIXED(	STR_LEVEL,	//パラメータの名前
+	PF_ADD_FIXED(	AETEXT_PARAM(strings, L10N_PARAM_LEVEL),	//パラメータの名前
 					0, 			//数値入力する場合の最小値
 					100,		//数値入力する場合の最大値
 					0,			//スライダーの最小値 
@@ -41,7 +43,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_SRC, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_SRC_COLOR),
 					0xFF,
 					0xFF,
 					0xFF,
@@ -50,7 +52,7 @@ static PF_Err ParamsSetup (	PF_InData		*in_data,
 
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(	STR_DST, 
+	PF_ADD_COLOR(	AETEXT_PARAM(strings, L10N_PARAM_DST_COLOR),
 					0x00,
 					0x00,
 					0x00,

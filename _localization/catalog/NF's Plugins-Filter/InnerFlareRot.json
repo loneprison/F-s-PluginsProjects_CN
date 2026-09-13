@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_COLOR": {"useSource": true},
+        "L10N_PARAM_ROT": {"useSource": true},
+        "L10N_PARAM_LENGTH": {"useSource": true},
+        "L10N_PARAM_OFFSET": {"useSource": true},
+        "L10N_PARAM_BLUR": {"useSource": true},
+        "L10N_PARAM_HYPERBOLIC": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": {"useSource": true}
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_ROT": "方向",
+        "L10N_PARAM_LENGTH": "距离",
+        "L10N_PARAM_OFFSET": "偏移",
+        "L10N_PARAM_BLUR": "模糊度",
+        "L10N_PARAM_HYPERBOLIC": "偏差"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "内阴影"
+      }
+    }
+  }
+}

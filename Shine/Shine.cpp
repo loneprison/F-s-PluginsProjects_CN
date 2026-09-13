@@ -971,10 +971,11 @@ PF_Err Shine::ParamsSetup(
 	in_data = in_dataP;
 	out_data = out_dataP;
 	PF_ParamDef		def;
+	const ShineText::Strings strings(in_dataP);
 	//----------------------------------------------------------------
 	//位置の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_POINT(STR_POS,		//"New Center"
+	PF_ADD_POINT(AETEXT_PARAM(strings, L10N_PARAM_POS),		//"New Center"
 		50,	// X
 		50,	// Y
 		0,	// Flag
@@ -982,7 +983,7 @@ PF_Err Shine::ParamsSetup(
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_SLIDER(STR_LENGTH,	//パラメータの名前
+	PF_ADD_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_LENGTH),	//パラメータの名前
 		0, 		//数値入力する場合の最小値
 		1000,			//数値入力する場合の最大値
 		0,				//スライダーの最小値
@@ -992,7 +993,7 @@ PF_Err Shine::ParamsSetup(
 	);		
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_FLOAT_SLIDER(STR_STRONG,	//Name
+	PF_ADD_FLOAT_SLIDER(AETEXT_PARAM(strings, L10N_PARAM_STRONG),	//Name
 		0,						//VALID_MIN
 		1000,					//VALID_MAX
 		0,						//SLIDER_MIN
@@ -1006,8 +1007,8 @@ PF_Err Shine::ParamsSetup(
 	);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ISCOLOR,
-		STR_ON,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_USE_COLOR),
+		AETEXT_LABEL(strings, L10N_PARAM_ON),
 		FALSE,
 		0,
 		ID_ISCOLOR
@@ -1015,7 +1016,7 @@ PF_Err Shine::ParamsSetup(
 	//----------------------------------------------------------------
 	//色の指定
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_COLOR(STR_COLOR,
+	PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR),
 		0xFF,
 		0xFF,
 		0xFF,

@@ -1,0 +1,4 @@
+    {{RETURN_TYPE}} {{METHOD}}(AeText::TextToken token) const noexcept
+    {
+        return text_.{{RESOLVER}}(token);
+    }

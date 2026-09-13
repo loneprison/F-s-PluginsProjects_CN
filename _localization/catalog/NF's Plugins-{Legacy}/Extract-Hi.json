@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_BORDER": {"useSource": true},
+        "L10N_PARAM_SOFTNESS": {"useSource": true},
+        "L10N_PARAM_TARGET": {"useSource": true},
+        "L10N_PARAM_CUSTOM_COLOR": {"useSource": true},
+        "L10N_PARAM_INVERT": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Extracts bright areas using an algorithm different from the standard effect."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_BORDER": "阈值",
+        "L10N_PARAM_SOFTNESS": "柔和度",
+        "L10N_PARAM_TARGET": "通道",
+        "L10N_PARAM_CUSTOM_COLOR": "自定义颜色",
+        "L10N_PARAM_INVERT": "反转"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Popup": {
+        "L10N_PARAM_TARGET_ITEMS": "亮度|红色|绿色|蓝色|青色|洋红|黄色|RGB最大值|自定义"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "提取高亮区域（与标准算法不同）"
+      }
+    }
+  }
+}

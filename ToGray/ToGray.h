@@ -39,11 +39,11 @@
 //#include "FsAE.h"
 
 
-#define STR_GRAY_MODE_POP1	"mode"
-#define STR_GRAY_MODE_POP2	"(Y)uv|h(L)s|(R+G+B)/3|(R)gb|r(G)b|rg(B)|RGBMax|(L)ab"
+#define L10N_PARAM_MODE	"mode"
+#define L10N_PARAM_MODE_ITEMS	"(Y)uv|h(L)s|(R+G+B)/3|(R)gb|r(G)b|rg(B)|RGBMax|(L)ab"
 #define STR_GRAY_MODE_COUNT	8
 #define STR_GRAY_MODE_DEF	1
-#define STR_ORG_BLEND		"blend original(%)"
+#define L10N_PARAM_BLEND_ORIGINAL		"blend original(%)"
 
 //ユーザーインターフェースのID
 //ParamsSetup関数とRender関数のparamsパラメータのIDになる

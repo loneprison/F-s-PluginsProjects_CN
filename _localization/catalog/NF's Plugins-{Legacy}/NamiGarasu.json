@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_WAVE_VALUE": {"useSource": true},
+        "L10N_PARAM_ROT": {"useSource": true},
+        "L10N_PARAM_SPEED": {"useSource": true},
+        "L10N_PARAM_ADD_MAP": {"useSource": true},
+        "L10N_PARAM_NOISE": {"useSource": true},
+        "L10N_PARAM_A_SIZE": {"useSource": true},
+        "L10N_PARAM_A_VALUE": {"useSource": true},
+        "L10N_PARAM_A_STRONG": {"useSource": true},
+        "L10N_PARAM_A_SPEED": {"useSource": true},
+        "L10N_PARAM_A_SEED": {"useSource": true},
+        "L10N_PARAM_B_SIZE": {"useSource": true},
+        "L10N_PARAM_B_VALUE": {"useSource": true},
+        "L10N_PARAM_B_STRONG": {"useSource": true},
+        "L10N_PARAM_B_SPEED": {"useSource": true},
+        "L10N_PARAM_B_SEED": {"useSource": true},
+        "L10N_PARAM_C_SIZE": {"useSource": true},
+        "L10N_PARAM_C_VALUE": {"useSource": true},
+        "L10N_PARAM_C_STRONG": {"useSource": true},
+        "L10N_PARAM_C_SPEED": {"useSource": true},
+        "L10N_PARAM_C_SEED": {"useSource": true},
+        "L10N_PARAM_DISP_MAP": {"useSource": true},
+        "L10N_PARAM_X_LENGTH": {"useSource": true},
+        "L10N_PARAM_Y_LENGTH": {"useSource": true}
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "Topic": {
+        "L10N_PARAM_LAYER_A": {"useSource": true},
+        "L10N_PARAM_LAYER_B": {"useSource": true},
+        "L10N_PARAM_LAYER_C": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Applies a wavy-glass distortion."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_WAVE_VALUE": "扭曲强度",
+        "L10N_PARAM_ROT": "风向",
+        "L10N_PARAM_SPEED": "风速",
+        "L10N_PARAM_ADD_MAP": "叠加贴图",
+        "L10N_PARAM_NOISE": "复杂度",
+        "L10N_PARAM_A_SIZE": "A_尺寸",
+        "L10N_PARAM_A_VALUE": "A_数值",
+        "L10N_PARAM_A_STRONG": "A_强度",
+        "L10N_PARAM_A_SPEED": "A_速度",
+        "L10N_PARAM_A_SEED": "A_种子",
+        "L10N_PARAM_B_SIZE": "B_尺寸",
+        "L10N_PARAM_B_VALUE": "B_数值",
+        "L10N_PARAM_B_STRONG": "B_强度",
+        "L10N_PARAM_B_SPEED": "B_速度",
+        "L10N_PARAM_B_SEED": "B_种子",
+        "L10N_PARAM_C_SIZE": "C_尺寸",
+        "L10N_PARAM_C_VALUE": "C_数值",
+        "L10N_PARAM_C_STRONG": "C_强度",
+        "L10N_PARAM_C_SPEED": "C_速度",
+        "L10N_PARAM_C_SEED": "C_种子",
+        "L10N_PARAM_DISP_MAP": "仅贴图",
+        "L10N_PARAM_X_LENGTH": "X_长度",
+        "L10N_PARAM_Y_LENGTH": "Y_长度"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "Topic": {
+        "L10N_PARAM_LAYER_A": "A扭曲",
+        "L10N_PARAM_LAYER_B": "B扭曲",
+        "L10N_PARAM_LAYER_C": "C扭曲"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "波纹玻璃"
+      }
+    }
+  }
+}

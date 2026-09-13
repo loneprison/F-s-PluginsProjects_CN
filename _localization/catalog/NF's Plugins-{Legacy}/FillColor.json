@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "translations": {
+    "en": {
+      "Param": {
+        "L10N_PARAM_EXECUTE": "Execute",
+        "L10N_PARAM_COLOR": "Color",
+        "L10N_PARAM_OPACITY": "Opacity"
+      },
+      "Label": {
+        "L10N_PARAM_ON": {"useSource": true}
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "Fills opaque areas."
+      }
+    },
+    "zh": {
+      "Param": {
+        "L10N_PARAM_EXECUTE": "启用",
+        "L10N_PARAM_COLOR": "颜色",
+        "L10N_PARAM_OPACITY": "不透明度"
+      },
+      "Label": {
+        "L10N_PARAM_ON": "开"
+      },
+      "About": {
+        "L10N_PLUGIN_DESC": "填充不透明区域"
+      }
+    }
+  }
+}

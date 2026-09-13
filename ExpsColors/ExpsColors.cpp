@@ -6,6 +6,7 @@
 
 
 #include "ExpsColors.h"
+#include "ExpsColorsText.generated.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -19,10 +20,11 @@ static PF_Err ParamsSetup (
 {
 	PF_Err			err = PF_Err_NONE;
 	PF_ParamDef		def;
+	const ExpsColorsText::Strings strings(in_data);
 	//----------------------------------------------------------------
 	AEFX_CLR_STRUCT(def);
-	PF_ADD_CHECKBOX(STR_ON,
-		STR_ON2,
+	PF_ADD_CHECKBOX(AETEXT_PARAM(strings, L10N_PARAM_ON),
+		AETEXT_LABEL(strings, L10N_PARAM_ON_VALUE),
 		TRUE,
 		0,
 		ID_ON
@@ -30,16 +32,16 @@ static PF_Err ParamsSetup (
 
 	//----------------------------------------------------------------
 	//色の指定
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color0", 0xFF, 0xFF, 0xFF, ID_COLOR0);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color1", 0xFF, 0x00, 0x00, ID_COLOR1);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color2", 0x00, 0xFF, 0x00, ID_COLOR2);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color3", 0x00, 0x00, 0xFF, ID_COLOR3);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color4", 0xFF, 0xFF, 0x00, ID_COLOR4);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color5", 0xFF, 0x00, 0xFF, ID_COLOR5);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color6", 0x00, 0xFF, 0xFF, ID_COLOR6);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color7", 0x00, 0x00, 0x00, ID_COLOR7);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color8", 0x80, 0x80, 0x80, ID_COLOR8);
-	AEFX_CLR_STRUCT(def); PF_ADD_COLOR("color9", 0xFF, 0x80, 0xFF, ID_COLOR9);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR0), 0xFF, 0xFF, 0xFF, ID_COLOR0);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR1), 0xFF, 0x00, 0x00, ID_COLOR1);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR2), 0x00, 0xFF, 0x00, ID_COLOR2);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR3), 0x00, 0x00, 0xFF, ID_COLOR3);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR4), 0xFF, 0xFF, 0x00, ID_COLOR4);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR5), 0xFF, 0x00, 0xFF, ID_COLOR5);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR6), 0x00, 0xFF, 0xFF, ID_COLOR6);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR7), 0x00, 0x00, 0x00, ID_COLOR7);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR8), 0x80, 0x80, 0x80, ID_COLOR8);
+	AEFX_CLR_STRUCT(def); PF_ADD_COLOR(AETEXT_PARAM(strings, L10N_PARAM_COLOR9), 0xFF, 0x80, 0xFF, ID_COLOR9);
 
 	//----------------------------------------------------------------
 	out_data->num_params = 	ID_NUM_PARAMS; 
